@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Footer from "@/components/ui/footer";
 
 const rifficFont = localFont({
   src: "./fonts/rifficfree-bold.ttf",
@@ -50,7 +51,12 @@ export default function RootLayout({
       lang="en"
       className={`${texGyreAdventorFont.variable} ${rifficFont.variable}`}
     >
-      <body className="font-tga font-normal">{children}</body>
+      <body className="font-tga font-normal h-screen flex flex-col justify-between">
+        {children}
+        <Footer
+
+        />
+      </body>
     </html>
   );
 }

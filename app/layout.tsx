@@ -51,6 +51,21 @@ export default function RootLayout({
       lang="en"
       className={`${texGyreAdventorFont.variable} ${rifficFont.variable}`}
     >
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link
+          rel="icon"
+          href="/icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/apple-icon?<generated>"
+          type="image/<generated>"
+          sizes="<generated>"
+        />
+      </head>
       <body className="font-tga font-normal h-screen flex flex-col justify-between">
         {children}
         <Footer

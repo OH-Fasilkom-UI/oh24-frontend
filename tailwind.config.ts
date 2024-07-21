@@ -19,6 +19,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        'riffic': ['var(--font-riffic)', 'sans-serif'],
+        'tex-gyre': ['var(--font-tex-gyre-adventor)', 'sans-serif'],
+      },
       colors: {
         // Alert
         "alert-destructive-background": "#FFDCDC",
@@ -99,6 +103,7 @@ const config = {
         "Red-Region/Pohutukawa/100": "#FFE1E4",
         "Red-Region/Pohutukawa/700": "#BD1827",
         "Red-Region/Pohutukawa/800": "#931621",
+        "Red-Region/Monza/800": "#A3111E",
         "Text/Text-Dark-BG": "#E0ECFF",
         "Text/Text-Light-BG": "#2E3881",
 

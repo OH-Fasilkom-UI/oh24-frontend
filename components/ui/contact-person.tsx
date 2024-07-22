@@ -11,7 +11,7 @@ const ContactPerson: React.FC<ContactPersonProps> = ({
     ...props
 }) => {
     return (
-        <section {...props} className={cn("w-full h-[640px] md:h-fit rounded-[32px] bg-Red-Region/Monza/800 relative flex items-center justify-center overflow-hidden shadow-md", className)}>
+        <section {...props} className={cn("w-full h-[640px] md:h-fit rounded-[32px] bg-RedRegion/Monza/800 relative flex items-center justify-center overflow-hidden shadow-md", className)}>
             <div className="absolute w-full h-full z-10">
                 <Image
                     src={'/contact-person-corner-left.png'}

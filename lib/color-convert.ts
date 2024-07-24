@@ -39,17 +39,20 @@ FFFFFF
 -
 `
 
-const trimmed = colors.trim().split('\n').filter(item => item !== '-' && item !== '');
+const trimmed = colors
+  .trim()
+  .split('\n')
+  .filter((item) => item !== '-' && item !== '')
 
-const colorName = trimmed[0].replace(/ /g, '');
-const colorPrefix = 'Misc';
+const colorName = trimmed[0].replace(/ /g, '')
+const colorPrefix = 'Misc'
 
-const customColors: { [key: string]: string } = {};
+const customColors: { [key: string]: string } = {}
 
 for (let i = 5; i < trimmed.length - 1; i += 2) {
-    const colorNumber = trimmed[i];
-    const colorHex = trimmed[i + 1];
-    customColors[`${colorPrefix}/${colorName}/${colorNumber}`] = `#${colorHex}`;
+  const colorNumber = trimmed[i]
+  const colorHex = trimmed[i + 1]
+  customColors[`${colorPrefix}/${colorName}/${colorNumber}`] = `#${colorHex}`
 }
 
-console.log(customColors);
+console.log(customColors)

@@ -3,7 +3,7 @@ import { Slot } from '@radix-ui/react-slot'
 import { twMerge } from 'tailwind-merge'
 import { cva, type VariantProps } from 'class-variance-authority'
 
-const buttonVariants = cva(
+export const buttonVariants = cva(
   'flex justify-center items-center gap-2 w-max font-semibold transition-all px-7 md:px-8 py-2.5 md:py-3 text-sm md:text-base rounded-[12px]',
   {
     variants: {
@@ -44,4 +44,4 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 )
 Button.displayName = 'Button'
 
-export { Button, buttonVariants }
+export default Button

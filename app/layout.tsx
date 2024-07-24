@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
-import Footer from '@/components/ui/footer'
+import Footer from '@/components/ui/Footer'
 
 const rifficFont = localFont({
   src: './fonts/rifficfree-bold.ttf',

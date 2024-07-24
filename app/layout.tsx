@@ -66,7 +66,7 @@ export default function RootLayout({
           sizes="<generated>"
         />
       </head>
-      <body className="font-tga font-normal h-screen flex flex-col justify-between">
+      <body className="font-tga font-normal flex flex-col justify-between bg-[#B5D3DD] min-h-screen">
         {children}
         <Footer
 

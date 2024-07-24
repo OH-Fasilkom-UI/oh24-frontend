@@ -1,6 +1,7 @@
 import ContactPerson from '@/components/ui/contact-person'
+import { MessageSquare, Search, User } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Search } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -13,13 +14,16 @@ export default function Home() {
         iconPosition="right"
       />
       <ContactPerson>
-        <button className="bg-primary text-primary-foreground">
-          Contact Us
-        </button>
-        <button className="bg-primary text-primary-foreground">
-          Contact Us
-        </button>
+        <Button variant={'primary'} disabled={false}>
+          <MessageSquare size={20} /> Contact Person 1
+        </Button>
+        <Button variant={'primary'} disabled={false}>
+          <MessageSquare size={20} /> Contact Person 2
+        </Button>
       </ContactPerson>
+      <Button variant={'primary'} disabled={false}>
+        <User size={20} /> Register
+      </Button>
     </main>
   )
 }

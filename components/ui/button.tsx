@@ -4,30 +4,22 @@ import { twMerge } from 'tailwind-merge'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'flex justify-center items-center gap-2 w-max font-semibold transition-all px-7 md:px-8 py-2.5 md:py-3 text-sm md:text-base rounded-[12px]',
   {
     variants: {
       variant: {
-        default: 'bg-primary text-primary-foreground hover:bg-primary/90',
-        destructive:
-          'bg-destructive text-destructive-foreground hover:bg-destructive/90',
-        outline:
-          'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+        primary:
+          'bg-[#4141EA] disabled:bg-[#2727A3] disabled:text-white/50 text-white dark:text-[#E2E7EF] hover:shadow-[0_4px_12px_0_rgba(0,0,0,0.50)] active:shadow-[0_0_20px_0_rgba(40,40,161,0.50)_inset] dark:hover:shadow-[0_4px_12px_0_rgba(255,255,255,0.50)] dark:active:shadow-[0_0_20px_0_rgba(40,40,161,0.50)_inset] disabled:hover:shadow-none disabled:active:shadow-none',
         secondary:
-          'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-        ghost: 'hover:bg-accent hover:text-accent-foreground',
-        link: 'text-primary underline-offset-4 hover:underline',
-      },
-      size: {
-        default: 'h-10 px-4 py-2',
-        sm: 'h-9 rounded-md px-3',
-        lg: 'h-11 rounded-md px-8',
-        icon: 'h-10 w-10',
+          'bg-[#73ABBD] disabled:bg-[#58808C] disabled:text-white/50 text-white dark:text-[#E2E7EF] hover:shadow-[0_4px_12px_0_rgb(181,211,221)] active:shadow-[0_0_20px_0_rgba(98,144,158,0.25)_inset] dark:hover:shadow-[0_4px_12px_0_rgba(255,255,255,0.50)] dark:active:shadow-[0_0_20px_0_rgba(181,211,221,0.25)_inset] disabled:hover:shadow-none disabled:active:shadow-none',
+        ghost:
+          'bg-[#F0F8FF] disabled:bg-[#CAD2D9] border-[2px] border-[#2E3881] disabled:border-[#7C85AC] text-[#2E3881] disabled:text-[#7C85AC] dark:text-[#E2E7EF] hover:shadow-[0_4px_12px_0_rgba(0,0,0,0.25)] active:shadow-[0_0_20px_0_rgba(0,0,0,0.10)_inset] dark:hover:shadow-[0_4px_12px_0_rgba(255,255,255,0.25)] dark:active:shadow-[0_0_20px_0_rgba(0,0,0,0.10)_inset] disabled:hover:shadow-none disabled:active:shadow-none',
+        tertiary:
+          'bg-[#F0F8FF] disabled:bg-[#CAD2D9] disabled:border-[#828AAE] text-[#2E3881] disabled:text-[#7C85AC] dark:text-[#E2E7EF] hover:underline active:text-[#8F98BF] active:no-underline dark:hover:underline dark:active:text-[#8F98BF] disabled:hover:no-underline',
       },
     },
     defaultVariants: {
-      variant: 'default',
-      size: 'default',
+      variant: 'primary',
     },
   }
 )
@@ -39,11 +31,11 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button'
     return (
       <Comp
-        className={twMerge(buttonVariants({ variant, size, className }))}
+        className={twMerge(buttonVariants({ variant, className }))}
         ref={ref}
         {...props}
       />

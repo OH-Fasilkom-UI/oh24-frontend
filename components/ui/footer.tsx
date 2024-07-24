@@ -42,7 +42,7 @@ const Footer: React.FC<FooterProps> = ({
                             alt="Open House Logo"
                             width={251}
                             height={303.23}
-                            className="w-[124.8px] h-[156px] md:w-[251px] md:h-[303.23px]"
+                            className="w-[124.8px] h-[156px] md:w-[251px] md:h-[303.23px] hover:scale-105 duration-100"
                         />
                         <div className="hidden lg:flex flex-col justify-center gap-8 font-tex-gyre text-Text/TextDarkBG font-bold text-base">
                             {

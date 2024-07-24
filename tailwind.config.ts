@@ -35,15 +35,15 @@ const config = {
         "alert-warning-foreground": "#C5BE12",
 
         // Button
-        "button-ghost-all-border": "Text/Text-Light-BG",
+        "button-ghost-all-border": "Text/TextLightBG",
         "button-ghost-default": "BlueRegion/Cornflower/50",
         "button-ghost-disabled": "#CAD2D9",
         "button-ghost-hover": "BlueRegion/Cornflower/50",
         "button-ghost-pressed": "BlueRegion/Cornflower/50",
-        "button-primary-default": "BlueRegion/Portage/600",
+        "button-primary-default": "BlueRegion/Portgage/600",
         "button-primary-disabled": "#2727A3",
-        "button-primary-hover": "BlueRegion/Portage/600",
-        "button-primary-pressed": "BlueRegion/Portage/600",
+        "button-primary-hover": "BlueRegion/Portgage/600",
+        "button-primary-pressed": "BlueRegion/Portgage/600",
         "button-secondary-default": "Miscellanous/Ziggurat/400",
         "button-secondary-disabled": "#58808C",
         "button-secondary-hover": "Miscellanous/Ziggurat/400",
@@ -55,23 +55,23 @@ const config = {
 
         // Chips
         "chips-default-background": "BlueRegion/CeruleanBlue/100",
-        "chips-default-border": "Purple-Region/True-V/700",
-        "chips-default-foreground": "Purple-Region/True-V/700",
+        "chips-default-border": "PurpleRegion/TrueV/700",
+        "chips-default-foreground": "PurpleRegion/TrueV/700",
         "chips-hover-background": "BlueRegion/CeruleanBlue/100",
-        "chips-hover-border": "Purple-Region/BlueViolet/500",
-        "chips-hover-foreground": "Purple-Region/BlueViolet/500",
-        "chips-hover-selected-background": "Purple-Region/True-V/600",
-        "chips-hover-selected-border": "Purple-Region/BlueViolet/500",
-        "chips-hover-selected-foreground": "Purple-Region/BlueViolet/500",
-        "chips-selected-background": "Purple-Region/BlueViolet/600",
-        "chips-selected-border": "Purple-Region/BlueViolet/500",
-        "chips-selected-foreground": "Purple-Region/BlueViolet/500",
+        "chips-hover-border": "PurpleRegion/BlueViolet/500",
+        "chips-hover-foreground": "PurpleRegion/BlueViolet/500",
+        "chips-hover-selected-background": "PurpleRegion/TrueV/600",
+        "chips-hover-selected-border": "PurpleRegion/BlueViolet/500",
+        "chips-hover-selected-foreground": "PurpleRegion/BlueViolet/500",
+        "chips-selected-background": "PurpleRegion/BlueViolet/600",
+        "chips-selected-border": "PurpleRegion/BlueViolet/500",
+        "chips-selected-foreground": "PurpleRegion/BlueViolet/500",
 
         // Toast
         "toast-destructive-background": "#FFDCDC",
         "toast-destructive-foreground": "#9A2323",
         "toast-info-background": "#E0DAFA",
-        "toast-info-foreground": "Purple-Region/Moon-Raker/600",
+        "toast-info-foreground": "PurpleRegion/MoonRaker/600",
         "toast-success-background": "#DEFFDC",
         "toast-success-foreground": "#1C8333",
         "toast-warning-background": "#FBFFCD",
@@ -79,11 +79,11 @@ const config = {
 
         // Tooltip
         "tooltip-background": "BlueRegion/Cornflower/50",
-        "tooltip-foreground": "Text/Text-Light-BG",
+        "tooltip-foreground": "Text/TextLightBG",
 
         // Modals
         "modals-background": "BlueRegion/Cornflower/50",
-        "modals-foreground": "Text/Text-Light-BG",
+        "modals-foreground": "Text/TextLightBG",
 
         // Custom Colors
         'BlueRegion/Cornflower/50': '#F0F8FF',
@@ -315,10 +315,6 @@ const config = {
         'Misc/OuterSpace/900': '#2F363E',
         'Misc/OuterSpace/950': '#20262C',
 
-        "BlueRegion/Portage/100": "#DFE8FF",
-        "BlueRegion/Portage/600": "#4141EA",
-        "BlueRegion/Portage/800": "#2E2CA7",
-
         "Text/TextDarkBG": "#E0ECFF",
         "Text/TextLightBG": "#2E3881",
 
@@ -355,6 +351,16 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      fontSize: {
+        t1: '60px',
+        t2: '48px',
+        t3: '36px',
+        t4: '24px',
+        t5: '20px',
+        t6: '16px',
+        t7: '14px',
+        t8: '12px',
       },
       borderRadius: {
         lg: "var(--radius)",

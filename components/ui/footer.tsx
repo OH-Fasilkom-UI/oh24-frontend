@@ -47,9 +47,10 @@ const Footer: React.FC<FooterProps> = ({ ...props }) => {
                 'Registration Page',
                 'Merchandise',
                 'Wall of Fame',
-              ].map((item) => {
+              ].map((item, i) => {
                 return (
                   <a
+                    key={i}
                     href={item}
                     className="list-none hover:text-RedRegion/Monza/700 hover:scale-105 duration-200 cursor-pointer"
                   >

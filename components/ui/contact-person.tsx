@@ -1,5 +1,5 @@
-import { cn } from '@/lib/utils'
 import Image from 'next/image'
+import { twMerge } from 'tailwind-merge'
 
 export interface ContactPersonProps
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -14,7 +14,7 @@ const ContactPerson: React.FC<ContactPersonProps> = ({
   return (
     <section
       {...props}
-      className={cn(
+      className={twMerge(
         'w-full h-[640px] md:h-fit rounded-[32px] bg-RedRegion/Monza/800 relative flex items-center justify-center overflow-hidden shadow-md',
         className
       )}

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { cn } from '@/lib/utils'
+import { twMerge } from 'tailwind-merge'
 import { AlertTriangle } from 'lucide-react'
 
 export interface InputProps
@@ -40,7 +40,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             {...props}
             type={type}
             ref={ref}
-            className={cn(
+            className={twMerge(
               `w-full h-full bg-transparent hover:bg-white/30 outline-none focus:bg-white/30 px-5 ${icon ? (iconPosition === 'left' ? 'pl-14' : 'pr-14') : ''} py-3 duration-300 placeholder:text-[#2E3881]/30 text-t9 sm:text-t7`,
               className
             )}

@@ -1,4 +1,5 @@
-import { Toaster } from '@/components/ui/sonner'
+import { Toaster } from '@/components/ui/Toast'
+import { Alerter } from '@/components/ui/Alert'
 import Footer from '@/components/ui/Footer'
 import localFont from 'next/font/local'
 import type { Metadata } from 'next'
@@ -70,6 +71,7 @@ export default function RootLayout({
       <body className="font-tga font-normal flex flex-col justify-between bg-[#B5D3DD] min-h-screen">
         <main>{children}</main>
         <Toaster position="top-center" />
+        <Alerter />
         <Footer />
       </body>
     </html>

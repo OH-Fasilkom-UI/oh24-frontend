@@ -1,0 +1,39 @@
+@font-face {
+  font-family: riffic;
+  src: url('/rifficfree-bold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: tex-gyre;
+  src: url('/texgyreadventor-bold.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: tex-gyre;
+  src: url('/texgyreadventor-bolditalic.otf');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: tex-gyre;
+  src: url('/texgyreadventor-italic.otf');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: tex-gyre;
+  src: url('/texgyreadventor-regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --font-riffic: riffic;
+  --font-tex-gyre-adventor: tex-gyre;
+}

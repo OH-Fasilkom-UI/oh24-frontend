@@ -15,7 +15,7 @@ export const Toaster = ({ ...props }: ToasterProps) => {
         unstyled: true,
         classNames: {
           toast:
-            'flex items-center gap-6 px-5 py-3 rounded-[15px] font-bold text-[#2E3881] shadow-[0px_4px_10px_0px]',
+            'font-tex-gyre flex items-center gap-6 px-5 py-3 rounded-[15px] font-bold text-[#2E3881] shadow-[0px_4px_10px_0px]',
         },
       }}
       {...props}

@@ -55,7 +55,7 @@ const Checkbox = React.forwardRef<
     <CheckboxPrimitive.Root
       id={id}
       ref={ref}
-      className={twMerge(checkboxVariants({ size, color }), className,)}
+      className={twMerge(checkboxVariants({ size, color }), className)}
       {...props}
     >
       <CheckboxPrimitive.Indicator className="flex items-center justify-center text-current">

@@ -26,6 +26,4 @@ export const Tertiary = () => (
   <Button variant="tertiary" children="Hello, World" />
 )
 
-export const Ghost = () => (
-  <Button variant="ghost" children="Hello, World" />
-)
+export const Ghost = () => <Button variant="ghost" children="Hello, World" />

@@ -3,24 +3,39 @@
 import * as React from 'react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { LucideProps, X } from 'lucide-react'
+import Button, { ButtonProps } from './Button'
 
 // TODO:
-// - [ ] buttons prop
+// - [x] buttons prop
 // - [ ] alignment prop
-// - [ ] closeButton prop
+// - [x] closeButton prop
 // - [ ] mobile view
+
+type IconType = React.ForwardRefExoticComponent<
+  Omit<LucideProps, 'ref'> & React.RefAttributes<SVGSVGElement>
+>
+
+type ButtonType = React.ReactNode
 
 export interface ModalProps
   extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Root> {
   trigger: React.ReactNode
-  icon: React.ForwardRefExoticComponent<
-    Omit<LucideProps, 'ref'> & React.RefAttributes<SVGSVGElement>
-  >
+  icon: IconType
   title: string
   description: string
+  buttons?: [ButtonType] | [ButtonType, ButtonType]
+  hideClose?: boolean
 }
 
-const Modal = ({ icon: Icon, trigger, title, description, ...props }: ModalProps) => {
+const Modal = ({
+  icon: Icon,
+  trigger,
+  title,
+  description,
+  buttons,
+  hideClose = false,
+  ...props
+}: ModalProps) => {
   return (
     <DialogPrimitive.Root {...props}>
       <DialogPrimitive.Trigger asChild children={trigger} />
@@ -36,14 +51,33 @@ const Modal = ({ icon: Icon, trigger, title, description, ...props }: ModalProps
               {description}
             </DialogPrimitive.Description>
           </div>
-          <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
-            <X className="h-4 w-4" />
-            <span className="sr-only">Close</span>
-          </DialogPrimitive.Close>
+          {!hideClose && (
+            <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
+              <X className="h-4 w-4" />
+              <span className="sr-only">Close</span>
+            </DialogPrimitive.Close>
+          )}
+          {!!buttons?.length && (
+            <div className="flex flex-row [&>*]:flex-grow space-x-2 mt-3">
+              {buttons?.[0]}
+              {buttons?.[1]}
+            </div>
+          )}
         </DialogPrimitive.Content>
       </DialogPrimitive.Portal>
     </DialogPrimitive.Root>
   )
 }
+
+interface ModalButtonProps extends ButtonProps {
+  closeOnClick?: boolean
+}
+
+Modal.Button = React.forwardRef<HTMLButtonElement, ModalButtonProps>(
+  ({ closeOnClick, ...props }: ModalButtonProps, ref) => {
+    const el = <Button {...props} ref={ref} />
+    return closeOnClick ? <DialogPrimitive.Close children={el} asChild /> : el
+  }
+)
 
 export default Modal

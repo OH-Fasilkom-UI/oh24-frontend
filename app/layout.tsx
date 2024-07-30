@@ -4,6 +4,7 @@ import Footer from '@/components/ui/Footer'
 import localFont from 'next/font/local'
 import type { Metadata } from 'next'
 import './globals.css'
+import { Navbar } from '@/components/ui/Navbar'
 
 const rifficFont = localFont({
   src: './fonts/rifficfree-bold.ttf',
@@ -69,6 +70,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-tga font-normal flex flex-col justify-between bg-[#B5D3DD] min-h-screen">
+        <Navbar />
         <main>{children}</main>
         <Toaster position="top-center" />
         <Alerter />

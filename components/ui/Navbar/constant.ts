@@ -6,28 +6,33 @@ import { Users } from 'lucide-react'
 
 export const NAVBAR_LINKS = [
   {
-    href: '/home',
+    href: '/',
     icon: House,
     label: 'Home',
+    isExist: true,
   },
   {
-    href: '/',
+    href: '/ambassador',
     icon: SquareUserRound,
     label: 'Ambassador',
+    isExist: true,
   },
   {
-    href: '/',
+    href: '/fwefwefw',
     icon: Building,
     label: 'About Fasilkom',
+    isExist: false,
   },
   {
-    href: '/',
+    href: '/wefwfew',
     icon: FileText,
     label: 'Registration Page',
+    isExist: false,
   },
   {
-    href: '/',
+    href: '/wefwefw',
     icon: Users,
     label: 'Wall of Fame',
+    isExist: false,
   },
 ]

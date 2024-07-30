@@ -1,7 +1,7 @@
 'use client'
 
 import React, { ComponentPropsWithoutRef, useEffect, useState } from 'react'
-import { CountdownProps } from './iterface'
+import { CountdownProps } from './interface'
 import { Timer } from 'lucide-react'
 import { cn } from '@/lib/utils'
 

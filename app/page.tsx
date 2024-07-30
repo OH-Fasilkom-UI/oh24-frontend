@@ -14,12 +14,19 @@ import {
   Search,
   TriangleAlert,
 } from 'lucide-react'
+import FileInput from '@/components/ui/FileInput'
+import { useState } from 'react'
 
 export default function Home() {
   const { alert } = useAlert()
-
+  const [file, setFile] = useState<File | null>(null)
   return (
     <main className="p-10 min-h-screen">
+      <FileInput
+        file={file}
+        setFile={setFile}
+        secondaryMessage="Upload your file here"
+      />
       <Input
         placeholder="Masukkan nama"
         errorMessage="Nama tidak boleh kosong"

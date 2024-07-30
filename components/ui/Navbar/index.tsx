@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { NAVBAR_LINKS } from './constant'
+import { NAVBAR_LINKS, NAVBAR_LOGIN } from './constant'
 import { usePathname, useRouter } from 'next/navigation'
 import Image from 'next/image'
 import Button from '../Button'
@@ -10,12 +10,17 @@ import {
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuList,
+  NavigationMenuLink,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
+import { useState } from 'react'
+import { ChevronDown } from 'lucide-react'
 
 export const Navbar = () => {
   const pathname = usePathname()
   const router = useRouter()
+  const [isLogin, setIsLogin] = useState(false) // Nanti bakal diganti kalo be dah ok
+  const [isHover, setIsHover] = useState(false)
 
   return (
     <nav className="flex justify-between items-center px-12 py-4 bg-[#0000001A]">
@@ -40,7 +45,51 @@ export const Navbar = () => {
           {link.label}
         </p>
       ))}
-      <Button className="max-lg:hidden block">Login</Button>
+      {isLogin ? (
+        <NavigationMenu className="max-lg:hidden block">
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger
+                onMouseEnter={() => setIsHover(true)}
+                onMouseLeave={() => setIsHover(false)}
+                className="text-[#3733CF] flex flex-row gap-2 max-xl:text-[12px] text-[16px] font-bold whitespace-nowrap hover:text-[#C10F1F]"
+              >
+                Welcome, Nak Oha{' '}
+                <span>
+                  <ChevronDown
+                    size={24}
+                    className={`transition-all ${isHover ? 'rotate-180' : ''}`}
+                  />
+                </span>
+              </NavigationMenuTrigger>
+              <NavigationMenuContent className="w-fit rounded-[20px] justify-center h-fit px-10 pb-4 bg-[#8D8D8D1A]">
+                {NAVBAR_LOGIN.map((link, index) => (
+                  <p
+                    key={index}
+                    onClick={() => {
+                      link.label === 'Logout'
+                        ? setIsLogin(false)
+                        : router.push(link.href)
+                    }}
+                    className="text-[#3733CF] hover:text-[#C10F1F] cursor-pointer justify-start flex flex-row font-tex-gyre font-bold items-center gap-2 text-[16px] mt-5"
+                  >
+                    {link.icon && <span>{React.createElement(link.icon)}</span>}
+                    {link.label}
+                  </p>
+                ))}
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+      ) : (
+        <Button
+          onClick={() => setIsLogin(true)}
+          className={`max-lg:hidden block`}
+        >
+          Login
+        </Button>
+      )}
+
       <NavigationMenu className="max-lg:block hidden">
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -73,9 +122,29 @@ export const Navbar = () => {
                   {link.label}
                 </p>
               ))}
-              <Button className="max-lg:block mt-5 hidden w-fit h-fit px-8">
-                Log In
-              </Button>
+              {isLogin ? (
+                NAVBAR_LOGIN.map((link, index) => (
+                  <p
+                    key={index}
+                    onClick={() => {
+                      link.label === 'Logout'
+                        ? setIsLogin(false)
+                        : router.push(link.href)
+                    }}
+                    className="text-[#3733CF] justify-start flex flex-row font-tex-gyre  items-center gap-4 text-[12px] mt-5"
+                  >
+                    {link.icon && <span>{React.createElement(link.icon)}</span>}
+                    {link.label}
+                  </p>
+                ))
+              ) : (
+                <Button
+                  onClick={() => setIsLogin(true)}
+                  className="max-lg:block mt-5 hidden w-fit h-fit px-8"
+                >
+                  Log In
+                </Button>
+              )}
             </NavigationMenuContent>
           </NavigationMenuItem>
         </NavigationMenuList>

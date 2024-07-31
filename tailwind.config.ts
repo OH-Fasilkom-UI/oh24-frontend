@@ -20,6 +20,9 @@ const config = {
       },
     },
     extend: {
+      boxShadow: {
+        'timeline': '4px 4px 12px 0 rgba(98, 163, 203, 0.5), -4px -4px 12px 0 rgba(78, 86, 196, 0.5)',
+      },
       fontFamily: {
         riffic: ['var(--font-riffic)', 'sans-serif'],
         'tex-gyre': ['var(--font-tex-gyre-adventor)', 'sans-serif'],

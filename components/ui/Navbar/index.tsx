@@ -23,9 +23,15 @@ export const Navbar = () => {
   const [isHover, setIsHover] = useState(false)
 
   return (
-    <nav className="flex justify-between items-center px-12 py-4 bg-[#0000001A]">
-      <div className="max-md:w-[150px] max-md:h-[41px]">
-        <Image src="/logo-navbar.svg" alt="logo" width={204} height={61} />
+    <nav className="flex justify-between items-center px-12 py-4 max-md:py-2 bg-[#0000001A]">
+      <div className="relative w-[170px] h-[44px]">
+        <Image
+          alt="contoh"
+          src="/logo-navbar.svg"
+          fill
+          sizes="none"
+          className="object-contain"
+        />
       </div>
       {NAVBAR_LINKS.map((link, index) => (
         <p

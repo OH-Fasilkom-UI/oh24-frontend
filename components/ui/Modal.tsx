@@ -7,12 +7,6 @@ import Button, { ButtonProps } from './Button'
 import { twMerge } from 'tailwind-merge'
 import { ScrollArea } from './scroll-area'
 
-// TODO:
-// - [x] buttons prop
-// - [x] alignment prop
-// - [x] closeButton prop
-// - [ ] mobile view
-
 type IconType = React.ForwardRefExoticComponent<
   Omit<LucideProps, 'ref'> & React.RefAttributes<SVGSVGElement>
 >

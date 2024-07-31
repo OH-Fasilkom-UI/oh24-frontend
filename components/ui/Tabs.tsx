@@ -3,15 +3,23 @@
 import * as React from 'react'
 import * as TabsPrimitive from '@radix-ui/react-tabs'
 import { twMerge } from 'tailwind-merge'
+import { LucideProps } from 'lucide-react'
+
+interface TabsListProps
+  extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.List> {
+  withBG?: boolean
+}
 
 const TabsList = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.List>,
-  React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
->(({ className, ...props }, ref) => (
+  TabsListProps
+>(({ className, withBG, ...props }, ref) => (
   <TabsPrimitive.List
     ref={ref}
     className={twMerge(
-      'inline-flex h-16 items-center justify-center bg-muted p-2 rounded-xl bg-button-ghost',
+      'inline-flex justify-center p-1 sm:p-2 rounded-xl max-w-screen',
+      'data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start data-[orientation=horizontal]:flex-row data-[orientation=horizontal]:items-center ',
+      withBG ? 'bg-BlueRegion/Cornflower/50' : 'bg-transparent',
       className
     )}
     {...props}
@@ -19,22 +27,41 @@ const TabsList = React.forwardRef<
 ))
 TabsList.displayName = TabsPrimitive.List.displayName
 
+type IconType = React.ForwardRefExoticComponent<
+  Omit<LucideProps, 'ref'> & React.RefAttributes<SVGSVGElement>
+>
+
+interface TabsTriggerProps
+  extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger> {
+  withNumber?: number
+  withIcon?: IconType
+}
+
 const TabsTrigger = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
->(({ className, ...props }, ref) => (
+  TabsTriggerProps
+>(({ className, children, withNumber, withIcon: WithIcon, ...props }, ref) => (
   <TabsPrimitive.Trigger
     ref={ref}
     className={twMerge(
-      'font-tex-gyre font-bold inline-flex items-center justify-center rounded-xl whitespace-nowrap px-8 py-4 text-sm ring-offset-background transition-all',
+      'font-tex-gyre font-bold inline-flex items-center justify-center rounded-xl whitespace-nowrap ring-offset-background transition-all',
       'disabled:pointer-events-none disabled:opacity-50',
+      'px-4 py-3 sm:px-8 sm:py-4 text-xs sm:text-sm',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
-      'data-[state=active]:text-Text/TextLightBG data-[state=active]:bg-BlueRegion/Cornflower/100',
-      'data-[state=inactive]:text-Misc/ShuttleGray/600',
+      'data-[state=active]:text-Text/TextLightBG data-[state=active]:bg-BlueRegion/Cornflower/100 [&[data-state=active]_.tab-number]:bg-Text/TextLightBG/30',
+      'data-[state=inactive]:text-Misc/ShuttleGray/600 [&[data-state=inactive]_.tab-number]:bg-Misc/ShuttleGray/600/30',
       className
     )}
     {...props}
-  />
+  >
+    <div className="flex flex-row items-center gap-2">
+      {withNumber && (
+        <span className="tab-number rounded-full w-5 h-5 sm:w-6 sm:h-6 content-center pb-px">{withNumber}</span>
+      )}
+      {WithIcon && <WithIcon className='w-5 h-5 sm:w-6 sm:h-6' />}
+      {children}
+    </div>
+  </TabsPrimitive.Trigger>
 ))
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
 

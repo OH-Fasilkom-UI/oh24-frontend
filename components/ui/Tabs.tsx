@@ -56,9 +56,11 @@ const TabsTrigger = React.forwardRef<
   >
     <div className="flex flex-row items-center gap-2">
       {withNumber && (
-        <span className="tab-number rounded-full w-5 h-5 sm:w-6 sm:h-6 content-center pb-px">{withNumber}</span>
+        <span className="tab-number rounded-full w-5 h-5 sm:w-6 sm:h-6 content-center pb-px">
+          {withNumber}
+        </span>
       )}
-      {WithIcon && <WithIcon className='w-5 h-5 sm:w-6 sm:h-6' />}
+      {WithIcon && <WithIcon className="w-5 h-5 sm:w-6 sm:h-6" />}
       {children}
     </div>
   </TabsPrimitive.Trigger>

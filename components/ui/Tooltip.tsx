@@ -11,11 +11,19 @@ const TooltipProvider = TooltipPrimitive.Provider
 const Tooltip = TooltipPrimitive.Root
 
 const TooltipTrigger = TooltipPrimitive.Trigger
+type TooltipContentProps = {
+  className?: string;
+  sideOffset?: number;
+  side?: string;
+  icon?: boolean;
+  title?: string;
+  children?: React.ReactNode;
+};
 
 const TooltipContent = React.forwardRef<
   React.ElementRef<typeof TooltipPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
->(({ className, sideOffset = 4, side, title, content, ...props }, ref) => (
+  TooltipContentProps & React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
+>(({ className, sideOffset = 4, side, icon = true, title, children, content, ...props }, ref) => (
   <TooltipPrimitive.Content
     ref={ref}
     side={side}
@@ -56,9 +64,10 @@ const TooltipContent = React.forwardRef<
       </div>
       <div className="bg-[#F0F8FF] p-3.5 md:p-4 rounded-xl text-[#2E3881] font-tex-gyre">
         <div className="text-base items-center gap-2 font-semibold pb-1 hidden md:flex">
-          <Info size={18} /> {title}
+          <Info className={icon ? "" : "hidden"} size={18} /> {title}
         </div>
         <div className="max-w-48">{content}</div>
+        {children}
       </div>
     </div>
   </TooltipPrimitive.Content>

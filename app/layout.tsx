@@ -69,7 +69,7 @@ export default function RootLayout({
           sizes="<generated>"
         />
       </head>
-      <body className="font-tga font-normal flex flex-col justify-between bg-[#B5D3DD] min-h-screen">
+      <body className="font-tga font-normal flex flex-col justify-between bg-[#B5D3DD] min-h-screen" suppressHydrationWarning suppressContentEditableWarning>
         <Navbar />
         <main>{children}</main>
         <Toaster position="top-center" />

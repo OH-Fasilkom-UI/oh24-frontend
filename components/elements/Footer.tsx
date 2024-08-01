@@ -1,25 +1,35 @@
 'use client'
 import { Copy, Instagram, Twitter, Youtube } from 'lucide-react'
 import Image from 'next/image'
+import {motion, useInView} from 'framer-motion'
+import { useRef } from 'react'
 
 export interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const Footer: React.FC<FooterProps> = ({ ...props }) => {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: false })
+
   return (
-    <footer className="relative flex items-end">
+    <motion.footer
+      ref={ref}
+      initial={{ y: 200 }}
+      animate={{ y: inView ? 0 : 200 }}
+      transition={{ duration: 0.5, type: 'spring', stiffness: 100, damping: 20 }}
+      className="relative flex items-end z-0">
       <Image
         src={'/footer.png'}
         alt="Footer Background"
         width={1920}
         height={412}
-        className="w-full absolute bottom-[412px] sm:bottom-[262px] md:bottom-[412px] object-top object-cover z-[-1] hidden sm:flex"
+        className="w-full absolute bottom-[412px] sm:bottom-[262px] md:bottom-[412px] object-top object-cover -z-10 hidden sm:flex"
       />
       <Image
         src={'/footer-mobile.png'}
         alt="Footer Background"
         width={1920}
         height={412}
-        className="w-full absolute bottom-[262px] object-top object-cover z-[-1] sm:hidden"
+        className="w-full absolute bottom-[262px] object-top object-cover -z-10 sm:hidden"
       />
       <section className="z-20 flex flex-col gap-4 bg-[#343FC0] h-[262px] md:h-[412px] p-5 md:p-10 w-full">
         <div className="flex items-center justify-center text-white font-bold text-sm font-tex-gyre gap-2 md:hidden">
@@ -122,7 +132,7 @@ const Footer: React.FC<FooterProps> = ({ ...props }) => {
           </div>
         </div>
       </section>
-    </footer>
+    </motion.footer>
   )
 }
 

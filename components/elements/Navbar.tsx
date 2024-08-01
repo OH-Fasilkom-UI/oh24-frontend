@@ -34,12 +34,12 @@ export const Navbar = () => {
         />
       </div>
       {NAVBAR_LINKS.map((link, index) => (
-        <p
+        <div
           key={index}
           onClick={() => {
             link.isExist && router.push(link.href)
           }}
-          className={`text-[16px] cursor-pointer max-xl:text-[12px] max-lg:hidden gap-2 flex font-tex-gyre font-semibold ${
+          className={`items-center text-[16px] cursor-pointer max-xl:text-[12px] max-lg:hidden gap-2 flex font-tex-gyre font-semibold hover:text-RedRegion/Monza/500 duration-300 hover:scale-105 ${
             link.isExist
               ? pathname === link.href
                 ? 'text-[#C10F1F]'
@@ -49,7 +49,7 @@ export const Navbar = () => {
         >
           {link.icon && <span>{React.createElement(link.icon)}</span>}
           {link.label}
-        </p>
+        </div>
       ))}
       {isLogin ? (
         <NavigationMenu className="max-lg:hidden block">
@@ -58,7 +58,7 @@ export const Navbar = () => {
               <NavigationMenuTrigger
                 onMouseEnter={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}
-                className="text-[#3733CF] flex flex-row gap-2 max-xl:text-[12px] text-[16px] font-bold whitespace-nowrap hover:text-[#C10F1F]"
+                className="text-[#3733CF] flex flex-row gap-2 max-xl:text-[12px] text-[16px] font-bold whitespace-nowrap hover:text-[#C10F1F] font-tex-gyre"
               >
                 Welcome, Nak Oha{' '}
                 <span>
@@ -68,7 +68,7 @@ export const Navbar = () => {
                   />
                 </span>
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="w-fit rounded-[20px] justify-center h-fit px-10 pb-4 bg-[#8D8D8D1A]">
+              <NavigationMenuContent className="w-fit rounded-[8px] justify-center h-fit px-10 pb-4 bg-[#8D8D8D]/10">
                 {NAVBAR_LOGIN.map((link, index) => (
                   <p
                     key={index}
@@ -77,7 +77,7 @@ export const Navbar = () => {
                         ? setIsLogin(false)
                         : router.push(link.href)
                     }}
-                    className="text-[#3733CF] hover:text-[#C10F1F] cursor-pointer justify-start flex flex-row font-tex-gyre font-bold items-center gap-2 text-[16px] mt-5"
+                    className="text-[#3733CF] hover:text-[#C10F1F] duration-300 cursor-pointer justify-start flex flex-row font-tex-gyre font-bold items-center gap-2 text-[16px] mt-5"
                   >
                     {link.icon && <span>{React.createElement(link.icon)}</span>}
                     {link.label}
@@ -105,14 +105,14 @@ export const Navbar = () => {
                 size={24}
               />
             </NavigationMenuTrigger>
-            <NavigationMenuContent className="w-fit h-fit p-5 rounded-[20px] bg-[#8D8D8D1A]">
+            <NavigationMenuContent className="w-fit h-fit p-5 rounded-[8px] bg-[#8D8D8D]/10">
               {NAVBAR_LINKS.map((link, index) => (
                 <p
                   key={index}
                   onClick={() => {
                     link.isExist && router.push(link.href)
                   }}
-                  className={`flex cursor-pointer whitespace-nowrap flex-row items-center gap-4 text-[12px] mt-5 justify-start ${
+                  className={`font-tex-gyre flex cursor-pointer whitespace-nowrap flex-row items-center gap-4 text-[12px] mt-5 justify-start ${
                     link.isExist
                       ? pathname === link.href
                         ? 'text-[#C10F1F]'
@@ -146,7 +146,7 @@ export const Navbar = () => {
               ) : (
                 <Button
                   onClick={() => setIsLogin(true)}
-                  className="max-lg:block mt-5 hidden w-fit h-fit px-8"
+                  className="max-lg:block mt-5 hidden w-full h-fit px-8"
                 >
                   Log In
                 </Button>

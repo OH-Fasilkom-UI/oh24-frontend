@@ -80,4 +80,4 @@ const RadioGroup = React.forwardRef<
 RadioGroup.displayName = RadioGroupPrimitive.Root.displayName
 RadioGroup.Item = RadioGroupItem
 
-export default RadioGroup
+export { RadioGroup, RadioGroupItem }

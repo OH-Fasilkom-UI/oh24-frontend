@@ -12,6 +12,7 @@ import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import { NAVBAR_LINKS, NAVBAR_LOGIN } from './Navbar.data'
+import {motion} from 'framer-motion'
 
 export const Navbar = () => {
   const pathname = usePathname()
@@ -21,8 +22,12 @@ export const Navbar = () => {
 
 
   return (
-    <nav
-      className="flex justify-between items-center px-12 py-4 max-md:py-2 bg-[#0000001A]">
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      
+      className="z-50 backdrop-blur-sm fixed w-full flex justify-between items-center px-12 py-4 max-md:py-2 bg-[#0000001A]">
       <div className="relative w-[170px] h-[44px]">
         <Image
           alt="contoh"
@@ -38,11 +43,11 @@ export const Navbar = () => {
           onClick={() => {
             link.isExist && router.push(link.href)
           }}
-          className={`items-center text-[16px] cursor-pointer max-xl:text-[12px] max-lg:hidden gap-2 flex font-tex-gyre font-semibold hover:text-RedRegion/Monza/500 duration-300 hover:scale-105 ${
+          className={`items-center text-[16px] max-xl:text-[12px] max-lg:hidden gap-2 flex font-tex-gyre font-semibold  ${
             link.isExist
               ? pathname === link.href
-                ? 'text-[#C10F1F]'
-                : 'text-[#3733CF]'
+              ? 'text-[#C10F1F] hover:text-RedRegion/Monza/500 duration-300 hover:scale-105 cursor-pointer '
+              : 'text-[#3733CF] hover:text-RedRegion/Monza/500 duration-300 hover:scale-105 cursor-pointer '
               : 'text-[#454F59]'
           }`}
         >
@@ -154,6 +159,6 @@ export const Navbar = () => {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-    </nav>
+    </motion.nav>
   )
 }

@@ -1,32 +1,20 @@
 import { Meta } from '@storybook/react'
-import Card from './Card'
-import Button from './Button'
-import { Clapperboard } from 'lucide-react'
-import Image from 'next/image'
+import { SquareCheckBig } from 'lucide-react'
+import Modal from '../ui/Modal'
+import Button from '../ui/Button'
 
-const meta: Meta<typeof Card> = {
-  title: 'Components/Card',
+const meta: Meta<typeof Modal> = {
+  title: 'Components/Modal',
 }
 
 export default meta
 
 export const Main = () => (
   <div className="flex flex-col space-y-2">
-    <Card title="Lorem" className="max-w-lg">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dui enim,
-      euismod non laoreet eu, sodales nec eros. Ut in ligula ut lacus egestas
-      commodo. Duis gravida nunc in augue finibus, ut semper ligula imperdiet.
-      Maecenas mattis accumsan nisi, a aliquam lectus posuere vestibulum. Morbi
-      a magna purus. Ut erat orci, fringilla in eros ut, placerat ornare nisl.
-      Mauris in varius lacus. Etiam ac hendrerit mi. Suspendisse in semper
-      dolor. Etiam tempus tortor sit amet elit pellentesque, et accumsan tortor
-      varius. Pellentesque feugiat faucibus tempus. Sed suscipit quis arcu sed
-      mollis. Donec non ligula est. Nam suscipit eget sem a.
-    </Card>
-    <Card
-      title="Lorem"
-      buttons={[<Button>Register</Button>]}
-      className="max-w-lg"
+    <Modal
+      trigger={<Button>Default</Button>}
+      icon={SquareCheckBig}
+      title="Heading"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dui enim,
       euismod non laoreet eu, sodales nec eros. Ut in ligula ut lacus egestas
@@ -37,14 +25,33 @@ export const Main = () => (
       dolor. Etiam tempus tortor sit amet elit pellentesque, et accumsan tortor
       varius. Pellentesque feugiat faucibus tempus. Sed suscipit quis arcu sed
       mollis. Donec non ligula est. Nam suscipit eget sem a.
-    </Card>
-    <Card
-      title="Lorem"
+    </Modal>
+    <Modal
+      trigger={<Button>With one button</Button>}
+      icon={SquareCheckBig}
+      title="Heading"
+      buttons={[<Modal.Button>Ok</Modal.Button>]}
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dui enim,
+      euismod non laoreet eu, sodales nec eros. Ut in ligula ut lacus egestas
+      commodo. Duis gravida nunc in augue finibus, ut semper ligula imperdiet.
+      Maecenas mattis accumsan nisi, a aliquam lectus posuere vestibulum. Morbi
+      a magna purus. Ut erat orci, fringilla in eros ut, placerat ornare nisl.
+      Mauris in varius lacus. Etiam ac hendrerit mi. Suspendisse in semper
+      dolor. Etiam tempus tortor sit amet elit pellentesque, et accumsan tortor
+      varius. Pellentesque feugiat faucibus tempus. Sed suscipit quis arcu sed
+      mollis. Donec non ligula est. Nam suscipit eget sem a.
+    </Modal>
+    <Modal
+      trigger={<Button>With two buttons</Button>}
+      icon={SquareCheckBig}
+      title="Heading"
       buttons={[
-        <Button variant="secondary">Register</Button>,
-        <Button>Register</Button>,
+        <Modal.Button closeOnClick>Yes</Modal.Button>,
+        <Modal.Button closeOnClick variant="secondary">
+          No
+        </Modal.Button>,
       ]}
-      className="max-w-lg"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dui enim,
       euismod non laoreet eu, sodales nec eros. Ut in ligula ut lacus egestas
@@ -55,15 +62,12 @@ export const Main = () => (
       dolor. Etiam tempus tortor sit amet elit pellentesque, et accumsan tortor
       varius. Pellentesque feugiat faucibus tempus. Sed suscipit quis arcu sed
       mollis. Donec non ligula est. Nam suscipit eget sem a.
-    </Card>
-    <Card
-      title="Lorem"
-      asset={<Clapperboard size="8rem" />}
-      buttons={[
-        <Button variant="secondary">Register</Button>,
-        <Button>Register</Button>,
-      ]}
-      className="max-w-lg"
+    </Modal>
+    <Modal
+      trigger={<Button>Hide close</Button>}
+      icon={SquareCheckBig}
+      title="Heading"
+      hideClose
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dui enim,
       euismod non laoreet eu, sodales nec eros. Ut in ligula ut lacus egestas
@@ -74,32 +78,6 @@ export const Main = () => (
       dolor. Etiam tempus tortor sit amet elit pellentesque, et accumsan tortor
       varius. Pellentesque feugiat faucibus tempus. Sed suscipit quis arcu sed
       mollis. Donec non ligula est. Nam suscipit eget sem a.
-    </Card>
-    <Card
-      title="Lorem"
-      asset={
-        <Image
-          src="/PandaSuccess.png"
-          alt="notfound"
-          width="256"
-          height="256"
-        />
-      }
-      buttons={[
-        <Button variant="secondary">Register</Button>,
-        <Button>Register</Button>,
-      ]}
-      className="max-w-lg"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dui enim,
-      euismod non laoreet eu, sodales nec eros. Ut in ligula ut lacus egestas
-      commodo. Duis gravida nunc in augue finibus, ut semper ligula imperdiet.
-      Maecenas mattis accumsan nisi, a aliquam lectus posuere vestibulum. Morbi
-      a magna purus. Ut erat orci, fringilla in eros ut, placerat ornare nisl.
-      Mauris in varius lacus. Etiam ac hendrerit mi. Suspendisse in semper
-      dolor. Etiam tempus tortor sit amet elit pellentesque, et accumsan tortor
-      varius. Pellentesque feugiat faucibus tempus. Sed suscipit quis arcu sed
-      mollis. Donec non ligula est. Nam suscipit eget sem a.
-    </Card>
+    </Modal>
   </div>
 )

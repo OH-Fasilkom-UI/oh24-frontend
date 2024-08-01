@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react'
-import Checkbox from './Checkbox'
-import RadioGroup from './RadioGroup'
+import Checkbox from '../ui/Checkbox'
+import RadioGroup from '../ui/RadioGroup'
 
 const meta: Meta<typeof Checkbox> = {
   title: 'Components/RadioGroup',

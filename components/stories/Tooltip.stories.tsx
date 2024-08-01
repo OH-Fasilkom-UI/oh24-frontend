@@ -1,14 +1,13 @@
 import { Meta } from '@storybook/react'
-import Tabs from './Tabs'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from './Tooltip'
-import Button from './Button'
+} from '../ui/Tooltip'
+import Button from '../ui/Button'
 
-const meta: Meta<typeof Tabs> = {
+const meta: Meta<typeof Tooltip> = {
   title: 'Components/Tooltip',
 }
 

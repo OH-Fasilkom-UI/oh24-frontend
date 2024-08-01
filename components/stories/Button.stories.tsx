@@ -1,6 +1,6 @@
 import { fn } from '@storybook/test'
 import { Meta } from '@storybook/react'
-import Button from './Button'
+import Button from '../ui/Button'
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',

@@ -1,8 +1,8 @@
 'use client'
 import React from 'react'
 import bg from '@/public/background-testi.png'
-import { testimonials } from './constant'
-import { ScrollArea, ScrollBar } from '../scroll-area'
+import { testimonials } from './Testimonials.data'
+import { ScrollArea, ScrollBar } from '@/components/ui/ScrollArea'
 import { Avatar, AvatarImage } from '@radix-ui/react-avatar'
 import { useState } from 'react'
 

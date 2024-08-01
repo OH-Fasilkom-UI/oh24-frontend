@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
-import { NAVBAR_LINKS, NAVBAR_LOGIN } from './constant'
+import { NAVBAR_LINKS, NAVBAR_LOGIN } from './Navbar.data'
 import { usePathname, useRouter } from 'next/navigation'
 import Image from 'next/image'
-import Button from '../Button'
+import Button from '@/components/ui/Button'
 import { AlignRight } from 'lucide-react'
 import {
   NavigationMenu,
@@ -12,7 +12,7 @@ import {
   NavigationMenuList,
   NavigationMenuLink,
   NavigationMenuTrigger,
-} from '@/components/ui/navigation-menu'
+} from '@/components/ui/NavigationMenu'
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 

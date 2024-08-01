@@ -1,8 +1,9 @@
 import React from 'react'
 import { twMerge } from 'tailwind-merge'
-import { Props } from './interface'
 
-const Stack = ({ children, className, ...props }: Props) => {
+export interface StackProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+const Stack = ({ children, className, ...props }: StackProps) => {
   return (
     <div
       className={twMerge(

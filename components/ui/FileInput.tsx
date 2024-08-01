@@ -1,16 +1,32 @@
 import Image from 'next/image'
 import React, { useCallback } from 'react'
-import { useDropzone } from 'react-dropzone'
+import { useDropzone, DropzoneInputProps } from 'react-dropzone'
 import { twMerge } from 'tailwind-merge'
-import {
-  DeleteFileButtonProps,
-  DropzoneProps,
-  NotUploadedElementProps,
-  UploadedElementProps,
-} from './interface'
-import Stack from '../Stack'
-import { toast } from '../Toast'
 import { Trash2 } from 'lucide-react'
+import { toast } from './Toast'
+import Stack from './Stack'
+
+export interface DeleteFileButtonProps {
+  resetFile: () => void
+}
+
+export interface UploadedElementProps {
+  file: File
+  setFile: React.Dispatch<React.SetStateAction<File | null>>
+}
+
+export interface NotUploadedElementProps {
+  secondaryMessage?: string
+  getInputProps: <T extends DropzoneInputProps>(props?: T) => T
+}
+
+export interface DropzoneProps {
+  file: File | null
+  setFile: React.Dispatch<React.SetStateAction<File | null>>
+  className?: string
+  secondaryMessage?: string
+  maxSizeInByte?: number
+}
 
 const DeleteFileButton = ({ resetFile }: DeleteFileButtonProps) => {
   return (

@@ -5,7 +5,7 @@ import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { LucideProps, X } from 'lucide-react'
 import Button, { ButtonProps } from './Button'
 import { twMerge } from 'tailwind-merge'
-import { ScrollArea } from './scroll-area'
+import { ScrollArea } from './ScrollArea'
 
 type IconType = React.ForwardRefExoticComponent<
   Omit<LucideProps, 'ref'> & React.RefAttributes<SVGSVGElement>

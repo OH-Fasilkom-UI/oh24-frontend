@@ -1,4 +1,4 @@
-import Countdown from '.'
+import Countdown from '../elements/Countdown'
 
 export default {
   title: 'Components/Countdown'

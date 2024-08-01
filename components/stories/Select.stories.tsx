@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/react'
-import Select from './Select'
+import Select from '../ui/Select'
 
 const meta: Meta<typeof Select> = {
   title: 'Components/Select',

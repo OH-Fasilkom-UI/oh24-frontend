@@ -1,6 +1,6 @@
 'use client'
 
-import ContactPerson from '@/components/ui/ContactPerson'
+import ContactPerson from '@/components/elements/ContactPerson'
 import { toast } from '@/components/ui/Toast'
 import { useAlert } from '@/components/ui/Alert'
 import Button from '@/components/ui/Button'

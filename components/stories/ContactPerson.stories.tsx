@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/react'
-import ContactPerson from './ContactPerson'
+import ContactPerson from '../elements/ContactPerson'
 
 const meta: Meta<typeof ContactPerson> = {
   title: 'Components/ContactPerson',

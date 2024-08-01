@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import bg from '@/public/timeline.png'
-import { timelineData } from './constant'
+import { timelineData } from './Timeline.data'
 import Image from 'next/image'
 import {
   Dialog,
@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog'
+} from '@/components/ui/Dialog'
 
 export const Timeline = () => {
   const [showDescription, setShowDescription] = useState<null | number>(null)

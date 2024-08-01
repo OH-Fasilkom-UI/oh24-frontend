@@ -1,9 +1,15 @@
 'use client'
 
 import React, { ComponentPropsWithoutRef, useEffect, useState } from 'react'
-import { CountdownProps } from './interface'
 import { Timer } from 'lucide-react'
 import { cn } from '@/lib/utils'
+
+export interface CountdownProps {
+  date: string
+  type: 'Days' | 'Hours' | 'Minutes' | 'Seconds'
+  classNameType?: string
+  classNameBlock?: string
+}
 
 const BlockTime: React.FC<ComponentPropsWithoutRef<'div'> & CountdownProps> = ({
   date,

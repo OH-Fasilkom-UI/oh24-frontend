@@ -1,20 +1,17 @@
 'use client'
-import React from 'react'
-import { NAVBAR_LINKS, NAVBAR_LOGIN } from './Navbar.data'
-import { usePathname, useRouter } from 'next/navigation'
-import Image from 'next/image'
 import Button from '@/components/ui/Button'
-import { AlignRight } from 'lucide-react'
 import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuList,
-  NavigationMenuLink,
-  NavigationMenuTrigger,
+  NavigationMenuTrigger
 } from '@/components/ui/NavigationMenu'
-import { useState } from 'react'
-import { ChevronDown } from 'lucide-react'
+import { AlignRight, ChevronDown } from 'lucide-react'
+import Image from 'next/image'
+import { usePathname, useRouter } from 'next/navigation'
+import React, { useState } from 'react'
+import { NAVBAR_LINKS, NAVBAR_LOGIN } from './Navbar.data'
 
 export const Navbar = () => {
   const pathname = usePathname()
@@ -22,8 +19,10 @@ export const Navbar = () => {
   const [isLogin, setIsLogin] = useState(false) // Nanti bakal diganti kalo be dah ok
   const [isHover, setIsHover] = useState(false)
 
+
   return (
-    <nav className="flex justify-between items-center px-12 py-4 max-md:py-2 bg-[#0000001A]">
+    <nav
+      className="flex justify-between items-center px-12 py-4 max-md:py-2 bg-[#0000001A]">
       <div className="relative w-[170px] h-[44px]">
         <Image
           alt="contoh"

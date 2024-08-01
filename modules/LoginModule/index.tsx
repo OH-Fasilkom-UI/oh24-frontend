@@ -24,7 +24,7 @@ export const LoginModule = () => {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
         }}
-        className="w-screen md:hidden min-h-screen md:h-[150vh] min-[2500px]:h-[2200px]"
+        className="min-w-full md:hidden max-sm:min-h-screen max-md:h-[600px]"
       >
         <LoginPage />
       </div>

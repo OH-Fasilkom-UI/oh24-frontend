@@ -1,7 +1,7 @@
-import React from 'react'
+'use client'
+import mbg from '@/public/background-login-mobile.png'
 import bg from '@/public/background-login.png'
 import { LoginPage } from './sections/LoginPage'
-import mbg from '@/public/background-login-mobile.png'
 
 export const LoginModule = () => {
   return (
@@ -13,7 +13,7 @@ export const LoginModule = () => {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
         }}
-        className="w-screen max-md:hidden min-h-screen md:h-[150vh] min-[2500px]:h-[2200px]"
+        className="w-full max-md:hidden min-h-screen md:h-[150vh] min-[2500px]:h-[2200px]"
       >
         <LoginPage />
       </div>
@@ -24,7 +24,7 @@ export const LoginModule = () => {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
         }}
-        className="min-w-full md:hidden max-sm:min-h-screen max-md:h-[600px]"
+        className="w-full md:hidden min-h-screen md:h-[150vh] min-[2500px]:h-[2200px]"
       >
         <LoginPage />
       </div>

@@ -20,7 +20,7 @@ export const DetailProfile = () => {
     // handle change profile logic later
   }
   return (
-    <div className="flex flex-col md:pl-[120px]  xl:pl-[190px] py-10 max-md:pb-20 justify-center items-center md:items-start md:justify-start gap-[35px]">
+    <div className="mt-[10vh] flex flex-col md:px-[120px] xl:px-[190px] py-10 max-md:pb-20 justify-center items-center md:items-start md:justify-start gap-[35px]">
       <h1 className="text-[36px] text-[#2E3881] font-bold font-riffic tracking-[0.075rem]">
         Profile
       </h1>
@@ -78,7 +78,7 @@ export const DetailProfile = () => {
             </PopoverContent>
           </Popover>
         </div>
-        <div className="grid xl:grid-cols-2 md:gap-x-[188px] gap-y-6">
+        <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
           {DetailProfileConstant.map((item) => (
             <div
               key={item.title}

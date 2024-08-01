@@ -21,7 +21,7 @@ const BlockTime: React.FC<ComponentPropsWithoutRef<'div'> & CountdownProps> = ({
     <div className="flex flex-col items-center gap-1">
       <span
         className={cn(
-          'inline-block font-bold text-[#E0ECFF] text-[12px] sm:text-base',
+          'inline-block font-bold text-Text/TextDarkBG text-[12px] sm:text-base',
           classNameType
         )}
       >
@@ -29,13 +29,13 @@ const BlockTime: React.FC<ComponentPropsWithoutRef<'div'> & CountdownProps> = ({
       </span>
       <div
         className={cn(
-          'flex justify-center items-center w-[48px] h-[54.8px] xs:w-[64px] xs:h-[73px] sm:w-[93px] sm:h-[111px] bg-[#393FBC] border-2 border-[#C5D4FF] rounded-xl',
+          'flex justify-center items-center w-[48px] h-[54.8px] xs:w-[64px] xs:h-[73px] sm:w-[93px] sm:h-[111px] bg-BlueRegion/CeruleanBlue/700 border-2 border-BlueRegion/Portgage/200 rounded-xl',
           classNameBlock
         )}
       >
         <span
           className={cn(
-            'inline-block font-urbanist font-bold text-2xl xs:text-[32px] lg:text-[48px] md:text-[32px] text-[#E0ECFF]',
+            'inline-block font-urbanist font-bold text-2xl xs:text-[32px] lg:text-[48px] md:text-[32px] text-Text/TextDarkBG',
             classNameType
           )}
         >
@@ -49,8 +49,8 @@ const BlockTime: React.FC<ComponentPropsWithoutRef<'div'> & CountdownProps> = ({
 const DotTime = () => {
   return (
     <div className="flex flex-col gap-3 sm:gap-5 pt-4 sm:pt-7">
-      <div className="w-1 h-1 sm:w-2 sm:h-2 rounded-full bg-[#E0ECFF]"></div>
-      <div className="w-1 h-1 sm:w-2 sm:h-2 rounded-full bg-[#E0ECFF]"></div>
+      <div className="w-1 h-1 sm:w-2 sm:h-2 rounded-full bg-Text/TextDarkBG"></div>
+      <div className="w-1 h-1 sm:w-2 sm:h-2 rounded-full bg-Text/TextDarkBG"></div>
     </div>
   )
 }
@@ -177,13 +177,13 @@ const Countdown = ({
         <div className="flex items-center gap-1 sm:gap-2">
           <Timer
             className={cn(
-              'w-[14px] h-[14px] sm:w-[18px] sm:h-[18px] text-[#E0ECFF]',
+              'w-[14px] h-[14px] sm:w-[18px] sm:h-[18px] text-Text/TextDarkBG',
               classNameType
             )}
           />
           <span
             className={cn(
-              'inline-block text-[9px] xs:text-xs sm:text-base font-bold pt-[2px] sm:pt-0 text-[#E0ECFF]',
+              'inline-block text-[9px] xs:text-xs sm:text-base font-bold pt-[2px] sm:pt-0 text-Text/TextDarkBG',
               classNameType
             )}
           >{`${dateTime.date}, ${dateTime.time}`}</span>

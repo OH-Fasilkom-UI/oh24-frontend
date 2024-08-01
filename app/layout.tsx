@@ -1,9 +1,8 @@
-import { Toaster } from '@/components/ui/Toast'
-import { Alerter } from '@/components/ui/Alert'
 import { Navbar } from '@/components/elements/Navbar'
-import Footer from '@/components/elements/Footer'
-import localFont from 'next/font/local'
+import { Alerter } from '@/components/ui/Alert'
+import { Toaster } from '@/components/ui/Toast'
 import type { Metadata } from 'next'
+import localFont from 'next/font/local'
 import './globals.css'
 
 const rifficFont = localFont({
@@ -69,12 +68,11 @@ export default function RootLayout({
           sizes="<generated>"
         />
       </head>
-      <body className="font-tga font-normal flex flex-col justify-between bg-[#B5D3DD] min-h-screen">
+      <body className="font-tga font-normal flex flex-col justify-between bg-[#B5D3DD] min-h-screen" suppressHydrationWarning suppressContentEditableWarning>
         <Navbar />
         <main>{children}</main>
         <Toaster position="top-center" />
         <Alerter />
-        <Footer />
       </body>
     </html>
   )

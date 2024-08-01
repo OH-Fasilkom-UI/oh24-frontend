@@ -2,7 +2,7 @@ import * as React from 'react'
 import FileInput from '../ui/FileInput'
 
 export default {
-  title: 'Components/FileInput'
+  title: 'Components/FileInput',
 }
 
 export const Main = () => {

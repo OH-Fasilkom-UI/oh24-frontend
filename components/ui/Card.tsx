@@ -28,9 +28,9 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
           {asset}
         </div>
       )}
-      <p className="text-BlueRegion/Cornflower/50 text-sm font-tex-gyre">
+      <div className="text-BlueRegion/Cornflower/50 text-sm font-tex-gyre">
         {children}
-      </p>
+      </div>
       {!!buttons?.length && (
         <div className="flex flex-row [&>*]:flex-grow gap-x-2">
           {buttons?.[0]}

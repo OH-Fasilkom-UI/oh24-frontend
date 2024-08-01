@@ -15,7 +15,7 @@ export default function NotFound() {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
-      className="flex flex-col items-center h-[100vh] max-md:pt-[20vh]  lg:h-[150vh] gap-3"
+      className="flex flex-col items-center h-[100vh] max-md:pt-[30vh]  lg:h-[150vh] gap-3"
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
@@ -29,7 +29,10 @@ export default function NotFound() {
             className="object-contain"
           />
       </motion.div>
-      <Button onClick={() => router.push('/')}>Back to Home</Button>
+      <motion.div
+      >
+        <Button onClick={() => router.push('/')}>Back to Home</Button>
+      </motion.div>
     </div>
   )
 }

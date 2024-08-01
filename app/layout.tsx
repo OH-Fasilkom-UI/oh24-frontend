@@ -1,9 +1,8 @@
-import { Toaster } from '@/components/ui/Toast'
-import { Alerter } from '@/components/ui/Alert'
 import { Navbar } from '@/components/elements/Navbar'
-import Footer from '@/components/elements/Footer'
-import localFont from 'next/font/local'
+import { Alerter } from '@/components/ui/Alert'
+import { Toaster } from '@/components/ui/Toast'
 import type { Metadata } from 'next'
+import localFont from 'next/font/local'
 import './globals.css'
 
 const rifficFont = localFont({
@@ -74,7 +73,6 @@ export default function RootLayout({
         <main>{children}</main>
         <Toaster position="top-center" />
         <Alerter />
-        <Footer />
       </body>
     </html>
   )

@@ -132,7 +132,7 @@ const Footer: React.FC<FooterProps> = ({ ...props }) => {
             />
             <div className="hidden lg:flex flex-col justify-center gap-8 font-tex-gyre text-Text/TextDarkBG font-bold text-base">
               {routeLinks.map((link, index) => (
-                <a key={index} href={link.href} className="cursor-pointer">
+                <a key={index} href={link.href} className="cursor-pointer hover:scale-105 duration-300 hover:text-RedRegion/Monza/600">
                   {link.name}
                 </a>
               ))}
@@ -151,6 +151,7 @@ const Footer: React.FC<FooterProps> = ({ ...props }) => {
                       href={link.href}
                       target="_blank"
                       rel="noreferrer"
+                      className='hover:scale-125 duration-200'
                     >
                       {link.icon}
                     </a>
@@ -178,12 +179,15 @@ const Footer: React.FC<FooterProps> = ({ ...props }) => {
             <div className="hidden md:flex flex-col gap-6">
               <div className="flex flex-col gap-2">
                 <h5 className="">Supported by</h5>
-                <Image
-                  src={'/fasilkom.png'}
-                  alt="Fasilkom UI Logo"
-                  width={160}
-                  height={120}
-                />
+                <a href="https://cs.ui.ac.id/" target='_blank'>
+                  <Image
+                    className='cursor-pointer'
+                    src={'/fasilkom.png'}
+                    alt="Fasilkom UI Logo"
+                    width={160}
+                    height={120}
+                  />
+                </a>
               </div>
               <h3 className="text-4xl flex">#MoreThanIT</h3>
             </div>

@@ -15,7 +15,7 @@ const GoogleLogin = () => {
       window.google.accounts.id.initialize({
         ux_mode: 'popup',
         client_id:
-          '884590715533-shglopt0be7mj3g8vkr4n9j0taeq0p1s.apps.googleusercontent.com',
+          '409542269437-0f7lev9ea973jgmfdgnd1rgq5i32bguj.apps.googleusercontent.com',
         callback: async (res) => {
           alert(res.credential) // TODO: handle this
         },

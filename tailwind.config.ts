@@ -136,7 +136,7 @@ const config = {
         'BlueRegion/Portgage/400': '#809EF9',
         'BlueRegion/Portgage/500': '#627CF2',
         'BlueRegion/Portgage/600': '#4555E6',
-        'BlueRegion/Portgage/700': '#3440C8',
+        'BlueRegion/Portgage/700': '#3733CF',
         'BlueRegion/Portgage/800': '#2F3AA4',
         'BlueRegion/Portgage/900': '#2D3782',
         'BlueRegion/Portgage/950': '#1B204B',

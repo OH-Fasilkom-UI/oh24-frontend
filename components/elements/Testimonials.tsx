@@ -31,10 +31,10 @@ const Testimonials = () => {
             />
           </Avatar>
           <div className="flex gap-[24px] md:gap-[20px] flex-col lg:w-[780px] md:w-[530px] max-sm:w-fit max-sm:px-[10px] max-md:w-[283px]">
-            <p className="text-[#E0ECFF] font-tex-gyre max-md:text-[14px] leading-9 max-md:leading-[25px] font-extrabold text-justify md:text-[18px] text-[24px]">
+            <p className="text-Text/TextDarkBG font-tex-gyre max-md:text-[14px] leading-9 max-md:leading-[25px] font-extrabold text-justify md:text-[18px] text-[24px]">
               {testimonials[active].testimonial}
             </p>
-            <p className="text-[#E0ECFF] font-tex-gyre max-md:text-[14px] md:text-[20px] font-normal text-[24px]">
+            <p className="text-Text/TextDarkBG font-tex-gyre max-md:text-[14px] md:text-[20px] font-normal text-[24px]">
               {testimonials[active].namaDanSekolah}
             </p>
           </div>
@@ -50,7 +50,7 @@ const Testimonials = () => {
                 className="flex flex-col justify-center items-center gap-[24px]"
               >
                 <div
-                  className={`flex pt-6 rounded-2xl items-center flex-col ${active === index ? 'bg-[#2E3881]' : 'bg-[#1C274F]'} text-center gap-[24px] max-md:gap-[8px] max-md:w-[120px] max-md:h-[132px] max-md:pt-[12px] w-[190px] h-[236px]`}
+                  className={`flex pt-6 rounded-2xl items-center flex-col ${active === index ? 'bg-Text/TextLightBG' : 'bg-[#1C274F]'} text-center gap-[24px] max-md:gap-[8px] max-md:w-[120px] max-md:h-[132px] max-md:pt-[12px] w-[190px] h-[236px]`}
                 >
                   <Avatar>
                     <AvatarImage
@@ -61,7 +61,7 @@ const Testimonials = () => {
                       className="max-md:w-[80px] max-md:h-[80px]"
                     />
                   </Avatar>
-                  <p className="text-[#E0ECFF] font-tex-gyre font-normal max-md:text-[14px] md:text-[20px] text-[24px]">
+                  <p className="text-Text/TextDarkBG font-tex-gyre font-normal max-md:text-[14px] md:text-[20px] text-[24px]">
                     {testi.name}
                   </p>
                 </div>

@@ -45,10 +45,10 @@ export const Timeline = () => {
               ${showDescription === index ? (index === 2 ? 'max-w-[320px] z-10 2xl:max-w-[480px] xl:max-w-[420px]' : 'max-w-[360px] z-10 2xl:max-w-[480px] xl:max-w-[420px]') : showDescription !== null ? 'opacity-0' : 'lg:w-[200px] xl:w-[285px]'}
               flex flex-col rounded-[32px] gap-5 justify-center items-center py-[44px] px-[42px]`}
             >
-              <h1 className="text-[#E1F0FD] tracking-[0.075rem] font-bold text-xl xl:text-2xl font-riffic">
+              <h1 className="text-BlueRegion/Cornflower/100 tracking-[0.075rem] font-bold text-xl xl:text-2xl font-riffic">
                 {data.title}
               </h1>
-              <p className="text-[#E1F0FD] text-[16px] xl:text-[20px] font-normal font-tex-gyre">
+              <p className="text-BlueRegion/Cornflower/100 text-[16px] xl:text-[20px] font-normal font-tex-gyre">
                 {showDescription === index ? data.description : data.date}
               </p>
             </div>
@@ -65,20 +65,20 @@ export const Timeline = () => {
             <Dialog>
               <DialogTrigger className="z-10">
                 <div className="flex flex-col gap-3 mb-[66px] w-[203px] whitespace-nowrap shadow-timeline bg-[#2E3881E5] text-center justify-center items-center px-6 py-7 rounded-[32px]">
-                  <h1 className="text-[#E1F0FD] tracking-[0.075rem] font-bold font-riffic">
+                  <h1 className="text-BlueRegion/Cornflower/100 tracking-[0.075rem] font-bold font-riffic">
                     {data.title}
                   </h1>
-                  <p className="text-[#E1F0FD] text-[12px] font-normal font-tex-gyre">
+                  <p className="text-BlueRegion/Cornflower/100 text-[12px] font-normal font-tex-gyre">
                     {data.date}
                   </p>
                 </div>
               </DialogTrigger>
               <DialogContent className="bg-[#2E3881E5] border-0 w-[216px] flex flex-col gap-4 shadow-timeline py-12 px-6 rounded-[32px]">
                 <DialogHeader>
-                  <DialogTitle className="text-[#E1F0FD] tracking-[0.075rem] text-[16px] font-bold font-riffic">
+                  <DialogTitle className="text-BlueRegion/Cornflower/100 tracking-[0.075rem] text-[16px] font-bold font-riffic">
                     {data.title}
                   </DialogTitle>
-                  <DialogDescription className="text-[#E1F0FD] text-start text-[12px] font-normal font-tex-gyre">
+                  <DialogDescription className="text-BlueRegion/Cornflower/100 text-start text-[12px] font-normal font-tex-gyre">
                     {data.description}
                   </DialogDescription>
                 </DialogHeader>
@@ -96,7 +96,7 @@ export const Timeline = () => {
               />
             </div>
             <div
-              className={`bg-[#C10F1F] absolute w-4 ${index === 4 ? 'hidden' : 'h-[330px]'} translate-y-[340px]`}
+              className={`bg-RedRegion/Monza/700 absolute w-4 ${index === 4 ? 'hidden' : 'h-[330px]'} translate-y-[340px]`}
             ></div>
           </div>
         ))}

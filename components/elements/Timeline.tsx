@@ -11,6 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/Dialog'
+import { motion } from 'framer-motion'
 
 export const Timeline = () => {
   const [showDescription, setShowDescription] = useState<null | number>(null)
@@ -22,7 +23,11 @@ export const Timeline = () => {
     'xl:translate-x-32 translate-x-28 translate-y-36 xl:translate-y-44',
   ]
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.1 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       {/* DESKTOP */}
       <div
         style={{
@@ -101,6 +106,6 @@ export const Timeline = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   )
 }

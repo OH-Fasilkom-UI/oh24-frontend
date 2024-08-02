@@ -11,7 +11,7 @@ export const ProfilePageModule = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
-      className='min-h-[160vh]'
+      className="min-h-[160vh]"
     >
       <DetailProfile />
     </main>

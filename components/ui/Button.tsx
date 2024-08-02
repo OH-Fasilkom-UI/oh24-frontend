@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 export const buttonVariants = cva(
-  'font-tex-gyre flex justify-center items-center gap-2 w-max font-semibold transition-all px-7 md:px-8 py-2.5 md:py-3 text-sm md:text-base rounded-[12px] duration-200',
+  'z-50 font-tex-gyre flex justify-center items-center gap-2 w-max font-semibold transition-all px-7 md:px-8 py-2.5 md:py-3 text-sm md:text-base rounded-[12px] duration-200',
   {
     variants: {
       variant: {

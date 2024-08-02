@@ -3,10 +3,12 @@ import { ProfilePageModule } from '@/modules'
 import Footer from '@/components/elements/Footer'
 
 function page() {
-  return <>
-    <ProfilePageModule />
-    <Footer />
-  </>
+  return (
+    <>
+      <ProfilePageModule />
+      <Footer />
+    </>
+  )
 }
 
 export default page

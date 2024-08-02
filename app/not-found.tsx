@@ -36,6 +36,15 @@ export default function NotFound() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
+        <Image
+          alt="contoh"
+          src="/404-notfound.png"
+          fill
+          sizes="none"
+          className="object-contain"
+        />
+      </motion.div>
+      <motion.div>
         <Button onClick={() => router.push('/')}>Back to Home</Button>
       </motion.div>
     </div>

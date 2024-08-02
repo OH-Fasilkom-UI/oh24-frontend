@@ -3,8 +3,82 @@ import { Copy, Instagram, Twitter, Youtube } from 'lucide-react'
 import Image from 'next/image'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { toast } from '../ui/Toast'
 
 export interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+const socialMediaLinks: {
+  name: string
+  href: string
+  icon: React.ReactNode
+}[] = [
+  {
+    name: 'Instagram',
+    href: 'https://www.instagram.com/openhousecsui',
+    icon: <Instagram
+      className='cursor-pointer w-5 h-5 lg:w-6 lg:h-6'
+    />,
+  },
+  {
+    name: 'Twitter',
+    href: 'https://twitter.com/openhousecsui',
+    icon: <Twitter
+      className='cursor-pointer min-w-5 min-h-5 lg:w-6 lg:h-6'
+    />,
+  },
+  {
+    name: 'Youtube',
+    href: 'https://www.youtube.com/channel/UC0zOg9tXHb9J9Q3G1i7ZJZg',
+    icon: (
+      <Image
+        src={'/youtube.svg'}
+        alt="Youtube Logo"
+        width={24}
+        height={24}
+        className="min-w-5 w-5 lg:min-w-6 lg:w-6 cursor-pointer"
+      />
+    ),
+  },
+  {
+    name: 'Tiktok',
+    href: 'https://www.tiktok.com/@openhousecsui',
+    icon: (
+      <Image
+        src={'/tiktok.svg'}
+        alt="Tiktok Logo"
+        width={24}
+        height={24}
+        className="min-w-5 w-5 lg:min-w-5 lg:w-5 cursor-pointer"
+      />
+    ),
+  },
+  ]
+
+const routeLinks: {
+  name: string
+  href: string
+}[] = [
+  {
+    name: 'Ambassador',
+    href: '/ambassador',
+  },
+  {
+    name: 'Dashboard',
+    href: '/dashboard',
+  },
+  {
+    name: 'Registration Page',
+    href: '/registration-page',
+  },
+  {
+    name: 'Merchandise',
+    href: '/merchandise',
+  },
+  {
+    name: 'Wall of Fame',
+    href: '/wall-of-fame',
+  },
+]
 
 const Footer: React.FC<FooterProps> = ({ ...props }) => {
   const ref = useRef(null)
@@ -57,23 +131,11 @@ const Footer: React.FC<FooterProps> = ({ ...props }) => {
               className="w-[124.8px] h-[156px] md:w-[251px] md:h-[303.23px] hover:scale-105 duration-100"
             />
             <div className="hidden lg:flex flex-col justify-center gap-8 font-tex-gyre text-Text/TextDarkBG font-bold text-base">
-              {[
-                'Ambassador',
-                'Dashboard',
-                'Registration Page',
-                'Merchandise',
-                'Wall of Fame',
-              ].map((item, i) => {
-                return (
-                  <a
-                    key={i}
-                    href={item}
-                    className="list-none hover:text-RedRegion/Monza/700 hover:scale-105 duration-200 cursor-pointer"
-                  >
-                    {item}
-                  </a>
-                )
-              })}
+              {routeLinks.map((link, index) => (
+                <a key={index} href={link.href} className="cursor-pointer">
+                  {link.name}
+                </a>
+              ))}
             </div>
           </div>
           <div className="flex gap-10 lg:gap-16 xl:gap-32 font-tex-gyre font-bold text-white justify-end">
@@ -83,27 +145,16 @@ const Footer: React.FC<FooterProps> = ({ ...props }) => {
                   Find Us on Social Media
                 </h5>
                 <div className="flex gap-3 lg:gap-9 items-center cursor-pointer">
-                  <a href="">
-                    <Instagram className="w-4 lg:w-8 aspect-square cursor-pointer" />
-                  </a>
-                  <a href="">
-                    <Twitter className="fill-white w-4 lg:w-8 cursor-pointer" />
-                  </a>
-                  <a href="">
-                    <Youtube
-                      className="w-4 lg:w-10 cursor-pointer"
-                      fill="white"
-                    />
-                  </a>
-                  <a href="">
-                    <Image
-                      src={'/tiktok.svg'}
-                      alt="Tiktok Logo"
-                      width={24}
-                      height={24}
-                      className="min-w-3 w-3 lg:min-w-4 lg:w-4 cursor-pointer"
-                    />
-                  </a>
+                  {socialMediaLinks.map((link, index) => (
+                    <a
+                      key={index}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {link.icon}
+                    </a>
+                  ))}
                 </div>
               </div>
               <div className="flex flex-col items-end md:items-start">
@@ -116,6 +167,7 @@ const Footer: React.FC<FooterProps> = ({ ...props }) => {
                     onClick={() => {
                       // Copy to clipboard
                       navigator.clipboard.writeText('openhouse@cs.ui.ac.id')
+                      toast.success('Copied to clipboard!')
                     }}
                     className="w-3 md:w-4 aspect-square cursor-pointer hover:scale-110 duration-100"
                   />

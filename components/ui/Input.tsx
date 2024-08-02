@@ -26,13 +26,13 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="flex flex-col gap-1">
         {label && (
-          <label className="text-t9 sm:text-t7 font-tex-gyre font-bold text-[#2E3881]/60">
+          <label className="text-t9 sm:text-t7 font-tex-gyre font-bold text-Text/TextLightBG/60">
             {label}
           </label>
         )}
-        <div className="flex items-center w-full rounded-3xl font-tex-gyre outline-none border-2 border-[#2E3881]/30 overflow-hidden relative">
+        <div className="flex items-center w-full rounded-3xl font-tex-gyre outline-none border-2 border-Text/TextLightBG/30 overflow-hidden relative">
           <div
-            className={`absolute ${iconPosition === 'left' ? 'left-5' : 'right-5'} text-[#2E3881]/60`}
+            className={`absolute ${iconPosition === 'left' ? 'left-5' : 'right-5'} text-Text/TextLightBG/60`}
           >
             {icon}
           </div>
@@ -41,7 +41,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             type={type}
             ref={ref}
             className={twMerge(
-              `w-full h-full bg-transparent hover:bg-white/30 outline-none focus:bg-white/30 px-5 ${icon ? (iconPosition === 'left' ? 'pl-14' : 'pr-14') : ''} py-3 duration-300 placeholder:text-[#2E3881]/30 text-t9 sm:text-t7`,
+              `w-full h-full bg-transparent hover:bg-white/30 outline-none focus:bg-white/30 px-5 ${icon ? (iconPosition === 'left' ? 'pl-14' : 'pr-14') : ''} py-3 duration-300 placeholder:text-Text/TextLightBG/30 text-t9 sm:text-t7`,
               className
             )}
           />

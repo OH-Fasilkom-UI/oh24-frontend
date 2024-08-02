@@ -62,7 +62,7 @@ const AlertClose = React.forwardRef<
   <ToastPrimitives.Close
     ref={ref}
     className={cn(
-      'text-[#2E3881] self-start rounded-md p-1 focus:opacity-100 focus:outline-none focus:ring-2 group-[.destructive]:text-red-300 group-[.destructive]:hover:text-red-50 group-[.destructive]:focus:ring-red-400 group-[.destructive]:focus:ring-offset-red-600',
+      'text-Text/TextLightBG self-start rounded-md p-1 focus:opacity-100 focus:outline-none focus:ring-2 group-[.destructive]:text-red-300 group-[.destructive]:hover:text-red-50 group-[.destructive]:focus:ring-red-400 group-[.destructive]:focus:ring-offset-red-600',
       className
     )}
     alert-close=""
@@ -79,7 +79,7 @@ const AlertTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Title
     ref={ref}
-    className={cn('text-[#2E3881] font-semibold', className)}
+    className={cn('text-Text/TextLightBG font-semibold', className)}
     {...props}
   />
 ))
@@ -91,7 +91,7 @@ const AlertDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Description
     ref={ref}
-    className={cn('text-[#2E3881] text-sm max-w-40', className)}
+    className={cn('text-Text/TextLightBG text-sm max-w-40', className)}
     {...props}
   />
 ))
@@ -108,23 +108,23 @@ function Alerter() {
         return (
           <Alert key={id} {...props} variant={variant}>
             {variant == 'success' && (
-              <div className="bg-[#1C8333] p-1.5 rounded-xl">
-                <CircleCheck size={20} color="white" />
+              <div className="bg-[#1C8333] p-1.5 rounded-xl text-BlueRegion/Cornflower/50">
+                <CircleCheck size={20} />
               </div>
             )}
             {variant == 'error' && (
-              <div className="bg-[#9A2323] p-1.5 rounded-xl">
-                <Ban size={20} color="white" />
+              <div className="bg-[#9A2323] p-1.5 rounded-xl text-BlueRegion/Cornflower/50">
+                <Ban size={20} />
               </div>
             )}
             {variant == 'warning' && (
-              <div className="bg-[#C5BE12] p-1.5 rounded-xl">
-                <TriangleAlert size={20} color="white" />
+              <div className="bg-[#C5BE12] p-1.5 rounded-xl text-BlueRegion/Cornflower/50">
+                <TriangleAlert size={20} />
               </div>
             )}
             {variant == 'info' && (
-              <div className="bg-[#804ED9] p-1.5 rounded-xl">
-                <Info size={20} color="white" />
+              <div className="bg-PurpleRegion/MoonRaker/600 p-1.5 rounded-xl text-BlueRegion/Cornflower/50">
+                <Info size={20} />
               </div>
             )}
             <div className="grid gap-1">

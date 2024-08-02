@@ -59,24 +59,24 @@ const TooltipContent = React.forwardRef<
           <div
             className="w-0 h-0 
   data-[side=top]:border-l-[8px] data-[side=top]:border-l-transparent
-  data-[side=top]:border-t-[10px] data-[side=top]:border-t-[#F0F8FF]
+  data-[side=top]:border-t-[10px] data-[side=top]:border-t-BlueRegion/Cornflower/50
   data-[side=top]:border-r-[8px] data-[side=top]:border-r-transparent
   
   data-[side=right]:border-b-[8px] data-[side=right]:border-b-transparent
-  data-[side=right]:border-r-[10px] data-[side=right]:border-r-[#F0F8FF]
+  data-[side=right]:border-r-[10px] data-[side=right]:border-r-BlueRegion/Cornflower/50
   data-[side=right]:border-t-[8px] data-[side=right]:border-t-transparent
   
   data-[side=bottom]:border-r-[8px] data-[side=bottom]:border-r-transparent
-  data-[side=bottom]:border-b-[10px] data-[side=bottom]:border-b-[#F0F8FF]
+  data-[side=bottom]:border-b-[10px] data-[side=bottom]:border-b-BlueRegion/Cornflower/50
   data-[side=bottom]:border-l-[8px] data-[side=bottom]:border-l-transparent
   
   data-[side=left]:border-t-[8px] data-[side=left]:border-t-transparent
-  data-[side=left]:border-l-[10px] data-[side=left]:border-l-[#F0F8FF]
+  data-[side=left]:border-l-[10px] data-[side=left]:border-l-BlueRegion/Cornflower/50
   data-[side=left]:border-b-[8px] data-[side=left]:border-b-transparent"
             data-side={side}
           ></div>
         </div>
-        <div className="bg-[#F0F8FF] p-3.5 md:p-4 rounded-xl text-[#2E3881] font-tex-gyre">
+        <div className="bg-BlueRegion/Cornflower/50 p-3.5 md:p-4 rounded-xl text-Text/TextLightBG font-tex-gyre">
           <div className="text-base items-center gap-2 font-semibold pb-1 hidden md:flex">
             <Info className={icon ? '' : 'hidden'} size={18} /> {title}
           </div>

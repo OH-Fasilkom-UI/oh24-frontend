@@ -32,7 +32,7 @@ const DeleteFileButton = ({ resetFile }: DeleteFileButtonProps) => {
   return (
     <button
       onClick={resetFile}
-      className="flex justify-center items-center w-[36px] h-[36px] rounded-full bg-[#EDF3FF] text-[#7D8FFC]"
+      className="flex justify-center items-center w-[36px] h-[36px] rounded-full bg-BlueRegion/Portgage/50 text-BlueRegion/Portgage/400"
     >
       <Trash2 width={24} height={24} />
     </button>
@@ -61,9 +61,9 @@ const UploadedElement = ({ file, setFile }: UploadedElementProps) => {
           />
         </div>
 
-        <div className="flex flex-col font-tex-gyre gap-[5px] text-[#3733CF]">
+        <div className="flex flex-col font-tex-gyre gap-[5px] text-BlueRegion/Portgage/700">
           <p className="font-bold">
-            File telah <span className="text-[#FF494B]">terupload</span>!
+            File telah <span className="text-RedRegion/DarkBurgundy/400">terupload</span>!
           </p>
           <p className="text-sm font-normal">{file.name}</p>
         </div>
@@ -80,9 +80,9 @@ const NotUploadedElement = ({ secondaryMessage }: NotUploadedElementProps) => {
           <Image src={'/PandaUpload.png'} alt="" width={172} height={120} />
         </div>
 
-        <div className="flex flex-col font-tex-gyre gap-1 text-[#3733CF]">
+        <div className="flex flex-col font-tex-gyre gap-1 text-BlueRegion/Portgage/700">
           <p className="font-bold text-center">
-            Drag atau <span className="text-[#FF494B]">upload</span> file kamu
+            Drag atau <span className="text-RedRegion/DarkBurgundy/400">upload</span> file kamu
             di sini!
           </p>
           {secondaryMessage && (
@@ -128,7 +128,7 @@ const FileInput = ({
   return (
     <div
       className={twMerge(
-        'p-4 bg-[#F0F8FF] shadow-[0_0_20px_0_rgba(31,82,229,0.40)] dark:shadow-[0_0_20px_0_rgba(251,251,251,0.40)] rounded-[20px] max-w-[594px] font-sans',
+        'p-4 bg-BlueRegion/Cornflower/50 shadow-[0_0_20px_0_rgba(31,82,229,0.40)] dark:shadow-[0_0_20px_0_rgba(251,251,251,0.40)] rounded-[20px] max-w-[594px] font-sans',
         className
       )}
     >
@@ -136,7 +136,7 @@ const FileInput = ({
         {...getRootProps()}
         className={`bg-[#FBFBFB] h-full p-3  border-[2px] border-dashed cursor-pointer flex justify-center items-center rounded-xl ${
           isDragActive ? 'active' : ''
-        } border-[#2E3881]
+        } border-Text/TextLightBG
         `}
       >
         <input {...getInputProps()} />

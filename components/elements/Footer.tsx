@@ -1,7 +1,7 @@
 'use client'
 import { Copy, Instagram, Twitter, Youtube } from 'lucide-react'
 import Image from 'next/image'
-import {motion, useInView} from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 export interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {}
@@ -15,8 +15,14 @@ const Footer: React.FC<FooterProps> = ({ ...props }) => {
       ref={ref}
       initial={{ y: 200 }}
       animate={{ y: inView ? 0 : 200 }}
-      transition={{ duration: 0.5, type: 'spring', stiffness: 100, damping: 20 }}
-      className="relative flex items-end z-0">
+      transition={{
+        duration: 0.5,
+        type: 'spring',
+        stiffness: 100,
+        damping: 20,
+      }}
+      className="relative flex items-end z-0"
+    >
       <Image
         src={'/footer.png'}
         alt="Footer Background"

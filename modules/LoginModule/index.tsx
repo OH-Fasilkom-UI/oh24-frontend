@@ -10,10 +10,10 @@ export const LoginModule = () => {
         style={{
           backgroundImage: `url(${bg.src})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'bottom',
           backgroundRepeat: 'no-repeat',
         }}
-        className="w-full max-md:hidden min-h-screen md:h-[150vh] min-[2500px]:h-[2200px]"
+        className="w-full max-md:hidden min-h-screen md:h-[160vh] min-[2500px]:h-[2200px]"
       >
         <LoginPage />
       </div>

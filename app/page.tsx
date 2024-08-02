@@ -17,6 +17,7 @@ import {
 import FileInput from '@/components/ui/FileInput'
 import { useState } from 'react'
 import Footer from '@/components/elements/Footer'
+import GoogleLogin from '@/components/ui/GoogleLogin'
 
 export default function Home() {
   const { alert } = useAlert()
@@ -29,6 +30,7 @@ export default function Home() {
           setFile={setFile}
           secondaryMessage="Upload pdf doang ya blog"
         />
+        <GoogleLogin />
         <Input
           placeholder="Masukkan nama"
           errorMessage="Nama tidak boleh kosong"
@@ -37,10 +39,10 @@ export default function Home() {
           iconPosition="right"
         />
         <ContactPerson>
-          <Button variant={'primary'} disabled={false} className='w-full'>
+          <Button variant={'primary'} disabled={false} className="w-full">
             <MessageSquare size={20} /> Contact Person 1
           </Button>
-          <Button variant={'primary'} disabled={false} className='w-full'>
+          <Button variant={'primary'} disabled={false} className="w-full">
             <MessageSquare size={20} /> Contact Person 2
           </Button>
         </ContactPerson>

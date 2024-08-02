@@ -1,37 +1,37 @@
 export const DetailProfileConstant = [
-    {
-      title: 'Nama Lengkap',
-      value: 'Nak Oha',
-    },
-    {
-      title: 'Email',
-      value: "NakOha@gmail.com",
-    },
-    {
-      title: 'Domisili',
-      value: 'Jabodetabek',
-    },
-    {
-      title: 'WhatsApp',
-      value: "086969696969696",
-    },
-    {
-      title: 'Tanggal Lahir',
-      value: '19/02/2005',
-    },
-    {
-      title: 'Kelas',
-      value: "Gaypear",
-    },
-    {
-      title: 'Asal Sekolah',
-      value: 'SMAN 1 Bangka Belitung',
-    },
-    {
-      title: 'Nomor Telepon Orang Tua',
-      value: "089696969696969",
-    },
-  ]
+  {
+    title: 'Nama Lengkap',
+    value: 'Nak Oha',
+  },
+  {
+    title: 'Email',
+    value: 'NakOha@gmail.com',
+  },
+  {
+    title: 'Domisili',
+    value: 'Jabodetabek',
+  },
+  {
+    title: 'WhatsApp',
+    value: '086969696969696',
+  },
+  {
+    title: 'Tanggal Lahir',
+    value: '19/02/2005',
+  },
+  {
+    title: 'Kelas',
+    value: 'Gaypear',
+  },
+  {
+    title: 'Asal Sekolah',
+    value: 'SMAN 1 Bangka Belitung',
+  },
+  {
+    title: 'Nomor Telepon Orang Tua',
+    value: '089696969696969',
+  },
+]
 
 export const PandaImages = [
   {
@@ -49,5 +49,5 @@ export const PandaImages = [
   {
     alt: 'Panda Cewe 2',
     src: '/Profile/cewe2.png',
-  }
+  },
 ]

@@ -19,7 +19,8 @@
     ],
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    "types": ["google.accounts"]
   },
   "include": [
     "next-env.d.ts",

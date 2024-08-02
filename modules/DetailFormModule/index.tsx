@@ -12,7 +12,7 @@ export const DetailFormModule = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
-      className="min-h-[160vh] flex flex-col"
+      className="min-h-screen flex flex-col"
     >
       <div className="flex-grow flex flex-col pb-[262px] lg:pb-[700px] md:pb-[412px]">
         <div className="flex max-md:mt-[121px] max-md:gap-x-[7px] md:gap-x-[32px] font-tex-gyre font-bold items-center justify-center mx-auto md:mt-[182px] max-md:text-[15px] max-md:whitespace-nowrap max-md:w-[60px] md:text-[36px] leading-[40px] text-Text/TextLightBG">
@@ -27,7 +27,7 @@ export const DetailFormModule = () => {
             alt="kereta"
             width={310}
             height={250}
-            className="absolute max-md:top-1/2 md:top-0 right-0 max-md:w-[200px] max-md:h-auto max-lg:translate-x-1/4 md:w-[300px] md:h-[240px]"
+            className="absolute max-md:top-1/2 max-lg:top-[530px] top-0 right-0 max-md:w-[200px] max-md:h-auto max-lg:translate-x-1/4 md:w-[300px] md:h-[240px]"
           />
           <div className="mt-[43px] z-100 max-md:px-[20px] md:px-[30px] lg:px-[123px] mb-10">
             <DetailForm />

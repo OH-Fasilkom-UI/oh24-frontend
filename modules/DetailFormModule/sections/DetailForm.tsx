@@ -68,7 +68,7 @@ const DetailForm = () => {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="grid grid-cols-1 md:gap-x-[45px] md:grid-cols-2 lg:gap-x-[210px] gap-y-[20px]"
+          className="grid grid-cols-1 md:gap-x-[45px] lg:grid-cols-2 lg:gap-x-[210px] gap-y-[20px]"
         >
           <div className="space-y-4">
             <InputForm
@@ -176,7 +176,7 @@ const DetailForm = () => {
               form={form}
             />
             <div className=" flex justify-start w-full pt-3">
-              <Button type="submit" className="w-full md:w-auto">
+              <Button type="submit" className="w-full lg:w-auto">
                 Sign Up
               </Button>
             </div>

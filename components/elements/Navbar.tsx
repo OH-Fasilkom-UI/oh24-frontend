@@ -45,8 +45,8 @@ export const Navbar = () => {
           className={`items-center text-[16px] max-xl:text-[12px] max-lg:hidden gap-2 flex font-tex-gyre font-semibold  ${
             link.isExist
               ? pathname === link.href
-                ? 'text-[#C10F1F] hover:text-RedRegion/Monza/500 duration-300 hover:scale-105 cursor-pointer '
-                : 'text-[#3733CF] hover:text-RedRegion/Monza/500 duration-300 hover:scale-105 cursor-pointer '
+                ? 'text-RedRegion/Monza/700 hover:text-RedRegion/Monza/500 duration-300 hover:scale-105 cursor-pointer '
+                : 'text-BlueRegion/Portgage/700 hover:text-RedRegion/Monza/500 duration-300 hover:scale-105 cursor-pointer '
               : 'text-[#454F59]'
           }`}
         >
@@ -61,7 +61,7 @@ export const Navbar = () => {
               <NavigationMenuTrigger
                 onMouseEnter={() => setIsHover(true)}
                 onMouseLeave={() => setIsHover(false)}
-                className="text-[#3733CF] flex flex-row gap-2 max-xl:text-[12px] text-[16px] font-bold whitespace-nowrap hover:text-[#C10F1F] font-tex-gyre"
+                className="text-BlueRegion/Portgage/700 flex flex-row gap-2 max-xl:text-[12px] text-[16px] font-bold whitespace-nowrap hover:text-RedRegion/Monza/700 font-tex-gyre"
               >
                 Welcome, Nak Oha{' '}
                 <span>
@@ -80,7 +80,7 @@ export const Navbar = () => {
                         ? setIsLogin(false)
                         : router.push(link.href)
                     }}
-                    className="text-[#3733CF] hover:text-[#C10F1F] duration-300 cursor-pointer justify-start flex flex-row font-tex-gyre font-bold items-center gap-2 text-[16px] mt-5"
+                    className="text-BlueRegion/Portgage/700 hover:text-RedRegion/Monza/700 duration-300 cursor-pointer justify-start flex flex-row font-tex-gyre font-bold items-center gap-2 text-[16px] mt-5"
                   >
                     {link.icon && <span>{React.createElement(link.icon)}</span>}
                     {link.label}
@@ -118,9 +118,9 @@ export const Navbar = () => {
                   className={`font-tex-gyre flex cursor-pointer whitespace-nowrap flex-row items-center gap-4 text-[12px] mt-5 justify-start ${
                     link.isExist
                       ? pathname === link.href
-                        ? 'text-[#C10F1F]'
-                        : 'text-[#3733CF]'
-                      : 'text-[#454F59]'
+                        ? 'text-RedRegion/Monza/700'
+                        : 'text-BlueRegion/Portgage/700'
+                      : 'text-Misc/ShuttleGray/700'
                   }`}
                 >
                   {link.icon && (
@@ -140,7 +140,7 @@ export const Navbar = () => {
                         ? setIsLogin(false)
                         : router.push(link.href)
                     }}
-                    className="text-[#3733CF] justify-start flex flex-row font-tex-gyre  items-center gap-4 text-[12px] mt-5"
+                    className="text-BlueRegion/Portgage/700 justify-start flex flex-row font-tex-gyre  items-center gap-4 text-[12px] mt-5"
                   >
                     {link.icon && <span>{React.createElement(link.icon)}</span>}
                     {link.label}

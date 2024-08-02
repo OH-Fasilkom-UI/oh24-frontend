@@ -1,6 +1,7 @@
 import { Navbar } from '@/components/elements/Navbar'
 import { Alerter } from '@/components/ui/Alert'
 import { Toaster } from '@/components/ui/Toast'
+import Providers from './providers'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
@@ -49,35 +50,37 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${texGyreAdventorFont.variable} ${rifficFont.variable}`}
-    >
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link
-          rel="icon"
-          href="/icon?<generated>"
-          type="image/<generated>"
-          sizes="<generated>"
-        />
-        <link
-          rel="apple-touch-icon"
-          href="/apple-icon?<generated>"
-          type="image/<generated>"
-          sizes="<generated>"
-        />
-      </head>
-      <body
-        className="font-tga font-normal flex flex-col justify-between bg-[#B5D3DD] min-h-screen"
-        suppressHydrationWarning
-        suppressContentEditableWarning
+    <Providers>
+      <html
+        lang="en"
+        className={`${texGyreAdventorFont.variable} ${rifficFont.variable}`}
       >
-        <Navbar />
-        <main>{children}</main>
-        <Toaster position="top-center" />
-        <Alerter />
-      </body>
-    </html>
+        <head>
+          <link rel="icon" href="/favicon.ico" sizes="any" />
+          <link
+            rel="icon"
+            href="/icon?<generated>"
+            type="image/<generated>"
+            sizes="<generated>"
+          />
+          <link
+            rel="apple-touch-icon"
+            href="/apple-icon?<generated>"
+            type="image/<generated>"
+            sizes="<generated>"
+          />
+        </head>
+        <body
+          className="font-tga font-normal flex flex-col justify-between bg-[#B5D3DD] min-h-screen"
+          suppressHydrationWarning
+          suppressContentEditableWarning
+        >
+          <Navbar />
+          <main>{children}</main>
+          <Toaster position="top-center" />
+          <Alerter />
+        </body>
+      </html>
+    </Providers>
   )
 }

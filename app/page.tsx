@@ -18,10 +18,17 @@ import FileInput from '@/components/ui/FileInput'
 import { useState } from 'react'
 import Footer from '@/components/elements/Footer'
 import GoogleLogin from '@/components/ui/GoogleLogin'
+import { useIsAuthenticated, useLogin, useLogout } from '@/hooks/auth'
 
 export default function Home() {
   const { alert } = useAlert()
+  const { isAuthenticated } = useIsAuthenticated()
+  const { logout } = useLogout()
+  const { login } = useLogin()
   const [file, setFile] = useState<File | null>(null)
+
+  console.log('isloggedin', isAuthenticated)
+
   return (
     <>
       <main className="p-10 min-h-screen z-50">
@@ -30,7 +37,8 @@ export default function Home() {
           setFile={setFile}
           secondaryMessage="Upload pdf doang ya blog"
         />
-        <GoogleLogin />
+        <Button onClick={() => logout()}>Log Out</Button>
+        <GoogleLogin onCredential={(credential) => login(credential)} />
         <Input
           placeholder="Masukkan nama"
           errorMessage="Nama tidak boleh kosong"

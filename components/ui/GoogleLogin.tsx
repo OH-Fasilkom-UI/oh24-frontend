@@ -3,7 +3,11 @@
 import Script from 'next/script'
 import { useRef } from 'react'
 
-const GoogleLogin = () => {
+export interface GoogleLoginProps {
+  onCredential: (credential: string) => void
+}
+
+const GoogleLogin = ({ onCredential }: GoogleLoginProps) => {
   const divRef = useRef<HTMLDivElement>(null)
 
   const onLoad = () => {
@@ -16,9 +20,7 @@ const GoogleLogin = () => {
         ux_mode: 'popup',
         client_id:
           '409542269437-0f7lev9ea973jgmfdgnd1rgq5i32bguj.apps.googleusercontent.com',
-        callback: async (res) => {
-          alert(res.credential) // TODO: handle this
-        },
+        callback: async (res) => onCredential(res.credential),
       })
       window.google.accounts.id.renderButton(divRef.current, {
         theme: 'filled_blue',

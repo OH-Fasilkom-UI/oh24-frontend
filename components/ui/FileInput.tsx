@@ -63,7 +63,8 @@ const UploadedElement = ({ file, setFile }: UploadedElementProps) => {
 
         <div className="flex flex-col font-tex-gyre gap-[5px] text-BlueRegion/Portgage/700">
           <p className="font-bold">
-            File telah <span className="text-RedRegion/DarkBurgundy/400">terupload</span>!
+            File telah{' '}
+            <span className="text-RedRegion/DarkBurgundy/400">terupload</span>!
           </p>
           <p className="text-sm font-normal">{file.name}</p>
         </div>
@@ -82,8 +83,9 @@ const NotUploadedElement = ({ secondaryMessage }: NotUploadedElementProps) => {
 
         <div className="flex flex-col font-tex-gyre gap-1 text-BlueRegion/Portgage/700">
           <p className="font-bold text-center">
-            Drag atau <span className="text-RedRegion/DarkBurgundy/400">upload</span> file kamu
-            di sini!
+            Drag atau{' '}
+            <span className="text-RedRegion/DarkBurgundy/400">upload</span> file
+            kamu di sini!
           </p>
           {secondaryMessage && (
             <p className="text-sm text-center font-normal ">

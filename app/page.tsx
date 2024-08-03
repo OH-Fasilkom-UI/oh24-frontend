@@ -20,6 +20,7 @@ import Footer from '@/components/elements/Footer'
 import GoogleLogin from '@/components/ui/GoogleLogin'
 import { useIsAuthenticated, useLogin, useLogout } from '@/hooks/auth'
 import { usePersonalData, usePersonalDataMutation } from '@/hooks/personal'
+import Testimonials from '@/components/elements/Testimonials'
 
 export default function Home() {
   const { alert } = useAlert()
@@ -32,13 +33,11 @@ export default function Home() {
 
   const { personalData } = usePersonalData()
   const { mutate } = usePersonalDataMutation()
-
-  console.log('isloggedin', isAuthenticated)
   console.log('personaldata', personalData)
 
   return (
     <>
-      <main className="p-10 min-h-screen z-50">
+      <main className="p-10 min-h-screen relative z-20">
         <FileInput
           file={file}
           setFile={setFile}
@@ -68,7 +67,8 @@ export default function Home() {
             <MessageSquare size={20} /> Contact Person 2
           </Button>
         </ContactPerson>
-        <div className="flex gap-5 m-5 z-50">
+        <Testimonials />
+        <div className="flex gap-5 m-5 z-40">
           <Button
             onClick={() => {
               toast.success('Operation successful!')
@@ -106,7 +106,7 @@ export default function Home() {
             <Loader size={20} /> Loading
           </Button>
         </div>
-        <div className="flex gap-5 m-5">
+        <div className="flex gap-5 m-5 z-40">
           <Button
             onClick={() => {
               alert({

@@ -11,10 +11,11 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/Dialog'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 
 export const Timeline = () => {
-  const [showDescription, setShowDescription] = useState<null | number>(null)
+  const [hoveredCard, setHoveredCard] = useState<null | number>(null)
+  const [clickedCard, setClickedCard] = useState<null | number>(null)
   const translateStyle = [
     'xl:-translate-y-40 -translate-y-44',
     'xl:-translate-y-14 translate-x-5 -translate-y-24',
@@ -22,13 +23,30 @@ export const Timeline = () => {
     'xl:translate-y-36 xk:-translate-x-8 -translate-x-12 translate-y-28',
     'xl:translate-x-32 translate-x-28 translate-y-36 xl:translate-y-44',
   ]
+
+  const handleCardClick = (index: number) => {
+    setClickedCard(clickedCard === index ? null : index)
+    setHoveredCard(null)
+  }
+
+  const handleCardHover = (index: number) => {
+    if (clickedCard === null) {
+      setHoveredCard(index)
+    }
+  }
+
+  const handleCardHoverEnd = () => {
+    if (clickedCard === null) {
+      setHoveredCard(null)
+    }
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.1 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
     >
-      {/* DESKTOP */}
       <div
         style={{
           backgroundImage: `url(${bg.src})`,
@@ -36,27 +54,47 @@ export const Timeline = () => {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
         }}
-        className="2xl:w-[1280px] max-lg:hidden 2xl:h-[1020px] xl:w-[900px] xl:h-[740px] lg:w-[760px] lg:h-[600px] grid grid-cols-3 mt-40"
+        className="2xl:w-[1280px] max-lg:hidden 2xl:h-[1020px] xl:w-[900px] xl:h-[740px] lg:w-[760px] lg:h-[600px] grid grid-cols-3 my-40"
       >
         {timelineData.map((data, index) => (
           <div
             key={index}
-            className={`p-5  ${index === timelineData.length - 1 && 'col-span-2 justify-center items-center flex'}`}
+            className={`p-5 ${index === timelineData.length - 1 && 'col-span-2 justify-center items-center flex'}`}
           >
-            <div
-              onMouseLeave={() => setShowDescription(null)}
-              onMouseEnter={() => setShowDescription(index)}
-              className={`${translateStyle[index]} 2xl:max-h-[380px] xl:max-h-[440px] absolute shadow-timeline text-center transition-all bg-[#2E3881E5] 
-              ${showDescription === index ? (index === 2 ? 'max-w-[320px] z-10 2xl:max-w-[480px] xl:max-w-[420px]' : 'max-w-[360px] z-10 2xl:max-w-[480px] xl:max-w-[420px]') : showDescription !== null ? 'opacity-0' : 'lg:w-[200px] xl:w-[285px]'}
-              flex flex-col rounded-[32px] gap-5 justify-center items-center py-[44px] px-[42px]`}
+            <motion.div
+              onHoverStart={() => handleCardHover(index)}
+              onHoverEnd={handleCardHoverEnd}
+              whileHover={{
+                transition: { duration: 0.3 },
+                
+              }}
+              onClick={() => handleCardClick(index)}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className={`${translateStyle[index]} 2xl:max-h-[380px] xl:max-h-[440px] absolute shadow-timeline text-center bg-[#2E3881E5] 
+                ${clickedCard === index || hoveredCard === index
+                  ? (index === 2
+                    ? 'max-w-[320px] z-10 2xl:max-w-[480px] xl:max-w-[420px]'
+                    : 'max-w-[360px] z-10 2xl:max-w-[480px] xl:max-w-[420px]')
+                  : (clickedCard !== null || hoveredCard !== null)
+                    ? 'opacity-0 cursor-auto'
+                    : 'lg:w-[200px] xl:w-[285px]'
+                }
+                flex flex-col rounded-[32px] gap-5 justify-center items-center py-20 px-[42px]  duration-300 transition-all cursor-pointer`}
             >
               <h1 className="text-BlueRegion/Cornflower/100 tracking-[0.075rem] font-bold text-xl xl:text-2xl font-riffic">
                 {data.title}
               </h1>
-              <p className="text-BlueRegion/Cornflower/100 text-[16px] xl:text-[20px] font-normal font-tex-gyre">
-                {showDescription === index ? data.description : data.date}
-              </p>
-            </div>
+              {
+                clickedCard === index || hoveredCard === index ?
+                  <p className="text-BlueRegion/Cornflower/100 text-base font-normal font-tex-gyre">
+                    {data.description}
+                  </p>
+                  :
+                  <p className="text-BlueRegion/Cornflower/100 text-base font-normal font-tex-gyre">
+                    {data.date}
+                  </p>
+              }
+            </motion.div>
           </div>
         ))}
       </div>

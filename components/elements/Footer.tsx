@@ -1,82 +1,42 @@
 'use client'
-import { Copy, Instagram, Twitter, Youtube } from 'lucide-react'
+import { Copy, Instagram, Twitter } from 'lucide-react'
 import Image from 'next/image'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { toast } from '../ui/Toast'
 
-export interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-const socialMediaLinks: {
-  name: string
+interface LinkProps {
   href: string
-  icon: React.ReactNode
-}[] = [
-  {
-    name: 'Instagram',
-    href: 'https://www.instagram.com/openhousecsui',
-    icon: <Instagram className="cursor-pointer w-5 h-5 lg:w-6 lg:h-6" />,
-  },
-  {
-    name: 'Twitter',
-    href: 'https://twitter.com/openhousecsui',
-    icon: <Twitter className="cursor-pointer min-w-5 min-h-5 lg:w-6 lg:h-6" />,
-  },
-  {
-    name: 'Youtube',
-    href: 'https://www.youtube.com/channel/UC0zOg9tXHb9J9Q3G1i7ZJZg',
-    icon: (
-      <Image
-        src={'/youtube.svg'}
-        alt="Youtube Logo"
-        width={24}
-        height={24}
-        className="min-w-5 w-5 lg:min-w-6 lg:w-6 cursor-pointer"
-      />
-    ),
-  },
-  {
-    name: 'Tiktok',
-    href: 'https://www.tiktok.com/@openhousecsui',
-    icon: (
-      <Image
-        src={'/tiktok.svg'}
-        alt="Tiktok Logo"
-        width={24}
-        height={24}
-        className="min-w-5 w-5 lg:min-w-5 lg:w-5 cursor-pointer"
-      />
-    ),
-  },
-]
+  children: React.ReactNode
+}
 
-const routeLinks: {
-  name: string
-  href: string
-}[] = [
-  {
-    name: 'Ambassador',
-    href: '/ambassador',
-  },
-  {
-    name: 'Dashboard',
-    href: '/dashboard',
-  },
-  {
-    name: 'Registration Page',
-    href: '/registration-page',
-  },
-  {
-    name: 'Merchandise',
-    href: '/merchandise',
-  },
-  {
-    name: 'Wall of Fame',
-    href: '/wall-of-fame',
-  },
-]
+const SocialMediaLink = (props: LinkProps) => {
+  return (
+    <a
+      href={props.href}
+      target="_blank"
+      rel="noreferrer"
+      className="hover:scale-125 duration-200"
+    >
+      {props.children}
+    </a>
+  )
+}
 
-const Footer: React.FC<FooterProps> = ({ ...props }) => {
+const RouteLink = (props: LinkProps) => {
+  return (
+    <a
+      href={props.href}
+      target="_blank"
+      rel="noreferrer"
+      className="cursor-pointer hover:scale-105 duration-300 hover:text-RedRegion/Monza/600"
+    >
+      {props.children}
+    </a>
+  )
+}
+
+const Footer = () => {
   const ref = useRef(null)
   const inView = useInView(ref, { once: false })
 
@@ -127,11 +87,11 @@ const Footer: React.FC<FooterProps> = ({ ...props }) => {
               className="w-[124.8px] h-[156px] md:w-[251px] md:h-[303.23px] hover:scale-105 duration-100"
             />
             <div className="hidden lg:flex flex-col justify-center gap-8 font-tex-gyre text-Text/TextDarkBG font-bold text-base">
-              {routeLinks.map((link, index) => (
-                <a key={index} href={link.href} className="cursor-pointer hover:scale-105 duration-300 hover:text-RedRegion/Monza/600">
-                  {link.name}
-                </a>
-              ))}
+              <RouteLink href="/ambassador">Ambassador</RouteLink>
+              <RouteLink href="/dashboard">Dashboard</RouteLink>
+              <RouteLink href="/registration-page">Registration Page</RouteLink>
+              <RouteLink href="/merchandise">Merchandise</RouteLink>
+              <RouteLink href="/wall-of-fame">Wall of Fame</RouteLink>
             </div>
           </div>
           <div className="flex gap-10 lg:gap-16 xl:gap-32 font-tex-gyre font-bold text-white justify-end">
@@ -141,17 +101,30 @@ const Footer: React.FC<FooterProps> = ({ ...props }) => {
                   Find Us on Social Media
                 </p>
                 <div className="flex gap-3 lg:gap-9 items-center cursor-pointer">
-                  {socialMediaLinks.map((link, index) => (
-                    <a
-                      key={index}
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className='hover:scale-125 duration-200'
-                    >
-                      {link.icon}
-                    </a>
-                  ))}
+                  <SocialMediaLink href="https://www.instagram.com/ohfasilkom">
+                    <Instagram className="cursor-pointer w-5 h-5 lg:w-6 lg:h-6" />
+                  </SocialMediaLink>
+                  <SocialMediaLink href="https://twitter.com/OHFasilkom">
+                    <Twitter className="cursor-pointer min-w-5 min-h-5 lg:w-6 lg:h-6" />
+                  </SocialMediaLink>
+                  <SocialMediaLink href="https://www.youtube.com/@FasilkomUIOfficial">
+                    <Image
+                      src="/youtube.svg"
+                      alt="Youtube Logo"
+                      width={24}
+                      height={24}
+                      className="min-w-5 w-5 lg:min-w-6 lg:w-6 cursor-pointer"
+                    />
+                  </SocialMediaLink>
+                  <SocialMediaLink href="https://www.tiktok.com/@openhousefasilkomui">
+                    <Image
+                      src="/tiktok.svg"
+                      alt="Tiktok Logo"
+                      width={24}
+                      height={24}
+                      className="min-w-5 w-5 lg:min-w-5 lg:w-5 cursor-pointer"
+                    />
+                  </SocialMediaLink>
                 </div>
               </div>
               <div className="flex flex-col items-end md:items-start">
@@ -175,9 +148,9 @@ const Footer: React.FC<FooterProps> = ({ ...props }) => {
             <div className="hidden md:flex flex-col gap-6">
               <div className="flex flex-col gap-2">
                 <p>Supported by</p>
-                <a href="https://cs.ui.ac.id/" target='_blank'>
+                <a href="https://cs.ui.ac.id/" target="_blank">
                   <Image
-                    className='cursor-pointer'
+                    className="cursor-pointer"
                     src={'/fasilkom.png'}
                     alt="Fasilkom UI Logo"
                     width={160}

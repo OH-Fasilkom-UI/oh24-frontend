@@ -66,34 +66,33 @@ export const Timeline = () => {
               onHoverEnd={handleCardHoverEnd}
               whileHover={{
                 transition: { duration: 0.3 },
-                
               }}
               onClick={() => handleCardClick(index)}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
               className={`${translateStyle[index]} 2xl:max-h-[380px] xl:max-h-[440px] absolute shadow-timeline text-center bg-[#2E3881E5] 
-                ${clickedCard === index || hoveredCard === index
-                  ? (index === 2
-                    ? 'max-w-[320px] z-10 2xl:max-w-[480px] xl:max-w-[420px]'
-                    : 'max-w-[360px] z-10 2xl:max-w-[480px] xl:max-w-[420px]')
-                  : (clickedCard !== null || hoveredCard !== null)
-                    ? 'opacity-0 cursor-auto'
-                    : 'lg:w-[200px] xl:w-[285px]'
+                ${
+                  clickedCard === index || hoveredCard === index
+                    ? index === 2
+                      ? 'max-w-[320px] z-10 2xl:max-w-[480px] xl:max-w-[420px]'
+                      : 'max-w-[360px] z-10 2xl:max-w-[480px] xl:max-w-[420px]'
+                    : clickedCard !== null || hoveredCard !== null
+                      ? 'opacity-0 cursor-auto'
+                      : 'lg:w-[200px] xl:w-[285px]'
                 }
                 flex flex-col rounded-[32px] gap-5 justify-center items-center py-20 px-[42px]  duration-300 transition-all cursor-pointer`}
             >
               <h1 className="text-BlueRegion/Cornflower/100 tracking-[0.075rem] font-bold text-xl xl:text-2xl">
                 {data.title}
               </h1>
-              {
-                clickedCard === index || hoveredCard === index ?
-                  <p className="text-BlueRegion/Cornflower/100 text-base font-normal font-tex-gyre">
-                    {data.description}
-                  </p>
-                  :
-                  <p className="text-BlueRegion/Cornflower/100 text-base font-normal font-tex-gyre">
-                    {data.date}
-                  </p>
-              }
+              {clickedCard === index || hoveredCard === index ? (
+                <p className="text-BlueRegion/Cornflower/100 text-base font-normal font-tex-gyre">
+                  {data.description}
+                </p>
+              ) : (
+                <p className="text-BlueRegion/Cornflower/100 text-base font-normal font-tex-gyre">
+                  {data.date}
+                </p>
+              )}
             </motion.div>
           </div>
         ))}

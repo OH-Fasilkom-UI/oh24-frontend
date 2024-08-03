@@ -19,15 +19,22 @@ import { useState } from 'react'
 import Footer from '@/components/elements/Footer'
 import GoogleLogin from '@/components/ui/GoogleLogin'
 import { useIsAuthenticated, useLogin, useLogout } from '@/hooks/auth'
+import { usePersonalData, usePersonalDataMutation } from '@/hooks/personal'
 
 export default function Home() {
   const { alert } = useAlert()
+  const [file, setFile] = useState<File | null>(null)
+  const [profilePic, setProfilePic] = useState(0)
+
   const { isAuthenticated } = useIsAuthenticated()
   const { logout } = useLogout()
   const { login } = useLogin()
-  const [file, setFile] = useState<File | null>(null)
+
+  const { personalData } = usePersonalData()
+  const { mutate } = usePersonalDataMutation()
 
   console.log('isloggedin', isAuthenticated)
+  console.log('personaldata', personalData)
 
   return (
     <>
@@ -37,6 +44,13 @@ export default function Home() {
           setFile={setFile}
           secondaryMessage="Upload pdf doang ya blog"
         />
+        <Input
+          placeholder="profile picture number"
+          onChange={(e) => setProfilePic(parseInt(e.target.value))}
+        />
+        <Button onClick={() => mutate({ profilePic })}>
+          Change Profile Picture
+        </Button>
         <Button onClick={() => logout()}>Log Out</Button>
         <GoogleLogin onCredential={(credential) => login(credential)} />
         <Input

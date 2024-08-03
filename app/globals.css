@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+h1, h2, h3, h4, h5, h6 {
+  @apply font-riffic
+}
+
+* {
+  @apply font-tex-gyre
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

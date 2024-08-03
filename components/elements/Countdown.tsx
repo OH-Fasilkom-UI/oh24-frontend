@@ -138,7 +138,7 @@ const Countdown = ({
   }, [targetDate])
 
   return (
-    <div className="flex flex-col items-center gap-2 font-tex-gyre">
+    <div className="flex flex-col items-center gap-2">
       <div className="flex items-center gap-1 sm:gap-2">
         <BlockTime
           classNameBlock={classNameBlock}

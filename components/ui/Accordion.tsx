@@ -12,7 +12,7 @@ const AccordionItem = React.forwardRef<
   <AccordionPrimitive.Item
     ref={ref}
     className={twMerge(
-      '[&:not(:last-child)]:mb-2 font-tex-gyre rounded-3xl text-white px-8 [&:first-child]:bg-BlueRegion/CeruleanBlue/600 bg-BlueRegion/CeruleanBlue/700 border-b',
+      '[&:not(:last-child)]:mb-2 rounded-3xl text-white px-8 [&:first-child]:bg-BlueRegion/CeruleanBlue/600 bg-BlueRegion/CeruleanBlue/700 border-b',
       className
     )}
     {...props}
@@ -28,7 +28,7 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={twMerge(
-        'text-lg font-bold flex flex-1 items-center justify-between py-5 transition-all hover:underline [&[data-state=open]>svg]:rotate-180',
+        'text-lg font-tex-gyre font-bold flex flex-1 items-center justify-between py-5 transition-all hover:underline [&[data-state=open]>svg]:rotate-180',
         className
       )}
       {...props}

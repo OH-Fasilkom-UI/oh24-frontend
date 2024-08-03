@@ -61,7 +61,7 @@ const UploadedElement = ({ file, setFile }: UploadedElementProps) => {
           />
         </div>
 
-        <div className="flex flex-col font-tex-gyre gap-[5px] text-BlueRegion/Portgage/700">
+        <div className="flex flex-col gap-[5px] text-BlueRegion/Portgage/700">
           <p className="font-bold">
             File telah{' '}
             <span className="text-RedRegion/DarkBurgundy/400">terupload</span>!
@@ -81,7 +81,7 @@ const NotUploadedElement = ({ secondaryMessage }: NotUploadedElementProps) => {
           <Image src={'/PandaUpload.png'} alt="" width={172} height={120} />
         </div>
 
-        <div className="flex flex-col font-tex-gyre gap-1 text-BlueRegion/Portgage/700">
+        <div className="flex flex-col gap-1 text-BlueRegion/Portgage/700">
           <p className="font-bold text-center">
             Drag atau{' '}
             <span className="text-RedRegion/DarkBurgundy/400">upload</span> file

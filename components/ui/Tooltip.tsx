@@ -76,7 +76,7 @@ const TooltipContent = React.forwardRef<
             data-side={side}
           ></div>
         </div>
-        <div className="bg-BlueRegion/Cornflower/50 p-3.5 md:p-4 rounded-xl text-Text/TextLightBG font-tex-gyre">
+        <div className="bg-BlueRegion/Cornflower/50 p-3.5 md:p-4 rounded-xl text-Text/TextLightBG">
           <div className="text-base items-center gap-2 font-semibold pb-1 hidden md:flex">
             <Info className={icon ? '' : 'hidden'} size={18} /> {title}
           </div>

@@ -39,7 +39,7 @@ export const Navbar = () => {
               onClick={() => {
                 link.isExist && router.push(link.href)
               }}
-              className={`items-center text-[16px] max-xl:text-[12px] max-lg:hidden gap-2 flex font-tex-gyre font-semibold  ${
+              className={`items-center text-[16px] max-xl:text-[12px] max-lg:hidden gap-2 flex font-semibold  ${
                 link.isExist
                   ? pathname === link.href
                     ? 'text-RedRegion/Monza/700 hover:text-RedRegion/Monza/500 duration-300 hover:scale-105 cursor-pointer '

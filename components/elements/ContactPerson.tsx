@@ -53,10 +53,10 @@ const ContactPerson: React.FC<ContactPersonProps> = ({
         <div className="flex flex-col gap-8 h-fit w-fit justify-center">
           <div className="w-full flex flex-col gap-8 justify-center items-center">
             <div className="flex flex-col gap-2 text-white">
-              <h5 className="font-riffic font-bold text-2xl leading-8 text-center">
+              <h5 className="font-bold text-2xl leading-8 text-center">
                 Butuh bantuan atau memiliki pertanyaan?
               </h5>
-              <p className="font-tex-gyre font-normal text-base leading-6 text-center">
+              <p className="font-normal text-base leading-6 text-center">
                 Hubungi kami pada kontak berikut untuk bantuan lebih lanjut
               </p>
             </div>

@@ -24,7 +24,7 @@ export const checkboxVariants = cva(
 )
 
 export const checkboxLabelVariants = cva(
-  'font-tex-gyre font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
+  'font-bold leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
   {
     variants: {
       size: {

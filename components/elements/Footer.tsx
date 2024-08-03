@@ -108,8 +108,8 @@ const Footer: React.FC<FooterProps> = ({ ...props }) => {
         className="w-full absolute bottom-[262px] object-top object-cover -z-10 sm:hidden"
       />
       <section className="z-20 flex flex-col gap-4 bg-[#343FC0] h-[262px] md:h-[412px] p-5 md:p-10 w-full">
-        <div className="flex items-center justify-center text-white font-bold text-sm font-tex-gyre gap-2 md:hidden">
-          <h5 className="">Supported by</h5>
+        <div className="flex items-center justify-center text-white font-bold text-sm gap-2 md:hidden">
+          <p>Supported by</p>
           <Image
             src={'/fasilkom.png'}
             alt="Fasilkom UI Logo"
@@ -137,9 +137,9 @@ const Footer: React.FC<FooterProps> = ({ ...props }) => {
           <div className="flex gap-10 lg:gap-16 xl:gap-32 font-tex-gyre font-bold text-white justify-end">
             <div className="flex flex-col gap-4 md:gap-8 text-xl ">
               <div className="flex flex-col items-end md:items-start gap-4">
-                <h5 className="text-right md:text-left text-xs md:text-xl">
+                <p className="text-right md:text-left text-xs md:text-xl">
                   Find Us on Social Media
-                </h5>
+                </p>
                 <div className="flex gap-3 lg:gap-9 items-center cursor-pointer">
                   {socialMediaLinks.map((link, index) => (
                     <a
@@ -155,7 +155,7 @@ const Footer: React.FC<FooterProps> = ({ ...props }) => {
                 </div>
               </div>
               <div className="flex flex-col items-end md:items-start">
-                <h5 className="text-lg md:text-xl">Contact Us</h5>
+                <p className="text-lg md:text-xl">Contact Us</p>
                 <div className="flex gap-2 items-center">
                   <span className="font-normal text-xs flex md:text-base">
                     openhouse@cs.ui.ac.id
@@ -170,11 +170,11 @@ const Footer: React.FC<FooterProps> = ({ ...props }) => {
                   />
                 </div>
               </div>
-              <h3 className="text-xl text-right md:hidden">#MoreThanIT</h3>
+              <p className="text-xl text-right md:hidden">#MoreThanIT</p>
             </div>
             <div className="hidden md:flex flex-col gap-6">
               <div className="flex flex-col gap-2">
-                <h5 className="">Supported by</h5>
+                <p>Supported by</p>
                 <a href="https://cs.ui.ac.id/" target='_blank'>
                   <Image
                     className='cursor-pointer'
@@ -185,7 +185,7 @@ const Footer: React.FC<FooterProps> = ({ ...props }) => {
                   />
                 </a>
               </div>
-              <h3 className="text-4xl flex">#MoreThanIT</h3>
+              <p className="text-4xl flex">#MoreThanIT</p>
             </div>
           </div>
         </div>

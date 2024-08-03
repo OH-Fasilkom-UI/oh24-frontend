@@ -44,7 +44,7 @@ const TabsTrigger = React.forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={twMerge(
-      'font-tex-gyre font-bold inline-flex items-center justify-center rounded-xl whitespace-nowrap ring-offset-background transition-all',
+      'font-bold inline-flex items-center justify-center rounded-xl whitespace-nowrap ring-offset-background transition-all',
       'disabled:pointer-events-none disabled:opacity-50',
       'px-4 py-3 sm:px-8 sm:py-4 text-xs sm:text-sm',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',

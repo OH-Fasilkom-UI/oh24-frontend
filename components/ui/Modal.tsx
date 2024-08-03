@@ -56,10 +56,10 @@ const Modal = ({
                 <Icon size="4rem" />
               </div>
               <div className="flex flex-col space-y-1.5">
-                <DialogPrimitive.Title className="font-riffic text-3xl font-bold leading-none">
+                <DialogPrimitive.Title className="text-3xl font-bold leading-none">
                   {title}
                 </DialogPrimitive.Title>
-                <DialogPrimitive.Description className="font-tex-gyre">
+                <DialogPrimitive.Description>
                   {children}
                 </DialogPrimitive.Description>
               </div>

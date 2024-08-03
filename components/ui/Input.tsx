@@ -26,11 +26,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="flex flex-col gap-1">
         {label && (
-          <label className="text-t9 sm:text-t7 font-tex-gyre font-bold text-Text/TextLightBG/60">
+          <label className="text-t9 sm:text-t7 font-bold text-Text/TextLightBG/60">
             {label}
           </label>
         )}
-        <div className="flex items-center w-full rounded-3xl font-tex-gyre outline-none border-2 border-Text/TextLightBG/30 overflow-hidden relative">
+        <div className="flex items-center w-full rounded-3xl outline-none border-2 border-Text/TextLightBG/30 overflow-hidden relative">
           <div
             className={`absolute ${iconPosition === 'left' ? 'left-5' : 'right-5'} text-Text/TextLightBG/60`}
           >
@@ -49,7 +49,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {errorMessage && (
           <span className="text-RedRegion/Pohutukawa/500 flex gap-2">
             <AlertTriangle className="hidden sm:flex w-4" />
-            <p className="font-tex-gyre font-normal sm:font-bold items-center text-t9 sm:text-t7">
+            <p className="font-normal sm:font-bold items-center text-t9 sm:text-t7">
               {errorMessage}
             </p>
           </span>

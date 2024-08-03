@@ -25,7 +25,7 @@ const RadioGroupItem = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>
 >(({ id, className, children, ...props }, ref) => {
   return (
-    <div className="font-tex-gyre font-bold flex items-center space-x-2">
+    <div className="font-bold flex items-center space-x-2">
       <RadioGroupPrimitive.Item
         id={id}
         ref={ref}

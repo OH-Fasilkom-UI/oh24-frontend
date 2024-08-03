@@ -35,7 +35,7 @@ const Testimonials = ({
             />
           </Avatar>
           <div className="flex gap-[24px] md:gap-[20px] flex-col lg:w-[780px] md:w-[530px] max-sm:w-fit max-sm:px-[10px] max-md:w-[283px]">
-            <p className="text-Text/TextDarkBG font-tex-gyre max-md:text-[14px] leading-9 max-md:leading-[25px] font-extrabold text-justify md:text-[18px] text-[24px] max-sm:max-h-[250px] overflow-y-scroll sm:overflow-visible">
+            <p className="text-Text/TextDarkBG max-md:text-[14px] leading-9 max-md:leading-[25px] font-extrabold text-justify md:text-[18px] text-[24px] max-sm:max-h-[250px] overflow-y-scroll sm:overflow-visible">
               {(testimonyData ?? testimonials)[active].testimonial}
             </p>
             <p className="text-Text/TextDarkBG font-tex-gyre max-md:text-[14px] md:text-[20px] font-normal text-[24px]">

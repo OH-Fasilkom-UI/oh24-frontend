@@ -17,7 +17,7 @@ const SelectTrigger = React.forwardRef<
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      'font-tex-gyre font-bold rounded-lg flex px-4 h-10 w-full items-center justify-between roundedmd text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1',
+      'font-bold rounded-lg flex px-4 h-10 w-full items-center justify-between roundedmd text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1',
       'data-[state=open]:rounded-b-none [&>svg]:data-[state=open]:rotate-180',
       color === 'red'
         ? 'bg-RedRegion/Pohutukawa/700 text-RedRegion/Pohutukawa/100'
@@ -100,7 +100,7 @@ const SelectItem = React.forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      'last:rounded-b-lg font-tex-gyre font-bold relative flex w-full cursor-default select-none items-center py-2 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'last:rounded-b-lg font-bold relative flex w-full cursor-default select-none items-center py-2 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       'si',
       className
     )}

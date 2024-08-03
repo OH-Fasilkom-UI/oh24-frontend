@@ -20,7 +20,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       )}
       {...props}
     >
-      <h3 className="text-BlueRegion/Cornflower/100 text-4xl font-bold font-riffic">
+      <h3 className="text-BlueRegion/Cornflower/100 text-4xl font-bold">
         {title}
       </h3>
       {!!asset && (
@@ -28,7 +28,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
           {asset}
         </div>
       )}
-      <div className="text-BlueRegion/Cornflower/50 text-sm font-tex-gyre">
+      <div className="text-BlueRegion/Cornflower/50 text-sm">
         {children}
       </div>
       {!!buttons?.length && (

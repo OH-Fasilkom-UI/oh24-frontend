@@ -81,7 +81,7 @@ export const Timeline = () => {
                 }
                 flex flex-col rounded-[32px] gap-5 justify-center items-center py-20 px-[42px]  duration-300 transition-all cursor-pointer`}
             >
-              <h1 className="text-BlueRegion/Cornflower/100 tracking-[0.075rem] font-bold text-xl xl:text-2xl font-riffic">
+              <h1 className="text-BlueRegion/Cornflower/100 tracking-[0.075rem] font-bold text-xl xl:text-2xl">
                 {data.title}
               </h1>
               {
@@ -108,20 +108,20 @@ export const Timeline = () => {
             <Dialog>
               <DialogTrigger className="z-10">
                 <div className="flex flex-col gap-3 mb-[66px] w-[203px] whitespace-nowrap shadow-timeline bg-[#2E3881E5] text-center justify-center items-center px-6 py-7 rounded-[32px]">
-                  <h1 className="text-BlueRegion/Cornflower/100 tracking-[0.075rem] font-bold font-riffic">
+                  <h1 className="text-BlueRegion/Cornflower/100 tracking-[0.075rem] font-bold">
                     {data.title}
                   </h1>
-                  <p className="text-BlueRegion/Cornflower/100 text-[12px] font-normal font-tex-gyre">
+                  <p className="text-BlueRegion/Cornflower/100 text-[12px] font-normal">
                     {data.date}
                   </p>
                 </div>
               </DialogTrigger>
               <DialogContent className="bg-[#2E3881E5] border-0 w-[216px] flex flex-col gap-4 shadow-timeline py-12 px-6 rounded-[32px]">
                 <DialogHeader>
-                  <DialogTitle className="text-BlueRegion/Cornflower/100 tracking-[0.075rem] text-[16px] font-bold font-riffic">
+                  <DialogTitle className="text-BlueRegion/Cornflower/100 tracking-[0.075rem] text-[16px] font-bold">
                     {data.title}
                   </DialogTitle>
-                  <DialogDescription className="text-BlueRegion/Cornflower/100 text-start text-[12px] font-normal font-tex-gyre">
+                  <DialogDescription className="text-BlueRegion/Cornflower/100 text-start text-[12px] font-normal">
                     {data.description}
                   </DialogDescription>
                 </DialogHeader>

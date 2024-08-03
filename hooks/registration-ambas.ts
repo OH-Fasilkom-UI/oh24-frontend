@@ -19,7 +19,7 @@ export const useSubmitAmbassador = () => {
 export const useUploadAmbassadorFile = () => {
   return useMutation({
     mutationKey: ['reg', 'ambas', 'file'],
-    mutationFn: async (data: UploadAmbassadorFile & { field: string }) => {
+    mutationFn: async (data: UploadAmbassadorFile) => {
       const res = await uploadAmbassadorFile(data)
       return res
     },

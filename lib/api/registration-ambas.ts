@@ -24,17 +24,16 @@ export function submitAmbassador(data: SubmitAmbassadorData) {
 }
 
 export const uploadAmbassadorFileSchema = z.object({
-  file: z.any(), // berupa File
+  file: z.instanceof(File),
 })
 
-export type UploadAmbassadorFile = z.infer<typeof uploadAmbassadorFileSchema>
+export type UploadAmbassadorFile = z.infer<
+  typeof uploadAmbassadorFileSchema
+> & { field: 'followIG' | 'story' | 'twibbon' | 'cv' | 'mou' }
 
-export function uploadAmbassadorFile({
-  field,
-  ...data
-}: UploadAmbassadorFile & { field: string }) {
+export function uploadAmbassadorFile({ field, ...data }: UploadAmbassadorFile) {
   const body = new FormData()
-  // TODO: handle files
+  body.append('file', data.file)
 
   return fetch('/api/reg/ambas/', {
     method: 'POST',

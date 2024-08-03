@@ -15,16 +15,12 @@ const socialMediaLinks: {
   {
     name: 'Instagram',
     href: 'https://www.instagram.com/openhousecsui',
-    icon: <Instagram
-      className='cursor-pointer w-5 h-5 lg:w-6 lg:h-6'
-    />,
+    icon: <Instagram className="cursor-pointer w-5 h-5 lg:w-6 lg:h-6" />,
   },
   {
     name: 'Twitter',
     href: 'https://twitter.com/openhousecsui',
-    icon: <Twitter
-      className='cursor-pointer min-w-5 min-h-5 lg:w-6 lg:h-6'
-    />,
+    icon: <Twitter className="cursor-pointer min-w-5 min-h-5 lg:w-6 lg:h-6" />,
   },
   {
     name: 'Youtube',
@@ -52,7 +48,7 @@ const socialMediaLinks: {
       />
     ),
   },
-  ]
+]
 
 const routeLinks: {
   name: string

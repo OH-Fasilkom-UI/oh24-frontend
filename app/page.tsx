@@ -27,14 +27,6 @@ export default function Home() {
   const [file, setFile] = useState<File | null>(null)
   const [profilePic, setProfilePic] = useState(0)
 
-  const { isAuthenticated } = useIsAuthenticated()
-  const { logout } = useLogout()
-  const { login } = useLogin()
-
-  const { personalData } = usePersonalData()
-  const { mutate } = usePersonalDataMutation()
-  console.log('personaldata', personalData)
-
   return (
     <>
       <main className="p-10 min-h-screen relative z-20">
@@ -47,10 +39,6 @@ export default function Home() {
           placeholder="profile picture number"
           onChange={(e) => setProfilePic(parseInt(e.target.value))}
         />
-        <Button onClick={() => mutate({ profilePic })}>
-          Change Profile Picture
-        </Button>
-        <Button onClick={() => logout()}>Log Out</Button>
         <GoogleLogin onCredential={(credential) => login(credential)} />
         <Input
           placeholder="Masukkan nama"

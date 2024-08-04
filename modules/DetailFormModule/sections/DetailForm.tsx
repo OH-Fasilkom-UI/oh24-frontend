@@ -2,11 +2,11 @@
 
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useRouter } from 'next/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Card from '@/components/ui/Card'
 import Button from '@/components/ui/Button'
 import RadioGroup from '@/components/ui/RadioGroup'
-import { Label } from '@/components/ui/label'
 import Input from '@/components/ui/Input'
 import {
   Class,
@@ -14,8 +14,12 @@ import {
   SubmitPersonalData,
   submitPersonalDataSchema,
 } from '@/lib/api/registration'
+import { useSubmitPersonalData } from '@/hooks/registration'
 
 const DetailForm = () => {
+  const { mutate } = useSubmitPersonalData()
+  const router = useRouter()
+
   const {
     handleSubmit,
     register,
@@ -25,9 +29,14 @@ const DetailForm = () => {
     resolver: zodResolver(submitPersonalDataSchema),
   })
 
-  function onSubmit(values: SubmitPersonalData) {
-    // nanti diubah jadi logic submit
-    console.log(values)
+  function onSubmit(data: SubmitPersonalData) {
+    mutate(data, {
+      onSuccess(res) {
+        if (res.ok) {
+          router.push('/profile')
+        }
+      },
+    })
   }
 
   return (

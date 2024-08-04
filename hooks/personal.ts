@@ -29,6 +29,8 @@ export const usePersonalData = () => {
       const res = await fetch('/api/personal/my')
       const data = await res.json()
 
+      console.log(data.personal)
+
       return res.ok ? (data.personal as PersonalData) : null
     },
   })

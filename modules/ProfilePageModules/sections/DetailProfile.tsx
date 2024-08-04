@@ -1,24 +1,51 @@
 'use client'
 import React from 'react'
+import { useRouter } from 'next/navigation'
+import { Pencil } from 'lucide-react'
 import { Avatar, AvatarImage } from '@/components/ui/Avatar'
-import { DetailProfileConstant, PandaImages } from '../constant'
+import { PandaImages } from '../constant'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/Tooltip'
-import { Pencil } from 'lucide-react'
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
+import { PersonalData, usePersonalData } from '@/hooks/personal'
+
+interface FieldProps {
+  label: string
+  value: string
+}
+
+const Field = (props: FieldProps) => {
+  return (
+    <div className="text-Text/TextLightBG flex flex-col gap-1 max-md:text-center">
+      <p className="text-lg font-bold">{props.label}</p>
+      <p className="text-md font-normal">{props.value}</p>
+    </div>
+  )
+}
 
 export const DetailProfile = () => {
-  const handleProfileChange = (src: string) => {
-    // handle change profile logic later
+  const { personalData, isLoading } = usePersonalData()
+  const router = useRouter()
+
+  if (isLoading) {
+    return 'loading...' // TODO: change this
   }
+
+  if (!personalData) {
+    router.push('/')
+    return <></>
+  }
+
+  const handleProfileChange = (src: string) => {}
+
   return (
     <div className="mt-[10vh] flex flex-col md:px-[120px] xl:px-[190px] py-10 max-md:pb-20 justify-center items-center md:items-start md:justify-start gap-[35px]">
       <h1 className="text-[36px] text-[#2E3881] font-bold font-riffic tracking-[0.075rem]">
@@ -79,19 +106,14 @@ export const DetailProfile = () => {
           </Popover>
         </div>
         <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
-          {DetailProfileConstant.map((item) => (
-            <div
-              key={item.title}
-              className="flex flex-col gap-1 max-md:text-center"
-            >
-              <p className="text-[#2E3881] text-[20px] font-bold font-tex-gyre">
-                {item.title}
-              </p>
-              <p className="text-[#2E3881] text-[16px] font-normal font-tex-gyre">
-                {item.value}
-              </p>
-            </div>
-          ))}
+          <Field label='Nama Lengkap' value={personalData.fullName} />
+          <Field label='Email' value={'TODO'} />
+          <Field label='Domisili' value={personalData.domicile} />
+          <Field label='WhatsApp' value={personalData.phone} />
+          <Field label='Tanggal Lahir' value={personalData.dob} />
+          <Field label='Kelas' value={personalData.class} />
+          <Field label='Asal Sekolah' value={personalData.school ?? ''} />
+          <Field label='Nomor Telepon Orang Tua' value={personalData.parentPhone} />
         </div>
       </div>
     </div>

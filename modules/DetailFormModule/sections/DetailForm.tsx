@@ -11,13 +11,12 @@ import Input from '@/components/ui/Input'
 import {
   Class,
   Domicile,
+  submitPersonalData,
   SubmitPersonalData,
   submitPersonalDataSchema,
 } from '@/lib/api/registration'
-import { useSubmitPersonalData } from '@/hooks/registration'
 
 const DetailForm = () => {
-  const { mutate } = useSubmitPersonalData()
   const router = useRouter()
 
   const {
@@ -29,14 +28,12 @@ const DetailForm = () => {
     resolver: zodResolver(submitPersonalDataSchema),
   })
 
-  function onSubmit(data: SubmitPersonalData) {
-    mutate(data, {
-      onSuccess(res) {
-        if (res.ok) {
-          router.push('/profile')
-        }
-      },
-    })
+  async function onSubmit(data: SubmitPersonalData) {
+    const res = await submitPersonalData(data)
+
+    if (res.ok) {
+      router.push('/profile')
+    }
   }
 
   return (

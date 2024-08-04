@@ -44,26 +44,22 @@ const DetailForm = () => {
             {...register('fullName')}
           />
 
-          <div>
-            <Label className="text-xs md:text-base font-bold mb-2 block">
-              Domisili
-            </Label>
-            <RadioGroup
-              size="normal"
-              color="light"
-              className="flex flex-col space-y-1"
-              onValueChange={(value: unknown) =>
-                setValue('domicile', value as Domicile)
-              }
-            >
-              <RadioGroup.Item value="JABODETABEK" id="jabodetabek">
-                Jabodetabek
-              </RadioGroup.Item>
-              <RadioGroup.Item value="NON_JABODETABEK" id="luar-jabodetabek">
-                Luar Jabodetabek
-              </RadioGroup.Item>
-            </RadioGroup>
-          </div>
+          <RadioGroup
+            label="Domisili"
+            size="normal"
+            color="light"
+            className="flex flex-col space-y-1"
+            onValueChange={(value: unknown) =>
+              setValue('domicile', value as Domicile)
+            }
+          >
+            <RadioGroup.Item value="JABODETABEK" id="jabodetabek">
+              Jabodetabek
+            </RadioGroup.Item>
+            <RadioGroup.Item value="NON_JABODETABEK" id="luar-jabodetabek">
+              Luar Jabodetabek
+            </RadioGroup.Item>
+          </RadioGroup>
 
           <Input
             label="Tanggal Lahir"
@@ -96,38 +92,34 @@ const DetailForm = () => {
         </div>
 
         <div className="space-y-4 md:mt-4">
-          <div>
-            <Label className="text-xs md:text-base font-bold mb-2 block">
-              Kelas
-            </Label>
-            <RadioGroup
-              size="normal"
-              color="light"
-              className="flex flex-col space-y-1"
-              onValueChange={(value: unknown) =>
-                setValue('class', value as Class)
-              }
-            >
-              <RadioGroup.Item value="SMA_KELAS_10_SEDERAJAT" id="kelas-10">
-                Kelas 10
-              </RadioGroup.Item>
-              <RadioGroup.Item value="SMA_KELAS_11_SEDERAJAT" id="kelas-11">
-                Kelas 11
-              </RadioGroup.Item>
-              <RadioGroup.Item value="SMA_KELAS_12_SEDERAJAT" id="kelas-12">
-                Kelas 12
-              </RadioGroup.Item>
-              <RadioGroup.Item value="GAPYEAR" id="gapyear">
-                Gapyear
-              </RadioGroup.Item>
-              <RadioGroup.Item value="SEMIGAP" id="semigap">
-                Semigap
-              </RadioGroup.Item>
-              <RadioGroup.Item value="SMP_SEDERAJAT" id="smp">
-                SMP
-              </RadioGroup.Item>
-            </RadioGroup>
-          </div>
+          <RadioGroup
+            label="Kelas"
+            size="normal"
+            color="light"
+            className="flex flex-col space-y-1"
+            onValueChange={(value: unknown) =>
+              setValue('class', value as Class)
+            }
+          >
+            <RadioGroup.Item value="SMA_KELAS_10_SEDERAJAT" id="kelas-10">
+              Kelas 10
+            </RadioGroup.Item>
+            <RadioGroup.Item value="SMA_KELAS_11_SEDERAJAT" id="kelas-11">
+              Kelas 11
+            </RadioGroup.Item>
+            <RadioGroup.Item value="SMA_KELAS_12_SEDERAJAT" id="kelas-12">
+              Kelas 12
+            </RadioGroup.Item>
+            <RadioGroup.Item value="GAPYEAR" id="gapyear">
+              Gapyear
+            </RadioGroup.Item>
+            <RadioGroup.Item value="SEMIGAP" id="semigap">
+              Semigap
+            </RadioGroup.Item>
+            <RadioGroup.Item value="SMP_SEDERAJAT" id="smp">
+              SMP
+            </RadioGroup.Item>
+          </RadioGroup>
 
           <Input
             label="Nama Orang tua"

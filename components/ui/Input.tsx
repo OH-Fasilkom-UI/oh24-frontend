@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { twMerge } from 'tailwind-merge'
 import { AlertTriangle } from 'lucide-react'
+import { Label } from './label'
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -34,9 +35,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             : 'text-Text/TextLightBG/60'
         )}
       >
-        {label && (
-          <label className="text-t9 sm:text-t7 font-bold">{label}</label>
-        )}
+        {label && <Label>{label}</Label>}
         <div
           className={twMerge(
             'flex items-center w-full rounded-3xl outline-none border-2 overflow-hidden relative',

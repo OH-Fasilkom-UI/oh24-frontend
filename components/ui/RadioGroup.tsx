@@ -5,6 +5,7 @@ import * as RadioGroupPrimitive from '@radix-ui/react-radio-group'
 import { Circle } from 'lucide-react'
 import { twMerge } from 'tailwind-merge'
 import { cva } from 'class-variance-authority'
+import { Label } from './label'
 
 const radioGroupVariants = cva('', {
   variants: {
@@ -49,6 +50,7 @@ RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName
 
 interface RadioGroupProps
   extends React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root> {
+  label?: string
   size: 'normal' | 'small'
   color: 'light' | 'dark'
 }
@@ -63,17 +65,22 @@ interface RadioGroupType
 const RadioGroup = React.forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Root>,
   RadioGroupProps
->(({ className, size, color, ...props }, ref) => {
+>(({ className, label, size, color, ...props }, ref) => {
+  const Comp = !!label ? 'div' : React.Fragment
+
   return (
-    <RadioGroupPrimitive.Root
-      className={twMerge(
-        'grid gap-2',
-        radioGroupVariants({ size, color }),
-        className
-      )}
-      {...props}
-      ref={ref}
-    />
+    <Comp>
+      {!!label && <Label className='mb-4'>{label}</Label>}
+      <RadioGroupPrimitive.Root
+        className={twMerge(
+          'grid gap-1',
+          radioGroupVariants({ size, color }),
+          className
+        )}
+        {...props}
+        ref={ref}
+      />
+    </Comp>
   )
 }) as RadioGroupType
 

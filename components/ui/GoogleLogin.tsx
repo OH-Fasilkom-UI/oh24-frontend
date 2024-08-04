@@ -1,13 +1,13 @@
 'use client'
 
 import Script from 'next/script'
-import { useRef } from 'react'
+import { useRef, ComponentPropsWithoutRef } from 'react'
 
-export interface GoogleLoginProps {
+export interface GoogleLoginProps extends ComponentPropsWithoutRef<'div'> {
   onCredential: (credential: string) => void
 }
 
-const GoogleLogin = ({ onCredential }: GoogleLoginProps) => {
+const GoogleLogin = ({ onCredential, ...props }: GoogleLoginProps) => {
   const divRef = useRef<HTMLDivElement>(null)
 
   const onLoad = () => {
@@ -35,7 +35,7 @@ const GoogleLogin = ({ onCredential }: GoogleLoginProps) => {
   return (
     <>
       <Script src="https://accounts.google.com/gsi/client" onLoad={onLoad} />
-      <div ref={divRef} id="login-with-google-button" />
+      <div ref={divRef} id="login-with-google-button" {...props} />
     </>
   )
 }

@@ -1,9 +1,13 @@
-import Button from '@/components/ui/Button'
+'use client'
+
 import React from 'react'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { useLogin } from '@/hooks/auth'
+import GoogleLogin from '@/components/ui/GoogleLogin'
 
 export const LoginPage = () => {
+  const { login } = useLogin()
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
@@ -20,10 +24,10 @@ export const LoginPage = () => {
         <p>Welcome to </p>
         Open House <br className="md:hidden" /> Fasilkom UI 2024
       </div>
-      <Button className="mt-[64px]">
-        <Image src="/logo-google.png" alt="google" width={38} height={38} />
-        Log In with Google
-      </Button>
+      <GoogleLogin
+        onCredential={credential => login(credential)}
+        className='mt-10'
+      />
     </motion.div>
   )
 }

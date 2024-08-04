@@ -1,10 +1,11 @@
+import { isAuthenticated, loginWithGoogle, logout } from '@/lib/api/auth'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 
 export const useIsAuthenticated = () => {
   const { data, ...rest } = useQuery({
-    queryKey: ['auth', 'is_logged_in'],
+    queryKey: ['auth', 'is_authenticated'],
     queryFn: async () => {
-      const res = await fetch('/api/auth/user')
+      const res = await isAuthenticated()
       return res.ok
     },
   })
@@ -14,47 +15,36 @@ export const useIsAuthenticated = () => {
 
 export const useLogin = () => {
   const queryClient = useQueryClient()
-  const { mutate, ...rest } = useMutation({
+  return useMutation({
     mutationKey: ['auth', 'login'],
     mutationFn: async (credential: string) => {
-      const res = await fetch('/api/auth/user/google', {
-        method: 'POST',
-        body: JSON.stringify({ credential }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
+      const res = await loginWithGoogle(credential)
 
       if (res.ok) {
-        queryClient.invalidateQueries({ queryKey: ['auth', 'is_logged_in'] })
+        queryClient.invalidateQueries({
+          queryKey: ['auth', 'is_authenticated'],
+        })
       }
 
       return res.json()
     },
   })
-
-  return { login: mutate, ...rest }
 }
 
 export const useLogout = () => {
   const queryClient = useQueryClient()
-  const { mutate, ...rest } = useMutation({
-    mutationKey: ['auth', 'login'],
+  return useMutation({
+    mutationKey: ['auth', 'logout'],
     mutationFn: async () => {
-      const res = await fetch('/api/auth/user/logout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
+      const res = await logout()
 
       if (res.ok) {
-        queryClient.invalidateQueries({ queryKey: ['auth', 'is_logged_in'] })
+        queryClient.invalidateQueries({
+          queryKey: ['auth', 'is_authenticated'],
+        })
       }
 
       return res.json()
     },
   })
-
-  return { logout: mutate, ...rest }
 }

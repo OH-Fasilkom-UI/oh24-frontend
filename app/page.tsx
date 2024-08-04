@@ -17,9 +17,6 @@ import {
 import FileInput from '@/components/ui/FileInput'
 import { useState } from 'react'
 import Footer from '@/components/elements/Footer'
-import GoogleLogin from '@/components/ui/GoogleLogin'
-import { useIsAuthenticated, useLogin, useLogout } from '@/hooks/auth'
-import { usePersonalData, usePersonalDataMutation } from '@/hooks/personal'
 import Testimonials from '@/components/elements/Testimonials'
 
 export default function Home() {
@@ -39,7 +36,6 @@ export default function Home() {
           placeholder="profile picture number"
           onChange={(e) => setProfilePic(parseInt(e.target.value))}
         />
-        <GoogleLogin onCredential={(credential) => login(credential)} />
         <Input
           placeholder="Masukkan nama"
           errorMessage="Nama tidak boleh kosong"

@@ -8,7 +8,7 @@ import GoogleLogin from '@/components/ui/GoogleLogin'
 
 export const LoginPage = () => {
   const router = useRouter()
-  const { login } = useLogin()
+  const { mutate: login } = useLogin()
 
   return (
     <motion.div

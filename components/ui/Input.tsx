@@ -7,6 +7,7 @@ export interface InputProps
   label?: string
   errorMessage?: string
   icon?: React.ReactNode
+  color?: 'light' | 'dark'
   iconPosition?: 'left' | 'right'
 }
 
@@ -18,21 +19,34 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       errorMessage,
       icon,
       label,
+      color = 'light',
       iconPosition = 'left',
       ...props
     },
     ref
   ) => {
     return (
-      <div className="flex flex-col gap-1">
-        {label && (
-          <label className="text-t9 sm:text-t7 font-bold text-Text/TextLightBG/60">
-            {label}
-          </label>
+      <div
+        className={twMerge(
+          'flex flex-col gap-1',
+          color === 'light'
+            ? 'text-Text/TextDarkBG'
+            : 'text-Text/TextLightBG/60'
         )}
-        <div className="flex items-center w-full rounded-3xl outline-none border-2 border-Text/TextLightBG/30 overflow-hidden relative">
+      >
+        {label && (
+          <label className="text-t9 sm:text-t7 font-bold">{label}</label>
+        )}
+        <div
+          className={twMerge(
+            'flex items-center w-full rounded-3xl outline-none border-2 overflow-hidden relative',
+            color === 'light'
+              ? 'border-Text/TextDarkBG'
+              : 'border-Text/TextLightBG/30'
+          )}
+        >
           <div
-            className={`absolute ${iconPosition === 'left' ? 'left-5' : 'right-5'} text-Text/TextLightBG/60`}
+            className={`absolute ${iconPosition === 'left' ? 'left-5' : 'right-5'}`}
           >
             {icon}
           </div>
@@ -41,7 +55,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             type={type}
             ref={ref}
             className={twMerge(
-              `w-full h-full bg-transparent hover:bg-white/30 outline-none focus:bg-white/30 px-5 ${icon ? (iconPosition === 'left' ? 'pl-14' : 'pr-14') : ''} py-3 duration-300 placeholder:text-Text/TextLightBG/30 text-t9 sm:text-t7`,
+              `w-full h-full bg-transparent hover:bg-white/30 outline-none focus:bg-white/30 px-5 ${icon ? (iconPosition === 'left' ? 'pl-14' : 'pr-14') : ''} py-3 duration-300 text-t9 sm:text-t7`,
+              color === 'light'
+                ? 'placeholder:text-Text/TextDarkBG/30'
+                : 'placeholder:text-Text/TextLightBG/30',
               className
             )}
           />

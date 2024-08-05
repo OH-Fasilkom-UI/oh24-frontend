@@ -15,7 +15,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
-import { PersonalData, usePersonalData } from '@/hooks/personal'
+import { useUserData } from '@/hooks/user'
 
 interface FieldProps {
   label: string
@@ -32,14 +32,14 @@ const Field = (props: FieldProps) => {
 }
 
 export const DetailProfile = () => {
-  const { personalData, isLoading } = usePersonalData()
+  const { userData, isLoading } = useUserData({ personal: true })
   const router = useRouter()
 
   if (isLoading) {
     return 'loading...' // TODO: change this
   }
 
-  if (!personalData) {
+  if (!userData) {
     router.push('/')
     return <></>
   }
@@ -106,14 +106,17 @@ export const DetailProfile = () => {
           </Popover>
         </div>
         <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
-          <Field label='Nama Lengkap' value={personalData.fullName} />
-          <Field label='Email' value={'TODO'} />
-          <Field label='Domisili' value={personalData.domicile} />
-          <Field label='WhatsApp' value={personalData.phone} />
-          <Field label='Tanggal Lahir' value={personalData.dob} />
-          <Field label='Kelas' value={personalData.class} />
-          <Field label='Asal Sekolah' value={personalData.school ?? ''} />
-          <Field label='Nomor Telepon Orang Tua' value={personalData.parentPhone} />
+          <Field label="Nama Lengkap" value={userData.personal?.fullName} />
+          <Field label="Email" value={userData.email} />
+          <Field label="Domisili" value={userData.personal?.domicile} />
+          <Field label="WhatsApp" value={userData.personal?.phone} />
+          <Field label="Tanggal Lahir" value={userData.personal?.dob} />
+          <Field label="Kelas" value={userData.personal?.class} />
+          <Field label="Asal Sekolah" value={userData.personal?.school ?? ''} />
+          <Field
+            label="Nomor Telepon Orang Tua"
+            value={userData.personal?.parentPhone}
+          />
         </div>
       </div>
     </div>

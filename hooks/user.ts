@@ -1,23 +1,24 @@
 import {
-  getMyPersonalData,
-  PersonalData,
+  getMyUserData,
   updateMyPersonalData,
   UpdatePersonalData,
-} from '@/lib/api/personal'
+  UserData,
+  UserDataJoins,
+} from '@/lib/api/user'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 
-export const usePersonalData = () => {
-  const { data, ...rest } = useQuery({
+export function useUserData<T extends UserDataJoins>(joins: T | {} = {}) {
+  const { data, ...rest } = useQuery<UserData<T>>({
     queryKey: ['personal', 'my'],
     queryFn: async () => {
-      const res = await getMyPersonalData()
+      const res = await getMyUserData(joins)
       const data = await res.json()
 
-      return res.ok ? (data.personal as PersonalData) : null
+      return res.ok ? data.user : null
     },
   })
 
-  return { personalData: data, ...rest }
+  return { userData: data, ...rest }
 }
 
 export const usePersonalDataMutation = () => {

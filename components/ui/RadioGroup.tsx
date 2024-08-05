@@ -70,7 +70,7 @@ const RadioGroup = React.forwardRef<
 
   return (
     <Comp>
-      {!!label && <Label className='mb-4'>{label}</Label>}
+      {!!label && <Label className="mb-4">{label}</Label>}
       <RadioGroupPrimitive.Root
         className={twMerge(
           'grid gap-1',

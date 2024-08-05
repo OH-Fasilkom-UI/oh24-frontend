@@ -20,7 +20,7 @@ export const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="z-50 backdrop-blur-sm fixed w-full flex justify-between items-center px-12 py-4 max-md:py-2 bg-[#0000001A]"
+      className="z-50 backdrop-blur-sm fixed w-full flex justify-between items-center px-4 md:px-12 py-4 bg-[#0000001A]"
     >
       <div className="relative w-[170px] h-[44px]">
         <Image

@@ -21,13 +21,13 @@ export const DetailFormModule = () => {
             Lengkapi Data Dirimu!
           </h1>
         </div>
-        <div className="relative flex-grow overflow-hidden">
+        <div className="relative flex-grow overflow-visible">
           <Image
             src="/kereta-terbang.png"
             alt="kereta"
             width={310}
             height={250}
-            className="absolute max-md:top-1/2 max-lg:top-[530px] top-0 right-0 max-md:w-[200px] max-md:h-auto max-lg:translate-x-1/4 md:w-[300px] md:h-[240px]"
+            className="absolute max-sm:top-[55%] max-lg:top-[55%]  lg:-translate-y-20 right-0 max-md:w-[200px] max-md:h-auto max-lg:translate-x-1/4 md:w-[300px] md:h-[240px] lg:w-[350px] lg:h-auto"
           />
           <div className="mt-[43px] z-100 max-md:px-[20px] md:px-[30px] lg:px-[123px] mb-10">
             <DetailForm />

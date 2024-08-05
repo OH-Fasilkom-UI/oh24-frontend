@@ -29,7 +29,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div
         className={twMerge(
-          'flex flex-col gap-1',
+          'flex flex-col gap-3',
           color === 'light'
             ? 'text-Text/TextDarkBG'
             : 'text-Text/TextLightBG/60'

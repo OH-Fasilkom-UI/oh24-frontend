@@ -1,10 +1,14 @@
+'use client'
 import Image from 'next/image'
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 import { useDropzone, DropzoneInputProps } from 'react-dropzone'
 import { twMerge } from 'tailwind-merge'
-import { Trash2 } from 'lucide-react'
+import { Trash2, Upload } from 'lucide-react'
 import { toast } from './Toast'
 import Stack from './Stack'
+import { Dialog, DialogContent } from './Dialog'
+import Button from './Button'
+import { Label } from './label'
 
 export interface DeleteFileButtonProps {
   resetFile: () => void
@@ -26,6 +30,7 @@ export interface DropzoneProps {
   className?: string
   secondaryMessage?: string
   maxSizeInByte?: number
+  label?: string
 }
 
 const DeleteFileButton = ({ resetFile }: DeleteFileButtonProps) => {
@@ -104,7 +109,9 @@ const FileInput = ({
   className,
   secondaryMessage,
   maxSizeInByte = 5 * 1024 * 1024,
+  label,
 }: DropzoneProps) => {
+  const [open, setOpen] = useState(false)
   const onDrop = useCallback((acceptedFiles: File[]) => {
     const file = acceptedFiles[0]
 
@@ -128,31 +135,45 @@ const FileInput = ({
   })
 
   return (
-    <div
-      className={twMerge(
-        'p-4 bg-BlueRegion/Cornflower/50 shadow-[0_0_20px_0_rgba(31,82,229,0.40)] dark:shadow-[0_0_20px_0_rgba(251,251,251,0.40)] rounded-[20px] max-w-[594px] font-sans',
-        className
-      )}
-    >
-      <div
-        {...getRootProps()}
-        className={`bg-[#FBFBFB] h-full p-3  border-[2px] border-dashed cursor-pointer flex justify-center items-center rounded-xl ${
-          isDragActive ? 'active' : ''
-        } border-Text/TextLightBG
-        `}
-      >
-        <input {...getInputProps()} />
-
-        {file ? (
-          <UploadedElement file={file} setFile={setFile} />
-        ) : (
-          <NotUploadedElement
-            secondaryMessage={secondaryMessage}
-            getInputProps={getInputProps}
-          />
-        )}
+    <Dialog open={open} onOpenChange={setOpen}>
+      <div className={'flex flex-col gap-3 text-Text/TextDarkBG'}>
+        {label && <Label>{label}</Label>}
+        <div className={'flex flex-row gap-4'}>
+          <p className="w-full rounded-3xl outline-none border-2 py-3 px-5 overflow-hidden relative text-Text/TextDarkBG font-normal font-tex-gyre text-[16px]">
+            {file ? file.name : secondaryMessage}
+          </p>
+          <Button variant={'secondary'} onClick={() => setOpen(true)}>
+            <Upload />
+          </Button>
+        </div>
       </div>
-    </div>
+      <DialogContent
+        showCloseButton
+        className={twMerge(
+          'p-4 bg-BlueRegion/Cornflower/50 shadow-[0_0_20px_0_rgba(31,82,229,0.40)] dark:shadow-[0_0_20px_0_rgba(251,251,251,0.40)] rounded-[20px] max-w-[594px] font-sans',
+          className
+        )}
+      >
+        <div
+          {...getRootProps()}
+          className={`bg-[#FBFBFB] h-full p-3  border-[2px] border-dashed cursor-pointer flex justify-center items-center rounded-xl ${
+            isDragActive ? 'active' : ''
+          } border-Text/TextLightBG
+        `}
+        >
+          <input {...getInputProps()} />
+
+          {file ? (
+            <UploadedElement file={file} setFile={setFile} />
+          ) : (
+            <NotUploadedElement
+              secondaryMessage={secondaryMessage}
+              getInputProps={getInputProps}
+            />
+          )}
+        </div>
+      </DialogContent>
+    </Dialog>
   )
 }
 

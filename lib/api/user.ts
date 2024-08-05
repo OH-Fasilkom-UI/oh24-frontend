@@ -1,5 +1,19 @@
 import { z } from 'zod'
 
+enum Domicile {
+  JABODETABEK = 'JABODETABEK',
+  NON_JABODETABEK = 'NON_JABODETABEK',
+}
+
+enum Class {
+  SMP_SEDERAJAT = 'SMP_SEDERAJAT',
+  SMA_KELAS_10_SEDERAJAT = 'SMA_KELAS_10_SEDERAJAT',
+  SMA_KELAS_11_SEDERAJAT = 'SMA_KELAS_11_SEDERAJAT',
+  SMA_KELAS_12_SEDERAJAT = 'SMA_KELAS_12_SEDERAJAT',
+  GAPYEAR = 'GAPYEAR',
+  SEMIGAP = 'SEMIGAP',
+}
+
 enum Role {
   NONE = 'NONE',
   MENTEE = 'MENTEE',
@@ -23,12 +37,39 @@ export interface PersonalData {
   dob: string
   age: number
   school: string | null
-  class: string
+  class: Class
   phone: string
   lineId: string
-  domicile: string
+  domicile: Domicile
   parentName: string
   parentPhone: string
+}
+
+export function formatPersonalData(
+  data?: PersonalData
+): PersonalData | undefined {
+  if (!data) {
+    return undefined
+  }
+
+  // This looks so bad lmao
+
+  return {
+    ...data,
+    dob: new Date(data.dob).toLocaleDateString('id-ID', { dateStyle: 'long' }),
+    class: {
+      [Class.SMP_SEDERAJAT]: 'SMP',
+      [Class.SMA_KELAS_10_SEDERAJAT]: 'Kelas 10',
+      [Class.SMA_KELAS_11_SEDERAJAT]: 'Kelas 11',
+      [Class.SMA_KELAS_12_SEDERAJAT]: 'Kelas 12',
+      [Class.GAPYEAR]: 'Gap Year',
+      [Class.SEMIGAP]: 'Semigap',
+    }[data.class] as Class,
+    domicile: {
+      [Domicile.JABODETABEK]: 'Jabodetabek',
+      [Domicile.NON_JABODETABEK]: 'Luar Jabodetabek',
+    }[data.domicile] as Domicile,
+  }
 }
 
 export interface UserDataJoins {

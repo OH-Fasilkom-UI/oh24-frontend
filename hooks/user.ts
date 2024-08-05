@@ -1,4 +1,5 @@
 import {
+  formatPersonalData,
   getMyUserData,
   updateMyPersonalData,
   UpdatePersonalData,
@@ -13,6 +14,8 @@ export function useUserData<T extends UserDataJoins>(joins: T | {} = {}) {
     queryFn: async () => {
       const res = await getMyUserData(joins)
       const data = await res.json()
+
+      data.user.personal = formatPersonalData(data.user.personal)
 
       return res.ok ? data.user : null
     },

@@ -45,9 +45,9 @@ export const NAVBAR_LOGIN = [
     icon: CircleUserRound,
     label: 'Profile',
   },
-  {
-    href: '/logout',
-    icon: LogOut,
-    label: 'Logout',
-  },
+  // {
+  //   href: '/logout',
+  //   icon: LogOut,
+  //   label: 'Logout',
+  // },
 ]

@@ -1,7 +1,7 @@
 'use client'
 import Button from '@/components/ui/Button'
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
-import { AlignRight, ChevronDown } from 'lucide-react'
+import { AlignRight, ChevronDown, LogOut } from 'lucide-react'
 import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 import React, { useState } from 'react'
@@ -74,9 +74,7 @@ export const Navbar = () => {
                   <p
                     key={index}
                     onClick={() => {
-                      link.label === 'Logout'
-                        ? setIsLogin(false)
-                        : router.push(link.href)
+                      router.push(link.href)
                       setIsUserMenuOpen(false)
                     }}
                     className="text-BlueRegion/Portgage/700 hover:text-RedRegion/Monza/700 duration-300 cursor-pointer justify-start flex flex-row gap-3 font-tex-gyre font-bold p-2 items-center text-[16px]"
@@ -89,6 +87,15 @@ export const Navbar = () => {
                     {link.label}
                   </p>
                 ))}
+                <p
+                  onClick={() => setIsLogin(false)}
+                  className="text-BlueRegion/Portgage/700 hover:text-RedRegion/Monza/700 duration-300 cursor-pointer justify-start flex flex-row gap-3 font-tex-gyre font-bold p-2 items-center text-[16px]"
+                >
+                  <span className="w-[20px] h-[20px]">
+                    <LogOut />
+                  </span>
+                  Logout
+                </p>
               </PopoverContent>
             </Popover>
           ) : (
@@ -130,23 +137,32 @@ export const Navbar = () => {
                 </Link>
               ))}
               {isLogin ? (
-                NAVBAR_LOGIN.map((link, index) => (
-                  <p
-                    key={index}
-                    onClick={() => {
-                      if (link.label === 'Logout') {
-                        setIsLogin(false)
-                      } else {
+                <>
+                  {NAVBAR_LOGIN.map((link, index) => (
+                    <p
+                      key={index}
+                      onClick={() => {
                         router.push(link.href)
-                      }
-                      setIsMobileMenuOpen(false)
-                    }}
+                        setIsMobileMenuOpen(false)
+                      }}
+                      className="text-BlueRegion/Portgage/700 cursor-pointer justify-start flex flex-row font-tex-gyre items-center gap-4 text-[12px]"
+                    >
+                      {link.icon && (
+                        <span>{React.createElement(link.icon)}</span>
+                      )}
+                      {link.label}
+                    </p>
+                  ))}
+                  <p
+                    onClick={() => setIsLogin(false)}
                     className="text-BlueRegion/Portgage/700 cursor-pointer justify-start flex flex-row font-tex-gyre items-center gap-4 text-[12px]"
                   >
-                    {link.icon && <span>{React.createElement(link.icon)}</span>}
-                    {link.label}
+                    <span>
+                      <LogOut />{' '}
+                    </span>
+                    Logout
                   </p>
-                ))
+                </>
               ) : (
                 <Link href={paths.login}>
                   <Button className="w-full h-fit px-8">Log In</Button>

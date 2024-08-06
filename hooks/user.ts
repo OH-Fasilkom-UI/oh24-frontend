@@ -7,11 +7,10 @@ import {
   UserDataJoins,
 } from '@/lib/api/user'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { useRouter } from 'next/navigation'
+import { redirect } from 'next/navigation'
 
 export function useUserData<T extends UserDataJoins>(joins: T | {} = {}) {
   const queryClient = useQueryClient()
-  const router = useRouter()
 
   const { data, isError, ...rest } = useQuery<UserData<T>>({
     queryKey: ['personal', 'my'],
@@ -23,6 +22,7 @@ export function useUserData<T extends UserDataJoins>(joins: T | {} = {}) {
           queryKey: ['auth', 'is_authenticated'],
         })
 
+        console.log('throw')
         throw new Error()
       }
 
@@ -34,7 +34,7 @@ export function useUserData<T extends UserDataJoins>(joins: T | {} = {}) {
   })
 
   if (isError) {
-    router.push('/login')
+    redirect('/login')
   }
 
   return { userData: data, ...rest }

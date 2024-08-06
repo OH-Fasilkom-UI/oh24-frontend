@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import { useRouter } from 'next/navigation'
 import { Pencil } from 'lucide-react'
 import { Avatar, AvatarImage } from '@/components/ui/Avatar'
 import { PandaImages } from '../constant'
@@ -19,29 +18,23 @@ import { useUserData } from '@/hooks/user'
 
 interface FieldProps {
   label: string
-  value: string
+  value?: string | null
 }
 
-const Field = (props: FieldProps) => {
+const Field = ({ label, value = "" }: FieldProps) => {
   return (
     <div className="text-Text/TextLightBG flex flex-col gap-1 max-md:text-center">
-      <p className="text-lg font-bold">{props.label}</p>
-      <p className="text-md font-normal">{props.value}</p>
+      <p className="text-lg font-bold">{label}</p>
+      <p className="text-md font-normal">{value}</p>
     </div>
   )
 }
 
 export const DetailProfile = () => {
   const { userData, isLoading } = useUserData({ personal: true })
-  const router = useRouter()
 
   if (isLoading) {
     return 'loading...' // TODO: change this
-  }
-
-  if (!userData) {
-    router.push('/')
-    return <></>
   }
 
   const handleProfileChange = (src: string) => {}
@@ -106,16 +99,16 @@ export const DetailProfile = () => {
           </Popover>
         </div>
         <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
-          <Field label="Nama Lengkap" value={userData.personal?.fullName} />
-          <Field label="Email" value={userData.email} />
-          <Field label="Domisili" value={userData.personal?.domicile} />
-          <Field label="WhatsApp" value={userData.personal?.phone} />
-          <Field label="Tanggal Lahir" value={userData.personal?.dob} />
-          <Field label="Kelas" value={userData.personal?.class} />
-          <Field label="Asal Sekolah" value={userData.personal?.school ?? ''} />
+          <Field label="Nama Lengkap" value={userData?.personal?.fullName} />
+          <Field label="Email" value={userData?.email} />
+          <Field label="Domisili" value={userData?.personal?.domicile} />
+          <Field label="WhatsApp" value={userData?.personal?.phone} />
+          <Field label="Tanggal Lahir" value={userData?.personal?.dob} />
+          <Field label="Kelas" value={userData?.personal?.class} />
+          <Field label="Asal Sekolah" value={userData?.personal?.school} />
           <Field
             label="Nomor Telepon Orang Tua"
-            value={userData.personal?.parentPhone}
+            value={userData?.personal?.parentPhone}
           />
         </div>
       </div>

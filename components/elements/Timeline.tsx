@@ -11,7 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/Dialog'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 export const Timeline = () => {
   const [hoveredCard, setHoveredCard] = useState<null | number>(null)
@@ -54,7 +54,7 @@ export const Timeline = () => {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
         }}
-        className="2xl:w-[1280px] max-lg:hidden 2xl:h-[1020px] xl:w-[900px] xl:h-[740px] lg:w-[760px] lg:h-[600px] grid grid-cols-3 my-40"
+        className="2xl:w-[1280px] max-lg:hidden 2xl:h-[1020px] xl:w-[920px] xl:h-[740px] lg:w-[760px] lg:h-[600px] grid grid-cols-3 my-40"
       >
         {timelineData.map((data, index) => (
           <div
@@ -73,8 +73,8 @@ export const Timeline = () => {
                 ${
                   clickedCard === index || hoveredCard === index
                     ? index === 2
-                      ? 'max-w-[320px] z-10 2xl:max-w-[480px] xl:max-w-[420px]'
-                      : 'max-w-[360px] z-10 2xl:max-w-[480px] xl:max-w-[420px]'
+                      ? 'max-w-[320px] z-10 2xl:max-w-[480px] xl:max-w-[372px]'
+                      : 'max-w-[360px] z-10 2xl:max-w-[480px] xl:max-w-[372px]'
                     : clickedCard !== null || hoveredCard !== null
                       ? 'opacity-0 cursor-auto'
                       : 'lg:w-[200px] xl:w-[285px]'

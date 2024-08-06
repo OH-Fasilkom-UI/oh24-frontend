@@ -1,10 +1,10 @@
 'use client'
-import React from 'react'
-import bg from '@/public/background-testi.png'
-import { testimonials } from './Testimonials.data'
 import { ScrollArea, ScrollBar } from '@/components/ui/ScrollArea'
+import bg from '@/public/background-testi.png'
 import { Avatar, AvatarImage } from '@radix-ui/react-avatar'
 import { useState } from 'react'
+import { testimonials } from './Testimonials.data'
+import Image from 'next/image'
 
 const Testimonials = ({
   testimonyData = testimonials,
@@ -22,9 +22,17 @@ const Testimonials = ({
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
         }}
-        className="flex flex-col items-center rounded-xl w-full"
+        className="flex flex-col items-center rounded-xl w-full relative"
       >
-        <div className="flex lg:gap-[60px] md:gap-[30px] px-[30px] w-full md:h-fit max-md:gap-[20px] max-md:items-center max-md:flex-col justify-center flex-row lg:px-[40px] max-md:py-8 py-[64px] items-start">
+        <Image
+          src={'/whoosh.png'}
+          alt='whoosh'
+          width={300}
+          height={200}
+          objectFit="contain"
+          className='absolute z-0 -translate-y-6 md:hidden sm:w-[400px]'
+        />
+        <div className="flex lg:gap-[60px] md:gap-[30px] px-[30px] w-full md:h-fit max-md:gap-[20px] max-md:items-center max-md:flex-col justify-center flex-row lg:px-[40px] max-md:py-8 py-[64px] items-start z-20">
           <Avatar>
             <AvatarImage
               src={(testimonyData ?? testimonials)[active].foto}
@@ -35,7 +43,7 @@ const Testimonials = ({
             />
           </Avatar>
           <div className="flex gap-[24px] md:gap-[20px] flex-col lg:w-[780px] md:w-[530px] max-sm:w-fit max-sm:px-[10px] max-md:w-[283px]">
-            <p className="text-Text/TextDarkBG max-md:text-[14px] leading-9 max-md:leading-[25px] font-extrabold text-justify md:text-[18px] text-[24px] max-sm:max-h-[250px] overflow-y-scroll sm:overflow-visible">
+            <p className="text-Text/TextDarkBG max-md:text-[14px] leading-9 max-md:leading-[25px] font-extrabold text-justify md:text-[18px] text-[24px] max-sm:max-h-[250px] overflow-y-auto sm:overflow-visible">
               {(testimonyData ?? testimonials)[active].testimonial}
             </p>
             <p className="text-Text/TextDarkBG font-tex-gyre max-md:text-[14px] md:text-[20px] font-normal text-[24px]">
@@ -45,8 +53,10 @@ const Testimonials = ({
         </div>
       </div>
       <div>
-        <ScrollArea>
-          <div className="flex flex-row max-sm:gap-[10px] gap-[40px] justify-center py-10">
+        <ScrollArea
+          className='pt-10 pb-14 overflow-visible'
+        >
+          <div className="flex flex-row max-sm:gap-[10px] gap-[40px] justify-center">
             {(testimonyData ?? testimonials).map((testi, index) => (
               <div
                 onClick={() => setActive(index)}

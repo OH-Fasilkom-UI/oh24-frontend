@@ -15,9 +15,11 @@ import {
   SubmitPersonalData,
   submitPersonalDataSchema,
 } from '@/lib/api/registration'
+import { useUserData } from '@/hooks/user'
 
 const DetailForm = () => {
   const router = useRouter()
+  const { isLoading } = useUserData({ personal: true })
 
   const {
     handleSubmit,
@@ -34,6 +36,10 @@ const DetailForm = () => {
     if (res.ok) {
       router.push('/profile')
     }
+  }
+
+  if (isLoading) {
+    return 'Loading...'
   }
 
   return (

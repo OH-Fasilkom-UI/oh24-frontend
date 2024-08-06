@@ -10,12 +10,15 @@ import { motion } from 'framer-motion'
 import paths from '@/lib/paths'
 import Link from 'next/link'
 import { twMerge } from 'tailwind-merge'
+import { useIsAuthenticated, useLogout } from '@/hooks/auth'
 
 export const Navbar = () => {
   const pathname = usePathname()
-  const [isLogin, setIsLogin] = useState(true) // Nanti bakal diganti kalo be dah ok
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const { isAuthenticated } = useIsAuthenticated()
+  const { mutate: logout } = useLogout()
 
   return (
     <motion.nav
@@ -57,7 +60,7 @@ export const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          {isLogin ? (
+          {isAuthenticated ? (
             <Popover open={isUserMenuOpen} onOpenChange={setIsUserMenuOpen}>
               <PopoverTrigger asChild>
                 <button className="max-lg:hidden items-center text-BlueRegion/Portgage/700 flex flex-row gap-2 max-xl:text-[12px] text-[16px] font-bold whitespace-nowrap hover:text-RedRegion/Monza/700 font-tex-gyre">
@@ -85,7 +88,7 @@ export const Navbar = () => {
                   </Link>
                 ))}
                 <p
-                  onClick={() => setIsLogin(false)}
+                  onClick={() => logout()}
                   className="text-BlueRegion/Portgage/700 hover:text-RedRegion/Monza/700 duration-300 cursor-pointer justify-start flex flex-row gap-3 font-tex-gyre font-bold p-2 items-center text-[16px]"
                 >
                   <span className="w-[20px] h-[20px]">
@@ -133,7 +136,7 @@ export const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              {isLogin ? (
+              {isAuthenticated ? (
                 <>
                   {NAVBAR_LOGIN.map((link, index) => (
                     <Link href={link.href} key={index}>
@@ -149,7 +152,7 @@ export const Navbar = () => {
                     </Link>
                   ))}
                   <p
-                    onClick={() => setIsLogin(false)}
+                    onClick={() => logout()}
                     className="text-BlueRegion/Portgage/700 cursor-pointer justify-start flex flex-row font-tex-gyre items-center gap-4 text-[12px]"
                   >
                     <span>

@@ -9,11 +9,12 @@ import { NAVBAR_LINKS, NAVBAR_LOGIN } from './Navbar.data'
 import { motion } from 'framer-motion'
 import paths from '@/lib/paths'
 import Link from 'next/link'
+import { twMerge } from 'tailwind-merge'
 
 export const Navbar = () => {
   const pathname = usePathname()
   const router = useRouter()
-  const [isLogin, setIsLogin] = useState(false) // Nanti bakal diganti kalo be dah ok
+  const [isLogin, setIsLogin] = useState(true) // Nanti bakal diganti kalo be dah ok
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -38,22 +39,24 @@ export const Navbar = () => {
       {pathname !== '/login' && (
         <>
           {NAVBAR_LINKS.map((link, index) => (
-            <div
+            <Link
+              href={link.href}
+              aria-disabled={!link.isExist}
+              tabIndex={link.isExist ? undefined : -1}
               key={index}
-              onClick={() => {
-                link.isExist && router.push(link.href)
-              }}
-              className={`items-center text-[16px] max-xl:text-[12px] max-lg:hidden gap-2 flex font-semibold  ${
+              className={twMerge(
+                'items-center text-[16px] max-xl:text-[12px] max-lg:hidden gap-2 flex font-semibold',
+                link.isExist && pathname === link.href
+                  ? 'text-RedRegion/Monza/700 hover:text-RedRegion/Monza/500'
+                  : 'text-BlueRegion/Portgage/700 hover:text-RedRegion/Monza/500',
                 link.isExist
-                  ? pathname === link.href
-                    ? 'text-RedRegion/Monza/700 hover:text-RedRegion/Monza/500 duration-300 hover:scale-105 cursor-pointer '
-                    : 'text-BlueRegion/Portgage/700 hover:text-RedRegion/Monza/500 duration-300 hover:scale-105 cursor-pointer '
-                  : 'text-[#454F59]'
-              }`}
+                  ? 'duration-300 hover:scale-105 cursor-pointer'
+                  : 'text-[#454F59] pointer-events-none'
+              )}
             >
               {link.icon && <span>{React.createElement(link.icon)}</span>}
               {link.label}
-            </div>
+            </Link>
           ))}
           {isLogin ? (
             <Popover open={isUserMenuOpen} onOpenChange={setIsUserMenuOpen}>
@@ -102,21 +105,21 @@ export const Navbar = () => {
             </PopoverTrigger>
             <PopoverContent className="w-fit h-fit p-5 flex flex-col rounded-[8px] gap-5 bg-[#f3f3f3]">
               {NAVBAR_LINKS.map((link, index) => (
-                <p
+                <Link
                   key={index}
-                  onClick={() => {
-                    if (link.isExist) {
-                      router.push(link.href)
-                      setIsMobileMenuOpen(false)
-                    }
-                  }}
-                  className={`font-tex-gyre flex cursor-pointer whitespace-nowrap flex-row items-center gap-4 text-[12px] justify-start ${
+                  href={link.href}
+                  aria-disabled={!link.isExist}
+                  tabIndex={link.isExist ? undefined : -1}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={twMerge(
+                    'font-tex-gyre flex cursor-pointer whitespace-nowrap flex-row items-center gap-4 text-[12px] justify-start',
+                    link.isExist && pathname === link.href
+                      ? 'text-RedRegion/Monza/700'
+                      : 'text-BlueRegion/Portgage/700',
                     link.isExist
-                      ? pathname === link.href
-                        ? 'text-RedRegion/Monza/700'
-                        : 'text-BlueRegion/Portgage/700'
-                      : 'text-Misc/ShuttleGray/700'
-                  }`}
+                      ? 'duration-300 hover:scale-105 cursor-pointer'
+                      : 'text-Misc/ShuttleGray/700 pointer-events-none'
+                  )}
                 >
                   {link.icon && (
                     <span className="text-[10px]">
@@ -124,7 +127,7 @@ export const Navbar = () => {
                     </span>
                   )}
                   {link.label}
-                </p>
+                </Link>
               ))}
               {isLogin ? (
                 NAVBAR_LOGIN.map((link, index) => (

@@ -7,19 +7,35 @@ import {
   UserDataJoins,
 } from '@/lib/api/user'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { useRouter } from 'next/navigation'
 
 export function useUserData<T extends UserDataJoins>(joins: T | {} = {}) {
-  const { data, ...rest } = useQuery<UserData<T>>({
+  const queryClient = useQueryClient()
+  const router = useRouter()
+
+  const { data, isError, ...rest } = useQuery<UserData<T>>({
     queryKey: ['personal', 'my'],
     queryFn: async () => {
       const res = await getMyUserData(joins)
+
+      if (!res.ok) {
+        queryClient.invalidateQueries({
+          queryKey: ['auth', 'is_authenticated'],
+        })
+
+        throw new Error()
+      }
+
       const data = await res.json()
-
       data.user.personal = formatPersonalData(data.user.personal)
-
-      return res.ok ? data.user : null
+      return data
     },
+    retryOnMount: false,
   })
+
+  if (isError) {
+    router.push('/login')
+  }
 
   return { userData: data, ...rest }
 }

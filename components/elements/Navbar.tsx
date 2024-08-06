@@ -7,6 +7,8 @@ import { usePathname, useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import { NAVBAR_LINKS, NAVBAR_LOGIN } from './Navbar.data'
 import { motion } from 'framer-motion'
+import paths from '@/lib/paths'
+import Link from 'next/link'
 
 export const Navbar = () => {
   const pathname = usePathname()
@@ -85,12 +87,9 @@ export const Navbar = () => {
               </PopoverContent>
             </Popover>
           ) : (
-            <Button
-              onClick={() => setIsLogin(true)}
-              className={`max-lg:hidden block`}
-            >
-              Login
-            </Button>
+            <Link href={paths.login}>
+              <Button className="max-lg:hidden block">Login</Button>
+            </Link>
           )}
 
           <Popover open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -144,15 +143,9 @@ export const Navbar = () => {
                   </p>
                 ))
               ) : (
-                <Button
-                  onClick={() => {
-                    setIsLogin(true)
-                    setIsMobileMenuOpen(false)
-                  }}
-                  className="w-full h-fit px-8"
-                >
-                  Log In
-                </Button>
+                <Link href={paths.login}>
+                  <Button className="w-full h-fit px-8">Log In</Button>
+                </Link>
               )}
             </PopoverContent>
           </Popover>

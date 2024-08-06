@@ -81,28 +81,24 @@ h6 {
   }
 }
 
-/* globals.css */
-
-/* Custom Scrollbar */
+/* width */
 ::-webkit-scrollbar {
-  width: 12px;
+    width: 10px;
 }
-
+ 
+/* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+    background: #E0ECFF;
 }
-
+ 
+/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
+    background: #4756E4;
+    border-radius: 5px;
 }
-
+ 
+/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* For Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #4654ce #f1f1f1;
+    background: #343FC0;
+    transition-duration: 0.5s;
 }

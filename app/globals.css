@@ -83,22 +83,22 @@ h6 {
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
- 
+
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #E0ECFF;
+  background: #e0ecff;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #4756E4;
-    border-radius: 5px;
+  background: #4756e4;
+  border-radius: 5px;
 }
- 
+
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #343FC0;
-    transition-duration: 0.5s;
+  background: #343fc0;
+  transition-duration: 0.5s;
 }

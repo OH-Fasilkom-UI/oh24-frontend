@@ -3,7 +3,7 @@ import Button from '@/components/ui/Button'
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
 import { AlignRight, ChevronDown, LogOut } from 'lucide-react'
 import Image from 'next/image'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
 import { NAVBAR_LINKS, NAVBAR_LOGIN } from './Navbar.data'
 import { motion } from 'framer-motion'
@@ -13,7 +13,6 @@ import { twMerge } from 'tailwind-merge'
 
 export const Navbar = () => {
   const pathname = usePathname()
-  const router = useRouter()
   const [isLogin, setIsLogin] = useState(true) // Nanti bakal diganti kalo be dah ok
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -71,21 +70,19 @@ export const Navbar = () => {
               </PopoverTrigger>
               <PopoverContent className="w-fit rounded-[8px] flex flex-col gap-3 justify-center p-4 bg-[#f3f3f3]">
                 {NAVBAR_LOGIN.map((link, index) => (
-                  <p
-                    key={index}
-                    onClick={() => {
-                      router.push(link.href)
-                      setIsUserMenuOpen(false)
-                    }}
-                    className="text-BlueRegion/Portgage/700 hover:text-RedRegion/Monza/700 duration-300 cursor-pointer justify-start flex flex-row gap-3 font-tex-gyre font-bold p-2 items-center text-[16px]"
-                  >
-                    {link.icon && (
-                      <span className="w-[20px] h-[20px]">
-                        {React.createElement(link.icon)}
-                      </span>
-                    )}
-                    {link.label}
-                  </p>
+                  <Link href={link.href} key={index}>
+                    <p
+                      onClick={() => setIsUserMenuOpen(false)}
+                      className="text-BlueRegion/Portgage/700 hover:text-RedRegion/Monza/700 duration-300 cursor-pointer justify-start flex flex-row gap-3 font-tex-gyre font-bold p-2 items-center text-[16px]"
+                    >
+                      {link.icon && (
+                        <span className="w-[20px] h-[20px]">
+                          {React.createElement(link.icon)}
+                        </span>
+                      )}
+                      {link.label}
+                    </p>
+                  </Link>
                 ))}
                 <p
                   onClick={() => setIsLogin(false)}
@@ -139,19 +136,17 @@ export const Navbar = () => {
               {isLogin ? (
                 <>
                   {NAVBAR_LOGIN.map((link, index) => (
-                    <p
-                      key={index}
-                      onClick={() => {
-                        router.push(link.href)
-                        setIsMobileMenuOpen(false)
-                      }}
-                      className="text-BlueRegion/Portgage/700 cursor-pointer justify-start flex flex-row font-tex-gyre items-center gap-4 text-[12px]"
-                    >
-                      {link.icon && (
-                        <span>{React.createElement(link.icon)}</span>
-                      )}
-                      {link.label}
-                    </p>
+                    <Link href={link.href} key={index}>
+                      <p
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="text-BlueRegion/Portgage/700 cursor-pointer justify-start flex flex-row font-tex-gyre items-center gap-4 text-[12px]"
+                      >
+                        {link.icon && (
+                          <span>{React.createElement(link.icon)}</span>
+                        )}
+                        {link.label}
+                      </p>
+                    </Link>
                   ))}
                   <p
                     onClick={() => setIsLogin(false)}

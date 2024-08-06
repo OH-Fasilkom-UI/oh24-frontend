@@ -21,7 +21,7 @@ interface FieldProps {
   value?: string | null
 }
 
-const Field = ({ label, value = "" }: FieldProps) => {
+const Field = ({ label, value = '' }: FieldProps) => {
   return (
     <div className="text-Text/TextLightBG flex flex-col gap-1 max-md:text-center">
       <p className="text-lg font-bold">{label}</p>

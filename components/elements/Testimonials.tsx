@@ -26,11 +26,11 @@ const Testimonials = ({
       >
         <Image
           src={'/whoosh.png'}
-          alt='whoosh'
+          alt="whoosh"
           width={300}
           height={200}
           objectFit="contain"
-          className='absolute z-0 -translate-y-6 md:hidden sm:w-[400px]'
+          className="absolute z-0 -translate-y-6 md:hidden sm:w-[400px]"
         />
         <div className="flex lg:gap-[60px] md:gap-[30px] px-[30px] w-full md:h-fit max-md:gap-[20px] max-md:items-center max-md:flex-col justify-center flex-row lg:px-[40px] max-md:py-8 py-[64px] items-start z-20">
           <Avatar>
@@ -53,9 +53,7 @@ const Testimonials = ({
         </div>
       </div>
       <div>
-        <ScrollArea
-          className='pt-10 pb-14 overflow-visible'
-        >
+        <ScrollArea className="pt-10 pb-14 overflow-visible">
           <div className="flex flex-row max-sm:gap-[10px] gap-[40px] justify-center">
             {(testimonyData ?? testimonials).map((testi, index) => (
               <div

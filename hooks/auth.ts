@@ -31,16 +31,17 @@ export const useLogin = () => {
 
 export const useLogout = () => {
   const queryClient = useQueryClient()
+
   return useMutation({
     mutationKey: ['auth', 'logout'],
     mutationFn: async () => {
       const res = await logout()
 
-      if (res.ok) {
-        queryClient.setQueryData(['auth', 'is_authenticated'], false)
-      }
-
       return res.json()
+    },
+    onSuccess: () => {
+      queryClient.setQueryData(['auth', 'is_authenticated'], false)
+      queryClient.invalidateQueries({ queryKey: ['user', 'my'] })
     },
   })
 }

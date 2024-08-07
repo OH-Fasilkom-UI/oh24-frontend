@@ -32,7 +32,6 @@ export function useUserData<T extends UserDataJoins>(
       data.user.personal = formatPersonalData(data.user.personal)
       return data.user
     },
-    retryOnMount: false,
   })
 
   if (redirects) {

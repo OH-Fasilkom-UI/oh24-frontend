@@ -49,13 +49,15 @@ const NavbarDesktop = () => {
         </Link>
       ))}
       <div className="max-lg:hidden">
-        {(userDataLoading || isPending) ? (
+        {userDataLoading || isPending ? (
           'loading...'
         ) : isAuthenticated ? (
           <Popover open={isUserMenuOpen} onOpenChange={setIsUserMenuOpen}>
             <PopoverTrigger asChild>
               <button className="max-lg:hidden items-center text-BlueRegion/Portgage/700 flex flex-row gap-2 max-xl:text-[12px] text-[16px] font-bold whitespace-nowrap hover:text-RedRegion/Monza/700 font-tex-gyre">
-                Welcome, {userData?.personal.fullName}{' '}
+                {userData?.personal
+                  ? `Welcome, ${userData?.personal.fullName}`
+                  : 'Account'}
                 <ChevronDown
                   size={24}
                   className={`transition-all ${isUserMenuOpen ? 'rotate-180' : ''}`}

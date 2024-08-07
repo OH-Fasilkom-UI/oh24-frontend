@@ -31,6 +31,8 @@ const DetailForm = () => {
   })
 
   async function onSubmit(data: SubmitPersonalData) {
+    // TODO: fix this thing
+    // it redirects back to /detailform after going to /profile
     const res = await submitPersonalData(data)
 
     if (res.ok) {

@@ -40,6 +40,10 @@ export function useUserData<T extends UserDataJoins>(
       redirect(paths.login)
     }
 
+    if (currentPath === paths.login) {
+      redirect(paths.profilePage)
+    }
+
     if (currentPath === paths.profilePage && data?.hasPersonal === false) {
       redirect(paths.personalDataForm)
     }

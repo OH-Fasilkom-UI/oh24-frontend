@@ -1,5 +1,12 @@
+import { UserData } from "./user"
+
 export const isAuthenticated = () => {
   return fetch('/api/auth/user')
+}
+
+export interface LoginWithGoogleData {
+  success: boolean
+  user: UserData
 }
 
 export const loginWithGoogle = (credential: string) => {

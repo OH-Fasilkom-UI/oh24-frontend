@@ -1,13 +1,11 @@
 'use client'
 
 import React from 'react'
-import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { useLogin } from '@/hooks/auth'
 import GoogleLogin from '@/components/ui/GoogleLogin'
 
 export const LoginPage = () => {
-  const router = useRouter()
   const { mutate: login } = useLogin()
 
   return (
@@ -27,15 +25,7 @@ export const LoginPage = () => {
         Open House <br className="md:hidden" /> Fasilkom UI 2024
       </div>
       <GoogleLogin
-        onCredential={(credential) =>
-          login(credential, {
-            onSuccess(data) {
-              if (data.success) {
-                router.push('/detailform')
-              }
-            },
-          })
-        }
+        onCredential={(credential) => login(credential)}
         className="mt-10"
       />
     </motion.div>

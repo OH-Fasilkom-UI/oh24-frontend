@@ -79,7 +79,7 @@ export interface UserDataJoins {
   ambassador?: boolean
 }
 
-export interface UserData<T extends UserDataJoins> {
+export interface UserData<T extends UserDataJoins = {}> {
   updatedAt: string
   createdAt: string
   id: string

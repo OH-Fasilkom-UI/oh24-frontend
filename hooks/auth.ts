@@ -1,12 +1,23 @@
-import { isAuthenticated, loginWithGoogle, logout } from '@/lib/api/auth'
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import paths from '@/lib/paths'
+import {
+  isAuthenticated,
+  loginWithGoogle,
+  LoginWithGoogleData,
+  logout,
+} from '@/lib/api/auth'
 
 export const useIsAuthenticated = () => {
   const { data, ...rest } = useQuery({
     queryKey: ['auth', 'is_authenticated'],
     queryFn: async () => {
       const res = await isAuthenticated()
+
+      if (!res.ok) {
+        throw new Error()
+      }
+
       return res.ok
     },
   })
@@ -16,6 +27,8 @@ export const useIsAuthenticated = () => {
 
 export const useLogin = () => {
   const queryClient = useQueryClient()
+  const router = useRouter()
+
   return useMutation({
     mutationKey: ['auth', 'login'],
     mutationFn: async (credential: string) => {
@@ -25,12 +38,18 @@ export const useLogin = () => {
         throw new Error()
       }
 
-      return res.json()
+      return res.json() as Promise<LoginWithGoogleData>
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
       queryClient.setQueryData(['auth', 'is_authenticated'], true)
-      queryClient.invalidateQueries({ queryKey: ['user', 'my'] })
-    }
+      queryClient.setQueryData(['user', 'my'], data.user)
+
+      if (data.user.hasPersonal) {
+        router.push(paths.profilePage)
+      } else {
+        router.push(paths.personalDataForm)
+      }
+    },
   })
 }
 

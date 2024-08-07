@@ -63,11 +63,14 @@ export const usePersonalDataMutation = () => {
     mutationFn: async (data: UpdatePersonalData) => {
       const res = await updateMyPersonalData(data)
 
-      if (res.ok) {
-        queryClient.invalidateQueries({ queryKey: ['user', 'my'] })
+      if (!res.ok) {
+        throw new Error()
       }
 
       return res.json()
     },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['user', 'my'] })
+    }
   })
 }

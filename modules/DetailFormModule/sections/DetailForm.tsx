@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { useRouter } from 'next/navigation'
+import { redirect } from 'next/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Card from '@/components/ui/Card'
 import Button from '@/components/ui/Button'
@@ -11,15 +11,15 @@ import Input from '@/components/ui/Input'
 import {
   Class,
   Domicile,
-  submitPersonalData,
   SubmitPersonalData,
   submitPersonalDataSchema,
 } from '@/lib/api/registration'
 import { useUserData } from '@/hooks/user'
+import { useSubmitPersonalData } from '@/hooks/registration'
 
 const DetailForm = () => {
-  const router = useRouter()
   const { isLoading } = useUserData({ personal: true })
+  const { mutate: submit } = useSubmitPersonalData()
 
   const {
     handleSubmit,
@@ -31,13 +31,12 @@ const DetailForm = () => {
   })
 
   async function onSubmit(data: SubmitPersonalData) {
-    // TODO: fix this thing
-    // it redirects back to /detailform after going to /profile
-    const res = await submitPersonalData(data)
-
-    if (res.ok) {
-      router.push('/profile')
-    }
+    submit(data, {
+      // gw gatau kenapa harus pake redirect T_T
+      // kalo pake router di useRouter, bakal client
+      // side error
+      onSuccess: () => redirect('/profile')
+    })
   }
 
   if (isLoading) {

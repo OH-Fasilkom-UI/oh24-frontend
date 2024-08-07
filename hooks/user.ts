@@ -36,6 +36,7 @@ export function useUserData<T extends UserDataJoins>(
 
   if (redirects) {
     if (isError) {
+      // not logged in users trying to visit protected URLs
       redirect(paths.login)
     }
 

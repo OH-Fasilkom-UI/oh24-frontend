@@ -1,5 +1,6 @@
 import { isAuthenticated, loginWithGoogle, logout } from '@/lib/api/auth'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { useRouter } from 'next/navigation'
 
 export const useIsAuthenticated = () => {
   const { data, ...rest } = useQuery({
@@ -20,28 +21,40 @@ export const useLogin = () => {
     mutationFn: async (credential: string) => {
       const res = await loginWithGoogle(credential)
 
-      if (res.ok) {
-        queryClient.setQueryData(['auth', 'is_authenticated'], true)
+      if (!res.ok) {
+        throw new Error()
       }
 
       return res.json()
     },
+    onSuccess: () => {
+      queryClient.setQueryData(['auth', 'is_authenticated'], true)
+      queryClient.invalidateQueries({ queryKey: ['user', 'my'] })
+    }
   })
 }
 
 export const useLogout = () => {
   const queryClient = useQueryClient()
+  const router = useRouter()
 
   return useMutation({
     mutationKey: ['auth', 'logout'],
     mutationFn: async () => {
       const res = await logout()
 
+      if (!res.ok) {
+        throw new Error()
+      }
+
       return res.json()
     },
     onSuccess: () => {
       queryClient.setQueryData(['auth', 'is_authenticated'], false)
       queryClient.invalidateQueries({ queryKey: ['user', 'my'] })
+
+      // if logout is success return to home page
+      router.push('/')
     },
   })
 }

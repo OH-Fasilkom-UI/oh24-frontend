@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { redirect, RedirectType, usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { ChevronDown, LogOut } from 'lucide-react'
 import { twMerge } from 'tailwind-merge'
 import Button from '@/components/ui/Button'
@@ -80,7 +80,7 @@ const NavbarDesktop = () => {
               ))}
               <p
                 onClick={() => {
-                  logout(undefined, { onSuccess: () => redirect('/') })
+                  logout()
                   setIsUserMenuOpen(false)
                 }}
                 className="text-BlueRegion/Portgage/700 hover:text-RedRegion/Monza/700 duration-300 cursor-pointer justify-start flex flex-row gap-3 font-tex-gyre font-bold p-2 items-center text-[16px]"

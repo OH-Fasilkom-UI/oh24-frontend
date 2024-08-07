@@ -21,7 +21,7 @@ const NavbarMobile = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
   const { isAuthenticated } = useIsAuthenticated()
   const { mutate: logout, isPending } = useLogout()
-  const { userData, isLoading: userDataLoading } = useUserData(
+  const { isLoading: userDataLoading } = useUserData(
     { personal: true },
     false
   )
@@ -76,7 +76,7 @@ const NavbarMobile = () => {
             ))}
             <p
               onClick={() => {
-                logout(undefined, { onSuccess: () => redirect('/') })
+                logout()
                 setIsMobileMenuOpen(false)
               }}
               className="text-BlueRegion/Portgage/700 cursor-pointer justify-start flex flex-row font-tex-gyre items-center gap-4 text-[12px]"

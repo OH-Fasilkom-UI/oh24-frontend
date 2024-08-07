@@ -10,7 +10,10 @@ import paths from '@/lib/paths'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { redirect, usePathname } from 'next/navigation'
 
-export function useUserData<T extends UserDataJoins>(joins: T | {} = {}) {
+export function useUserData<T extends UserDataJoins>(
+  joins: T | {} = {},
+  redirects: boolean = true
+) {
   const queryClient = useQueryClient()
   const currentPath = usePathname()
 
@@ -19,12 +22,9 @@ export function useUserData<T extends UserDataJoins>(joins: T | {} = {}) {
     queryFn: async () => {
       const res = await getMyUserData(joins)
 
-      if (!res.ok) {
-        queryClient.invalidateQueries({
-          queryKey: ['auth', 'is_authenticated'],
-        })
+      queryClient.setQueryData(['auth', 'is_authenticated'], res.ok)
 
-        console.log('throw')
+      if (!res.ok) {
         throw new Error()
       }
 
@@ -35,16 +35,18 @@ export function useUserData<T extends UserDataJoins>(joins: T | {} = {}) {
     retryOnMount: false,
   })
 
-  if (isError) {
-    redirect(paths.login)
-  }
+  if (redirects) {
+    if (isError) {
+      redirect(paths.login)
+    }
 
-  if (currentPath === paths.profilePage && data?.hasPersonal === false) {
-    redirect(paths.personalDataForm)
-  }
+    if (currentPath === paths.profilePage && data?.hasPersonal === false) {
+      redirect(paths.personalDataForm)
+    }
 
-  if (currentPath === paths.personalDataForm && data?.hasPersonal === true) {
-    redirect(paths.profilePage)
+    if (currentPath === paths.personalDataForm && data?.hasPersonal === true) {
+      redirect(paths.profilePage)
+    }
   }
 
   return { userData: data, ...rest }

@@ -21,9 +21,7 @@ export const useLogin = () => {
       const res = await loginWithGoogle(credential)
 
       if (res.ok) {
-        queryClient.invalidateQueries({
-          queryKey: ['auth', 'is_authenticated'],
-        })
+        queryClient.setQueryData(['auth', 'is_authenticated'], true)
       }
 
       return res.json()
@@ -39,9 +37,7 @@ export const useLogout = () => {
       const res = await logout()
 
       if (res.ok) {
-        queryClient.invalidateQueries({
-          queryKey: ['auth', 'is_authenticated'],
-        })
+        queryClient.setQueryData(['auth', 'is_authenticated'], false)
       }
 
       return res.json()

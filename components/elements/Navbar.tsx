@@ -1,24 +1,30 @@
 'use client'
-import Button from '@/components/ui/Button'
-import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
-import { AlignRight, ChevronDown, LogOut } from 'lucide-react'
+import React, { useState } from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import React, { useState } from 'react'
-import { NAVBAR_LINKS, NAVBAR_LOGIN } from './Navbar.data'
-import { motion } from 'framer-motion'
-import paths from '@/lib/paths'
-import Link from 'next/link'
 import { twMerge } from 'tailwind-merge'
-import { useIsAuthenticated, useLogout } from '@/hooks/auth'
+import { motion } from 'framer-motion'
+import { AlignRight, ChevronDown, LogOut } from 'lucide-react'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+import Button from '@/components/ui/Button'
+import paths from '@/lib/paths'
+import { useUserData } from '@/hooks/user'
+import { useLogout } from '@/hooks/auth'
+import { NAVBAR_LINKS, NAVBAR_LOGIN } from './Navbar.data'
 
 export const Navbar = () => {
   const pathname = usePathname()
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  const { isAuthenticated } = useIsAuthenticated()
+  const { userData, isLoading: userDataLoading } = useUserData(
+    { personal: true },
+    false
+  )
   const { mutate: logout } = useLogout()
+
+  console.log(typeof userData)
 
   return (
     <motion.nav
@@ -60,49 +66,53 @@ export const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          {isAuthenticated ? (
-            <Popover open={isUserMenuOpen} onOpenChange={setIsUserMenuOpen}>
-              <PopoverTrigger asChild>
-                <button className="max-lg:hidden items-center text-BlueRegion/Portgage/700 flex flex-row gap-2 max-xl:text-[12px] text-[16px] font-bold whitespace-nowrap hover:text-RedRegion/Monza/700 font-tex-gyre">
-                  Welcome, Nak Oha{' '}
-                  <ChevronDown
-                    size={24}
-                    className={`transition-all ${isUserMenuOpen ? 'rotate-180' : ''}`}
-                  />
-                </button>
-              </PopoverTrigger>
-              <PopoverContent className="w-fit rounded-[8px] flex flex-col gap-3 justify-center p-4 bg-[#f3f3f3]">
-                {NAVBAR_LOGIN.map((link, index) => (
-                  <Link href={link.href} key={index}>
-                    <p
-                      onClick={() => setIsUserMenuOpen(false)}
-                      className="text-BlueRegion/Portgage/700 hover:text-RedRegion/Monza/700 duration-300 cursor-pointer justify-start flex flex-row gap-3 font-tex-gyre font-bold p-2 items-center text-[16px]"
-                    >
-                      {link.icon && (
-                        <span className="w-[20px] h-[20px]">
-                          {React.createElement(link.icon)}
-                        </span>
-                      )}
-                      {link.label}
-                    </p>
-                  </Link>
-                ))}
-                <p
-                  onClick={() => logout()}
-                  className="text-BlueRegion/Portgage/700 hover:text-RedRegion/Monza/700 duration-300 cursor-pointer justify-start flex flex-row gap-3 font-tex-gyre font-bold p-2 items-center text-[16px]"
-                >
-                  <span className="w-[20px] h-[20px]">
-                    <LogOut />
-                  </span>
-                  Logout
-                </p>
-              </PopoverContent>
-            </Popover>
-          ) : (
-            <Link href={paths.login}>
-              <Button className="max-lg:hidden block">Login</Button>
-            </Link>
-          )}
+          <div className="max-lg:hidden">
+            {userDataLoading ? (
+              'loading...'
+            ) : userData ? (
+              <Popover open={isUserMenuOpen} onOpenChange={setIsUserMenuOpen}>
+                <PopoverTrigger asChild>
+                  <button className="max-lg:hidden items-center text-BlueRegion/Portgage/700 flex flex-row gap-2 max-xl:text-[12px] text-[16px] font-bold whitespace-nowrap hover:text-RedRegion/Monza/700 font-tex-gyre">
+                    Welcome, {userData.personal.fullName}{' '}
+                    <ChevronDown
+                      size={24}
+                      className={`transition-all ${isUserMenuOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                </PopoverTrigger>
+                <PopoverContent className="w-fit rounded-[8px] flex flex-col gap-3 justify-center p-4 bg-[#f3f3f3]">
+                  {NAVBAR_LOGIN.map((link, index) => (
+                    <Link href={link.href} key={index}>
+                      <p
+                        onClick={() => setIsUserMenuOpen(false)}
+                        className="text-BlueRegion/Portgage/700 hover:text-RedRegion/Monza/700 duration-300 cursor-pointer justify-start flex flex-row gap-3 font-tex-gyre font-bold p-2 items-center text-[16px]"
+                      >
+                        {link.icon && (
+                          <span className="w-[20px] h-[20px]">
+                            {React.createElement(link.icon)}
+                          </span>
+                        )}
+                        {link.label}
+                      </p>
+                    </Link>
+                  ))}
+                  <p
+                    onClick={() => logout()}
+                    className="text-BlueRegion/Portgage/700 hover:text-RedRegion/Monza/700 duration-300 cursor-pointer justify-start flex flex-row gap-3 font-tex-gyre font-bold p-2 items-center text-[16px]"
+                  >
+                    <span className="w-[20px] h-[20px]">
+                      <LogOut />
+                    </span>
+                    Logout
+                  </p>
+                </PopoverContent>
+              </Popover>
+            ) : (
+              <Link href={paths.login}>
+                <Button className="">Login</Button>
+              </Link>
+            )}
+          </div>
 
           <Popover open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <PopoverTrigger asChild>
@@ -136,7 +146,9 @@ export const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              {isAuthenticated ? (
+              {userDataLoading ? (
+                'loading...'
+              ) : userData ? (
                 <>
                   {NAVBAR_LOGIN.map((link, index) => (
                     <Link href={link.href} key={index}>

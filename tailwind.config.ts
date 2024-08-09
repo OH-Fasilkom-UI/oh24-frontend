@@ -23,6 +23,9 @@ const config = {
         timeline:
           '4px 4px 12px 0 rgba(98, 163, 203, 0.5), -4px -4px 12px 0 rgba(78, 86, 196, 0.5)',
       },
+      textShadow: {
+        ambassador: '0 0 36px #E0ECFF',
+      },
       fontFamily: {
         riffic: ['var(--font-riffic)', 'sans-serif'],
         'tex-gyre': ['var(--font-tex-gyre-adventor)', 'sans-serif'],
@@ -399,7 +402,17 @@ const config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    function ({ addUtilities, theme }: any) {
+      const newUtilities = {
+        '.text-shadow-ambassador': {
+          textShadow: theme('textShadow.ambassador'),
+        },
+      }
+      addUtilities(newUtilities, ['responsive', 'hover'])
+    },
+  ],
 } satisfies Config
 
 export default config

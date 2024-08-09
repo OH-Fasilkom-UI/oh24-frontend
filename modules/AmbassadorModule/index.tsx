@@ -29,8 +29,8 @@ const AmbassadorModule = () => {
         <Testimonials />
       </div>
       <AmbassadorHelp />
-      {/* <AmbassadorAccordion /> */}
-      <div className="lg:mx-[120px] max-sm:mx-5 md:mx-20 mt-20">
+      <AmbassadorAccordion />
+      <div className="lg:mx-[120px] max-sm:mx-5 md:mx-20 mt-20 mb-[600px] xl:mb-[800px]">
         <ContactPerson />
       </div>
     </div>

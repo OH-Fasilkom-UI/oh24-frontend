@@ -1,9 +1,11 @@
+'use client'
 import React from 'react'
 import Countdown from '@/components/elements/Countdown'
 import Card from '@/components/ui/Card'
 import bg from '@/public/kota-di-ambassador.png'
 import Button from '@/components/ui/Button'
 import { User } from 'lucide-react'
+import { scroller } from 'react-scroll'
 
 const AmbassadorCard = () => {
   return (
@@ -41,7 +43,14 @@ const AmbassadorCard = () => {
             />
           </div>
           <div className="flex flex-row gap-5 max-sm:my-5 xl:my-20 justify-center">
-            <Button className="max-sm:text-[10px]">Description</Button>
+            <Button
+              onClick={() => {
+                scroller.scrollTo('ambass-desc', {
+                  smooth: true,
+                  offset: -150,
+                })
+              }}
+              className="max-sm:text-[10px]">Description</Button>
             <Button className="bg-Misc/Ziggurat/400 max-sm:text-[10px]">
               <User /> Register
             </Button>

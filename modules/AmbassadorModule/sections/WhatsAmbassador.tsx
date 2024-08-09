@@ -3,7 +3,9 @@ import Image from 'next/image'
 
 const WhatsAmbassador = () => {
   return (
-    <section className="flex justify-center p-8 max-md:mt-[100px] md:mt-[200px]">
+    <section
+      id='ambass-desc'
+      className="flex justify-center p-8 max-md:mt-[100px] md:mt-[200px]">
       <div className="flex md:max-w-2xl lg:max-w-3xl xl:max-w-4xl items-center">
         <div className="flex-1 mr-8 max-md:mx-3">
           <div className="flex flex-row items-center py-3">

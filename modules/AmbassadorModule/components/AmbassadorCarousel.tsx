@@ -1,5 +1,13 @@
 'use client'
 import React from 'react'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel'
+import Card from '@/components/ui/Card'
 
 const AmbassadorCarousel = () => {
   return (
@@ -14,6 +22,31 @@ const AmbassadorCarousel = () => {
           minim veniam, quis nostrud exercitation ullamco laboris.
         </p>
       </div>
+      <Carousel className="px-20 w-screen mx-auto">
+        <CarouselContent className="-ml-1">
+          {Array.from({ length: 5 }).map((_, index) => (
+            <CarouselItem
+              key={index}
+              className="pl-1 md:basis-1/2 lg:basis-1/3"
+            >
+              <div className="px-4">
+                <Card title="" className="flex flex-col gap-y-2 xl:w-[348px]">
+                  <div className="flex aspect-video w-full xl:h-[176px] rounded-3xl items-center bg-[#BDBFC2] justify-center">
+                    // Nanti ada image
+                  </div>
+                  <div className="flex items-center justify-center translate-y-2 flex-grow">
+                    <p className="text-[14px] leading-5 text-center">
+                      Deskripsi Lorem ipsum dolor sit amet
+                    </p>
+                  </div>
+                </Card>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </div>
   )
 }

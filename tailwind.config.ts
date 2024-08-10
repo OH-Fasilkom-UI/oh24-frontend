@@ -26,10 +26,15 @@ const config = {
       textShadow: {
         ambassador: '0 0 36px #E0ECFF',
       },
+      backgroundImage: {
+        'gradient-custom':
+          'linear-gradient(6.31deg, #1A2043 33.48%, #2C366D 68.87%)',
+      },
       fontFamily: {
         riffic: ['var(--font-riffic)', 'sans-serif'],
         'tex-gyre': ['var(--font-tex-gyre-adventor)', 'sans-serif'],
       },
+
       colors: {
         // Alert
         'alert-destructive-background': '#FFDCDC',

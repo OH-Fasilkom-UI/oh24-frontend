@@ -23,39 +23,34 @@ const AmbassadorCarousel = () => {
           eiusmod tempor incididunt ut
         </p>
       </div>
-      <Carousel className="px-20 w-screen mx-auto">
-        <CarouselContent className="-ml-1">
+      <Carousel className="px-[65px] md:px-[120px] lg:px-[190px]">
+        <CarouselContent className="lg:gap-5">
           {Array.from(LAST_AMBASSADOR).map((item, index) => (
-            <CarouselItem
-              key={index}
-              className="pl-1 md:basis-1/2 lg:basis-1/3"
-            >
-              <div className="px-4">
-                <Card
-                  title=""
-                  className="flex flex-col gap-y-2 max-md:w-[220px] xl:w-[348px]"
-                >
-                  <div className="relative w-full xl:h-[176px] rounded-3xl">
-                    <Image
-                      alt="contoh"
-                      src={item.image}
-                      fill
-                      sizes="none"
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="flex items-center justify-center translate-y-2 flex-grow">
-                    <p className="text-[14px] leading-5 text-center">
-                      {item.description}
-                    </p>
-                  </div>
-                </Card>
-              </div>
+            <CarouselItem key={index} className="sm:basis-1/2 xl:basis-1/3">
+              <Card
+                title=""
+                className="flex flex-col gap-2 rounded-[28px] shadow-carousel"
+              >
+                <div className="relative w-full xl:h-[176px] h-[128px] rounded-[30px] overflow-hidden">
+                  <Image
+                    alt="contoh"
+                    src={item.image}
+                    fill
+                    sizes="none"
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex items-center justify-center translate-y-2 flex-grow">
+                  <p className="text-[14px] leading-5 text-center">
+                    {item.description}
+                  </p>
+                </div>
+              </Card>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="md:px-[50px] lg:px-[73px]" />
+        <CarouselNext className="md:px-[50px] lg:px-[73px]" />
       </Carousel>
     </div>
   )

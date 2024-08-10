@@ -22,6 +22,16 @@ const config = {
       boxShadow: {
         timeline:
           '4px 4px 12px 0 rgba(98, 163, 203, 0.5), -4px -4px 12px 0 rgba(78, 86, 196, 0.5)',
+        ambassadorSatu:
+          '18px 31px 0px 3px rgba(44, 54, 109, 1), 4px 4px 12px 0 rgba(98, 163, 203, 0.5), -4px -4px 12px 0 rgba(78, 86, 196, 0.5)',
+        ambassadorDua:
+          '-19px 26px 0px 3px rgba(44, 54, 109, 1), 4px 4px 12px 0 rgba(98, 163, 203, 0.5), -4px -4px 12px 0 rgba(78, 86, 196, 0.5)',
+        ambassadorTiga:
+          '16px -3px 0px 6px rgba(44, 54, 109, 1), 4px 4px 12px 0 rgba(98, 163, 203, 0.5), -4px -4px 12px 0 rgba(78, 86, 196, 0.5)',
+        ambassadorEmpat:
+          '-17px -12px 0px 3px rgba(44, 54, 109, 1), 4px 4px 12px 0 rgba(98, 163, 203, 0.5), -4px -4px 12px 0 rgba(78, 86, 196, 0.5)',
+        ambassadorLima:
+          '17px -36px 0px 3px rgba(44, 54, 109, 1), 4px 4px 12px 0 rgba(98, 163, 203, 0.5), -4px -4px 12px 0 rgba(78, 86, 196, 0.5)',
       },
       textShadow: {
         ambassador: '0 0 36px #E0ECFF',

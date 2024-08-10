@@ -18,6 +18,7 @@ const WhatsAmbassador = () => {
               src="/ambass-hp-kecil.png"
               alt="ambas"
               width={42}
+              quality={100}
               height={59}
               className="max-sm:block hidden absolute top-1/2 max-sm:-translate-y-9 max-sm:right-0 max-[320px]:translate-x-6 max-[360px]:translate-x-3 max-[400px]:translate-x-1 max-[430px]:-translate-x-3 sm:right-5 transform -translate-y-1/2"
             />
@@ -38,6 +39,7 @@ const WhatsAmbassador = () => {
             <Image
               src="/panda-ambassador.png"
               alt="panda"
+              quality={100}
               width={225}
               height={353}
               className="max-sm:hidden block max-lg:w-[200px] max-lg:h-[250px]"

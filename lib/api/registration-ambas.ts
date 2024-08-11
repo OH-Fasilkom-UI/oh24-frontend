@@ -11,7 +11,7 @@ export const submitAmbassadorSchema = z.object({
   introductionVideoLink: z.string().url(),
   instagramLink: z.string().url(),
   tiktokLink: z.string().url(),
-  twitterLink: z.string().url().optional(),
+  twitterLink: z.string().optional(),
   ableToAttend: z.string(),
   Accommodation: z.string(),
 

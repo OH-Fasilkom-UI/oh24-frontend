@@ -11,9 +11,13 @@ export const submitAmbassadorSchema = z.object({
   introductionVideoLink: z.string().url(),
   instagramLink: z.string().url(),
   tiktokLink: z.string().url(),
-  twitterLink: z.string().optional(),
+  twitterLink: z
+    .string()
+    .url()
+    .optional()
+    .or(z.literal('').transform(() => undefined)),
   ableToAttend: z.string(),
-  Accommodation: z.string(),
+  accommodation: z.string(),
 
   twibbon: z
     .instanceof(File)

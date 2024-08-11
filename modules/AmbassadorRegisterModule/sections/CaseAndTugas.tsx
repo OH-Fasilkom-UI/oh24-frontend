@@ -301,7 +301,7 @@ export const CaseAndTugas = () => {
             />
             <FormField
               control={form.control}
-              name="Accommodation"
+              name="accommodation"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel

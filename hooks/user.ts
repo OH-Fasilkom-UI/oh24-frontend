@@ -51,6 +51,10 @@ export function useUserData<T extends UserDataJoins>(
     if (currentPath === paths.personalDataForm && data?.hasPersonal === true) {
       redirect(paths.profilePage)
     }
+
+    if (currentPath === paths.registerAmbassador && data?.hasAmbassador === true) {
+      redirect(paths.profilePage)
+    }
   }
 
   return { userData: data, ...rest }

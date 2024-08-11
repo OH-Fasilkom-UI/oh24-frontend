@@ -142,7 +142,7 @@ const FileInput = ({
           <p className="w-full rounded-3xl outline-none border-2 py-3 px-5 overflow-hidden relative text-Text/TextDarkBG font-normal font-tex-gyre text-[16px]">
             {file ? file.name : secondaryMessage}
           </p>
-          <Button variant={'secondary'} onClick={() => setOpen(true)}>
+          <Button type='button' variant={'secondary'} onClick={() => setOpen(true)}>
             <Upload />
           </Button>
         </div>

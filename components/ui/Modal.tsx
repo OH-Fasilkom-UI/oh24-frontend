@@ -15,8 +15,8 @@ type ButtonType = React.ReactNode
 
 export interface ModalProps
   extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Root> {
-  trigger: React.ReactNode
-  icon: IconType
+  trigger?: React.ReactNode
+  icon?: IconType
   title: string
   buttons?: [ButtonType] | [ButtonType, ButtonType]
   hideClose?: boolean
@@ -52,9 +52,7 @@ const Modal = ({
                 'flex-col items-center text-center'
               )}
             >
-              <div>
-                <Icon size="4rem" />
-              </div>
+              <div>{Icon && <Icon size="4rem" />}</div>
               <div className="flex flex-col space-y-1.5">
                 <DialogPrimitive.Title className="text-3xl font-bold leading-none">
                   {title}

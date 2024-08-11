@@ -9,11 +9,10 @@ export const submitAmbassadorSchema = z.object({
   expectations: z.string(),
 
   introductionVideoLink: z.string().url(),
-  instagramLink: z.string().url(),
-  tiktokLink: z.string().url(),
+  instagramLink: z.string(),
+  tiktokLink: z.string(),
   twitterLink: z
     .string()
-    .url()
     .optional()
     .or(z.literal('').transform(() => undefined)),
   ableToAttend: z.string(),

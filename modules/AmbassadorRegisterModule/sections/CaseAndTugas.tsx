@@ -1,36 +1,25 @@
 'use client'
-import React, { useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
+import Button from '@/components/ui/Button'
 import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
+  Form
 } from '@/components/ui/form'
 import { toast } from '@/components/ui/Toast'
+import { useSubmitAmbassadorData } from '@/hooks/registration'
 import {
   SubmitAmbassadorData,
   submitAmbassadorSchema,
 } from '@/lib/api/registration-ambas'
-import RadioGroup from '@/components/ui/RadioGroup'
-import { InfoSourceRadio } from '../elements/InfoSourceRadio'
-import FileInput from '@/components/ui/FileInput'
-import Button from '@/components/ui/Button'
-import { Textarea } from '@/components/ui/textarea'
-import { Calendly } from './Calendly'
-import InputForm from '../elements/InputForm'
-import { AccomodationRadio } from '../elements/AccomodationRadio'
-import { ArrowLeft, AtSign } from 'lucide-react'
-import { BackModal } from '../elements/BackModal'
-import { redirect } from 'next/navigation'
 import { cn } from '@/lib/utils'
-import { useSubmitAmbassadorData } from '@/hooks/registration'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
+import { redirect } from 'next/navigation'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { BackModal } from '../elements/BackModal'
 import { LeftSideForm } from '../elements/LeftSideForm'
 import { RightSideForm } from '../elements/RightSideForm'
+import { Calendly } from './Calendly'
 
 export const CaseAndTugas = () => {
   const [page, setPage] = useState(0)

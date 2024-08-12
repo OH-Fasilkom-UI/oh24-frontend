@@ -21,7 +21,7 @@ export const AMBASSADOR_PROGRAMS = [
   {
     id: 1,
     title: '1. Welcoming Ambassador',
-    image: '/pesawat-kanan.png',
+    image: '/pesawat-kanan-2.png',
     description:
       'Welcoming OH Ambassador merupakan sebuah inisiatif yang dirancang untuk memfasilitasi pertemuan dan interaksi antar OH Ambassador dan staf yang bertujuan untuk memperkenalkan mereka secara lebih dalam tentang kegiatan-kegiatan yang terdapat di Open House Fasilkom UI maupun keuntungan yang akan didapatkan para OH Ambassador.',
   },

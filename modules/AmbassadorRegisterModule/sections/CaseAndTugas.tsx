@@ -23,7 +23,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Calendly } from './Calendly'
 import InputForm from '../elements/InputForm'
 import { AccomodationRadio } from '../elements/AccomodationRadio'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, AtSign } from 'lucide-react'
 import { BackModal } from '../elements/BackModal'
 import { redirect } from 'next/navigation'
 import { cn } from '@/lib/utils'
@@ -143,18 +143,21 @@ export const CaseAndTugas = () => {
             />
             <InputForm
               form={form}
+              icon={<AtSign />}
               name="instagramLink"
               label="Akun Instagram"
-              placeholder="Isikan dengan tautan akun Instagram"
+              placeholder="Isikan dengan nama akun Instagram"
             />
             <InputForm
-              placeholder="Isikan dengan tautan akun Tiktok"
+              placeholder="Isikan dengan nama akun Tiktok"
+              icon={<AtSign />}
               form={form}
               name="tiktokLink"
               label="Akun Tiktok"
             />
             <InputForm
-              placeholder="Isikan dengan tautan akun Twitter"
+              placeholder="Isikan dengan nama akun Twitter"
+              icon={<AtSign />}
               form={form}
               name="twitterLink"
               label="Akun Twitter (opsional)"

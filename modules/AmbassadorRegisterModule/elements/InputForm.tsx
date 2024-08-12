@@ -22,6 +22,7 @@ interface InputFormProps<
   description?: string
   name: Path<T>
   form: UseFormReturn<T, U, V>
+  icon?: React.ReactNode
 }
 
 const InputForm = <
@@ -35,6 +36,7 @@ const InputForm = <
   disabled = false,
   name,
   form,
+  icon,
 }: InputFormProps<T, U, V>) => {
   return (
     <FormField
@@ -46,6 +48,7 @@ const InputForm = <
           <FormItem className="flex flex-col gap-1 text-xs md:text-base">
             <FormControl>
               <Input
+                icon={icon}
                 label={label}
                 className="text-xs md:text-base"
                 placeholder={placeholder}

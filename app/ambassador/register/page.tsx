@@ -4,10 +4,10 @@ import Footer from '@/components/elements/Footer'
 
 const page = () => {
   return (
-    <>
+    <main>
       <AmbassadorRegisterModule />
       <Footer />
-    </>
+    </main>
   )
 }
 

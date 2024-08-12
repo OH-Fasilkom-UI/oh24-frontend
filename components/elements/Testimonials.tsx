@@ -39,7 +39,7 @@ const Testimonials = ({
               alt="quote"
               width={180}
               height={180}
-              className="max-md:w-[120px] max-md:h-[120px]"
+              className="max-md:w-[120px] max-md:h-[120px] aspect-square object-cover rounded-full"
             />
           </Avatar>
           <div className="flex gap-[24px] md:gap-[20px] flex-col lg:w-[780px] md:w-[530px] max-sm:w-fit max-sm:px-[10px] max-md:w-[283px]">
@@ -70,7 +70,7 @@ const Testimonials = ({
                       alt="foto"
                       width={140}
                       height={140}
-                      className="max-md:w-[80px] max-md:h-[80px]"
+                      className="max-md:w-[80px] max-md:h-[80px] aspect-square object-cover rounded-full"
                     />
                   </Avatar>
                   <p className="text-Text/TextDarkBG font-tex-gyre font-bold max-md:text-[14px] md:text-[20px] text-[24px]">

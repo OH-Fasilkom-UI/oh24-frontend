@@ -92,29 +92,8 @@ const AmbassadorModule = () => {
         />
       </div>
       <WhatsAmbassador />
-      <div className="max-lg:block hidden mt-[100px] relative flex-grow">
+      <div className="max-lg:block hidden mt-[100px]">
         <AmbassadorProgramsMobile />
-        <Image
-          src="/pesawat-kanan.png"
-          alt="pesawat-kanan"
-          width={200}
-          height={83}
-          className="absolute -right-10 top-0 max-sm:translate-y-1/2 md:w-[250px]"
-        />
-        <Image
-          src="/pesawat-kiri-lagi.png"
-          alt="pesawat-kiri"
-          width={134}
-          height={132}
-          className="absolute -left-10 top-1/2 max-sm:translate-y-1/4 md:left-10"
-        />
-        <Image
-          src="/pesawat-kanann.png"
-          alt="pesawat-kanann"
-          width={100}
-          height={100}
-          className="absolute right-0 md:right-10 bottom-1/4 translate-y-[100px]"
-        />
       </div>
       <div className="max-lg:hidden block mt-[100px]">
         <p className="text-Text/TextLightBG font-riffic mb-10 max-md:text-[16px] md:text-[24px] max-md:leading-6 text-center font-bold xl:text-[36px] leading-[40px] tracking-widest">
@@ -122,27 +101,6 @@ const AmbassadorModule = () => {
           Ambassador
         </p>
         <AmbassadorProgamsDesktop />
-        <Image
-          src="/pesawat-kanan.png"
-          alt="pesawat-kanan"
-          width={450}
-          height={100}
-          className="absolute"
-        />
-        <Image
-          src="/pesawat-kiri-lagi.png"
-          alt="pesawat-kiri"
-          width={134}
-          height={132}
-          className="absolute"
-        />
-        <Image
-          src="/pesawat-kanann.png"
-          alt="pesawat-kanann"
-          width={100}
-          height={100}
-          className="absolute"
-        />
       </div>
       <div className="mt-20 min-[2300px]:px-[360px]">
         <AmbassadorCarousel />

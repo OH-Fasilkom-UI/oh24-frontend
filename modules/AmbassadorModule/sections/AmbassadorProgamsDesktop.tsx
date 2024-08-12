@@ -1,4 +1,5 @@
 import Card from '@/components/ui/Card'
+import Image from 'next/image'
 
 const AmbassadorProgamsDesktop = () => {
   return (
@@ -39,6 +40,13 @@ const AmbassadorProgamsDesktop = () => {
               pengalaman hands-on mengenai ilmu yang dapat diaplikasikan di
               dunia nyata.
             </p>
+            <Image
+              src="/pesawat-kiri-lagi.png"
+              alt="pesawat-kiri"
+              width={320}
+              height={200}
+              className="absolute left-0 -translate-x-32 bottom-0 z-20 translate-y-1/2"
+            />
           </Card>
 
           {/* Section 5 */}
@@ -78,11 +86,18 @@ const AmbassadorProgamsDesktop = () => {
               wawasan dan pengetahuan berharga langsung dari ahli industri, agar
               update dengan tren dan perkembangan terbaru di dunia teknologi.
             </p>
+            <Image
+              src="/pesawat-kanan-2.png"
+              alt="pesawat-kanan"
+              width={600}
+              height={400}
+              className="absolute right-0 -top-1/4 -translate-y-1/2"
+            />
           </Card>
           {/* Section 4 */}
           <Card
             title=""
-            className=" text-BlueRegion/Cornflower/100 p-6 rounded-[32px]"
+            className=" text-BlueRegion/Cornflower/100 p-6 rounded-[32px] relative"
           >
             <h2 className="text-[20px]  font-bold font-riffic mb-4 tracking-wider">
               4. 1-on-1 Mentoring
@@ -94,6 +109,13 @@ const AmbassadorProgamsDesktop = () => {
               Ilmu Komputer UI secara eksklusif. Selain itu, sesi ini juga
               melatih kemampuan komunikasi dan kepercayaan diri Ambassador.
             </p>
+            <Image
+              src="/pesawat-kanann.png"
+              alt="pesawat-kanann"
+              width={200}
+              height={200}
+              className="absolute right-0 -bottom-5 translate-y-1/2"
+            />
           </Card>
         </div>
       </div>

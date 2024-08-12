@@ -8,7 +8,7 @@ import mbg from '@/public/ambassador-kecil.png'
 const AmbassadorCard = () => {
   return (
     <div className="xl:mt-[194px] max-sm:mt-[100px] md:mt-[140px] flex flex-col">
-      <div className="flex flex-col mx-3 sm:mx-5 md:mx-10 lg:mx-20 min-[2000px]:mx-[400px]">
+      <div className="flex flex-col">
         <Card
           title=""
           className="max-md:hidden block"

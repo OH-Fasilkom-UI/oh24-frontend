@@ -4,10 +4,12 @@ import Footer from '@/components/elements/Footer'
 
 const Page = () => {
   return (
-    <div className="relative h-screen">
+    <main
+      className='relative'
+    >
       <AmbassadorModule />
       <Footer />
-    </div>
+    </main>
   )
 }
 

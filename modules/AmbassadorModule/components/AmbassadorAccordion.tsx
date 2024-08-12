@@ -51,8 +51,8 @@ const AmbassadorFAQData: FAQInterface[] = [
 
 const AmbassadorAccordion = () => {
   return (
-    <div className="w-full max-md:p-7 md:p-20">
-      <Accordion type="single" collapsible className='flex flex-col lg:gap-4'>
+    <div className="w-full">
+      <Accordion type="single" collapsible className='flex flex-col lg:gap-4 z-20'>
         {
           AmbassadorFAQData.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`}>

@@ -21,7 +21,7 @@ const AmbassadorHelp = () => {
         />
       </div>
       <div className="my-auto max-w-xl max-sm:mx-5 md:-translate-x-10 lg:-translate-x-1/4">
-        <h1 className="text-[48px] max-md:text-[24px] max-xl:text-[30px] whitespace-nowrap font-tex-gyre mb-3 leading-[48px] tracking-widest text-[#B91B70] font-bold text-center">
+        <h1 className="text-[48px] max-md:text-[24px] max-xl:text-[30px] whitespace-nowrap font-riffic mb-3 leading-[48px] tracking-widest text-[#B91B70] font-bold text-center">
           Need more help?
         </h1>
         <p className="lg:text-[20px] max-md:text-[14px] leading-[20px] font-tex-gyre font-bold text-center text-[#530C32]">

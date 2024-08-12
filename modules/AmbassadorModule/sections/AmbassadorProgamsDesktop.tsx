@@ -13,7 +13,7 @@ const AmbassadorProgamsDesktop = () => {
             <h2 className="text-[20px] font-bold font-riffic mb-4 tracking-wider">
               1. Welcoming Ambassador
             </h2>
-            <p className="font-tex-gyre text-[16px]">
+            <p className="font-tex-gyre text-[16px] font-bold leading-6">
               Welcoming OH Ambassador merupakan sebuah inisiatif yang dirancang
               untuk memfasilitasi pertemuan dan interaksi antar OH Ambassador
               dan staf yang bertujuan untuk memperkenalkan mereka secara lebih
@@ -31,7 +31,7 @@ const AmbassadorProgamsDesktop = () => {
             <h2 className="text-[20px] font-bold font-riffic mb-4 tracking-wider">
               3. Ristek Class
             </h2>
-            <p className="font-tex-gyre text-[16px]">
+            <p className="font-tex-gyre text-[16px] font-bold leading-6">
               Para OH Ambassador akan mendapatkan akses eksklusif ke kelas
               RISTEK yang dirancang untuk meningkatkan keterampilan teknis dan
               menambah pemahaman lebih dalam tentang topik IT yang dibawakan
@@ -49,7 +49,7 @@ const AmbassadorProgamsDesktop = () => {
             <h2 className="text-[20px] font-bold font-riffic mb-4 tracking-wider">
               5. Farewell Party
             </h2>
-            <p className="font-tex-gyre text-[16px]">
+            <p className="font-tex-gyre text-[16px] font-bold leading-6">
               Kegiatan penghujung acara yang akan dilaksanakan untuk para OH
               Ambassador yang telah aktif mempromosikan OH Fasilkom. Kegiatan
               ini bertujuan untuk menimbulkan kesan akhir yang baik bagi para OH
@@ -70,7 +70,7 @@ const AmbassadorProgamsDesktop = () => {
             <h2 className="text-[20px] font-bold font-riffic mb-4 tracking-wider">
               2. Webinar with Alumni
             </h2>
-            <p className="font-tex-gyre text-[16px]">
+            <p className="font-tex-gyre text-[16px] font-bold leading-6">
               OH Ambassador akan mendapatkan kesempatan untuk berpartisipasi
               dalam webinar mengenai aplikasi IT dan prospek kerja yang akan
               dibawakan oleh alumni Fasilkom UI yang telah sukses dalam bidang
@@ -87,7 +87,7 @@ const AmbassadorProgamsDesktop = () => {
             <h2 className="text-[20px]  font-bold font-riffic mb-4 tracking-wider">
               4. 1-on-1 Mentoring
             </h2>
-            <p className="font-tex-gyre text-[16px]">
+            <p className="font-tex-gyre text-[16px] font-bold leading-6">
               One-on-one mentoring memberikan kesempatan kepada para OH
               Ambassador untuk dapat berinteraksi secara 1-on-1 dengan mentor,
               saling berdiskusi, dan mendapatkan informasi mengenai Fakultas

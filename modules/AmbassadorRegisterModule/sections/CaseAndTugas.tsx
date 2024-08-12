@@ -28,6 +28,7 @@ import { BackModal } from '../elements/BackModal'
 import { redirect } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { useSubmitAmbassadorData } from '@/hooks/registration'
+import Image from 'next/image'
 
 export const CaseAndTugas = () => {
   const [page, setPage] = useState(0)
@@ -70,12 +71,15 @@ export const CaseAndTugas = () => {
       </Button>
       <h1
         className={cn(
-          'text-Text/TextLightBG text-[24px] mx-auto text-center lg:text-[36px] py-[60px] font-bold font-riffic tracking-wider',
+          'text-Text/TextLightBG text-[24px] mx-auto text-center lg:text-[36px] pt-[60px] font-bold font-riffic tracking-wider',
           page === 1 && 'hidden'
         )}
       >
-        Case and Tugas Calon Ambassador
+        Tugas Calon Ambassador
       </h1>
+      <p className='text-Text/TextLightBG md:text-[20px] text-[11px] pt-[4px] pb-[60px] text-center'>
+        Sebelum kamu mengisi tugas ini, pastikan kamu telah membaca ddan mendownloadd template yang disediakan di guidebook yaa!
+      </p>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}

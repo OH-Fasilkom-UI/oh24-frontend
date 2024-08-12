@@ -1,28 +1,19 @@
 export const LAST_AMBASSADOR = [
   {
     id: 1,
-    image: '',
-    description: 'Deskripsi Lorem ipsum dolor sit amet',
+    image: '/ambass-award.JPG',
+    description: 'Ambassador Awarding at  Main Event OH Fasilkom UI',
   },
   {
     id: 2,
-    image: '',
-    description: 'Deskripsi Lorem ipsum dolor sit amet',
+    image: '/ambass-mentoring.jpg',
+    description:
+      'One-on-one mentoring  with Universitas Indonesia Computer Science Students',
   },
   {
     id: 3,
-    image: '',
-    description: 'Deskripsi Lorem ipsum dolor sit amet',
-  },
-  {
-    id: 4,
-    image: '',
-    description: 'Deskripsi Lorem ipsum dolor sit amet',
-  },
-  {
-    id: 5,
-    image: '',
-    description: 'Deskripsi Lorem ipsum dolor sit amet',
+    image: '/ambass-webinar.jpg',
+    description: 'Webinar with Alumni ',
   },
 ]
 

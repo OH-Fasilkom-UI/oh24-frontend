@@ -51,9 +51,13 @@ const AmbassadorModule = () => {
         <AmbassadorProgramsMobile />
       </div>
       <div className="max-lg:hidden block mt-[100px]">
+        <p className="text-Text/TextLightBG font-riffic mb-10 max-md:text-[16px] md:text-[24px] max-md:leading-6 text-center font-bold xl:text-[36px] leading-[40px] tracking-widest">
+          Special Programs for <br className="max-md:block hidden" /> Open House
+          Ambassador
+        </p>
         <AmbassadorProgamsDesktop />
       </div>
-      <div className="mt-20">
+      <div className="mt-20 min-[2300px]:px-[200px] ">
         <AmbassadorCarousel />
       </div>
       <div className="max-sm:mx-5 md:mx-10 lg:mx-[80px] py-20 mt-20 flex flex-col gap-y-10 min-[2000px]:px-[500px]">
@@ -64,7 +68,7 @@ const AmbassadorModule = () => {
       </div>
       <AmbassadorHelp />
       <AmbassadorAccordion />
-      <div className="lg:mx-[120px] max-sm:mx-5 md:mx-20 xl:mt-[200px] min-[2000px]:mt-[300px] mb-[600px] xl:mb-[800px] min-[2000px]:mb-[1500px]">
+      <div className="lg:mx-[120px] max-lg:mt-[100px] max-sm:mx-5 md:mx-20 xl:mt-[200px] min-[2000px]:mt-[300px] mb-[600px] xl:mb-[800px] min-[2000px]:mb-[1500px]">
         <ContactPerson />
       </div>
     </div>

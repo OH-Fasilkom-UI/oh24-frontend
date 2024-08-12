@@ -10,14 +10,14 @@ const AmbassadorHelp = () => {
           alt="city"
           width={1440}
           height={400}
-          className="w-screen max-md:hidden block"
+          className="w-[1000px] max-md:hidden block object-contain -translate-x-10 lg:-translate-x-24"
         />
         <Image
           src="/city-amb.png"
           alt="city"
           width={1440}
           height={400}
-          className="w-screen max-md:block hidden"
+          className="w-screen max-md:block hidden object-contain"
         />
       </div>
       <div className="my-auto max-w-xl max-sm:mx-5 md:-translate-x-10 lg:-translate-x-1/4">

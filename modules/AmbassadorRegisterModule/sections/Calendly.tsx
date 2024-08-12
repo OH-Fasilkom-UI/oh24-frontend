@@ -32,7 +32,7 @@ export const Calendly: React.FC<CalendlyProps> = ({ showCalendly, onSubmit }) =>
           <h1 className="text-Text/TextLightBG text-[30px] lg:text-[48px] font-bold font-riffic tracking-wider lg:pt-4 pt-2 lg:pb-8 pb-4">
             Pilih Tanggal <br className="lg:hidden" /> Interview
           </h1>
-          <Link href="https://cl.gy/XWop" target="_blank">
+          <Link href="https://calendly.com/ohambass/interview-calon-ambassador" target="_blank">
             <Button variant={'secondary'} onClick={() => setShowFinalize(true)}>
               Open Calendly
             </Button>

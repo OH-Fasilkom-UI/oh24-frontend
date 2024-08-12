@@ -2,7 +2,7 @@ import Card from '@/components/ui/Card'
 
 const AmbassadorProgamsDesktop = () => {
   return (
-    <div className="p-6 flex justify-center">
+    <section className="p-6 flex justify-center">
       <div className="max-w-4xl flex gap-x-3 gap-y-8">
         <div className="flex flex-col gap-x-3 gap-y-8">
           {/* Section 1 */}
@@ -97,7 +97,7 @@ const AmbassadorProgamsDesktop = () => {
           </Card>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

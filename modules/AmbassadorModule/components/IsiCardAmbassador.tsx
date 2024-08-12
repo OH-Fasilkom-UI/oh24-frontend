@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '@/components/ui/Button'
-import { User } from 'lucide-react'
+import { BookMinus, User } from 'lucide-react'
 import { scroller } from 'react-scroll'
 import Countdown from '@/components/elements/Countdown'
 import Link from 'next/link'
@@ -35,17 +35,15 @@ const IsiCardAmbassador = () => {
       <div className="flex flex-row max-md:flex-col max-md:items-center gap-5 max-md:my-5 xl:my-20 justify-center">
         <Button
           onClick={() => {
-            scroller.scrollTo('ambass-desc', {
-              smooth: true,
-              offset: -150,
-            })
+            // Download Guidebook
           }}
-          className="max-md:text-[12px] w-full max-w-[150px] h-[44px]"
+          className="max-md:text-[12px] w-full max-w-[180px] h-[44px]"
         >
+          <BookMinus className='w-4' />
           Guidebook
         </Button>
         <Link href="/ambassador/register">
-          <Button className="bg-Misc/Ziggurat/400 max-md:text-[12px] w-full max-w-[150px]">
+          <Button className="bg-Misc/Ziggurat/400 max-md:text-[12px] w-[180px] md:w-full max-w-[180px]">
             <User className="max-md:text-[12px]" />
             Register
           </Button>

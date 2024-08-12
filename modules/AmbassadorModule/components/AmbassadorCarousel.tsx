@@ -31,22 +31,20 @@ const AmbassadorCarousel = () => {
           {Array.from(LAST_AMBASSADOR).map((item, index) => (
             <CarouselItem key={index} className="sm:basis-1/2 xl:basis-1/3">
               <Card
-                title=""
-                className="flex flex-col h-full gap-2 rounded-[28px] shadow-carousel"
-              >
-                <div className="relative w-full xl:h-[176px] h-[128px] rounded-[30px] overflow-hidden flex-shrink-0">
+                className="flex flex-col rounded-[28px] shadow-carousel p-4 pb-5 h-[320px]"
+                asset={
                   <Image
                     alt="contoh"
                     src={item.image}
-                    fill
-                    sizes="none"
-                    className="object-contain"
+                    width={200}
+                    height={200}
+                    className="object-cover w-full h-full aspect-square max-h-[200px] rounded-xl"
                   />
-                </div>
-                <div className="flex items-center justify-center translate-y-2  flex-grow">
-                  <p className="text-[14px] leading-5 text-center">
-                    {item.description}
-                  </p>
+                }
+              >
+
+                <div className="text-[14px] leading-5 text-center font-bold h-full flex items-center justify-center">
+                  {item.description}
                 </div>
               </Card>
             </CarouselItem>

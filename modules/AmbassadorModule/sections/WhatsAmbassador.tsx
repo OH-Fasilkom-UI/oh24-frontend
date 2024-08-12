@@ -10,7 +10,7 @@ const WhatsAmbassador = () => {
       <div className="flex md:max-w-2xl lg:max-w-3xl xl:max-w-4xl items-center">
         <div className="flex-1 mr-8 max-md:mx-3">
           <div className="flex flex-col relative py-3 w-full">
-            <p className="text-Text/TextLightBG max-md:leading-6 md:text-[24px] sm:mr-3 md:whitespace-nowrap max-md:text-[14px] max-lg:text-[16px] max-sm:text-center tracking-widest font-riffic font-bold text-[36px] leading-[40px]">
+            <p className="text-Text/TextLightBG max-md:leading-6 md:text-[24px] sm:mr-3 md:whitespace-nowrap max-md:text-base max-lg:text-[16px] max-sm:text-center tracking-widest font-riffic font-bold text-[36px] leading-[40px]">
               Apa itu <br className="max-sm:block hidden" /> Ambassador Open
               House?
             </p>
@@ -42,7 +42,7 @@ const WhatsAmbassador = () => {
               quality={100}
               width={225}
               height={353}
-              className="max-sm:hidden block max-lg:w-[200px] max-lg:h-[250px]"
+              className="max-sm:hidden block max-lg:w-[200px] max-lg:h-[250px] cursor-pointer hover:scale-110 duration-300 "
             />
           </div>
         </div>

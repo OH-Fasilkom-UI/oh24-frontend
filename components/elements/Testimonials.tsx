@@ -14,7 +14,9 @@ const Testimonials = ({
   const [active, setActive] = useState(0)
 
   return (
-    <section>
+    <section
+      className='md:px-20'
+    >
       <div
         style={{
           backgroundImage: `url(${bg.src})`,
@@ -43,7 +45,7 @@ const Testimonials = ({
             />
           </Avatar>
           <div className="flex gap-[24px] md:gap-[20px] flex-col lg:w-[780px] md:w-[530px] max-sm:w-fit max-sm:px-[10px] max-md:w-[283px]">
-            <p className="text-Text/TextDarkBG max-md:text-[14px] leading-9 max-md:leading-[25px] font-extrabold text-justify md:text-[18px] text-[24px] max-sm:max-h-[250px] overflow-y-auto sm:overflow-visible">
+            <p className="text-Text/TextDarkBG max-md:text-[14px] leading-9 max-md:leading-[25px] font-extrabold text-justify md:text-[18px] text-[24px] max-h-[250px] overflow-y-auto">
               {(testimonyData ?? testimonials)[active].testimonial}
             </p>
             <p className="text-Text/TextDarkBG font-tex-gyre max-md:text-[14px] md:text-[20px] font-normal text-[24px]">
@@ -53,16 +55,16 @@ const Testimonials = ({
         </div>
       </div>
       <div>
-        <ScrollArea className="pt-10 pb-14 overflow-visible">
-          <div className="flex flex-row max-sm:gap-[10px] gap-[40px] justify-center">
+        <ScrollArea className="pt-10 pb-10 overflow-visible">
+          <div className="flex flex-row max-md:gap-[10px] gap-[40px] justify-center min-h-[180px] md:min-h-[300px]">
             {(testimonyData ?? testimonials).map((testi, index) => (
               <div
                 onClick={() => setActive(index)}
                 key={index}
-                className="flex flex-col justify-center items-center gap-[24px] hover:scale-105 duration-300 cursor-pointer"
+                className="flex flex-col justify-center items-center gap-2 lg:gap-[24px] duration-300 cursor-pointer h-fit"
               >
                 <div
-                  className={`flex pt-6 rounded-2xl items-center flex-col ${active === index ? 'bg-Text/TextLightBG' : 'bg-[#1C274F]'} text-center gap-2 max-md:w-[120px] max-md:h-[132px] max-md:pt-[12px] w-[190px] h-[236px]`}
+                  className={`flex p-2 md:p-6 rounded-2xl items-center flex-col ${active === index ? 'bg-Text/TextLightBG' : 'bg-[#1C274F]'} text-center gap-2 max-md:w-[120px] max-md:h-[142px] max-md:pt-[12px] w-[190px] h-[236px]`}
                 >
                   <Avatar>
                     <AvatarImage
@@ -70,10 +72,10 @@ const Testimonials = ({
                       alt="foto"
                       width={140}
                       height={140}
-                      className="max-md:w-[80px] max-md:h-[80px] aspect-square object-cover rounded-full"
+                      className="w-[60px] h-[60px] md:h-[100px] md:w-[100px] aspect-square object-cover rounded-full"
                     />
                   </Avatar>
-                  <p className="text-Text/TextDarkBG font-tex-gyre font-bold max-md:text-[14px] md:text-[20px] text-[24px]">
+                  <p className="text-Text/TextDarkBG font-tex-gyre font-bold text-sm md:text-lg h-full flex items-center">
                     {testi.name}
                   </p>
                 </div>

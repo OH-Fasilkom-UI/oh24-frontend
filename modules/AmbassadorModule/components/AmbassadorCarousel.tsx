@@ -16,11 +16,14 @@ const AmbassadorCarousel = () => {
     <div className="py-20">
       <div className="mx-auto px-4">
         <h1 className="text-center font-bold text-4xl max-md:text-[24px] tracking-widest text-Text/TextLightBG mb-4">
-          Ambassador Last Year
+          Ambassador Last Year!
         </h1>
         <p className="text-center max-md:text-[12px] font-bold text-Text/TextLightBG mb-8 max-w-2xl mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut
+          Pada tahun 2023, OH Ambassador telah menerima berbagai program
+          menarik, mulai dari webinar dengan alumni Fasilkom UI, ngobrol dengan
+          mentor-mentor di Fasilkom UI, sampai belajar skill baru bersama
+          Ristek! Semua aktivitas ini disediakan secara exclusive kepada para
+          Ambassador Open House Fasilkom UI.
         </p>
       </div>
       <Carousel className="px-[65px] md:px-[120px] lg:px-[190px]">
@@ -29,9 +32,9 @@ const AmbassadorCarousel = () => {
             <CarouselItem key={index} className="sm:basis-1/2 xl:basis-1/3">
               <Card
                 title=""
-                className="flex flex-col gap-2 rounded-[28px] shadow-carousel"
+                className="flex flex-col h-full gap-2 rounded-[28px] shadow-carousel"
               >
-                <div className="relative w-full xl:h-[176px] h-[128px] rounded-[30px] overflow-hidden">
+                <div className="relative w-full xl:h-[176px] h-[128px] rounded-[30px] overflow-hidden flex-shrink-0">
                   <Image
                     alt="contoh"
                     src={item.image}
@@ -40,7 +43,7 @@ const AmbassadorCarousel = () => {
                     className="object-contain"
                   />
                 </div>
-                <div className="flex items-center justify-center translate-y-2 flex-grow">
+                <div className="flex items-center justify-center translate-y-2  flex-grow">
                   <p className="text-[14px] leading-5 text-center">
                     {item.description}
                   </p>

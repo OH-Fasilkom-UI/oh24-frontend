@@ -12,7 +12,7 @@ export const AccordionItem = React.forwardRef<
   <AccordionPrimitive.Item
     ref={ref}
     className={twMerge(
-      '[&:not(:last-child)]:mb-2 rounded-3xl text-white px-8 [&:first-child]:bg-BlueRegion/CeruleanBlue/600 bg-BlueRegion/CeruleanBlue/700 border-b',
+      '[&:not(:last-child)]:mb-2 rounded-3xl text-white px-8 [&:first-child]:bg-BlueRegion/CeruleanBlue/600 bg-BlueRegion/CeruleanBlue/700 border-b z-20',
       className
     )}
     {...props}

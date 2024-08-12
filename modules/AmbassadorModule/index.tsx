@@ -65,7 +65,7 @@ const AmbassadorModule = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
-      className="min-h-screen flex flex-col"
+      className="min-h-screen flex flex-col px-5 md:px-10 lg:px-20 z-20"
     >
       <div className="relative flex-grow mt-10">
         <AmbassadorCard />
@@ -74,7 +74,7 @@ const AmbassadorModule = () => {
           alt="pesawat-kiri"
           width={100}
           height={100}
-          className="lg:left-10 max-[400px]:w-[70px] max-lg:top-0 max-md:left-0 lg:top-[100px] min-[2000px]:mx-[300px] absolute"
+          className="lg:left-0 max-[400px]:w-[70px] max-lg:top-0 max-md:left-0 lg:top-[100px] min-[2000px]:mx-[300px] absolute"
         />
         <Image
           src="/pesawat-kiri.png"
@@ -105,7 +105,7 @@ const AmbassadorModule = () => {
       <div className="mt-20 min-[2300px]:px-[200px] ">
         <AmbassadorCarousel />
       </div>
-      <div className="max-sm:mx-5 md:mx-10 lg:mx-[80px] py-20 mt-20 flex flex-col gap-y-10 min-[2000px]:px-[500px]">
+      <div className="py-20 mt-20 flex flex-col gap-y-10 min-[2000px]:px-[500px]">
         <p className="font-riffic text-center text-Text/TextLightBG font-bold text-[36px] max-sm:text-[20px] max-md:text-[24px] leading-10 tracking-widest">
           Let&rsquo;s Hear Testimony From Ambassador
         </p>
@@ -115,7 +115,7 @@ const AmbassadorModule = () => {
       </div>
       <AmbassadorHelp />
       <AmbassadorAccordion />
-      <div className="lg:mx-[120px] max-lg:mt-[100px] max-sm:mx-5 md:mx-20 xl:mt-[200px] min-[2000px]:mt-[300px] mb-[600px] xl:mb-[800px] min-[2000px]:mb-[1500px]">
+      <div className="">
         <ContactPerson />
       </div>
     </div>

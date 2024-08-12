@@ -49,7 +49,9 @@ export const CaseAndTugas = () => {
   }
 
   return (
-    <section>
+    <section
+      className='flex flex-col gap-10'
+    >
       <BackModal showModal={showModal} setShowModal={setShowModal} />
       <Button
         onClick={handleBack}

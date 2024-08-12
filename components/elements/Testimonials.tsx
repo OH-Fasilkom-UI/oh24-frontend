@@ -15,7 +15,7 @@ const Testimonials = ({
 
   return (
     <section
-      className='md:px-20'
+      className='w-full'
     >
       <div
         style={{

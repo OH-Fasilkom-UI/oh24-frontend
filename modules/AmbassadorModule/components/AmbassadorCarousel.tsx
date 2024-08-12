@@ -31,19 +31,19 @@ const AmbassadorCarousel = () => {
           {Array.from(LAST_AMBASSADOR).map((item, index) => (
             <CarouselItem key={index} className="sm:basis-1/2 xl:basis-1/3">
               <Card
-                className="flex flex-col rounded-[28px] shadow-carousel p-4 pb-5 h-[320px]"
+                className="flex flex-col rounded-[28px] shadow-carousel p-4 sm:p-4 pb-5 h-[230px] gap-2"
                 asset={
                   <Image
                     alt="contoh"
                     src={item.image}
                     width={200}
                     height={200}
-                    className="object-cover w-full h-full aspect-square max-h-[200px] rounded-xl"
+                    className="object-cover w-full h-full aspect-square max-h-[130px] rounded-xl"
                   />
                 }
               >
 
-                <div className="text-[14px] leading-5 text-center font-bold h-full flex items-center justify-center">
+                <div className="text-[14px] leading-5 text-center font-bold h-fit flex items-center justify-center">
                   {item.description}
                 </div>
               </Card>

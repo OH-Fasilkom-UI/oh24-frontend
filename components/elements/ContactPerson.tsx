@@ -15,7 +15,7 @@ const ContactPerson: React.FC<ContactPersonProps> = ({
     <section
       {...props}
       className={twMerge(
-        'w-full h-[640px] md:h-fit rounded-[32px] bg-RedRegion/Monza/800 relative flex items-center justify-center overflow-hidden shadow-md',
+        'w-full h-[640px] md:h-fit rounded-[32px] bg-RedRegion/Monza/800 relative flex items-center justify-center overflow-hidden shadow-md z-20',
         className
       )}
     >

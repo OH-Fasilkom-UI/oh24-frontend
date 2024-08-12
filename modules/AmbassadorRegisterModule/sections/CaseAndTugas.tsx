@@ -1,8 +1,6 @@
 'use client'
 import Button from '@/components/ui/Button'
-import {
-  Form
-} from '@/components/ui/form'
+import { Form } from '@/components/ui/form'
 import { toast } from '@/components/ui/Toast'
 import { useSubmitAmbassadorData } from '@/hooks/registration'
 import {
@@ -68,7 +66,12 @@ export const CaseAndTugas = () => {
       >
         Tugas Calon Ambassador
       </h1>
-      <p className="text-Text/TextLightBG md:text-[20px] text-[11px] pt-[4px] pb-[60px] text-center">
+      <p
+        className={cn(
+          'text-Text/TextLightBG md:text-[20px] text-[11px] pt-[4px] pb-[60px] text-center',
+          page === 1 && 'hidden'
+        )}
+      >
         Sebelum kamu mengisi tugas ini, pastikan kamu telah membaca ddan
         mendownloadd template yang disediakan di guidebook yaa!
       </p>

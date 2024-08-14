@@ -123,13 +123,13 @@ const AmbassadorModule = () => {
           <Link href={'https://wa.me/082178452476'} target='_blank'>
             <Button>
               <MessageSquare size={24} />
-              <span>Sav</span>
+              <span>Savitri</span>
             </Button>
           </Link>
           <Link href={'https://wa.me/081321037558'} target='_blank'>
             <Button>
               <MessageSquare size={24} />
-              <span>Cia</span>
+              <span>Patricia</span>
             </Button>
           </Link>
         </ContactPerson>

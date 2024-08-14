@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const AmbassadorHelp = () => {
   return (
-    <section className="flex max-md:flex-col flex-row w-full">
+    <section className="flex max-md:flex-col flex-row w-full mb-8">
       <div>
         <Image
           src="/city-road.png"

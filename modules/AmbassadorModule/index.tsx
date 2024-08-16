@@ -10,6 +10,9 @@ import bg from '@/public/wave-notfound.png'
 import AmbassadorProgramsMobile from './sections/AmbassadorProgramsMobile'
 import AmbassadorProgamsDesktop from './sections/AmbassadorProgamsDesktop'
 import Image from 'next/image'
+import Button from '@/components/ui/Button'
+import { MessageSquare } from 'lucide-react'
+import Link from 'next/link'
 
 const ambassTestimonyData = [
   {
@@ -65,9 +68,9 @@ const AmbassadorModule = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
-      className="min-h-screen flex flex-col px-5 md:px-10 lg:px-20 z-20"
+      className="min-h-screen flex flex-col z-20"
     >
-      <div className="relative flex-grow mt-10">
+      <div className="relative flex-grow mt-10 px-5 md:px-10 lg:px-15">
         <AmbassadorCard />
         <Image
           src="/pesawat-kiri.png"
@@ -92,31 +95,44 @@ const AmbassadorModule = () => {
         />
       </div>
       <WhatsAmbassador />
-      <div className="max-lg:block hidden mt-[100px]">
+      <div className="max-lg:block hidden mt-[100px] px-5 md:px-10 lg:px-15">
         <AmbassadorProgramsMobile />
       </div>
-      <div className="max-lg:hidden block mt-[100px]">
+      <div className="max-lg:hidden block mt-[100px] px-5 md:px-10 lg:px-15">
         <p className="text-Text/TextLightBG font-riffic mb-10 max-md:text-[16px] md:text-[24px] max-md:leading-6 text-center font-bold xl:text-[36px] leading-[40px] tracking-widest">
           Special Programs for <br className="max-md:block hidden" /> Open House
           Ambassador
         </p>
         <AmbassadorProgamsDesktop />
       </div>
-      <div className="mt-20 min-[2300px]:px-[200px] ">
+      <div className="mt-20 min-[2300px]:px-[360px] px-5 md:px-10 lg:px-15">
         <AmbassadorCarousel />
       </div>
-      <div className="py-20 mt-20 flex flex-col gap-y-10 min-[2000px]:px-[500px]">
+      <div className="py-20 mt-20 flex flex-col gap-y-10 min-[2000px]:px-[500px] px-5 md:px-10 lg:px-15">
         <p className="font-riffic text-center text-Text/TextLightBG font-bold text-[36px] max-sm:text-[20px] max-md:text-[24px] leading-10 tracking-widest">
           Let&rsquo;s Hear Testimony From Ambassador
         </p>
-        <Testimonials
-          testimonyData={ambassTestimonyData}
-        />
+        <Testimonials testimonyData={ambassTestimonyData} />
       </div>
       <AmbassadorHelp />
-      <AmbassadorAccordion />
-      <div className="">
-        <ContactPerson />
+      <div className="px-5 md:px-10 lg:px-15">
+        <AmbassadorAccordion />
+      </div>
+      <div className="mt-[200px] md:mb-[75vh] mb-[40vh] px-5 md:px-10 lg:px-15">
+        <ContactPerson>
+          <Link href={'https://wa.me/082178452476'} target='_blank'>
+            <Button>
+              <MessageSquare size={24} />
+              <span>Savitri</span>
+            </Button>
+          </Link>
+          <Link href={'https://wa.me/081321037558'} target='_blank'>
+            <Button>
+              <MessageSquare size={24} />
+              <span>Patricia</span>
+            </Button>
+          </Link>
+        </ContactPerson>
       </div>
     </div>
   )

@@ -21,6 +21,7 @@ export const AMBASSADOR_PROGRAMS = [
   {
     id: 1,
     title: '1. Welcoming Ambassador',
+    image: '/pesawat-kanan-2.png',
     description:
       'Welcoming OH Ambassador merupakan sebuah inisiatif yang dirancang untuk memfasilitasi pertemuan dan interaksi antar OH Ambassador dan staf yang bertujuan untuk memperkenalkan mereka secara lebih dalam tentang kegiatan-kegiatan yang terdapat di Open House Fasilkom UI maupun keuntungan yang akan didapatkan para OH Ambassador.',
   },
@@ -33,6 +34,7 @@ export const AMBASSADOR_PROGRAMS = [
   {
     id: 3,
     title: '3. Ristek Class',
+    image: '/pesawat-kiri-lagi.png',
     description:
       'Para OH Ambassador akan mendapatkan akses eksklusif ke kelas RISTEK yang dirancang untuk meningkatkan keterampilan teknis dan menambah pemahaman lebih dalam tentang topik IT yang dibawakan oleh narasumber. RISTEK Class akan memberikan OH Ambassador pengalaman hands-on mengenai ilmu yang dapat diaplikasikan di dunia nyata.',
   },
@@ -45,6 +47,7 @@ export const AMBASSADOR_PROGRAMS = [
   {
     id: 5,
     title: '5. Farewell Party',
+    image: '/pesawat-kanann.png',
     description:
       'Kegiatan penghujung acara yang akan dilaksanakan untuk para OH Ambassador yang telah aktif mempromosikan OH Fasilkom. Kegiatan ini bertujuan untuk menimbulkan kesan akhir yang baik bagi para OH Ambassador yang telah turut serta dalam rangkaian acara OH Fasilkom. Melalui Farewell party, diharapkan para OH Ambassador dapat merasakan apresiasi dalam menyukseskan acara OH Fasilkom itu sendiri.',
   },

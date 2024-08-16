@@ -42,7 +42,7 @@ const ContactPerson: React.FC<ContactPersonProps> = ({
           className="absolute top-0 left-0 md:hidden w-full"
         />
       </div>
-      <div className="z-20 flex flex-col md:flex-row-reverse gap-4 w-fit h-fit justify-center items-center p-8">
+      <div className="z-20 flex flex-col md:flex-row-reverse max-md:gap-4 xl:gap-[40vh] justify-center items-center p-8">
         <Image
           src={'/contact-person-panda-ngoding.svg'}
           alt="Contact Person Asset"
@@ -53,16 +53,16 @@ const ContactPerson: React.FC<ContactPersonProps> = ({
         <div className="flex flex-col gap-8 h-fit w-fit justify-center">
           <div className="w-full flex flex-col gap-8 justify-center items-center">
             <div className="flex flex-col gap-2 text-white">
-              <h5 className="font-bold text-2xl leading-8 text-center">
+              <h5 className="font-bold text-2xl leading-8 text-center md:text-start">
                 Butuh bantuan atau memiliki pertanyaan?
               </h5>
-              <p className="font-normal text-base leading-6 text-center">
+              <p className="font-normal text-base leading-6 text-center md:text-start">
                 Hubungi kami pada kontak berikut untuk bantuan lebih lanjut
               </p>
             </div>
             {/* Buttons Stored Here */}
             <div
-              className={`${children ? 'flex' : 'hidden'} flex-col md:flex-row justify-center lg:justify-start w-full gap-4`}
+              className={`${children ? 'flex' : 'hidden'} flex-col md:flex-row justify-center items-center lg:justify-start w-full gap-4`}
             >
               {children}
             </div>

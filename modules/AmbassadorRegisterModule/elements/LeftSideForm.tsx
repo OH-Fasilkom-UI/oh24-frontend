@@ -106,6 +106,7 @@ export const LeftSideForm = <
             <FormControl>
               <FileInput
                 label="Bukti Follow IG OH Fasilkom"
+                secondaryMessage='Unggah file JPG/PNG/JPEG dengan maksimum 2MB'
                 file={field.value}
                 setFile={field.onChange}
                 {...field}
@@ -123,6 +124,7 @@ export const LeftSideForm = <
             <FormControl>
               <FileInput
                 label="Bukti Post Insta Story"
+                secondaryMessage='Unggah file JPG/PNG/JPEG dengan maksimum 2MB'
                 file={field.value}
                 setFile={field.onChange}
                 {...field}

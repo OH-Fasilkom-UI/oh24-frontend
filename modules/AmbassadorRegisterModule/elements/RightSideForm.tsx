@@ -31,6 +31,7 @@ export const RightSideForm = <
             <FormControl>
               <FileInput
                 label="Bukti Post Twibbon"
+                secondaryMessage='Unggah file JPG dengan maksimum 2MB'
                 file={field.value}
                 setFile={field.onChange}
                 {...field}
@@ -54,6 +55,7 @@ export const RightSideForm = <
             <FormControl>
               <FileInput
                 label="Upload CV"
+                secondaryMessage='Unggah file PDF dengan maksimum 2MB'
                 file={field.value}
                 setFile={field.onChange}
                 {...field}
@@ -71,6 +73,7 @@ export const RightSideForm = <
             <FormControl>
               <FileInput
                 label="Upload MoU"
+                secondaryMessage='Unggah file PDF dengan maksimum 2MB'
                 file={field.value}
                 setFile={field.onChange}
                 {...field}

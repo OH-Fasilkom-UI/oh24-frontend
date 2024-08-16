@@ -68,7 +68,7 @@ const AmbassadorModule = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
-      className="min-h-screen flex flex-col z-20"
+      className="min-h-screen flex flex-col z-20 w-full"
     >
       <div className="relative flex-grow mt-10 px-5 md:px-10 lg:px-15">
         <AmbassadorCard />
@@ -77,21 +77,21 @@ const AmbassadorModule = () => {
           alt="pesawat-kiri"
           width={100}
           height={100}
-          className="lg:left-0 max-[400px]:w-[70px] max-lg:top-0 max-md:left-0 lg:top-[100px] min-[2000px]:mx-[300px] absolute"
+          className="lg:left-0 max-[400px]:w-[70px] max-lg:top-0 max-md:left-0 lg:top-[100px] absolute"
         />
         <Image
           src="/pesawat-kiri.png"
           alt="pesawat-kiri"
           width={236}
           height={183}
-          className="left-0 top-1/4 absolute hidden lg:block min-[2000px]:mx-[250px]"
+          className="left-0 top-1/4 absolute hidden lg:block"
         />
         <Image
           src="/pesawat-kanan.png"
           alt="pesawat-kanan"
           width={200}
           height={200}
-          className="absolute hidden lg:block right-0 top-[100px] min-[2000px]:mx-[250px] min-[2000px]:w-[300px]"
+          className="absolute hidden lg:block right-0 top-[100px]"
         />
       </div>
       <WhatsAmbassador />
@@ -108,7 +108,7 @@ const AmbassadorModule = () => {
       <div className="mt-20 min-[2300px]:px-[360px] px-5 md:px-10 lg:px-15">
         <AmbassadorCarousel />
       </div>
-      <div className="py-20 mt-20 flex flex-col gap-y-10 min-[2000px]:px-[500px] px-5 md:px-10 lg:px-15">
+      <div className="py-20 mt-20 flex flex-col gap-y-10 px-5 md:px-10 lg:px-15">
         <p className="font-riffic text-center text-Text/TextLightBG font-bold text-[36px] max-sm:text-[20px] max-md:text-[24px] leading-10 tracking-widest">
           Let&rsquo;s Hear Testimony From Ambassador
         </p>

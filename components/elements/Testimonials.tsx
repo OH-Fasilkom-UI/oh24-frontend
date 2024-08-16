@@ -2,9 +2,25 @@
 import { ScrollArea, ScrollBar } from '@/components/ui/ScrollArea'
 import bg from '@/public/background-testi.png'
 import { Avatar, AvatarImage } from '@radix-ui/react-avatar'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { testimonials } from './Testimonials.data'
 import Image from 'next/image'
+import {motion, useInView} from 'framer-motion'
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2, // Stagger timing
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
 
 const Testimonials = ({
   testimonyData = testimonials,
@@ -13,11 +29,26 @@ const Testimonials = ({
 }) => {
   const [active, setActive] = useState(0)
 
+  const mainCardRef = useRef(null)
+  const childrenRef = useRef(null)
+  const inView = useInView(mainCardRef, { once: true })
+  const inViewChildren = useInView(childrenRef, { once: true })
+
   return (
     <section
       className='w-full'
     >
-      <div
+      <motion.div
+        ref={mainCardRef}
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={
+          inView
+            ? { opacity: 1, scale: 1 }
+            : { opacity: 0, scale: 0.5 }
+        }
+        exit={{ opacity: 0, scale: 0.5 }}
+        transition={{ duration: 0.5, type: 'spring', bounce: 0.25 }}
+
         style={{
           backgroundImage: `url(${bg.src})`,
           backgroundSize: 'cover',
@@ -53,18 +84,27 @@ const Testimonials = ({
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
       <div>
         <ScrollArea className="pt-10 pb-10 overflow-visible">
-          <div className="flex flex-row max-md:gap-[10px] gap-[40px] justify-center min-h-[180px] md:min-h-[300px]">
+          <motion.div
+            ref={childrenRef}
+            className="flex flex-row max-md:gap-[10px] gap-[40px] justify-center min-h-[180px] md:min-h-[300px]"
+            variants={containerVariants}
+            initial="hidden"
+            animate={inViewChildren ? 'visible' : 'hidden'}
+          >
             {(testimonyData ?? testimonials).map((testi, index) => (
-              <div
+              <motion.div
                 onClick={() => setActive(index)}
                 key={index}
                 className="flex flex-col justify-center items-center gap-2 lg:gap-[24px] duration-300 cursor-pointer h-fit"
+                variants={itemVariants}
               >
-                <div
-                  className={`flex p-2 md:p-6 rounded-2xl items-center flex-col ${active === index ? 'bg-Text/TextLightBG' : 'bg-[#1C274F]'} text-center gap-2 max-md:w-[120px] max-md:h-[142px] max-md:pt-[12px] w-[190px] h-[236px]`}
+                <motion.div
+                  className={`flex p-2 md:p-6 rounded-2xl items-center flex-col ${active === index ? 'bg-Text/TextLightBG' : 'bg-[#1C274F]'
+                    } text-center gap-2 max-md:w-[120px] max-md:h-[142px] max-md:pt-[12px] w-[190px] h-[236px]`}
+                  variants={itemVariants}
                 >
                   <Avatar>
                     <AvatarImage
@@ -78,10 +118,10 @@ const Testimonials = ({
                   <p className="text-Text/TextDarkBG font-tex-gyre font-bold text-sm md:text-lg h-full flex items-center">
                     {testi.name}
                   </p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
           <ScrollBar orientation="horizontal" className="-translate-y-10" />
         </ScrollArea>
       </div>

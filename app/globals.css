@@ -102,3 +102,9 @@ h6 {
   background: #343fc0;
   transition-duration: 0.5s;
 }
+
+
+nav {
+  width: inherit;
+  max-width: inherit;
+}

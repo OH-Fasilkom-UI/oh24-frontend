@@ -71,12 +71,14 @@ export default function RootLayout({
           />
         </head>
         <body
-          className="font-tga font-normal flex flex-col justify-between bg-[#B5D3DD] min-h-screen"
+          className="font-tga font-normal bg-[#B5D3DD] min-h-screen"
           suppressHydrationWarning
           suppressContentEditableWarning
         >
-          <Navbar />
-          <main>{children}</main>
+          <main className='max-w-[1920px] mx-auto'>
+            <Navbar />
+            <main>{children}</main>
+          </main>
           <Toaster position="top-center" />
           <Alerter />
         </body>

@@ -1,7 +1,8 @@
 import { z } from 'zod'
 
 const MAX_FILE_SIZE = 1024 * 1024 * 2
-const FILE_TYPES = ['image/png', 'image/jpeg', 'image/jpg', 'application/pdf']
+const FILE_TYPES = ['application/pdf']
+const IMAGE_TYPES = ['image/png', 'image/jpeg', 'image/jpg']
 
 export const submitAmbassadorSchema = z.object({
   infoSource: z.string(),
@@ -21,42 +22,42 @@ export const submitAmbassadorSchema = z.object({
   twibbon: z
     .instanceof(File)
     .refine((file) => file.size <= MAX_FILE_SIZE, {
-      message: 'Max file size is 2MB',
+      message: 'Ukuran file maksimal 2MB',
     })
-    .refine((file) => FILE_TYPES.includes(file.type), {
-      message: 'Invalid file type',
+    .refine((file) => IMAGE_TYPES.includes(file.type), {
+      message: 'Tipe file harus JPG/PNG/JPEG',
     }),
   followIG: z
     .instanceof(File)
     .refine((file) => file.size <= MAX_FILE_SIZE, {
-      message: 'Max file size is 2MB',
+      message: 'Ukuran file maksimal 2MB',
     })
-    .refine((file) => FILE_TYPES.includes(file.type), {
-      message: 'Invalid file type',
+    .refine((file) => IMAGE_TYPES.includes(file.type), {
+      message: 'Tipe file harus JPG/PNG/JPEG',
     }),
   story: z
     .instanceof(File)
     .refine((file) => file.size <= MAX_FILE_SIZE, {
-      message: 'Max file size is 2MB',
+      message: 'Ukuran file maksimal 2MB',
     })
-    .refine((file) => FILE_TYPES.includes(file.type), {
-      message: 'Invalid file type',
+    .refine((file) => IMAGE_TYPES.includes(file.type), {
+      message: 'Tipe file harus JPG/PNG/JPEG',
     }),
   cv: z
     .instanceof(File)
     .refine((file) => file.size <= MAX_FILE_SIZE, {
-      message: 'Max file size is 2MB',
+      message: 'Ukuran file maksimal 2MB',
     })
     .refine((file) => FILE_TYPES.includes(file.type), {
-      message: 'Invalid file type',
+      message: 'Tipe file harus PDF',
     }),
   mou: z
     .instanceof(File)
     .refine((file) => file.size <= MAX_FILE_SIZE, {
-      message: 'Max file size is 2MB',
+      message: 'Ukuran file maksimal 2MB',
     })
     .refine((file) => FILE_TYPES.includes(file.type), {
-      message: 'Invalid file type',
+      message: 'Tipe file harus PDF',
     }),
 })
 

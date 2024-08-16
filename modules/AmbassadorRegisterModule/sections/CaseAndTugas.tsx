@@ -45,6 +45,9 @@ export const CaseAndTugas = () => {
         toast.success('Berhasil mengirimkan data')
         redirect('/ambassador')
       },
+      onError: (error) => { 
+        toast.error(error.message)
+      }
     })
   }
 
@@ -68,15 +71,19 @@ export const CaseAndTugas = () => {
       >
         Tugas Calon Ambassador
       </h1>
-      <p
-        className={cn(
-          'text-Text/TextLightBG md:text-[20px] text-[11px] pt-[4px] pb-[60px] text-center',
-          page === 1 && 'hidden'
-        )}
+      <div
+        className='w-full flex justify-center'
       >
-        Sebelum kamu mengisi tugas ini, pastikan kamu telah membaca ddan
-        mendownloadd template yang disediakan di guidebook yaa!
-      </p>
+        <p
+          className={cn(
+            'text-Text/TextLightBG md:text-[20px] text-sm leading-5 md:leading-9 text-center font-bold max-w-[800px]',
+            page === 1 && 'hidden'
+          )}
+        >
+          Sebelum kamu mengisi tugas ini, pastikan kamu telah membaca dan
+          mendownload template yang disediakan di guidebook yaa!
+        </p>
+      </div>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}

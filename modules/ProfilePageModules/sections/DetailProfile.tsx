@@ -40,7 +40,7 @@ export const DetailProfile = () => {
   const handleProfileChange = (src: string) => {}
 
   return (
-    <div className="mt-[10vh] flex flex-col md:px-[120px] xl:px-[190px] py-10 max-md:pb-20 justify-center items-center md:items-start md:justify-start gap-[35px]">
+    <div className="pt-[20vh] mb-[50vh] flex flex-col md:px-[120px] xl:px-[190px] py-10 max-md:pb-20 justify-center items-center md:items-start md:justify-start gap-[35px]">
       <h1 className="text-[36px] text-[#2E3881] font-bold font-riffic tracking-[0.075rem]">
         Profile
       </h1>

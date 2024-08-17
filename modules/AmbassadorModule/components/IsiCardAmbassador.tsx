@@ -4,26 +4,6 @@ import { toast } from '@/components/ui/Toast';
 import { BookMinus, User } from 'lucide-react'
 import Link from 'next/link'
 
-function downloadPDF(url: string, filename: string) {
-  // Create a new anchor element
-  const link = document.createElement('a');
-
-  // Set the href attribute to the URL of the PDF
-  link.href = url;
-
-  // Set the download attribute to the desired file name
-  link.download = filename;
-
-  // Append the anchor to the document body
-  document.body.appendChild(link);
-
-  // Trigger the download by simulating a click on the anchor element
-  link.click();
-
-  // Remove the anchor from the document body
-  document.body.removeChild(link);
-}
-
 const IsiCardAmbassador = () => {
   return (
     <div>

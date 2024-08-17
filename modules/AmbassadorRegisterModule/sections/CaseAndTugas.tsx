@@ -18,10 +18,12 @@ import { BackModal } from '../elements/BackModal'
 import { LeftSideForm } from '../elements/LeftSideForm'
 import { RightSideForm } from '../elements/RightSideForm'
 import { Calendly } from './Calendly'
+import { useUserData } from '@/hooks/user'
 
 export const CaseAndTugas = () => {
   const [page, setPage] = useState(0)
   const [showModal, setShowModal] = useState(false)
+  const { isLoading } = useUserData({ personal: true })
   const { mutate: submit } = useSubmitAmbassadorData()
 
   const form = useForm<SubmitAmbassadorData>({
@@ -49,6 +51,10 @@ export const CaseAndTugas = () => {
         toast.error(error.message)
       }
     })
+  }
+
+  if (isLoading) {
+    return 'Loading...'
   }
 
   useEffect(() => {

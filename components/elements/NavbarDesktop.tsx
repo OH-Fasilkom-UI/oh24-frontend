@@ -15,6 +15,7 @@ import paths from '@/lib/paths'
 import { useIsAuthenticated, useLogout } from '@/hooks/auth'
 import { useUserData } from '@/hooks/user'
 import { NAVBAR_LINKS, NAVBAR_LOGIN } from './Navbar.data'
+import { Skeleton } from "@/components/ui/skeleton"
 
 const NavbarDesktop = () => {
   const pathname = usePathname()
@@ -50,7 +51,7 @@ const NavbarDesktop = () => {
       ))}
       <div className="max-lg:hidden">
         {userDataLoading || isPending ? (
-          'loading...'
+          <Skeleton className="h-full w-full" />
         ) : isAuthenticated ? (
           <Popover open={isUserMenuOpen} onOpenChange={setIsUserMenuOpen}>
             <PopoverTrigger asChild>

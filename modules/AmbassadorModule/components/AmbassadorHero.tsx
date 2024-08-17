@@ -1,11 +1,11 @@
 'use client'
 import React from 'react'
 import Card from '@/components/ui/Card'
-import IsiCardAmbassador from './IsiCardAmbassador'
+import AmbassadorHeroContent from './AmbassadorHeroContent'
 import bg from '@/public/kota-di-ambassador.png'
 import mbg from '@/public/ambassador-kecil.png'
 
-const AmbassadorCard = () => {
+const AmbassadorHero = () => {
   return (
     <div className="xl:mt-[194px] max-sm:mt-[100px] md:mt-[140px] flex flex-col">
       <div className="flex flex-col">
@@ -19,7 +19,7 @@ const AmbassadorCard = () => {
             backgroundRepeat: 'no-repeat',
           }}
         >
-          <IsiCardAmbassador />
+          <AmbassadorHeroContent />
         </Card>
         <Card
           title=""
@@ -31,11 +31,11 @@ const AmbassadorCard = () => {
             backgroundRepeat: 'no-repeat',
           }}
         >
-          <IsiCardAmbassador />
+          <AmbassadorHeroContent />
         </Card>
       </div>
     </div>
   )
 }
 
-export default AmbassadorCard
+export default AmbassadorHero

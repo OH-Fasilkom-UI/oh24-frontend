@@ -1,5 +1,5 @@
 import React from 'react'
-import AmbassadorCard from './components/AmbassadorCard'
+import AmbassadorHero from './components/AmbassadorHero'
 import WhatsAmbassador from './sections/WhatsAmbassador'
 import AmbassadorCarousel from './components/AmbassadorCarousel'
 import Testimonials from '@/components/elements/Testimonials'
@@ -70,14 +70,14 @@ const AmbassadorModule = () => {
       }}
       className="min-h-screen flex flex-col z-20 w-full"
     >
-      <div className="relative flex-grow mt-10 px-5 md:px-10 lg:px-15">
-        <AmbassadorCard />
+      <div className="relative flex-grow mt-10 px-5 md:px-10 lg:px-32">
+        <AmbassadorHero />
         <Image
           src="/pesawat-kiri.png"
           alt="pesawat-kiri"
           width={100}
           height={100}
-          className="lg:left-0 max-[400px]:w-[70px] max-lg:top-0 max-md:left-0 lg:top-[100px] absolute animate-float-vertical"
+          className="hidden lg:block lg:left-0 max-[400px]:w-[70px] max-lg:top-0 max-md:left-0 lg:top-[100px] absolute animate-float-vertical"
         />
         <Image
           src="/pesawat-kiri.png"
@@ -95,30 +95,30 @@ const AmbassadorModule = () => {
         />
       </div>
       <WhatsAmbassador />
-      <div className="max-lg:block hidden mt-[100px] px-5 md:px-10 lg:px-15">
+      <div className="max-lg:block hidden mt-[100px] px-5 md:px-10 lg:px-32">
         <AmbassadorProgramsMobile />
       </div>
-      <div className="max-lg:hidden block mt-[100px] px-5 md:px-10 lg:px-15">
+      <div className="max-lg:hidden block mt-[100px] px-5 md:px-10 lg:px-32">
         <p className="text-Text/TextLightBG font-riffic mb-10 max-md:text-[16px] md:text-[24px] max-md:leading-6 text-center font-bold xl:text-[36px] leading-[40px] tracking-widest">
           Special Programs for <br className="max-md:block hidden" /> Open House
           Ambassador
         </p>
         <AmbassadorProgramsDesktop />
       </div>
-      <div className="mt-20 min-[2300px]:px-[360px] px-5 md:px-10 lg:px-15">
+      <div className="mt-20 min-[2300px]:px-[360px] px-5 md:px-10 lg:px-32">
         <AmbassadorCarousel />
       </div>
-      <div className="py-20 mt-20 flex flex-col gap-y-10 px-5 md:px-10 lg:px-15">
+      <div className="py-20 mt-20 flex flex-col gap-y-10 px-5 md:px-10 lg:px-32">
         <p className="font-riffic text-center text-Text/TextLightBG font-bold text-[36px] max-sm:text-[20px] max-md:text-[24px] leading-10 tracking-widest">
           Let&rsquo;s Hear Testimony From Ambassador
         </p>
         <Testimonials testimonyData={ambassTestimonyData} />
       </div>
       <AmbassadorHelp />
-      <div className="px-5 md:px-10 lg:px-15">
+      <div className="px-5 md:px-10 lg:px-32">
         <AmbassadorAccordion />
       </div>
-      <div className="mt-[200px] md:mb-[75vh] mb-[40vh] px-5 md:px-10 lg:px-15">
+      <div className="mt-[200px] md:mb-[75vh] mb-[40vh] px-5 md:px-10 lg:px-32">
         <ContactPerson>
           <Link href={'https://wa.me/082178452476'} target='_blank' className='w-full'>
             <Button className='w-full'>

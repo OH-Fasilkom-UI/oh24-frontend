@@ -37,20 +37,9 @@ const RouteLink = (props: LinkProps) => {
 }
 
 const Footer = () => {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: false })
 
   return (
-    <motion.footer
-      ref={ref}
-      initial={{ y: 200 }}
-      animate={{ y: inView ? 0 : 200 }}
-      transition={{
-        duration: 0.5,
-        type: 'spring',
-        stiffness: 100,
-        damping: 20,
-      }}
+    <footer
       className="relative flex items-end z-0"
     >
       <Image
@@ -163,7 +152,7 @@ const Footer = () => {
           </div>
         </div>
       </section>
-    </motion.footer>
+    </footer>
   )
 }
 

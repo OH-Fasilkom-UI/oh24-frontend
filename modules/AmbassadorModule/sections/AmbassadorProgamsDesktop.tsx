@@ -1,7 +1,8 @@
+import { AnimatedTrain } from '@/components/animated/Train'
 import Card from '@/components/ui/Card'
 import Image from 'next/image'
 
-const AmbassadorProgamsDesktop = () => {
+const AmbassadorProgramsDesktop = () => {
   return (
     <section className="p-6 flex justify-center">
       <div className="max-w-4xl flex gap-x-3 gap-y-8">
@@ -40,12 +41,8 @@ const AmbassadorProgamsDesktop = () => {
               pengalaman hands-on mengenai ilmu yang dapat diaplikasikan di
               dunia nyata.
             </p>
-            <Image
-              src="/pesawat-kiri-lagi.png"
-              alt="pesawat-kiri"
-              width={320}
-              height={200}
-              className="absolute left-0 -translate-x-32 bottom-0 z-20 translate-y-1/2"
+            <AnimatedTrain
+              className='-left-32 bottom-8 '
             />
           </Card>
 
@@ -91,7 +88,7 @@ const AmbassadorProgamsDesktop = () => {
               alt="pesawat-kanan"
               width={600}
               height={400}
-              className="absolute right-0 -top-1/4 -translate-y-1/2"
+              className="absolute right-0 -top-60 animate-float-horizontal"
             />
           </Card>
           {/* Section 4 */}
@@ -114,7 +111,7 @@ const AmbassadorProgamsDesktop = () => {
               alt="pesawat-kanann"
               width={200}
               height={200}
-              className="absolute right-0 -bottom-5 translate-y-1/2"
+              className="absolute right-0 -bottom-32 animate-float-vertical"
             />
           </Card>
         </div>
@@ -123,4 +120,4 @@ const AmbassadorProgamsDesktop = () => {
   )
 }
 
-export default AmbassadorProgamsDesktop
+export default AmbassadorProgramsDesktop

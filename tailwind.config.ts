@@ -410,10 +410,25 @@ const config = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        'float-vertical': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-30px)' },
+        },
+        'float-horizontal': {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(-30px)' },
+        },
+        spin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'float-vertical': 'float-vertical 5s ease-in-out infinite',
+        'float-horizontal': 'float-horizontal 5s ease-in-out infinite',
+        'spin': 'spin 10s linear infinite',
       },
     },
   },

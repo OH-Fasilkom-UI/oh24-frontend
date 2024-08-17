@@ -6,6 +6,9 @@ import {
   AccordionTrigger,
 } from '@/components/ui/Accordion'
 
+import {motion, useInView} from 'framer-motion'
+import { useRef } from 'react'
+
 interface FAQInterface {
   question: string
   answer: string
@@ -49,24 +52,58 @@ const AmbassadorFAQData: FAQInterface[] = [
   }
 ]
 
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2, // Stagger each child by 0.2 seconds
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { delay: 0.1} },
+};
+
 const AmbassadorAccordion = () => {
+
   return (
-    <div className="w-full">
-      <Accordion type="single" collapsible className='flex flex-col lg:gap-4 z-20'>
-        {
-          AmbassadorFAQData.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="max-md:text-[16px] max-sm:text-[12px] text-start">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="max-md:text-[16px] max-sm:text-[12px] font-bold">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))
-        }
+    <motion.div
+      className="w-full"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      <Accordion type="single" collapsible className="flex flex-col lg:gap-4 z-20">
+        {AmbassadorFAQData.map((faq, index) => {
+          const ref = useRef(null);
+          const isInView = useInView(ref, { once: true});
+
+          return (
+            <motion.div
+              key={index}
+              ref={ref}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+              variants={itemVariants}
+              className='my-2 '
+            >
+              <AccordionItem value={`item-${index}`}>
+                <AccordionTrigger className="max-md:text-[16px] max-sm:text-[12px] text-start">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="max-md:text-[16px] max-sm:text-[12px] font-bold">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            </motion.div>
+          );
+        })}
       </Accordion>
-    </div>
+    </motion.div>
   )
 }
 

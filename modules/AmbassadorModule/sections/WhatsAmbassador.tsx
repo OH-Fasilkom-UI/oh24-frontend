@@ -42,7 +42,7 @@ const WhatsAmbassador = () => {
               quality={100}
               width={225}
               height={353}
-              className="max-sm:hidden block max-lg:w-[200px] max-lg:h-[250px] cursor-pointer hover:scale-110 duration-300 "
+              className="max-sm:hidden block max-lg:w-[200px] max-lg:h-[250px] cursor-pointer hover:scale-110 animate-float-vertical"
             />
           </div>
         </div>

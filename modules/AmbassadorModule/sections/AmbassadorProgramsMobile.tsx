@@ -3,6 +3,7 @@ import Card from '@/components/ui/Card'
 import { AMBASSADOR_PROGRAMS } from '../constant'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
+import { AnimatedTrain } from '@/components/animated/Train'
 
 const AmbassadorProgramsMobile = () => {
   return (
@@ -23,21 +24,30 @@ const AmbassadorProgramsMobile = () => {
                 {program.title}
               </h3>
               <p className="text-xs font-tex-gyre">{program.description}</p>{' '}
-              {program.image && (
-                <Image
-                  src={program.image}
-                  alt={program.title}
-                  width={200}
-                  height={200}
-                  className={cn(
-                    'absolute',
-                    index === 0 && 'right-0 top-1/2 translate-y-1/3 z-20',
-                    index === 2 &&
-                      'bottom-0 translate-y-1/2 -translate-x-1/3 left-0 z-20',
-                    index === 4 && '-right-7 w-[150px] -top-1/3 translate-y-1/2'
-                  )}
-                />
-              )}
+              {program.image && 
+                (
+                index === 2 ? (
+                  <AnimatedTrain
+                    className='bottom-0 -left-32'
+                  />
+                ) : (
+                    <Image
+                      src={program.image}
+                      alt={program.title}
+                      width={200}
+                      height={200}
+                      className={cn(
+                        'absolute',
+                        index === 0 && 'right-0 -bottom-5 z-20 animate-float-horizontal',
+                        index === 2 &&
+                        'bottom-0 translate-y-1/2 -translate-x-1/3 left-0 z-20',
+                        index === 4 && '-right-7 w-[150px] -top-10 animate-float-vertical'
+                      )}
+                    />
+                  )
+                )
+              
+              }
             </Card>
           </div>
         ))}

@@ -8,7 +8,7 @@ import AmbassadorAccordion from './components/AmbassadorAccordion'
 import ContactPerson from '@/components/elements/ContactPerson'
 import bg from '@/public/wave-notfound.png'
 import AmbassadorProgramsMobile from './sections/AmbassadorProgramsMobile'
-import AmbassadorProgamsDesktop from './sections/AmbassadorProgamsDesktop'
+import AmbassadorProgramsDesktop from './sections/AmbassadorProgamsDesktop'
 import Image from 'next/image'
 import Button from '@/components/ui/Button'
 import { MessageSquare } from 'lucide-react'
@@ -77,21 +77,21 @@ const AmbassadorModule = () => {
           alt="pesawat-kiri"
           width={100}
           height={100}
-          className="lg:left-0 max-[400px]:w-[70px] max-lg:top-0 max-md:left-0 lg:top-[100px] absolute"
+          className="lg:left-0 max-[400px]:w-[70px] max-lg:top-0 max-md:left-0 lg:top-[100px] absolute animate-float-vertical"
         />
         <Image
           src="/pesawat-kiri.png"
           alt="pesawat-kiri"
           width={236}
           height={183}
-          className="left-0 top-1/4 absolute hidden lg:block"
+          className="left-0 top-1/4 absolute hidden lg:block animate-float-horizontal"
         />
         <Image
           src="/pesawat-kanan.png"
           alt="pesawat-kanan"
           width={200}
           height={200}
-          className="absolute hidden lg:block right-0 top-[100px]"
+          className="absolute hidden lg:block right-0 top-[100px] animate-float-vertical"
         />
       </div>
       <WhatsAmbassador />
@@ -103,7 +103,7 @@ const AmbassadorModule = () => {
           Special Programs for <br className="max-md:block hidden" /> Open House
           Ambassador
         </p>
-        <AmbassadorProgamsDesktop />
+        <AmbassadorProgramsDesktop />
       </div>
       <div className="mt-20 min-[2300px]:px-[360px] px-5 md:px-10 lg:px-15">
         <AmbassadorCarousel />

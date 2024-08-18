@@ -55,7 +55,7 @@ const Testimonials = ({
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
         }}
-        className="flex flex-col items-center rounded-xl w-full relative"
+        className="flex flex-col items-center rounded-xl w-full relative lg:h-[570px]"
       >
         <Image
           src={'/whoosh.png'}
@@ -76,7 +76,7 @@ const Testimonials = ({
             />
           </Avatar>
           <div className="flex gap-[24px] md:gap-[20px] flex-col lg:w-[780px] md:w-[530px] max-sm:w-fit max-sm:px-[10px] max-md:w-[283px]">
-            <p className="text-Text/TextDarkBG max-md:text-[14px] leading-9 max-md:leading-[25px] font-extrabold text-justify md:text-[18px] text-[24px] max-h-[250px] overflow-y-auto">
+            <p className="text-Text/TextDarkBG max-md:text-[14px] leading-9 max-md:leading-[25px] font-extrabold text-justify md:text-[18px] text-[24px] max-h-[350px] overflow-y-auto">
               {(testimonyData ?? testimonials)[active].testimonial}
             </p>
             <p className="text-Text/TextDarkBG font-tex-gyre max-md:text-[14px] md:text-[20px] font-normal text-[24px]">

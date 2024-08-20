@@ -1,17 +1,18 @@
 'use client'
-import React, { useState } from 'react'
-import Image from 'next/image'
+
 import Button from '@/components/ui/Button'
-import Link from 'next/link'
-import { CalendlyProps } from '../interface'
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
+import Link from 'next/link'
+import React, { useState } from 'react'
+import { CalendlyProps } from '../interface'
 
 export const Calendly: React.FC<CalendlyProps> = ({ showCalendly, onSubmit }) => {
   const [showFinalize, setShowFinalize] = useState(false)
   return (
     <section
       className={cn(
-        'flex lg:flex-row flex-col lg:gap-[90px] gap-8 justify-center items-center lg:items-start translate-y-1/2',
+        'z-10 flex lg:flex-row flex-col lg:gap-[90px] gap-8 justify-center items-center lg:items-start translate-y-1/2',
         !showCalendly && 'hidden'
       )}
     >

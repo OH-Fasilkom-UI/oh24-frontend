@@ -74,8 +74,5 @@ export function submitAmbassador(data: SubmitAmbassadorData) {
   return fetch('/api/reg/ambas', {
     method: 'POST',
     body,
-    headers: {
-      'Content-Type': 'multipart/form-data',
-    },
   })
 }

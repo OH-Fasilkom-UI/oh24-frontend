@@ -1,8 +1,9 @@
 'use client'
+
 import Button from '@/components/ui/Button'
 import Modal from '@/components/ui/Modal'
-import React from 'react'
 import { useRouter } from 'next/navigation'
+import React from 'react'
 import { BackModalProps } from '../interface'
 
 export const BackModal: React.FC<BackModalProps> = ({

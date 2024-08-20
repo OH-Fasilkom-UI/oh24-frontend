@@ -1,10 +1,4 @@
-import { House } from 'lucide-react'
-import { SquareUserRound } from 'lucide-react'
-import { Building } from 'lucide-react'
-import { FileText } from 'lucide-react'
-import { Users } from 'lucide-react'
-import { CircleUserRound } from 'lucide-react'
-import { LogOut } from 'lucide-react'
+import { Building, CircleUserRound, FileText, House, SquareUserRound, Users } from 'lucide-react'
 
 export const NAVBAR_LINKS = [
   {

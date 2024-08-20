@@ -1,6 +1,5 @@
-import React from 'react'
-import { ProfilePageModule } from '@/modules'
 import Footer from '@/components/elements/Footer'
+import { ProfilePageModule } from '@/modules'
 
 function page() {
   return (

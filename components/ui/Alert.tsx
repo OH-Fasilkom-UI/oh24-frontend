@@ -1,9 +1,9 @@
 'use client'
 
-import { Ban, CircleCheck, Info, TriangleAlert, X } from 'lucide-react'
-import { cva, type VariantProps } from 'class-variance-authority'
-import * as ToastPrimitives from '@radix-ui/react-toast'
 import { cn } from '@/lib/utils'
+import * as ToastPrimitives from '@radix-ui/react-toast'
+import { cva, type VariantProps } from 'class-variance-authority'
+import { Ban, CircleCheck, Info, TriangleAlert, X } from 'lucide-react'
 import * as React from 'react'
 
 const AlertProvider = ToastPrimitives.Provider
@@ -325,14 +325,5 @@ function useAlert() {
 }
 
 export {
-  type AlertProps,
-  AlertProvider,
-  AlertViewport,
-  Alert,
-  AlertTitle,
-  AlertDescription,
-  AlertClose,
-  Alerter,
-  useAlert,
-  alert,
+  Alert, alert, AlertClose, AlertDescription, Alerter, AlertProvider, AlertTitle, AlertViewport, useAlert, type AlertProps
 }

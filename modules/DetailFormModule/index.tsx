@@ -1,7 +1,6 @@
-import React from 'react'
-import DetailForm from './sections/DetailForm'
 import bg from '@/public/wave-notfound.png'
 import Image from 'next/image'
+import DetailForm from './sections/DetailForm'
 
 export const DetailFormModule = () => {
   return (

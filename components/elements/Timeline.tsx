@@ -1,8 +1,5 @@
 'use client'
-import React, { useState } from 'react'
-import bg from '@/public/timeline.png'
-import { timelineData } from './Timeline.data'
-import Image from 'next/image'
+
 import {
   Dialog,
   DialogContent,
@@ -11,7 +8,11 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/Dialog'
+import bg from '@/public/timeline.png'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { useState } from 'react'
+import { timelineData } from './Timeline.data'
 
 export const Timeline = () => {
   const [hoveredCard, setHoveredCard] = useState<null | number>(null)

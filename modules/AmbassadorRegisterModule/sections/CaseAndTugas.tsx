@@ -1,8 +1,10 @@
 'use client'
+
 import Button from '@/components/ui/Button'
 import { Form } from '@/components/ui/form'
 import { toast } from '@/components/ui/Toast'
 import { useSubmitAmbassadorData } from '@/hooks/registration'
+import { useUserData } from '@/hooks/user'
 import {
   SubmitAmbassadorData,
   submitAmbassadorSchema,
@@ -11,16 +13,16 @@ import { cn } from '@/lib/utils'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
-import { redirect } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { BackModal } from '../elements/BackModal'
 import { LeftSideForm } from '../elements/LeftSideForm'
 import { RightSideForm } from '../elements/RightSideForm'
 import { Calendly } from './Calendly'
-import { useUserData } from '@/hooks/user'
 
 export const CaseAndTugas = () => {
+  const router = useRouter()
   const [page, setPage] = useState(0)
   const [showModal, setShowModal] = useState(false)
   const { isLoading } = useUserData({ personal: true })
@@ -45,7 +47,7 @@ export const CaseAndTugas = () => {
     submit(data, {
       onSuccess: () => {
         toast.success('Berhasil mengirimkan data')
-        redirect('/ambassador')
+        router.push('/ambassador')
       },
       onError: (error) => { 
         toast.error(error.message)

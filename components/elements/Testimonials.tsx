@@ -1,11 +1,12 @@
 'use client'
+
 import { ScrollArea, ScrollBar } from '@/components/ui/ScrollArea'
 import bg from '@/public/background-testi.png'
 import { Avatar, AvatarImage } from '@radix-ui/react-avatar'
+import { motion, useInView } from 'framer-motion'
+import Image from 'next/image'
 import { useRef, useState } from 'react'
 import { testimonials } from './Testimonials.data'
-import Image from 'next/image'
-import {motion, useInView} from 'framer-motion'
 
 const containerVariants = {
   hidden: { opacity: 0 },

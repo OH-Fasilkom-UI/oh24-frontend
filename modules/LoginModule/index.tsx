@@ -1,4 +1,5 @@
 'use client'
+
 import mbg from '@/public/background-login-mobile.png'
 import bg from '@/public/background-login.png'
 import { LoginPage } from './sections/LoginPage'

@@ -1,6 +1,4 @@
-import React from 'react'
-import { CustomFormProps } from '../interface'
-import { FieldValues, Path } from 'react-hook-form'
+import FileInput from '@/components/ui/FileInput'
 import {
   FormControl,
   FormField,
@@ -9,9 +7,11 @@ import {
   FormMessage,
 } from '@/components/ui/form'
 import RadioGroup from '@/components/ui/RadioGroup'
-import InputForm from './InputForm'
-import FileInput from '@/components/ui/FileInput'
+import React from 'react'
+import { FieldValues, Path } from 'react-hook-form'
+import { CustomFormProps } from '../interface'
 import { AccomodationRadio } from './AccomodationRadio'
+import InputForm from './InputForm'
 
 export const RightSideForm = <
   T extends FieldValues,
@@ -31,7 +31,7 @@ export const RightSideForm = <
             <FormControl>
               <FileInput
                 label="Bukti Post Twibbon"
-                secondaryMessage='Unggah file JPG dengan maksimum 2MB'
+                secondaryMessage='Unggah file JPG/PNG/JPEG dengan maksimum 2MB'
                 file={field.value}
                 setFile={field.onChange}
                 {...field}

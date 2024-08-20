@@ -1,9 +1,10 @@
 'use client'
-import Image from 'next/image'
+
 import Button from '@/components/ui/Button'
-import { useRouter } from 'next/navigation'
 import bg from '@/public/wave-notfound.png'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 export default function NotFound() {
   const router = useRouter()

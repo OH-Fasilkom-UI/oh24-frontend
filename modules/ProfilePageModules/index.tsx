@@ -1,4 +1,3 @@
-import React from 'react'
 import bg from '@/public/wave-notfound.png'
 import { DetailProfile } from './sections/DetailProfile'
 

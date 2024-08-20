@@ -1,8 +1,8 @@
 'use client'
 
-import { ExternalToast, Toaster as Sonner, toast as toastSonner } from 'sonner'
-import { CircleCheck, Ban, TriangleAlert, Loader } from 'lucide-react'
+import { Ban, CircleCheck, Loader, TriangleAlert } from 'lucide-react'
 import { ReactNode } from 'react'
+import { ExternalToast, Toaster as Sonner, toast as toastSonner } from 'sonner'
 
 type ToasterProps = React.ComponentProps<typeof Sonner>
 

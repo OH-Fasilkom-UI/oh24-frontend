@@ -1,6 +1,5 @@
-import React from 'react'
-import AmbassadorModule from '@/modules/AmbassadorModule'
 import Footer from '@/components/elements/Footer'
+import AmbassadorModule from '@/modules/AmbassadorModule'
 
 const Page = () => {
   return (

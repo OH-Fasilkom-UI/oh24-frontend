@@ -1,19 +1,18 @@
-import React from 'react'
-import { CustomFormProps } from '../interface'
-import { FieldValues, Path } from 'react-hook-form'
-import {
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-  } from '@/components/ui/form'
-import RadioGroup from '@/components/ui/RadioGroup'
-import { InfoSourceRadio } from './InfoSourceRadio'
-import { Textarea } from '@/components/ui/textarea'
-import InputForm from './InputForm'
-import { AtSign } from 'lucide-react'
 import FileInput from '@/components/ui/FileInput'
+import {
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form'
+import RadioGroup from '@/components/ui/RadioGroup'
+import { Textarea } from '@/components/ui/textarea'
+import { AtSign } from 'lucide-react'
+import { FieldValues, Path } from 'react-hook-form'
+import { CustomFormProps } from '../interface'
+import { InfoSourceRadio } from './InfoSourceRadio'
+import InputForm from './InputForm'
 
 export const LeftSideForm = <
   T extends FieldValues,

@@ -1,19 +1,17 @@
-'use client'
-
-import React from 'react'
-import Link from 'next/link'
-import { redirect, usePathname } from 'next/navigation'
-import { AlignRight, LogOut } from 'lucide-react'
-import { twMerge } from 'tailwind-merge'
 import Button from '@/components/ui/Button'
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
-import paths from '@/lib/paths'
 import { useIsAuthenticated, useLogout } from '@/hooks/auth'
 import { useUserData } from '@/hooks/user'
+import paths from '@/lib/paths'
+import { AlignRight, LogOut } from 'lucide-react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import React from 'react'
+import { twMerge } from 'tailwind-merge'
 import { NAVBAR_LINKS, NAVBAR_LOGIN } from './Navbar.data'
 
 const NavbarMobile = () => {

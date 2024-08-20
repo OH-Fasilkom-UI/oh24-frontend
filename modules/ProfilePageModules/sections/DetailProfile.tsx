@@ -1,8 +1,6 @@
 'use client'
-import React from 'react'
-import { Pencil } from 'lucide-react'
+
 import { Avatar, AvatarImage } from '@/components/ui/Avatar'
-import { PandaImages } from '../constant'
 import {
   Tooltip,
   TooltipContent,
@@ -15,6 +13,8 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover'
 import { useUserData } from '@/hooks/user'
+import { Pencil } from 'lucide-react'
+import { PandaImages } from '../constant'
 
 interface FieldProps {
   label: string

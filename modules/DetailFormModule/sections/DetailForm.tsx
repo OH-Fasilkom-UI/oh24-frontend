@@ -1,21 +1,20 @@
 'use client'
 
-import React from 'react'
-import { useForm } from 'react-hook-form'
-import { redirect } from 'next/navigation'
-import { zodResolver } from '@hookform/resolvers/zod'
-import Card from '@/components/ui/Card'
 import Button from '@/components/ui/Button'
-import RadioGroup from '@/components/ui/RadioGroup'
+import Card from '@/components/ui/Card'
 import Input from '@/components/ui/Input'
+import RadioGroup from '@/components/ui/RadioGroup'
+import { useSubmitPersonalData } from '@/hooks/registration'
+import { useUserData } from '@/hooks/user'
 import {
   Class,
   Domicile,
   SubmitPersonalData,
   submitPersonalDataSchema,
 } from '@/lib/api/registration'
-import { useUserData } from '@/hooks/user'
-import { useSubmitPersonalData } from '@/hooks/registration'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { redirect } from 'next/navigation'
+import { useForm } from 'react-hook-form'
 
 const DetailForm = () => {
   const { isLoading } = useUserData({ personal: true })

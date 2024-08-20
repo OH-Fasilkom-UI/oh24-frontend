@@ -1,4 +1,3 @@
-import React from 'react'
 import RadioGroup from '@/components/ui/RadioGroup'
 
 export const AccomodationRadio = () => {

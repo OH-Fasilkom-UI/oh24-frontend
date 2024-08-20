@@ -1,6 +1,5 @@
-import React from 'react'
-import { AmbassadorRegisterModule } from '@/modules/AmbassadorRegisterModule'
 import Footer from '@/components/elements/Footer'
+import { AmbassadorRegisterModule } from '@/modules/AmbassadorRegisterModule'
 
 const page = () => {
   return (

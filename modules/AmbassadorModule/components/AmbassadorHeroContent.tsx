@@ -1,6 +1,6 @@
 import Countdown from '@/components/elements/Countdown'
 import Button from '@/components/ui/Button'
-import { toast } from '@/components/ui/Toast';
+import { toast } from '@/components/ui/Toast'
 import { BookMinus, User } from 'lucide-react'
 import Link from 'next/link'
 

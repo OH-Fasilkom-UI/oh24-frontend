@@ -1,10 +1,10 @@
 import { Navbar } from '@/components/elements/Navbar'
 import { Alerter } from '@/components/ui/Alert'
 import { Toaster } from '@/components/ui/Toast'
-import Providers from './providers'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
+import Providers from './providers'
 
 const rifficFont = localFont({
   src: './fonts/rifficfree-bold.ttf',

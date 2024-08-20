@@ -1,5 +1,6 @@
 'use client'
-import React from 'react'
+
+import Card from '@/components/ui/Card'
 import {
   Carousel,
   CarouselContent,
@@ -7,9 +8,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
-import Card from '@/components/ui/Card'
-import { LAST_AMBASSADOR } from '../constant'
 import Image from 'next/image'
+import { LAST_AMBASSADOR } from '../constant'
 
 const AmbassadorCarousel = () => {
   return (

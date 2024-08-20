@@ -1,6 +1,5 @@
-import { DetailFormModule } from '@/modules/DetailFormModule'
 import Footer from '@/components/elements/Footer'
-import React from 'react'
+import { DetailFormModule } from '@/modules/DetailFormModule'
 
 const Page = () => {
   return (

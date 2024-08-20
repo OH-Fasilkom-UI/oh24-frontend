@@ -1,4 +1,4 @@
-import { FieldValues, Path, UseFormReturn } from 'react-hook-form'
+import { FieldValues, UseFormReturn } from 'react-hook-form'
 export interface BackModalProps {
   showModal: boolean
   setShowModal: (show: boolean) => void

@@ -1,9 +1,8 @@
 'use client'
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import { useLogin } from '@/hooks/auth'
 import GoogleLogin from '@/components/ui/GoogleLogin'
+import { useLogin } from '@/hooks/auth'
+import { motion } from 'framer-motion'
 
 export const LoginPage = () => {
   const { mutate: login } = useLogin()

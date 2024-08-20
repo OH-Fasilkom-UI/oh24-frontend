@@ -1,9 +1,8 @@
 'use client'
-import React from 'react'
 import Card from '@/components/ui/Card'
-import AmbassadorHeroContent from './AmbassadorHeroContent'
-import bg from '@/public/kota-di-ambassador.png'
 import mbg from '@/public/ambassador-kecil.png'
+import bg from '@/public/kota-di-ambassador.png'
+import AmbassadorHeroContent from './AmbassadorHeroContent'
 
 const AmbassadorHero = () => {
   return (

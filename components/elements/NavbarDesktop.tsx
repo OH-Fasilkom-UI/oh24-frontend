@@ -1,25 +1,23 @@
-'use client'
-
-import React from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { ChevronDown, LogOut } from 'lucide-react'
-import { twMerge } from 'tailwind-merge'
 import Button from '@/components/ui/Button'
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
-import paths from '@/lib/paths'
+import { Skeleton } from "@/components/ui/skeleton"
 import { useIsAuthenticated, useLogout } from '@/hooks/auth'
 import { useUserData } from '@/hooks/user'
+import paths from '@/lib/paths'
+import { ChevronDown, LogOut } from 'lucide-react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { createElement, useState } from 'react'
+import { twMerge } from 'tailwind-merge'
 import { NAVBAR_LINKS, NAVBAR_LOGIN } from './Navbar.data'
-import { Skeleton } from "@/components/ui/skeleton"
 
 const NavbarDesktop = () => {
   const pathname = usePathname()
-  const [isUserMenuOpen, setIsUserMenuOpen] = React.useState(false)
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
   const { isAuthenticated } = useIsAuthenticated()
   const { mutate: logout, isPending } = useLogout()
   const { userData, isLoading: userDataLoading } = useUserData(
@@ -45,7 +43,7 @@ const NavbarDesktop = () => {
               : 'text-[#454F59] pointer-events-none'
           )}
         >
-          {link.icon && <span>{React.createElement(link.icon)}</span>}
+          {link.icon && <span>{createElement(link.icon)}</span>}
           {link.label}
         </Link>
       ))}
@@ -74,7 +72,7 @@ const NavbarDesktop = () => {
                   >
                     {link.icon && (
                       <span className="w-[20px] h-[20px]">
-                        {React.createElement(link.icon)}
+                        {createElement(link.icon)}
                       </span>
                     )}
                     {link.label}

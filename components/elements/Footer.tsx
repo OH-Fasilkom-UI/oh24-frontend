@@ -1,8 +1,7 @@
 'use client'
+
 import { Copy, Instagram, Twitter } from 'lucide-react'
 import Image from 'next/image'
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
 import { toast } from '../ui/Toast'
 
 interface LinkProps {

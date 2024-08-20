@@ -120,7 +120,7 @@ export const CaseAndTugas = () => {
             alt="medali"
             width={87}
             height={125}
-            className="absolute right-0 max-lg:top-0 max-lg:-translate-y-6 lg:bottom-1 translate-x-12 z-10"
+            className="absolute right-5 max-lg:top-0 max-lg:-translate-y-6 lg:bottom-1 translate-x-12 z-10"
           />
           <LeftSideForm form={form} />
           <RightSideForm form={form}>

@@ -94,10 +94,10 @@ const AmbassadorModule = () => {
         />
       </div>
       <WhatsAmbassador />
-      <div className="max-lg:block hidden mt-[100px] px-5 md:px-10 lg:px-32">
+      <div className="max-xl:block hidden mt-[100px] px-5 md:px-10 lg:px-32">
         <AmbassadorProgramsMobile />
       </div>
-      <div className="max-lg:hidden block mt-[100px] px-5 md:px-10 lg:px-32">
+      <div className="max-xl:hidden block mt-[100px] px-5 md:px-10 lg:px-32">
         <p className="text-Text/TextLightBG font-riffic mb-10 max-md:text-[16px] md:text-[24px] max-md:leading-6 text-center font-bold xl:text-[36px] leading-[40px] tracking-widest">
           Special Programs for <br className="max-md:block hidden" /> Open House
           Ambassador

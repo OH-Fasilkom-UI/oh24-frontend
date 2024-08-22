@@ -20,18 +20,19 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       )}
       {...props}
     >
-      {
-        title && 
+      {title && (
         <h3 className="text-BlueRegion/Cornflower/100 text-4xl font-bold">
           {title}
         </h3>
-      }
+      )}
       {!!asset && (
         <div className="flex flex-col items-center text-BlueRegion/Cornflower/50">
           {asset}
         </div>
       )}
-      <div className="text-BlueRegion/Cornflower/50 text-sm h-full">{children}</div>
+      <div className="text-BlueRegion/Cornflower/50 text-sm h-full">
+        {children}
+      </div>
       {!!buttons?.length && (
         <div className="flex flex-row [&>*]:flex-grow gap-x-2">
           {buttons?.[0]}
@@ -41,5 +42,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     </div>
   )
 )
+
+Card.displayName = 'Card'
 
 export default Card

@@ -98,5 +98,6 @@ Modal.Button = React.forwardRef<HTMLButtonElement, ModalButtonProps>(
 )
 
 Modal.displayName = 'Modal'
+Modal.Button.displayName = 'Modal.Button'
 
 export default Modal

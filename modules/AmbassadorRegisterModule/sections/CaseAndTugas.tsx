@@ -14,7 +14,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { ArrowLeft } from 'lucide-react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { BackModal } from '../elements/BackModal'
 import { LeftSideForm } from '../elements/LeftSideForm'
@@ -58,21 +58,6 @@ export const CaseAndTugas = () => {
   if (isLoading) {
     return 'Loading...'
   }
-
-  useEffect(() => {
-    const handleBeforeUnload = (event: { returnValue: string }) => {
-      const message = 'You have unsaved changes. Are you sure you want to leave?';
-      event.returnValue = message; // Standard way to display the message in modern browsers
-      return message; // For some older browsers
-    };
-
-    window.addEventListener('beforeunload', handleBeforeUnload);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-    };
-  }, []);
 
   return (
     <section

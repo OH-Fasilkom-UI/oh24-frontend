@@ -17,7 +17,7 @@ export const NormalDark = () => (
       Hi
     </RadioGroup.Item>
     <RadioGroup.Item value="whats-up" id="whats-up">
-      What's up
+      What&apos;s up
     </RadioGroup.Item>
   </RadioGroup>
 )
@@ -31,7 +31,7 @@ export const NormalLight = () => (
       Hi
     </RadioGroup.Item>
     <RadioGroup.Item value="whats-up" id="whats-up">
-      What's up
+      What&apos;s up
     </RadioGroup.Item>
   </RadioGroup>
 )
@@ -45,7 +45,7 @@ export const SmallDark = () => (
       Hi
     </RadioGroup.Item>
     <RadioGroup.Item value="whats-up" id="whats-up">
-      What's up
+      What&apos;s up
     </RadioGroup.Item>
   </RadioGroup>
 )
@@ -59,7 +59,7 @@ export const SmallLight = () => (
       Hi
     </RadioGroup.Item>
     <RadioGroup.Item value="whats-up" id="whats-up">
-      What's up
+      What&apos;s up
     </RadioGroup.Item>
   </RadioGroup>
 )

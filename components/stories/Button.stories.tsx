@@ -14,16 +14,10 @@ const meta: Meta<typeof Button> = {
 
 export default meta
 
-export const Primary = () => (
-  <Button variant="primary" children="Hello, World" />
-)
+export const Primary = () => <Button variant="primary">Hello, World</Button>
 
-export const Secondary = () => (
-  <Button variant="secondary" children="Hello, World" />
-)
+export const Secondary = () => <Button variant="secondary">Hello, World</Button>
 
-export const Tertiary = () => (
-  <Button variant="tertiary" children="Hello, World" />
-)
+export const Tertiary = () => <Button variant="tertiary">Hello, World</Button>
 
-export const Ghost = () => <Button variant="ghost" children="Hello, World" />
+export const Ghost = () => <Button variant="ghost">Hello, World</Button>

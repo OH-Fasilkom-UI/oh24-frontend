@@ -30,7 +30,7 @@ export const Main = () => (
       trigger={<Button>With one button</Button>}
       icon={SquareCheckBig}
       title="Heading"
-      buttons={[<Modal.Button>Ok</Modal.Button>]}
+      buttons={[<Modal.Button key={0}>Ok</Modal.Button>]}
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dui enim,
       euismod non laoreet eu, sodales nec eros. Ut in ligula ut lacus egestas
@@ -47,8 +47,8 @@ export const Main = () => (
       icon={SquareCheckBig}
       title="Heading"
       buttons={[
-        <Modal.Button closeOnClick>Yes</Modal.Button>,
-        <Modal.Button closeOnClick variant="secondary">
+        <Modal.Button key={0} closeOnClick>Yes</Modal.Button>,
+        <Modal.Button key={1} closeOnClick variant="secondary">
           No
         </Modal.Button>,
       ]}

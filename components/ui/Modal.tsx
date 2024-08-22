@@ -13,9 +13,11 @@ type IconType = React.ForwardRefExoticComponent<
 
 type ButtonType = React.ReactNode
 
+type triggerType = React.ReactNode
+
 export interface ModalProps
   extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Root> {
-  trigger?: React.ReactNode
+  trigger?: triggerType
   icon?: IconType
   title: string
   buttons?: [ButtonType] | [ButtonType, ButtonType]
@@ -34,7 +36,7 @@ const Modal = ({
 }: ModalProps) => {
   return (
     <DialogPrimitive.Root {...props}>
-      <DialogPrimitive.Trigger asChild children={trigger} />
+      <DialogPrimitive.Trigger asChild>{trigger}</DialogPrimitive.Trigger>
       <DialogPrimitive.Portal>
         <DialogPrimitive.Overlay className="backdrop-blur fixed inset-0 z-50 bg-black/25 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
         <DialogPrimitive.Content
@@ -93,7 +95,11 @@ interface ModalButtonProps extends ButtonProps {
 Modal.Button = React.forwardRef<HTMLButtonElement, ModalButtonProps>(
   ({ closeOnClick, ...props }: ModalButtonProps, ref) => {
     const el = <Button {...props} ref={ref} />
-    return closeOnClick ? <DialogPrimitive.Close children={el} asChild /> : el
+    return closeOnClick ? (
+      <DialogPrimitive.Close asChild>{el}</DialogPrimitive.Close>
+    ) : (
+      el
+    )
   }
 )
 

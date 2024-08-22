@@ -1,8 +1,7 @@
 import { Meta } from '@storybook/react'
-import Button from '../ui/Button'
 import { Accordion } from '../ui/Accordion'
 
-const meta: Meta<typeof Button> = {
+const meta: Meta<typeof Accordion> = {
   title: 'Components/Accordion',
 }
 

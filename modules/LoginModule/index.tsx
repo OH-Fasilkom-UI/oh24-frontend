@@ -1,34 +1,36 @@
 'use client'
 
-import mbg from '@/public/background-login-mobile.png'
-import bg from '@/public/background-login.png'
+import Image from 'next/image'
 import { LoginPage } from './sections/LoginPage'
 
 export const LoginModule = () => {
   return (
-    <main>
-      <div
-        style={{
-          backgroundImage: `url(${bg.src})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'bottom',
-          backgroundRepeat: 'no-repeat',
-        }}
-        className="w-full max-md:hidden min-h-screen md:h-[160vh] min-[2500px]:h-[2200px]"
-      >
-        <LoginPage />
-      </div>
-      <div
-        style={{
-          backgroundImage: `url(${mbg.src})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-        className="w-full md:hidden min-h-screen md:h-[150vh] min-[2500px]:h-[2200px]"
-      >
-        <LoginPage />
-      </div>
+    <main className='relative min-h-screen'>
+      <Image
+        src="/login-desktop.png"
+        alt="login"
+        layout="responsive"
+        width={1920}
+        height={1500}
+        className="hidden md:block w-full absolute z-[-1] mt-52"
+      />
+      <Image
+        src="/login-mobile.png"
+        alt="login"
+        layout="cover"
+        width={375}
+        height={812}
+        className="block md:hidden w-full absolute z-[-1] mt-52 bottom-0 min-[350px]:-bottom-[200px] min-[500px]:-bottom-[400px] min-[600px]:-bottom-[600px]"
+      />
+      <Image
+        src={'/wave-notfound.png'}
+        alt="wave"
+        layout="cover"
+        width={1920}
+        height={1500}
+        className="absolute z-[-1] bottom-0 h-full w-full object-cover"
+      />
+      <LoginPage /> 
     </main>
   )
 }

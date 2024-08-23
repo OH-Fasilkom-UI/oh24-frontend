@@ -152,7 +152,9 @@ const DetailForm = () => {
           />
 
           <div className=" flex justify-start w-full pt-3">
-            <Button type="submit" className="w-full lg:w-auto">
+            <Button type="submit" className="w-full lg:w-auto"
+              variant={'secondary'}
+            >
               Sign Up
             </Button>
           </div>

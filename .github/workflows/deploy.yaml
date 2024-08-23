@@ -16,7 +16,6 @@ jobs:
           script: ~/deploy.sh frontend ${{ github.ref_name }}
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           proxy_host: ${{ secrets.PROXY_HOST }}
           proxy_username: ${{ secrets.PROXY_USERNAME }}

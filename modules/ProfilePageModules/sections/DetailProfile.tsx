@@ -1,23 +1,17 @@
 'use client'
 
 import { Avatar, AvatarImage } from '@/components/ui/Avatar'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/Tooltip'
+import { toast } from '@/components/ui/Toast'
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
 import { useUserData } from '@/hooks/user'
-import { Pencil } from 'lucide-react'
-import { PandaImages } from '../constant'
-import { toast } from '@/components/ui/Toast'
-import { useState } from 'react'
 import { updateMyPersonalData } from '@/lib/api/user'
+import { Pencil } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { PandaImages } from '../constant'
 
 interface FieldProps {
   label: string
@@ -35,12 +29,13 @@ const Field = ({ label, value = '' }: FieldProps) => {
 
 export const DetailProfile = () => {
   const { userData, isLoading } = useUserData({ personal: true })
+  const [profilePict, setProfilePictSrc] = useState<number>(0)
+  const [popOpen, popClose] = useState(false)
 
-  if (isLoading) {
-    return toast.loading("Loading...") // TODO: change this
-  }
+  useEffect(() => {
+    setProfilePictSrc(userData?.personal.profilePic ?? 0)
+  }, [userData])
 
-  const [profilePict, setProfilePictSrc] = useState(0)
 
   const handleProfileChange = async (id: number) => {
     setProfilePictSrc(id)
@@ -56,6 +51,10 @@ export const DetailProfile = () => {
     toast.success('Berhasil mengganti foto profil')
   }
 
+  if (isLoading) {
+    return toast.loading("Loading...") // TODO: change this
+  }
+
   return (
     <div className="pt-[20vh] mb-[50vh] flex flex-col md:px-[120px] xl:px-[190px] py-10 max-md:pb-20 justify-center items-center md:items-start md:justify-start gap-[35px]">
       <h1 className="text-[36px] text-[#2E3881] font-bold font-riffic tracking-[0.075rem]">
@@ -68,40 +67,38 @@ export const DetailProfile = () => {
               PandaImages[profilePict].src
             } />
           </Avatar>
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger className="p-5 max-md:hidden -translate-y-16 bg-[#5E31A6] text-[#E0ECFF] rounded-full">
-                <Pencil className="w-10 h-10" />
-              </TooltipTrigger>
-              <TooltipContent
-                icon={false}
-                side={'right'}
-                className="flex flex-col"
-              >
-                <h1 className="text-[#2E3881] text-[16px] font-tex-gyre font-bold mb-3">
-                  Choose Your Panda!
-                </h1>
-                <div className="flex flex-row gap-[34px]">
-                  {PandaImages.map((item, index) => (
-                    <Avatar
-                      onClick={() => handleProfileChange(index)}
-                      key={item.alt}
-                      className="w-[108px] h-[108px] cursor-pointer"
-                    >
-                      <AvatarImage src={item.src} />
-                    </Avatar>
-                  ))}
-                </div>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          <Popover
+            open={popOpen}
+            onOpenChange={popClose}
+          >
+            <PopoverTrigger className="p-5 max-md:hidden -translate-y-16 bg-[#5E31A6] text-[#E0ECFF] rounded-full">
+              <Pencil className="w-10 h-10" />
+            </PopoverTrigger>
+            <PopoverContent className="flex flex-col w-fit" side={'right'}>
+              <h1 className="text-[#2E3881] text-[16px] font-tex-gyre font-bold mb-3">
+                Choose Your Panda!
+              </h1>
+              <div className="flex flex-row gap-[34px] w-fit">
+                {PandaImages.map((item, index) => (
+                  <Avatar
+                    onClick={() => {
+                      handleProfileChange(index)
+                      popClose(false)
+                    }}
+                    key={item.alt}
+                    className="w-[108px] h-[108px] cursor-pointer"
+                  >
+                    <AvatarImage src={item.src} />
+                  </Avatar>
+                ))}
+              </div>
+            </PopoverContent>
+          </Popover>
           <Popover>
             <PopoverTrigger className="p-5 md:hidden -translate-y-16 bg-[#5E31A6] text-[#E0ECFF] rounded-full">
               <Pencil className="w-10 h-10" />
             </PopoverTrigger>
-            <PopoverContent className="flex flex-col items-center justify-center w-full"
-              side='bottom'
-            >
+            <PopoverContent className="flex flex-col items-center justify-center w-full" side='bottom'>
               <h1 className="text-[#2E3881] text-[16px] font-tex-gyre font-bold mb-3">
                 Choose Your Panda!
               </h1>

@@ -1,4 +1,4 @@
-import bg from '@/public/main-wave.png'
+import bg from '@/public/main-wave.svg'
 import { DetailProfile } from './sections/DetailProfile'
 
 export const ProfilePageModule = () => {

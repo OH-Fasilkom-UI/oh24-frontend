@@ -4,7 +4,7 @@ const WhatsAmbassador = () => {
   return (
     <section
       id="ambass-desc"
-      className="flex justify-center p-8 max-md:mt-[100px] md:mt-[200px]"
+      className="flex justify-center p-8 max-md:mt-[100px] md:mt-[200px] z-50"
     >
       <div className="flex md:max-w-2xl lg:max-w-3xl xl:max-w-4xl items-center">
         <div className="flex-1 mr-8 max-md:mx-3">

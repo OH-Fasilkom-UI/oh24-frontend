@@ -1,7 +1,7 @@
 import ContactPerson from '@/components/elements/ContactPerson'
 import Testimonials from '@/components/elements/Testimonials'
 import Button from '@/components/ui/Button'
-import bg from '@/public/main-wave.png'
+import bg from '@/public/main-wave.svg'
 import { MessageSquare } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -66,7 +66,7 @@ const AmbassadorModule = () => {
         alt="main-wave"
         width={1920}
         height={1080}
-        className='h-screen w-full fixed object-cover'
+        className='h-full w-full absolute object-cover'
       />
       <div className="relative flex-grow mt-10 px-5 md:px-10 lg:px-32">
         <AmbassadorHero />

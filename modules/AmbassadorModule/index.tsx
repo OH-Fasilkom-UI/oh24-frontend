@@ -66,7 +66,7 @@ const AmbassadorModule = () => {
         alt="main-wave"
         width={1920}
         height={1080}
-        className='h-full w-full absolute object-cover'
+        className='h-full w-full absolute object-cover z-[-1]'
       />
       <div className="relative flex-grow mt-10 px-5 md:px-10 lg:px-32">
         <AmbassadorHero />

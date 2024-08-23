@@ -422,6 +422,10 @@ const config = {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' },
         },
+        swing: {
+          '0%, 100%': { transform: 'rotate(3deg)' },
+          '50%': { transform: 'rotate(-3deg)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -429,6 +433,7 @@ const config = {
         'float-vertical': 'float-vertical 5s ease-in-out infinite',
         'float-horizontal': 'float-horizontal 5s ease-in-out infinite',
         'spin': 'spin 10s linear infinite',
+        swing: 'swing 1s infinite',
       },
     },
   },

@@ -81,7 +81,9 @@ export const DetailProfile = () => {
             <PopoverTrigger className="p-5 md:hidden -translate-y-16 bg-[#5E31A6] text-[#E0ECFF] rounded-full">
               <Pencil className="w-10 h-10" />
             </PopoverTrigger>
-            <PopoverContent className="flex flex-col items-center justify-center w-full">
+            <PopoverContent className="flex flex-col items-center justify-center w-full"
+              side='bottom'
+            >
               <h1 className="text-[#2E3881] text-[16px] font-tex-gyre font-bold mb-3">
                 Choose Your Panda!
               </h1>

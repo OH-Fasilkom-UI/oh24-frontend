@@ -67,7 +67,7 @@ export const CaseAndTugas = () => {
       <BackModal showModal={showModal} setShowModal={setShowModal} />
       <Button
         onClick={handleBack}
-        className="flex gap-[14px] cursor-pointer absolute xl:translate-y-[64px]"
+        className="flex gap-[14px] cursor-pointer absolute xl:translate-y-[64px] z-10"
       >
         <ArrowLeft />
         Back

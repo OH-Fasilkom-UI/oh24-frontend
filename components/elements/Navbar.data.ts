@@ -5,7 +5,7 @@ export const NAVBAR_LINKS = [
     href: '/',
     icon: House,
     label: 'Home',
-    isExist: true,
+    isExist: false,
   },
   {
     href: '/ambassador',

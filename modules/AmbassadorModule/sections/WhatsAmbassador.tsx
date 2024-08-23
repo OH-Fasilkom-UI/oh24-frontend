@@ -8,7 +8,7 @@ const WhatsAmbassador = () => {
     >
       <div className="flex md:max-w-2xl lg:max-w-3xl xl:max-w-4xl items-center">
         <div className="flex-1 mr-8 max-md:mx-3">
-          <div className="flex flex-col relative py-3 w-full">
+          <div className="flex max-[300px]:flex-col-reverse items-center gap-4 flex-col relative py-3 w-full">
             <p className="text-Text/TextLightBG max-md:leading-6 md:text-[24px] sm:mr-3 md:whitespace-nowrap max-md:text-base max-lg:text-[16px] max-sm:text-center tracking-widest font-riffic font-bold text-[36px] leading-[40px]">
               Apa itu <br className="max-sm:block hidden" /> Ambassador Open
               House?
@@ -19,7 +19,7 @@ const WhatsAmbassador = () => {
               width={42}
               quality={100}
               height={59}
-              className="max-sm:block hidden absolute top-1/2 max-sm:-translate-y-9 max-sm:right-0 max-[320px]:translate-x-6 max-[360px]:translate-x-3 max-[400px]:translate-x-1 max-[430px]:-translate-x-3 sm:right-5 transform -translate-y-1/2"
+              className='max-sm:block hidden min-[300px]:absolute -top-10 min-[450px]:-top-5 min-[550px]:right-10 max-sm:right-0 max-[320px]:right-1 max-[360px]:right-2 max-[400px]:right-4 max-[430px]:right-6 sm:right-5 transform animate-swing'
             />
           </div>
           <p className="font-tex-gyre text-[16px] max-md:leading-4  font-bold leading-6 max-md:text-[12px] max-xl:text-[13px] max-sm:text-center text-Text/TextLightBG">

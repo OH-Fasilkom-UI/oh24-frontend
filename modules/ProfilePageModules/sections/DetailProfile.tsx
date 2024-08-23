@@ -38,7 +38,21 @@ export const DetailProfile = () => {
     return toast.loading("Loading...") // TODO: change this
   }
 
-  const handleProfileChange = (src: string) => {}
+  const [profilePict, setProfilePictSrc] = useState(0)
+
+  const handleProfileChange = async (id: number) => {
+    setProfilePictSrc(id)
+    
+    const res = await updateMyPersonalData({
+      profilePic: id,
+    })
+
+    if (!res.ok) {
+      return toast.error('Gagal mengganti foto profil')
+    }
+
+    toast.success('Berhasil mengganti foto profil')
+  }
 
   return (
     <div className="pt-[20vh] mb-[50vh] flex flex-col md:px-[120px] xl:px-[190px] py-10 max-md:pb-20 justify-center items-center md:items-start md:justify-start gap-[35px]">
@@ -48,7 +62,9 @@ export const DetailProfile = () => {
       <div className="flex flex-col max-md:justify-center max-md:items-center md:flex-row md:gap-[108px]">
         <div className="flex flex-col items-end">
           <Avatar className="w-[216px] h-[216px]">
-            <AvatarImage src="/Profile/cowo1.png" />
+            <AvatarImage src={ 
+              PandaImages[profilePict].src
+            } />
           </Avatar>
           <TooltipProvider>
             <Tooltip>
@@ -64,9 +80,9 @@ export const DetailProfile = () => {
                   Choose Your Panda!
                 </h1>
                 <div className="flex flex-row gap-[34px]">
-                  {PandaImages.map((item) => (
+                  {PandaImages.map((item, index) => (
                     <Avatar
-                      onClick={() => handleProfileChange(item.src)}
+                      onClick={() => handleProfileChange(index)}
                       key={item.alt}
                       className="w-[108px] h-[108px] cursor-pointer"
                     >
@@ -88,9 +104,9 @@ export const DetailProfile = () => {
                 Choose Your Panda!
               </h1>
               <div className="flex flex-col items-center gap-[34px]">
-                {PandaImages.map((item) => (
+                {PandaImages.map((item, index) => (
                   <Avatar
-                    onClick={() => handleProfileChange(item.src)}
+                    onClick={() => handleProfileChange(index)}
                     key={item.alt}
                     className="w-[108px] h-[108px] cursor-pointer"
                   >

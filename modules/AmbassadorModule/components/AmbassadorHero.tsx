@@ -6,7 +6,7 @@ import AmbassadorHeroContent from './AmbassadorHeroContent'
 
 const AmbassadorHero = () => {
   return (
-    <div className="xl:mt-[194px] max-sm:mt-[100px] md:mt-[140px] flex flex-col">
+    <div className="xl:mt-[194px] max-sm:mt-[100px] sm:mt-[120px] flex flex-col">
       <div className="flex flex-col">
         <Card
           title=""

@@ -76,21 +76,21 @@ const AmbassadorModule = () => {
           alt="pesawat-kiri"
           width={100}
           height={100}
-          className="hidden lg:block lg:left-0 max-[400px]:w-[70px] max-lg:top-0 max-md:left-0 lg:top-[100px] absolute animate-float-vertical"
+          className="md:left-0 max-md:w-[150px] max-md:-top-32 md:-top-20 max-md:left-0 lg:top-[100px] absolute animate-float-vertical"
         />
         <Image
           src="/pesawat-kiri.png"
           alt="pesawat-kiri"
           width={236}
           height={183}
-          className="left-0 top-1/4 absolute hidden lg:block animate-float-horizontal"
+          className="left-0 top-1/4 absolute hidden md:block animate-float-horizontal"
         />
         <Image
           src="/pesawat-kanan.png"
           alt="pesawat-kanan"
           width={200}
           height={200}
-          className="absolute hidden lg:block right-0 top-[100px] animate-float-vertical"
+          className="absolute hidden md:block right-0 top-[100px] animate-float-vertical"
         />
       </div>
       <WhatsAmbassador />

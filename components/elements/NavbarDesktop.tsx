@@ -49,7 +49,7 @@ const NavbarDesktop = () => {
       ))}
       <div className="max-lg:hidden">
         {userDataLoading || isPending ? (
-          <Skeleton className="h-full w-full" />
+          <Skeleton className="h-[45px] w-[100px]" />
         ) : isAuthenticated ? (
           <Popover open={isUserMenuOpen} onOpenChange={setIsUserMenuOpen}>
             <PopoverTrigger asChild>

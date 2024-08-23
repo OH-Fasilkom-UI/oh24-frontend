@@ -1,7 +1,7 @@
 import ContactPerson from '@/components/elements/ContactPerson'
 import Testimonials from '@/components/elements/Testimonials'
 import Button from '@/components/ui/Button'
-import bg from '@/public/wave-notfound.png'
+import bg from '@/public/main-wave.png'
 import { MessageSquare } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -60,15 +60,14 @@ const ambassTestimonyData = [
 
 const AmbassadorModule = () => {
   return (
-    <div
-      style={{
-        backgroundImage: `url(${bg.src})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-      className="min-h-screen flex flex-col z-20 w-full"
-    >
+    <main className="min-h-screen flex flex-col z-20 w-full relative">
+      <Image
+        src={bg.src}
+        alt="main-wave"
+        width={1920}
+        height={1080}
+        className='h-screen w-full fixed object-cover'
+      />
       <div className="relative flex-grow mt-10 px-5 md:px-10 lg:px-32">
         <AmbassadorHero />
         <Image
@@ -133,7 +132,7 @@ const AmbassadorModule = () => {
           </Link>
         </ContactPerson>
       </div>
-    </div>
+    </main>
   )
 }
 

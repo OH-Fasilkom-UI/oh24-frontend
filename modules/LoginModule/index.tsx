@@ -23,7 +23,7 @@ export const LoginModule = () => {
         className="block md:hidden w-full absolute z-[-1] mt-52 bottom-0 min-[350px]:-bottom-[200px] min-[500px]:-bottom-[400px] min-[600px]:-bottom-[600px]"
       />
       <Image
-        src={'/wave-notfound.png'}
+        src={'/main-wave.png'}
         alt="wave"
         layout="cover"
         width={1920}

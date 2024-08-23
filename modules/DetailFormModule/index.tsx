@@ -1,4 +1,4 @@
-import bg from '@/public/wave-notfound.png'
+import bg from '@/public/main-wave.png'
 import Image from 'next/image'
 import DetailForm from './sections/DetailForm'
 

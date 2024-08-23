@@ -1,7 +1,7 @@
 'use client'
 
 import Button from '@/components/ui/Button'
-import bg from '@/public/wave-notfound.png'
+import bg from '@/public/main-wave.png'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'

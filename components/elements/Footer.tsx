@@ -58,12 +58,14 @@ const Footer = () => {
       <section className="z-20 flex flex-col gap-4 bg-[#343FC0] h-[262px] md:h-[412px] p-5 md:p-10 w-full">
         <div className="flex items-center justify-center text-white font-bold text-sm gap-2 md:hidden">
           <p>Supported by</p>
-          <Image
-            src={'/fasilkom.png'}
-            alt="Fasilkom UI Logo"
-            width={84}
-            height={120}
-          />
+          <a href="https://cs.ui.ac.id/" target="_blank">
+            <Image
+              src={'/fasilkom.png'}
+              alt="Fasilkom UI Logo"
+              width={84}
+              height={120}
+            />
+          </a>
         </div>
         <div className="flex items-center justify-between w-full h-fit gap-4">
           <div className="flex gap-12">

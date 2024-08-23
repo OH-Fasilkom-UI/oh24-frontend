@@ -15,6 +15,7 @@ import {
 import { useUserData } from '@/hooks/user'
 import { Pencil } from 'lucide-react'
 import { PandaImages } from '../constant'
+import { toast } from '@/components/ui/Toast'
 
 interface FieldProps {
   label: string
@@ -34,7 +35,7 @@ export const DetailProfile = () => {
   const { userData, isLoading } = useUserData({ personal: true })
 
   if (isLoading) {
-    return 'loading...' // TODO: change this
+    return toast.loading("Loading...") // TODO: change this
   }
 
   const handleProfileChange = (src: string) => {}

@@ -15,6 +15,7 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod'
 import { redirect } from 'next/navigation'
 import { useForm } from 'react-hook-form'
+import { toast } from '@/components/ui/Toast'
 
 const DetailForm = () => {
   const { isLoading } = useUserData({ personal: true })
@@ -34,12 +35,15 @@ const DetailForm = () => {
       // gw gatau kenapa harus pake redirect T_T
       // kalo pake router di useRouter, bakal client
       // side error
-      onSuccess: () => redirect('/profile')
+      onSuccess: () => {
+        toast.success('Berhasil mengirimkan data')
+        redirect('/profile')
+      },
     })
   }
 
   if (isLoading) {
-    return 'Loading...'
+    return toast.loading('Loading...')
   }
 
   return (

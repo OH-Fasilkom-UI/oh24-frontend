@@ -20,6 +20,7 @@ import { BackModal } from '../elements/BackModal'
 import { LeftSideForm } from '../elements/LeftSideForm'
 import { RightSideForm } from '../elements/RightSideForm'
 import { Calendly } from './Calendly'
+import { Skeleton } from '@/components/ui/skeleton'
 
 export const CaseAndTugas = () => {
   const router = useRouter()
@@ -56,7 +57,7 @@ export const CaseAndTugas = () => {
   }
 
   if (isLoading) {
-    return 'Loading...'
+    return toast.loading("Loading...")
   }
 
   return (

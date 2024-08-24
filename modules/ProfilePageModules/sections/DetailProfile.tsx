@@ -97,7 +97,7 @@ export const DetailProfile = () => {
               <Pencil className="w-10 h-10" />
             </PopoverTrigger>
             <PopoverContent
-              className="flex flex-col items-center justify-center w-full translate-x-20 translate-y-[350px]"
+              className="absolute w-fit p-8 flex flex-col items-center justify-center translate-y-[60px] -translate-x-[100px]"
               side="left"
             >
               <h1 className="text-[#2E3881] text-[16px] font-tex-gyre font-bold mb-3">

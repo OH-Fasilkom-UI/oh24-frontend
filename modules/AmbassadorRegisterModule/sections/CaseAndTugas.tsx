@@ -2,6 +2,7 @@
 
 import Button from '@/components/ui/Button'
 import { Form } from '@/components/ui/form'
+import { Skeleton } from '@/components/ui/skeleton'
 import { toast } from '@/components/ui/Toast'
 import { useSubmitAmbassadorData } from '@/hooks/registration'
 import { useUserData } from '@/hooks/user'
@@ -18,10 +19,9 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { BackModal } from '../elements/BackModal'
 import { LeftSideForm } from '../elements/LeftSideForm'
-import { RightSideForm } from '../elements/RightSideForm'
 import { RegisteredNotice } from '../elements/RegisteredNotice'
+import { RightSideForm } from '../elements/RightSideForm'
 import { Calendly } from './Calendly'
-import { Skeleton } from '@/components/ui/skeleton'
 
 export const CaseAndTugas = () => {
   const router = useRouter()
@@ -52,7 +52,7 @@ export const CaseAndTugas = () => {
         router.push('/ambassador')
       },
       onError: (error) => { 
-        toast.error(error.message)
+        toast.error("Terjadi Kesalahan!")
       }
     })
   }
@@ -62,18 +62,18 @@ export const CaseAndTugas = () => {
   }
 
   if (isLoading) {
-    toast.loading("Loading...")
-    return
+    return <Skeleton className='w-full h-[600px]' />
   }
+
 
   return (
     <section
-      className='flex flex-col gap-10'
+      className='flex flex-col gap-10 min-h-screen'
     >
       <BackModal showModal={showModal} setShowModal={setShowModal} />
       <Button
         onClick={handleBack}
-        className="flex gap-[14px] cursor-pointer absolute xl:translate-y-[64px] z-10"
+        className="flex gap-[14px] cursor-pointer z-10"
       >
         <ArrowLeft />
         Back
@@ -103,7 +103,7 @@ export const CaseAndTugas = () => {
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className={cn(
-            'flex flex-col justify-center lg:flex-row xl:mx-40 gap-4 relative',
+            'flex flex-col justify-center lg:flex-row xl:mx-40 gap-4 relative mb-60 xl:mb-96',
             page === 1 && 'hidden'
           )}
         >

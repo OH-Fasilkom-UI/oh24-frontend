@@ -37,10 +37,9 @@ export const DetailProfile = () => {
     setProfilePictSrc(userData?.personal.profilePic ?? 0)
   }, [userData])
 
-
   const handleProfileChange = async (id: number) => {
     setProfilePictSrc(id)
-    
+
     const res = await updateMyPersonalData({
       profilePic: id,
     })
@@ -67,14 +66,9 @@ export const DetailProfile = () => {
       <div className="flex flex-col max-md:justify-center max-md:items-center md:flex-row md:gap-[108px]">
         <div className="flex flex-col items-end">
           <Avatar className="w-[216px] h-[216px]">
-            <AvatarImage src={ 
-              PandaImages[profilePict].src
-            } />
+            <AvatarImage src={PandaImages[profilePict].src} />
           </Avatar>
-          <Popover
-            open={popOpen}
-            onOpenChange={popClose}
-          >
+          <Popover open={popOpen} onOpenChange={popClose}>
             <PopoverTrigger className="p-5 max-md:hidden -translate-y-16 bg-[#5E31A6] text-[#E0ECFF] rounded-full">
               <Pencil className="w-10 h-10" />
             </PopoverTrigger>
@@ -103,7 +97,9 @@ export const DetailProfile = () => {
               <Pencil className="w-10 h-10" />
             </PopoverTrigger>
             <PopoverContent
-              className="flex flex-col items-center justify-center w-full" side={'bottom'} >
+              className="flex flex-col items-center justify-center w-full translate-x-20 translate-y-[350px]"
+              side="left"
+            >
               <h1 className="text-[#2E3881] text-[16px] font-tex-gyre font-bold mb-3">
                 Choose Your Panda!
               </h1>
@@ -122,7 +118,7 @@ export const DetailProfile = () => {
           </Popover>
         </div>
         <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
-          <Field label="Nama Lengkap" value={userData?.personal?.fullName} />
+        <Field label="Nama Lengkap" value={userData?.personal?.fullName} />
           <Field label="Email" value={userData?.email} />
           <Field label="Domisili" value={userData?.personal?.domicile} />
           <Field label="WhatsApp" value={userData?.personal?.phone} />

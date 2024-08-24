@@ -1,16 +1,9 @@
-import bg from '@/public/main-wave.svg'
 import Image from 'next/image'
 import DetailForm from './sections/DetailForm'
 
 export const DetailFormModule = () => {
   return (
     <div
-      style={{
-        backgroundImage: `url(${bg.src})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
       className="min-h-screen flex flex-col"
     >
       <div className="flex-grow flex flex-col pb-[262px] lg:pb-[700px] md:pb-[412px]">

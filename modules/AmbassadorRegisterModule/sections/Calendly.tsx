@@ -12,7 +12,7 @@ export const Calendly: React.FC<CalendlyProps> = ({ showCalendly, onSubmit }) =>
   return (
     <section
       className={cn(
-        'z-10 flex lg:flex-row flex-col lg:gap-[90px] gap-8 justify-center items-center lg:items-start translate-y-1/2',
+        'z-10 flex lg:flex-row flex-col lg:gap-[90px] gap-8 justify-center items-center lg:items-start',
         !showCalendly && 'hidden'
       )}
     >

@@ -71,25 +71,15 @@ const itemVariants = {
 const AmbassadorAccordion = () => {
 
   return (
-    <motion.div
+    <div
       className="w-full"
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
     >
       <Accordion type="single" collapsible className="flex flex-col lg:gap-4 z-20">
         {AmbassadorFAQData.map((faq, index) => {
-          const ref = useRef(null);
-          const isInView = useInView(ref, { once: true});
-
           return (
-            <motion.div
+            <div
               key={index}
-              ref={ref}
-              initial="hidden"
-              animate={isInView ? 'visible' : 'hidden'}
-              variants={itemVariants}
-              className='my-2 '
+              className='my-2'
             >
               <AccordionItem value={`item-${index}`}>
                 <AccordionTrigger className="max-md:text-[16px] max-sm:text-[12px] text-start">
@@ -99,11 +89,11 @@ const AmbassadorAccordion = () => {
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
-            </motion.div>
+            </div>
           );
         })}
       </Accordion>
-    </motion.div>
+    </div>
   )
 }
 

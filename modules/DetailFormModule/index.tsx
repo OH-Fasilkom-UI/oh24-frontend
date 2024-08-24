@@ -4,7 +4,7 @@ import DetailForm from './sections/DetailForm'
 export const DetailFormModule = () => {
   return (
     <div
-      className="min-h-screen flex flex-col"
+      className="min-h-screen flex flex-col overflow-hidden"
     >
       <div className="flex-grow flex flex-col pb-[262px] lg:pb-[700px] md:pb-[412px]">
         <div className="flex max-md:mt-[121px] max-md:gap-x-[7px] md:gap-x-[32px] font-tex-gyre font-bold items-center justify-center mx-auto md:mt-[182px] max-md:text-[15px] max-md:whitespace-nowrap max-md:w-[60px] md:text-[36px] leading-[40px] text-Text/TextLightBG">

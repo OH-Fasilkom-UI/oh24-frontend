@@ -12,6 +12,7 @@ import { updateMyPersonalData } from '@/lib/api/user'
 import { Pencil } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { PandaImages } from '../constant'
+import { Skeleton } from '@/components/ui/skeleton'
 
 interface FieldProps {
   label: string
@@ -51,7 +52,10 @@ export const DetailProfile = () => {
   }
 
   if (isLoading) {
-    return toast.loading("Loading...") // TODO: change this
+    return <div className='p-32'>
+      <Skeleton className='h-[600px] md:mx-[120px] xl:mx-[190px] z-50' />
+
+    </div>
   }
 
   return (

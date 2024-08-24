@@ -32,6 +32,8 @@ export const DetailProfile = () => {
   const [profilePict, setProfilePictSrc] = useState<number>(0)
   const [popOpen, popClose] = useState(false)
 
+  const winowWidth = window.innerWidth
+
   useEffect(() => {
     setProfilePictSrc(userData?.personal.profilePic ?? 0)
   }, [userData])
@@ -74,7 +76,7 @@ export const DetailProfile = () => {
             <PopoverTrigger className="p-5 max-md:hidden -translate-y-16 bg-[#5E31A6] text-[#E0ECFF] rounded-full">
               <Pencil className="w-10 h-10" />
             </PopoverTrigger>
-            <PopoverContent className="flex flex-col w-fit" side={'right'}>
+            <PopoverContent className="flex flex-col w-fit" side={winowWidth > 780 ? 'right' : 'bottom'}>
               <h1 className="text-[#2E3881] text-[16px] font-tex-gyre font-bold mb-3">
                 Choose Your Panda!
               </h1>

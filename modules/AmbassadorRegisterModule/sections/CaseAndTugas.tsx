@@ -19,6 +19,7 @@ import { useForm } from 'react-hook-form'
 import { BackModal } from '../elements/BackModal'
 import { LeftSideForm } from '../elements/LeftSideForm'
 import { RightSideForm } from '../elements/RightSideForm'
+import { RegisteredNotice } from '../elements/RegisteredNotice'
 import { Calendly } from './Calendly'
 import { Skeleton } from '@/components/ui/skeleton'
 
@@ -26,7 +27,7 @@ export const CaseAndTugas = () => {
   const router = useRouter()
   const [page, setPage] = useState(0)
   const [showModal, setShowModal] = useState(false)
-  const { isLoading } = useUserData({ personal: true })
+  const { isLoading, userData } = useUserData({ personal: true })
   const { mutate: submit } = useSubmitAmbassadorData()
 
   const form = useForm<SubmitAmbassadorData>({
@@ -56,8 +57,13 @@ export const CaseAndTugas = () => {
     })
   }
 
+  if (userData?.hasAmbassadorForm) {
+    return <RegisteredNotice />
+  }
+
   if (isLoading) {
-    return toast.loading("Loading...")
+    toast.loading("Loading...")
+    return
   }
 
   return (

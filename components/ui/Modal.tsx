@@ -78,7 +78,7 @@ const Modal = ({
             <div
               className={twMerge(
                 'flex gap-x-2 mt-3 px-6 sm:px-10',
-                'flex-row md:flex-row-reverse [&>*]:flex-grow md:[&>*]:flex-grow-0'
+                'flex-col gap-2 md:flex-row-reverse [&>*]:flex-grow md:[&>*]:flex-grow-0'
               )}
             >
               {buttons?.[0]}

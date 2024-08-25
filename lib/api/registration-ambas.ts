@@ -5,11 +5,11 @@ const FILE_TYPES = ['application/pdf']
 const IMAGE_TYPES = ['image/png', 'image/jpeg', 'image/jpg']
 
 export const submitAmbassadorSchema = z.object({
-  infoSource: z.string(),
-  reasonForJoining: z.string(),
-  expectations: z.string(),
+  infoSource: z.string().max(255),
+  reasonForJoining: z.string().max(255),
+  expectations: z.string().max(255),
 
-  introductionVideoLink: z.string().url(),
+  introductionVideoLink: z.string().url().max(255),
   instagramLink: z.string().refine((value) => !value.includes('@'), {
     message: "Username tidak boleh mengandung dengan '@'",
   }),
@@ -22,8 +22,8 @@ export const submitAmbassadorSchema = z.object({
     .or(z.literal('').transform(() => undefined)).refine((value) => !value?.includes('@'), {
       message: "Username tidak boleh mengandung dengan '@'",
     }),
-  ableToAttend: z.string(),
-  accommodation: z.string(),
+  ableToAttend: z.string().max(255),
+  accommodation: z.string().max(255),
 
   twibbon: z
     .instanceof(File, {

@@ -15,7 +15,7 @@ export enum Domicile {
 }
 
 export const submitPersonalDataSchema = z.object({
-  fullName: z.string().min(1, 'Nama lengkap harus diisi'),
+  fullName: z.string().min(1, 'Nama lengkap harus diisi').max(255),
   dob: z.date(),
   school: z.string().optional(),
   class: z.nativeEnum(Class),
@@ -23,9 +23,9 @@ export const submitPersonalDataSchema = z.object({
     .string()
     .regex(new RegExp('^[0-9]*$'))
     .min(1, 'Nomor WhatsApp harus diisi'),
-  lineId: z.string().min(1, 'ID Line harus diisi'),
+  lineId: z.string().min(1, 'ID Line harus diisi').max(255),
   domicile: z.nativeEnum(Domicile),
-  parentName: z.string().min(1, 'Nama Orang Tua harus diisi'),
+  parentName: z.string().min(1, 'Nama Orang Tua harus diisi').max(255),
   parentPhone: z
     .string()
     .regex(new RegExp('^[0-9]*$'))

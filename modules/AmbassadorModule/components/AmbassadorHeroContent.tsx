@@ -29,9 +29,13 @@ const AmbassadorHeroContent = () => {
         <Countdown targetDate={new Date('2024-09-08T23:59:00')} displayDate />
       </div>
       <div className="flex flex-row justify-center gap-5 my-5 lg:my-20 max-md:flex-col max-md:items-center">
-        <Link href="/Module_0.pdf" download="Guidebook Ambaszzing" target="_blank">
+        <Link href="/guidebook.pdf" download="Guidebook Open Recruitment Ambassador OH Fasilkom UI 2024" target="_blank">
           <Button
-            onClick={() => toast.success("Guidebook berhasil diunduh")}
+            onClick={() => {
+              setTimeout(() => {
+                toast.success("Guidebook berhasil diunduh")
+              }, 500)
+            }}
             className="w-[180px] max-md:text-[12px]"
           >
             <BookMinus className="w-4" />

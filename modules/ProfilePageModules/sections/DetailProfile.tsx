@@ -12,7 +12,7 @@ import { updateMyPersonalData } from '@/lib/api/user'
 import { Pencil } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { PandaImages } from '../constant'
-import { Skeleton } from '@/components/ui/skeleton'
+import { Loader } from '@/components/elements/Loader'
 
 interface FieldProps {
   label: string
@@ -52,10 +52,7 @@ export const DetailProfile = () => {
   }
 
   if (isLoading) {
-    return <div className='p-32'>
-      <Skeleton className='h-[600px] md:mx-[120px] xl:mx-[190px] z-50' />
-
-    </div>
+    return <Loader />
   }
 
   return (

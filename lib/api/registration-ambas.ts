@@ -5,15 +5,15 @@ const FILE_TYPES = ['application/pdf']
 const IMAGE_TYPES = ['image/png', 'image/jpeg', 'image/jpg']
 
 export const submitAmbassadorSchema = z.object({
-  infoSource: z.string().max(255),
-  reasonForJoining: z.string().max(255),
-  expectations: z.string().max(255),
+  infoSource: z.string().max(255, 'Max 255 karakter'),
+  reasonForJoining: z.string().max(255, 'Max 255 karakter'),
+  expectations: z.string().max(255, 'Max 255 karakter'),
 
-  introductionVideoLink: z.string().url().max(255),
-  instagramLink: z.string().refine((value) => !value.includes('@'), {
+  introductionVideoLink: z.string().url().max(255, 'Max 255 karakter'),
+  instagramLink: z.string().max(255, 'Max 255 karakter').refine((value) => !value.includes('@'), {
     message: "Username tidak boleh mengandung dengan '@'",
   }),
-  tiktokLink: z.string().refine((value) => !value.includes('@'), {
+  tiktokLink: z.string().max(255, 'Max 255 karakter').refine((value) => !value.includes('@'), {
     message: "Username tidak boleh mengandung dengan '@'",
   }),
   twitterLink: z

@@ -56,7 +56,7 @@ export const DetailProfile = () => {
   }
 
   return (
-    <div className="pt-[20vh] mb-[50vh] flex flex-col md:px-[120px] xl:px-[190px] py-10 max-md:pb-20 justify-center items-center md:items-start md:justify-start gap-[35px]">
+    <div className="pt-[10rem] min-[1920px]:pt-[10rem] mb-10  flex flex-col md:px-[120px] xl:px-[190px] py-10 max-md:pb-20 justify-center items-center md:items-start md:justify-start gap-[35px]">
       <h1 className="text-[36px] text-[#2E3881] font-bold font-riffic tracking-[0.075rem]">
         Profile
       </h1>
@@ -67,7 +67,7 @@ export const DetailProfile = () => {
           </Avatar>
           <Popover open={popOpen} onOpenChange={popClose}>
             <PopoverTrigger className="p-5 max-md:hidden -translate-y-16 bg-[#5E31A6] text-[#E0ECFF] rounded-full">
-              <Pencil className="w-10 h-10" />
+              <Pencil className="w-10 h-10 z-50" />
             </PopoverTrigger>
             <PopoverContent className="flex flex-col w-fit" side={'right'}>
               <h1 className="text-[#2E3881] text-[16px] font-tex-gyre font-bold mb-3">
@@ -91,10 +91,10 @@ export const DetailProfile = () => {
           </Popover>
           <Popover>
             <PopoverTrigger className="p-5 md:hidden -translate-y-16 bg-[#5E31A6] text-[#E0ECFF] rounded-full">
-              <Pencil className="w-10 h-10" />
+              <Pencil className="w-10 h-10 z-50" />
             </PopoverTrigger>
             <PopoverContent
-              className="flex flex-col items-center justify-center w-full translate-x-20 translate-y-[350px]"
+              className="absolute w-fit p-8 flex flex-col items-center justify-center translate-y-[60px] -translate-x-[100px]"
               side="left"
             >
               <h1 className="text-[#2E3881] text-[16px] font-tex-gyre font-bold mb-3">

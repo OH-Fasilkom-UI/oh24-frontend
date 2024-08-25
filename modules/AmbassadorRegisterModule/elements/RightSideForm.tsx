@@ -98,8 +98,8 @@ export const RightSideForm = <
               <br />
               <br />
               Dengan mempertimbangkan hal tersebut, apakah dapat menghadiri Main
-              Event yang berada di Fasilkom UI, Depok pada tanggal 16 November
-              2024 atau 23 November 2024?
+              Event yang berada di Fasilkom UI, Depok pada tanggal 23 November
+              2024 atau 24 November 2024?
             </FormLabel>
             <FormControl>
               <RadioGroup

@@ -10,12 +10,18 @@ export const submitAmbassadorSchema = z.object({
   expectations: z.string(),
 
   introductionVideoLink: z.string().url(),
-  instagramLink: z.string(),
-  tiktokLink: z.string(),
+  instagramLink: z.string().refine((value) => !value.includes('@'), {
+    message: "Username tidak boleh mengandung dengan '@'",
+  }),
+  tiktokLink: z.string().refine((value) => !value.includes('@'), {
+    message: "Username tidak boleh mengandung dengan '@'",
+  }),
   twitterLink: z
     .string()
     .optional()
-    .or(z.literal('').transform(() => undefined)),
+    .or(z.literal('').transform(() => undefined)).refine((value) => !value?.includes('@'), {
+      message: "Username tidak boleh mengandung dengan '@'",
+    }),
   ableToAttend: z.string(),
   accommodation: z.string(),
 

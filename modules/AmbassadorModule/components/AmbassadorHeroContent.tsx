@@ -17,7 +17,7 @@ const AmbassadorHeroContent = () => {
         </h1>
         <p className="font-bold font-tex-gyre text-Text/TextDarkBG leading-[28px] text-sm md:text-xl max-md:leading-4 max-md:text-center">
           Ambassador adalah salah satu divisi dari OH Fasilkom UI untuk mengajak
-          siswa/1 SMA/sederajat menjadi ikon dari OH Fasilkom UI 2024, dengan
+          siswa/i SMA/sederajat menjadi ikon dari OH Fasilkom UI 2024, dengan
           tujuan mempromosikan acara OH Fasilkom 2024 dan Fakultas Ilmu Komputer
           itu sendiri.
         </p>

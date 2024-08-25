@@ -28,7 +28,7 @@ export const CaseAndTugas = () => {
   const [page, setPage] = useState(0)
   const [showModal, setShowModal] = useState(false)
   const { isLoading, userData } = useUserData({ personal: true })
-  const { mutate: submit } = useSubmitAmbassadorData()
+  const { mutate: submit, isPending } = useSubmitAmbassadorData()
 
   const form = useForm<SubmitAmbassadorData>({
     resolver: zodResolver(submitAmbassadorSchema),
@@ -51,7 +51,7 @@ export const CaseAndTugas = () => {
         toast.success('Berhasil mengirimkan data')
         router.push('/ambassador')
       },
-      onError: (error) => { 
+      onError: () => {
         toast.error("Terjadi Kesalahan!")
       }
     })
@@ -119,8 +119,9 @@ export const CaseAndTugas = () => {
             <Button
               id="submitAmbas"
               type="submit"
-              variant={'secondary'}
+              variant="secondary"
               className="w-full"
+              disabled={isPending}
             >
               Next
             </Button>
@@ -128,10 +129,9 @@ export const CaseAndTugas = () => {
         </form>
       </Form>
       <Calendly
+        isPending={isPending}
         showCalendly={page === 1}
-        onSubmit={() => {
-          document.getElementById('submitAmbas')?.click()
-        }}
+        onSubmit={() => document.getElementById('submitAmbas')?.click()}
       />
     </section>
   )

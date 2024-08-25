@@ -19,7 +19,7 @@ import { toast } from '@/components/ui/Toast'
 
 const DetailForm = () => {
   const { isLoading } = useUserData({ personal: true })
-  const { mutate: submit } = useSubmitPersonalData()
+  const { mutate: submit, isPending } = useSubmitPersonalData()
 
   const {
     handleSubmit,
@@ -152,8 +152,11 @@ const DetailForm = () => {
           />
 
           <div className=" flex justify-start w-full pt-3">
-            <Button type="submit" className="w-full lg:w-auto"
-              variant={'secondary'}
+            <Button
+              type="submit"
+              className="w-full lg:w-auto"
+              variant="secondary"
+              disabled={isPending}
             >
               Sign Up
             </Button>

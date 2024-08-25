@@ -2,7 +2,6 @@
 
 import Button from '@/components/ui/Button'
 import { Form } from '@/components/ui/form'
-import { Skeleton } from '@/components/ui/skeleton'
 import { toast } from '@/components/ui/Toast'
 import { useSubmitAmbassadorData } from '@/hooks/registration'
 import { useUserData } from '@/hooks/user'
@@ -22,6 +21,7 @@ import { LeftSideForm } from '../elements/LeftSideForm'
 import { RegisteredNotice } from '../elements/RegisteredNotice'
 import { RightSideForm } from '../elements/RightSideForm'
 import { Calendly } from './Calendly'
+import { Loader } from '@/components/elements/Loader'
 
 export const CaseAndTugas = () => {
   const router = useRouter()
@@ -62,7 +62,7 @@ export const CaseAndTugas = () => {
   }
 
   if (isLoading) {
-    return <Skeleton className='w-full h-[600px]' />
+    return <Loader />
   }
 
 

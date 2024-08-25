@@ -29,9 +29,23 @@ const Field = ({ label, value = '' }: FieldProps) => {
 }
 
 export const DetailProfile = () => {
-  const { userData, isLoading } = useUserData({ personal: true })
+  // const { userData,  } = useUserData({ personal: true })
   const [profilePict, setProfilePictSrc] = useState<number>(0)
   const [popOpen, popClose] = useState(false)
+
+  const userData = {
+    personal: {
+      profilePic: 0,
+      fullName: 'Muhammad Rizqi',
+      domicile: 'Jakarta',
+      phone: '081234567890',
+      dob: '12-12-2000',
+      class: '2024',
+      school: 'SMA 1 Jakarta',
+      parentPhone: '081234567890',
+    },
+    email: 'asu@gmail.com'
+  }
 
   useEffect(() => {
     setProfilePictSrc(userData?.personal.profilePic ?? 0)
@@ -51,12 +65,12 @@ export const DetailProfile = () => {
     toast.success('Berhasil mengganti foto profil')
   }
 
-  if (isLoading) {
-    return <Loader />
-  }
+  // if (isLoading) {
+  //   return <Loader />
+  // }
 
   return (
-    <div className="pt-[10rem] min-[1920px]:pt-[10rem] mb-10  flex flex-col md:px-[120px] xl:px-[190px] py-10 max-md:pb-20 justify-center items-center md:items-start md:justify-start gap-[35px]">
+    <div className="pt-[10rem] min-[1920px]:pt-[10rem] mb-10 flex flex-col md:px-[120px] xl:px-[190px] py-10 max-md:pb-96 justify-center items-center md:items-start md:justify-start gap-[35px]">
       <h1 className="text-[36px] text-[#2E3881] font-bold font-riffic tracking-[0.075rem]">
         Profile
       </h1>

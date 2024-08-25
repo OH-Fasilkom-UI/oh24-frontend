@@ -16,7 +16,7 @@ export const LoginModule = () => {
           layout="responsive"
           width={1920}
           height={1500}
-          className="hidden md:block w-full absolute z-[-1] bottom-0"
+          className="hidden md:block w-full absolute z-0 bottom-0"
         />
         <Image
           src="/login-mobile.png"
@@ -24,7 +24,7 @@ export const LoginModule = () => {
           layout="cover"
           width={375}
           height={812}
-          className="block md:hidden w-full absolute z-[-1] bottom-0 min-[350px]:-bottom-[200px] min-[500px]:-bottom-[400px] min-[600px]:-bottom-[600px]"
+          className="block md:hidden w-full absolute z-0 bottom-0 min-[350px]:-bottom-[200px] min-[500px]:-bottom-[400px] min-[600px]:-bottom-[600px]"
         />
       </div>
     </main>

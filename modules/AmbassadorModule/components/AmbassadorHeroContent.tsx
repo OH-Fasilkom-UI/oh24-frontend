@@ -26,7 +26,7 @@ const AmbassadorHeroContent = () => {
         <p className="font-bold font-tex-gyre leading-[28px] text-[20px] md:text-[14px] max-md:text-[15px] mb-5">
           Recruitment Ambassador Open House Fasilkom UI 2024 ditutup
         </p>
-        <Countdown targetDate={new Date('2024-09-19T23:59:59Z')} displayDate />
+        <Countdown targetDate={new Date('2024-09-08T23:59:00')} displayDate />
       </div>
       <div className="flex flex-row justify-center gap-5 my-5 lg:my-20 max-md:flex-col max-md:items-center">
         <Link href="/Module_0.pdf" download="Guidebook Ambaszzing" target="_blank">

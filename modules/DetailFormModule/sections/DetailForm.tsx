@@ -16,10 +16,11 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { redirect } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { toast } from '@/components/ui/Toast'
+import { Loader } from '@/components/elements/Loader'
 
 const DetailForm = () => {
   const { isLoading } = useUserData({ personal: true })
-  const { mutate: submit } = useSubmitPersonalData()
+  const { mutate: submit, isPending } = useSubmitPersonalData()
 
   const {
     handleSubmit,
@@ -43,7 +44,7 @@ const DetailForm = () => {
   }
 
   if (isLoading) {
-    return toast.loading('Loading...')
+    return <Loader />
   }
 
   return (
@@ -152,7 +153,12 @@ const DetailForm = () => {
           />
 
           <div className=" flex justify-start w-full pt-3">
-            <Button type="submit" className="w-full lg:w-auto">
+            <Button
+              type="submit"
+              className="w-full lg:w-auto"
+              variant="secondary"
+              disabled={isPending}
+            >
               Sign Up
             </Button>
           </div>

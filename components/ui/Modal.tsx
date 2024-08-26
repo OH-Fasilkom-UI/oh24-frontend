@@ -22,7 +22,7 @@ export interface ModalProps
   title: string
   buttons?: [ButtonType] | [ButtonType, ButtonType]
   hideClose?: boolean
-  wide?: boolean
+  disableClickOutside?: boolean
 }
 
 const Modal = ({
@@ -32,6 +32,7 @@ const Modal = ({
   buttons,
   children,
   hideClose = false,
+  disableClickOutside = false,
   ...props
 }: ModalProps) => {
   return (
@@ -40,6 +41,8 @@ const Modal = ({
       <DialogPrimitive.Portal>
         <DialogPrimitive.Overlay className="backdrop-blur fixed inset-0 z-50 bg-black/25 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
         <DialogPrimitive.Content
+          onInteractOutside={(e) => disableClickOutside && e.preventDefault()}
+          onEscapeKeyDown={(e) => disableClickOutside && e.preventDefault()}
           className={twMerge(
             'text-Text/TextLightBG bg-BlueRegion/Cornflower/50 fixed left-[50%] top-[50%] z-50 grid translate-x-[-50%] translate-y-[-50%] gap-4 bg-background duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] rounded-3xl',
             'py-6 sm:py-8',
@@ -75,7 +78,7 @@ const Modal = ({
             <div
               className={twMerge(
                 'flex gap-x-2 mt-3 px-6 sm:px-10',
-                'flex-row md:flex-row-reverse [&>*]:flex-grow md:[&>*]:flex-grow-0'
+                'flex-col gap-2 md:flex-row-reverse [&>*]:flex-grow md:[&>*]:flex-grow-0'
               )}
             >
               {buttons?.[0]}

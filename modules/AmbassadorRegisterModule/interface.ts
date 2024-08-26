@@ -5,6 +5,7 @@ export interface BackModalProps {
 }
 
 export interface CalendlyProps {
+  isPending: boolean
   showCalendly: boolean
   onSubmit: () => void
 }

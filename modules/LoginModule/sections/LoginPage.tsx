@@ -17,7 +17,7 @@ export const LoginPage = () => {
         stiffness: 260,
         damping: 20,
       }}
-      className="flex flex-col items-center pt-20 md:pt-32"
+      className="flex flex-col items-center pt-20 md:pt-32 z-20"
     >
       <div className="font-bold flex flex-col md:gap-8 tracking-[1.5px] leading-[36px] font-riffic text-center md:text-[50px] lg:text-[60px] max-md:text-[30px] text-[#2E3881] pt-[64px]">
         <span className="font-riffic">Welcome to </span>

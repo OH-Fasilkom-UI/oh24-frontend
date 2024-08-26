@@ -26,12 +26,12 @@ const AmbassadorCarousel = () => {
           Ambassador Open House Fasilkom UI.
         </p>
       </div>
-      <Carousel className="px-[65px] md:px-[120px] lg:px-[190px]">
-        <CarouselContent className="2xl:gap-5 lg:gap-[70px]">
+      <Carousel className="px-[65px] md:px-[120px] lg:px-[50px]">
+        <CarouselContent className="gap-1">
           {Array.from(LAST_AMBASSADOR).map((item, index) => (
             <CarouselItem key={index} className="lg:basis-1/2 xl:basis-1/3">
               <Card
-                className="flex flex-col rounded-[28px] shadow-carousel lg:max-w-[370px] p-4 sm:p-4 pb-5 lg:min-h-[270px] gap-5"
+                className="flex flex-col rounded-[28px] shadow-carousel lg:max-w-[350px] p-4 sm:p-4 pb-5 lg:min-h-[270px] gap-5"
                 asset={
                   <Image
                     alt="contoh"
@@ -49,8 +49,8 @@ const AmbassadorCarousel = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="md:px-[50px] lg:px-[73px]" />
-        <CarouselNext className="md:px-[50px] lg:px-[73px]" />
+        <CarouselPrevious className='lg:-translate-x-20 -translate-x-5'/>
+        <CarouselNext className='lg:translate-x-20 translate-x-5'/>
       </Carousel>
     </div>
   )

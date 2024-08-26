@@ -12,6 +12,10 @@ const nextConfig = {
             source: '/api/:path*',
             destination: 'http://localhost:3001/:path*',
           },
+          {
+            source: '/admin/:path*',
+            destination: 'http://localhost:5173/admin/:path*',
+          },
         ],
 }
 

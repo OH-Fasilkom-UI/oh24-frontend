@@ -7,12 +7,12 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { CalendlyProps } from '../interface'
 
-export const Calendly: React.FC<CalendlyProps> = ({ showCalendly, onSubmit }) => {
+export const Calendly: React.FC<CalendlyProps> = ({ isPending, showCalendly, onSubmit }) => {
   const [showFinalize, setShowFinalize] = useState(false)
   return (
     <section
       className={cn(
-        'z-10 flex lg:flex-row flex-col lg:gap-[90px] gap-8 justify-center items-center lg:items-start translate-y-1/2',
+        'z-10 flex lg:flex-row flex-col lg:gap-[90px] gap-8 justify-center items-center lg:items-start',
         !showCalendly && 'hidden'
       )}
     >
@@ -45,9 +45,7 @@ export const Calendly: React.FC<CalendlyProps> = ({ showCalendly, onSubmit }) =>
           <h2 className="text-Text/TextLightBG text-[20px] lg:text-[30px] font-bold font-riffic tracking-wider">
             Sudah yakin dengan isianmu?
           </h2>
-          <Button
-            onClick={onSubmit}
-          >
+          <Button onClick={onSubmit} disabled={isPending}>
             Finalize
           </Button>
         </div>

@@ -1,7 +1,6 @@
 'use client'
 
 import Button from '@/components/ui/Button'
-import bg from '@/public/main-wave.svg'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
@@ -10,12 +9,6 @@ export default function NotFound() {
   const router = useRouter()
   return (
     <div
-      style={{
-        backgroundImage: `url(${bg.src})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
       className="flex flex-col items-center h-[100vh] max-md:pt-[40vh] pt-[10vh] gap-3"
     >
       <motion.div

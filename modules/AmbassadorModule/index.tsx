@@ -1,7 +1,6 @@
 import ContactPerson from '@/components/elements/ContactPerson'
 import Testimonials from '@/components/elements/Testimonials'
 import Button from '@/components/ui/Button'
-import bg from '@/public/main-wave.svg'
 import { MessageSquare } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -61,13 +60,6 @@ const ambassTestimonyData = [
 const AmbassadorModule = () => {
   return (
     <main className="min-h-screen flex flex-col z-20 w-full relative">
-      <Image
-        src={bg.src}
-        alt="main-wave"
-        width={1920}
-        height={1080}
-        className='h-full w-full absolute object-cover'
-      />
       <div className="relative flex-grow mt-10 px-5 md:px-10 lg:px-32">
         <AmbassadorHero />
         <Image
@@ -118,16 +110,16 @@ const AmbassadorModule = () => {
       </div>
       <div className="mt-[200px] md:mb-[75vh] mb-[40vh] px-5 md:px-10 lg:px-32">
         <ContactPerson>
-          <Link href={'https://wa.me/6282178452476'} target='_blank' className='w-full'>
+          <Link href={'https://wa.me/6282112641122'} target='_blank' className='w-full'>
             <Button className='w-full'>
               <MessageSquare size={24} />
-              <span>Savitri</span>
+              <span>Bintoro</span>
             </Button>
           </Link>
-          <Link href={'https://wa.me/6281321037558'} target='_blank' className='w-full'>
+          <Link href={'https://wa.me/6281292292933'} target='_blank' className='w-full'>
             <Button className='w-full'>
               <MessageSquare size={24} />
-              <span>Patricia</span>
+              <span>Omar</span>
             </Button>
           </Link>
         </ContactPerson>

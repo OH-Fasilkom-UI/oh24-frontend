@@ -1,16 +1,9 @@
-import bg from '@/public/main-wave.svg'
 import { CaseAndTugas } from './sections/CaseAndTugas'
 
 export const AmbassadorRegisterModule = () => {
   return (
     <main
-      style={{
-        backgroundImage: `url(${bg.src})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-      className="lg:px-20 px-8 py-28 pb-[60vh] md:pb-[100vh] min-h-[140vh] z-10"
+      className="py-28 pb-40 min-[450px]:pb-60 lg:pb-[550px] z-10 px-10 md:px-16"
     >
       <CaseAndTugas />
     </main>

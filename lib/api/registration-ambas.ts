@@ -5,22 +5,30 @@ const FILE_TYPES = ['application/pdf']
 const IMAGE_TYPES = ['image/png', 'image/jpeg', 'image/jpg']
 
 export const submitAmbassadorSchema = z.object({
-  infoSource: z.string(),
-  reasonForJoining: z.string(),
-  expectations: z.string(),
+  infoSource: z.string().max(255, 'Max 255 karakter'),
+  reasonForJoining: z.string().max(255, 'Max 255 karakter'),
+  expectations: z.string().max(255, 'Max 255 karakter'),
 
-  introductionVideoLink: z.string().url(),
-  instagramLink: z.string(),
-  tiktokLink: z.string(),
+  introductionVideoLink: z.string().url().max(255, 'Max 255 karakter'),
+  instagramLink: z.string().max(255, 'Max 255 karakter').refine((value) => !value.includes('@'), {
+    message: "Username tidak boleh mengandung dengan '@'",
+  }),
+  tiktokLink: z.string().max(255, 'Max 255 karakter').refine((value) => !value.includes('@'), {
+    message: "Username tidak boleh mengandung dengan '@'",
+  }),
   twitterLink: z
     .string()
     .optional()
-    .or(z.literal('').transform(() => undefined)),
-  ableToAttend: z.string(),
-  accommodation: z.string(),
+    .or(z.literal('').transform(() => undefined)).refine((value) => !value?.includes('@'), {
+      message: "Username tidak boleh mengandung dengan '@'",
+    }),
+  ableToAttend: z.string().max(255),
+  accommodation: z.string().max(255),
 
   twibbon: z
-    .instanceof(File)
+    .instanceof(File, {
+      message: 'File harus diisi',
+    })
     .refine((file) => file.size <= MAX_FILE_SIZE, {
       message: 'Ukuran file maksimal 2MB',
     })
@@ -28,7 +36,9 @@ export const submitAmbassadorSchema = z.object({
       message: 'Tipe file harus JPG/PNG/JPEG',
     }),
   followIG: z
-    .instanceof(File)
+    .instanceof(File, {
+      message: 'File harus diisi',
+    })
     .refine((file) => file.size <= MAX_FILE_SIZE, {
       message: 'Ukuran file maksimal 2MB',
     })
@@ -36,7 +46,9 @@ export const submitAmbassadorSchema = z.object({
       message: 'Tipe file harus JPG/PNG/JPEG',
     }),
   story: z
-    .instanceof(File)
+    .instanceof(File, {
+      message: 'File harus diisi',
+    })
     .refine((file) => file.size <= MAX_FILE_SIZE, {
       message: 'Ukuran file maksimal 2MB',
     })
@@ -44,7 +56,9 @@ export const submitAmbassadorSchema = z.object({
       message: 'Tipe file harus JPG/PNG/JPEG',
     }),
   cv: z
-    .instanceof(File)
+    .instanceof(File, {
+      message: 'File harus diisi',
+    })
     .refine((file) => file.size <= MAX_FILE_SIZE, {
       message: 'Ukuran file maksimal 2MB',
     })
@@ -52,7 +66,9 @@ export const submitAmbassadorSchema = z.object({
       message: 'Tipe file harus PDF',
     }),
   mou: z
-    .instanceof(File)
+    .instanceof(File, {
+      message: 'File harus diisi',
+    })
     .refine((file) => file.size <= MAX_FILE_SIZE, {
       message: 'Ukuran file maksimal 2MB',
     })

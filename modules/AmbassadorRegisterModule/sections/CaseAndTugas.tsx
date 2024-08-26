@@ -18,16 +18,17 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { BackModal } from '../elements/BackModal'
 import { LeftSideForm } from '../elements/LeftSideForm'
+import { RegisteredNotice } from '../elements/RegisteredNotice'
 import { RightSideForm } from '../elements/RightSideForm'
 import { Calendly } from './Calendly'
-import { Skeleton } from '@/components/ui/skeleton'
+import { Loader } from '@/components/elements/Loader'
 
 export const CaseAndTugas = () => {
   const router = useRouter()
   const [page, setPage] = useState(0)
   const [showModal, setShowModal] = useState(false)
-  const { isLoading } = useUserData({ personal: true })
-  const { mutate: submit } = useSubmitAmbassadorData()
+  const { isLoading, userData } = useUserData({ personal: true })
+  const { mutate: submit, isPending } = useSubmitAmbassadorData()
 
   const form = useForm<SubmitAmbassadorData>({
     resolver: zodResolver(submitAmbassadorSchema),
@@ -50,24 +51,29 @@ export const CaseAndTugas = () => {
         toast.success('Berhasil mengirimkan data')
         router.push('/ambassador')
       },
-      onError: (error) => { 
-        toast.error(error.message)
+      onError: () => {
+        toast.error("Terjadi Kesalahan!")
       }
     })
   }
 
-  if (isLoading) {
-    return toast.loading("Loading...")
+  if (userData?.hasAmbassadorForm) {
+    return <RegisteredNotice />
   }
+
+  if (isLoading) {
+    return <Loader />
+  }
+
 
   return (
     <section
-      className='flex flex-col gap-10'
+      className='flex flex-col gap-10 min-h-screen'
     >
       <BackModal showModal={showModal} setShowModal={setShowModal} />
       <Button
         onClick={handleBack}
-        className="flex gap-[14px] cursor-pointer absolute xl:translate-y-[64px]"
+        className="flex gap-[14px] cursor-pointer z-10"
       >
         <ArrowLeft />
         Back
@@ -97,7 +103,7 @@ export const CaseAndTugas = () => {
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className={cn(
-            'flex flex-col justify-center lg:flex-row xl:mx-40 gap-4 relative',
+            'flex flex-col justify-center lg:flex-row xl:mx-40 gap-4 relative mb-60 xl:mb-96',
             page === 1 && 'hidden'
           )}
         >
@@ -113,8 +119,9 @@ export const CaseAndTugas = () => {
             <Button
               id="submitAmbas"
               type="submit"
-              variant={'secondary'}
+              variant="secondary"
               className="w-full"
+              disabled={isPending}
             >
               Next
             </Button>
@@ -122,10 +129,9 @@ export const CaseAndTugas = () => {
         </form>
       </Form>
       <Calendly
+        isPending={isPending}
         showCalendly={page === 1}
-        onSubmit={() => {
-          document.getElementById('submitAmbas')?.click()
-        }}
+        onSubmit={() => document.getElementById('submitAmbas')?.click()}
       />
     </section>
   )

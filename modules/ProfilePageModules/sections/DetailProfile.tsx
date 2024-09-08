@@ -1,6 +1,8 @@
 'use client'
 
+import { Loader } from '@/components/elements/Loader'
 import { Avatar, AvatarImage } from '@/components/ui/Avatar'
+import Button from '@/components/ui/Button'
 import { toast } from '@/components/ui/Toast'
 import {
   Popover,
@@ -9,10 +11,10 @@ import {
 } from '@/components/ui/popover'
 import { useUserData } from '@/hooks/user'
 import { updateMyPersonalData } from '@/lib/api/user'
-import { Pencil } from 'lucide-react'
+import { Pencil, SquarePen } from 'lucide-react'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { PandaImages } from '../constant'
-import { Loader } from '@/components/elements/Loader'
 
 interface FieldProps {
   label: string
@@ -61,61 +63,73 @@ export const DetailProfile = () => {
         Profile
       </h1>
       <div className="flex flex-col max-md:justify-center max-md:items-center md:flex-row md:gap-[108px]">
-        <div className="flex flex-col items-end">
-          <Avatar className="w-[216px] h-[216px]">
-            <AvatarImage src={PandaImages[profilePict].src} />
-          </Avatar>
-          <Popover open={popOpen} onOpenChange={popClose}>
-            <PopoverTrigger className="p-5 max-md:hidden -translate-y-16 bg-[#5E31A6] text-[#E0ECFF] rounded-full">
-              <Pencil className="w-10 h-10 z-50" />
-            </PopoverTrigger>
-            <PopoverContent className="flex flex-col w-fit" side={'right'}>
-              <h1 className="text-[#2E3881] text-[16px] font-tex-gyre font-bold mb-3">
-                Choose Your Panda!
-              </h1>
-              <div className="flex flex-row gap-[34px] w-fit">
-                {PandaImages.map((item, index) => (
-                  <Avatar
-                    onClick={() => {
-                      handleProfileChange(index)
-                      popClose(false)
-                    }}
-                    key={item.alt}
-                    className="w-[108px] h-[108px] cursor-pointer"
-                  >
-                    <AvatarImage src={item.src} />
-                  </Avatar>
-                ))}
-              </div>
-            </PopoverContent>
-          </Popover>
-          <Popover>
-            <PopoverTrigger className="p-5 md:hidden -translate-y-16 bg-[#5E31A6] text-[#E0ECFF] rounded-full">
-              <Pencil className="w-10 h-10 z-50" />
-            </PopoverTrigger>
-            <PopoverContent
-              className="absolute w-fit p-8 flex flex-col items-center justify-center translate-y-[60px] -translate-x-[100px]"
-              side="left"
-            >
-              <h1 className="text-[#2E3881] text-[16px] font-tex-gyre font-bold mb-3">
-                Choose Your Panda!
-              </h1>
-              <div className="flex flex-col items-center gap-[34px]">
-                {PandaImages.map((item, index) => (
-                  <Avatar
-                    onClick={() => handleProfileChange(index)}
-                    key={item.alt}
-                    className="w-[108px] h-[108px] cursor-pointer"
-                  >
-                    <AvatarImage src={item.src} />
-                  </Avatar>
-                ))}
-              </div>
-            </PopoverContent>
-          </Popover>
+        <div className='flex flex-col items-center max-md:pb-10'>
+          <div className="flex flex-col items-end">
+            <Avatar className="w-[216px] h-[216px]">
+              <AvatarImage src={PandaImages[profilePict].src} />
+            </Avatar>
+            <Popover open={popOpen} onOpenChange={popClose}>
+              <PopoverTrigger className="p-5 max-md:hidden -translate-y-16 bg-[#5E31A6] text-[#E0ECFF] rounded-full">
+                <Pencil className="w-10 h-10 z-50" />
+              </PopoverTrigger>
+              <PopoverContent className="flex flex-col w-fit" side={'right'}>
+                <h1 className="text-[#2E3881] text-[16px] font-tex-gyre font-bold mb-3">
+                  Choose Your Panda!
+                </h1>
+                <div className="flex flex-row gap-[34px] w-fit">
+                  {PandaImages.map((item, index) => (
+                    <Avatar
+                      onClick={() => {
+                        handleProfileChange(index)
+                        popClose(false)
+                      }}
+                      key={item.alt}
+                      className="w-[108px] h-[108px] cursor-pointer"
+                    >
+                      <AvatarImage src={item.src} />
+                    </Avatar>
+                  ))}
+                </div>
+              </PopoverContent>
+            </Popover>
+            <Popover>
+              <PopoverTrigger className="p-5 md:hidden -translate-y-16 bg-[#5E31A6] text-[#E0ECFF] rounded-full">
+                <Pencil className="w-10 h-10 z-50" />
+              </PopoverTrigger>
+              <PopoverContent
+                className="absolute w-fit p-8 flex flex-col items-center justify-center translate-y-[60px] -translate-x-[100px]"
+                side="left"
+              >
+                <h1 className="text-[#2E3881] text-[16px] font-tex-gyre font-bold mb-3">
+                  Choose Your Panda!
+                </h1>
+                <div className="flex flex-col items-center gap-[34px]">
+                  {PandaImages.map((item, index) => (
+                    <Avatar
+                      onClick={() => handleProfileChange(index)}
+                      key={item.alt}
+                      className="w-[108px] h-[108px] cursor-pointer"
+                    >
+                      <AvatarImage src={item.src} />
+                    </Avatar>
+                  ))}
+                </div>
+              </PopoverContent>
+            </Popover>
+          </div>
+          {userData?.hasAmbassadorForm ?
+            <p className='text-Text/TextLightBG text-lg font-bold max-w-44 text-center'>You have registered as an ambassador</p>
+            :
+            <Link href="/ambassador/register">
+              <Button>
+                <SquarePen className="max-md:text-[12px]" />
+                Register Ambassador
+              </Button>
+            </Link>
+          }
         </div>
         <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
-        <Field label="Nama Lengkap" value={userData?.personal?.fullName} />
+          <Field label="Nama Lengkap" value={userData?.personal?.fullName} />
           <Field label="Email" value={userData?.email} />
           <Field label="Domisili" value={userData?.personal?.domicile} />
           <Field label="WhatsApp" value={userData?.personal?.phone} />

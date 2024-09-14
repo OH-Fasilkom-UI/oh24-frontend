@@ -1,11 +1,10 @@
 import Footer from '@/components/elements/Footer'
-import AmbassadorModule from '@/modules/AmbassadorModule'
+import ExploreModule from '@/modules/ExploreModule'
 
 const Page = () => {
   return (
     <main className="relative">
-      <AmbassadorModule />
-      <Footer />
+      <ExploreModule />
     </main>
   )
 }

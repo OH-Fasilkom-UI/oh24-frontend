@@ -117,16 +117,16 @@ export const DetailProfile = () => {
               </PopoverContent>
             </Popover>
           </div>
-          {userData?.hasAmbassadorForm ?
+          {/* {userData?.hasAmbassadorForm ?
             <p className='text-Text/TextLightBG text-lg font-bold max-w-44 text-center'>You have registered as an ambassador</p>
             :
             <Link href="/ambassador/register">
-              <Button>
+              <Button disabled>
                 <SquarePen className="max-md:text-[12px]" />
                 Register Ambassador
               </Button>
             </Link>
-          }
+          } */}
         </div>
         <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
           <Field label="Nama Lengkap" value={userData?.personal?.fullName} />

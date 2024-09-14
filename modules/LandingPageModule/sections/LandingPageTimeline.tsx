@@ -167,17 +167,15 @@ const TimelineContent = ({ selectedIndex }: { selectedIndex: number }) => {
 
 const Timeline = () => {
   const [selectedIndex, setSelectedIndex] = useState(0)
-  const selectorConfig: ('active' | 'inactive-0' | 'inactive-1')[] = new Array(
-    6
-  )
-
+  const selectorConfig: ('active' | 'inactive-0' | 'inactive-1')[] = [
+    'inactive-0',
+    'inactive-1',
+    'inactive-0',
+    'inactive-1',
+    'inactive-0',
+    'inactive-1',
+  ]
   selectorConfig[selectedIndex] = 'active'
-  for (let i = 1; selectedIndex - i >= 0; i++) {
-    selectorConfig[selectedIndex - i] = i % 2 == 0 ? 'inactive-0' : 'inactive-1'
-  }
-  for (let i = 1; selectedIndex + i < 6; i++) {
-    selectorConfig[selectedIndex + i] = i % 2 == 0 ? 'inactive-1' : 'inactive-0'
-  }
 
   const selectorItems = selectorConfig.map((config, index) => {
     return (

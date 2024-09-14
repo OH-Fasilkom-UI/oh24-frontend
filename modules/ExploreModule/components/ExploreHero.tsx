@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { Link as ScrollLink } from 'react-scroll'
 import Image from 'next/image'
 import Link from 'next/link'
 import Button from '@/components/ui/Button'
@@ -26,71 +27,81 @@ const ExploreHero = () => {
       </div>
       <div className="w-screen absolute top-[68px] min-[370px]:top-[42px] min-[480px]:top-0 min-[520px]:-top-[42px] md:top-0 lg:-top-[32px] min-[1576px]:-top-[86px]">
         <div className="w-full">
-          <Image
-            src={
-              isJalurMasukHovered
-                ? '/explore-hero/jalurmasuk-shadow.svg'
-                : '/explore-hero/jalurmasuk.svg'
-            }
-            alt="jalur-masuk"
-            width={100}
-            height={50}
-            className={`absolute ${isJalurMasukHovered ? 'top-[40.4%]' : 'top-[40.7%]'} max-md:w-[14vw] w-[11.6vw] max-md:h-[24vw] h-auto left-[5%] md:left-[22.2%] max-md:top-[45%] max-md:opacity-0 block object-contain z-9999 duration-100`}
-            onMouseEnter={() => setIsJalurMasukHovered(true)}
-            onMouseLeave={() => setIsJalurMasukHovered(false)}
-          />
-          <Image
-            src={
-              isJurusanHovered
-                ? '/explore-hero/jurusan-shadow.svg'
-                : '/explore-hero/jurusan.svg'
-            }
-            alt="jurusan"
-            width={100}
-            height={50}
-            className={`absolute ${isJurusanHovered ? 'top-[33.2%]' : 'top-[33.4%]'} max-md:w-[12.2vw] w-[8.6vw] h-auto left-[11%] md:left-[31.3%] max-md:top-[35%] max-md:opacity-0 block object-contain z-9999 duration-100`}
-            onMouseEnter={() => setIsJurusanHovered(true)}
-            onMouseLeave={() => setIsJurusanHovered(false)}
-          />
-          <Image
-            src={
-              isFacilityHovered
-                ? '/explore-hero/facility-shadow.svg'
-                : '/explore-hero/facility.svg'
-            }
-            alt="facility"
-            width={100}
-            height={50}
-            className={`absolute ${isFacilityHovered ? 'top-[35.3%]' : 'top-[35.5%]'} max-md:w-[9vw] w-[5vw] h-auto right-[12%] md:right-[34.7%] max-md:top-[37%] max-md:opacity-0 block object-contain z-9999 duration-100`}
-            onMouseEnter={() => setIsFacilityHovered(true)}
-            onMouseLeave={() => setIsFacilityHovered(false)}
-          />
-          <Image
-            src={
-              isAlumniHovered
-                ? '/explore-hero/alumni-shadow.svg'
-                : '/explore-hero/alumni.svg'
-            }
-            alt="alumni"
-            width={100}
-            height={50}
-            className={`absolute ${isAlumniHovered ? 'top-[44.7%]' : 'top-[45%]'} max-md:w-[11vw] w-[7.6vw] h-auto right-[19%] md:right-[36.5%] max-md:top-[49%] max-md:opacity-0 block object-contain z-9999 duration-100`}
-            onMouseEnter={() => setIsAlumniHovered(true)}
-            onMouseLeave={() => setIsAlumniHovered(false)}
-          />
-          <Image
-            src={
-              isAchievementHovered
-                ? '/explore-hero/achievement-shadow.svg'
-                : '/explore-hero/achievement.svg'
-            }
-            alt="achievement"
-            width={100}
-            height={50}
-            className={`absolute ${isAchievementHovered ? 'top-[48.2%]' : 'top-[48.4%]'} max-md:w-[21vw] w-[12.7vw] h-auto right-[38%] md:right-[43.8%] max-md:top-[53%] max-md:opacity-0 block object-contain z-9999 duration-100`}
-            onMouseEnter={() => setIsAchievementHovered(true)}
-            onMouseLeave={() => setIsAchievementHovered(false)}
-          />
+          <ScrollLink to="" smooth={true} duration={500}>
+            <Image
+              src={
+                isJalurMasukHovered
+                  ? '/explore-hero/jalurmasuk-shadow.svg'
+                  : '/explore-hero/jalurmasuk.svg'
+              }
+              alt="jalur-masuk"
+              width={100}
+              height={50}
+              className={`absolute ${isJalurMasukHovered ? 'top-[40.4%]' : 'top-[40.7%]'} max-md:w-[14vw] w-[11.6vw] max-md:h-[24vw] h-auto left-[5%] md:left-[22.2%] max-md:top-[45%] max-md:opacity-0 block object-contain z-9999 duration-100`}
+              onMouseEnter={() => setIsJalurMasukHovered(true)}
+              onMouseLeave={() => setIsJalurMasukHovered(false)}
+            />
+          </ScrollLink>
+          <ScrollLink to="" smooth={true} duration={500}>
+            <Image
+              src={
+                isJurusanHovered
+                  ? '/explore-hero/jurusan-shadow.svg'
+                  : '/explore-hero/jurusan.svg'
+              }
+              alt="jurusan"
+              width={100}
+              height={50}
+              className={`absolute ${isJurusanHovered ? 'top-[33.2%]' : 'top-[33.4%]'} max-md:w-[12.2vw] w-[8.6vw] h-auto left-[11%] md:left-[31.3%] max-md:top-[35%] max-md:opacity-0 block object-contain z-9999 duration-100`}
+              onMouseEnter={() => setIsJurusanHovered(true)}
+              onMouseLeave={() => setIsJurusanHovered(false)}
+            />
+          </ScrollLink>
+          <ScrollLink to="" smooth={true} duration={500}>
+            <Image
+              src={
+                isFacilityHovered
+                  ? '/explore-hero/facility-shadow.svg'
+                  : '/explore-hero/facility.svg'
+              }
+              alt="facility"
+              width={100}
+              height={50}
+              className={`absolute ${isFacilityHovered ? 'top-[35.3%]' : 'top-[35.5%]'} max-md:w-[9vw] w-[5vw] h-auto right-[12%] md:right-[34.7%] max-md:top-[37%] max-md:opacity-0 block object-contain z-9999 duration-100`}
+              onMouseEnter={() => setIsFacilityHovered(true)}
+              onMouseLeave={() => setIsFacilityHovered(false)}
+            />
+          </ScrollLink>
+          <ScrollLink to="" smooth={true} duration={500}>
+            <Image
+              src={
+                isAlumniHovered
+                  ? '/explore-hero/alumni-shadow.svg'
+                  : '/explore-hero/alumni.svg'
+              }
+              alt="alumni"
+              width={100}
+              height={50}
+              className={`absolute ${isAlumniHovered ? 'top-[44.7%]' : 'top-[45%]'} max-md:w-[11vw] w-[7.6vw] h-auto right-[19%] md:right-[36.5%] max-md:top-[49%] max-md:opacity-0 block object-contain z-9999 duration-100`}
+              onMouseEnter={() => setIsAlumniHovered(true)}
+              onMouseLeave={() => setIsAlumniHovered(false)}
+            />
+          </ScrollLink>
+          <ScrollLink to="" smooth={true} duration={500}>
+            <Image
+              src={
+                isAchievementHovered
+                  ? '/explore-hero/achievement-shadow.svg'
+                  : '/explore-hero/achievement.svg'
+              }
+              alt="achievement"
+              width={100}
+              height={50}
+              className={`absolute ${isAchievementHovered ? 'top-[48.2%]' : 'top-[48.4%]'} max-md:w-[21vw] w-[12.7vw] h-auto right-[38%] md:right-[43.8%] max-md:top-[53%] max-md:opacity-0 block object-contain z-9999 duration-100`}
+              onMouseEnter={() => setIsAchievementHovered(true)}
+              onMouseLeave={() => setIsAchievementHovered(false)}
+            />
+          </ScrollLink>
           <Image
             src="/explore-hero.png"
             alt="city"
@@ -106,7 +117,7 @@ const ExploreHero = () => {
             className="w-full max-md:block hidden object-contain"
           />
           <div className="absolute bottom-[8%] min-[520px]:bottom-[16%] md:bottom-[24%] flex flex-col w-full justify-center gap-3 my-5 lg:my-20 items-center">
-            <Link href="" target="_blank">
+            <Link href="">
               <Button className="bg-Misc/Ziggurat/400 max-md:text-[12px] lg:text-xl">
                 Lihat Pencapaian Kami
               </Button>

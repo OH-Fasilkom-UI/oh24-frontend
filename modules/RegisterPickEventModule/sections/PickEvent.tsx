@@ -46,6 +46,7 @@ export const PickEventSection = () => {
             }
 
             setIsSubmitting(true);
+
             // Validasi Referral Code
             try {
                 if (referralCode) {
@@ -55,11 +56,11 @@ export const PickEventSection = () => {
                     toast.info("No referral code provided.");
                 }
                 // console.log("Form Submitted: ", result.data);
-                // Misalnya ada error saat validasi kode referral
+                // Misalnya ada error saat validasi kode referral (backend error)
             } catch (error: any) {
                 toast.error(error.message || "Validation Failed");
             } finally {
-                setIsSubmitting(false); // Optional: End loading
+                setIsSubmitting(false);
             }
         } else {
             const errorMessages = result.error.errors.map(err => err.message).join(", ");
@@ -69,8 +70,8 @@ export const PickEventSection = () => {
     };
 
     return (
-        <section className="mt-5">
-            <div className="absolute w-screen max-lg:h-[100vh] h-[145vh] z-0 max-lg:top-60">
+        <section className="mt-5 overflow-x-hidden">
+            <div className="absolute w-full max-lg:h-[100vh] h-[145vh] z-0 max-lg:top-60">
                 <Image
                     className="absolute object-cover"
                     fill
@@ -192,12 +193,21 @@ export const PickEventSection = () => {
                     <Button
                         onClick={handleSubmit}
                         className={`bg-BlueRegion/Cornflower/50 text-Text/TextLightBG py-2 px-4 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
-                        disabled={isSubmitting} // Optional: Disable button while submitting
+                        disabled={isSubmitting}
                     >
                         {isSubmitting ? "Submitting..." : "Submit"}
                     </Button>
                 </div>
+
+
             </div>
+            <Image
+                src="/pesawat-kanan-2.png"
+                alt="pesawat-kanan"
+                width={400}
+                height={266}
+                className="absolute right-0 top-56 animate-float-horizontal z-20 max-lg:hidden"
+            />
         </section>
     );
 };

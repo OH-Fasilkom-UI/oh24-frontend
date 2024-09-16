@@ -3,7 +3,7 @@ import { PickEventModule } from '@/modules/RegisterPickEventModule'
 
 const Page = () => {
     return (
-        <main>
+        <main className='max-w-[1920px] overflow-x-hidden'>
             <PickEventModule />
             <Footer />
         </main>

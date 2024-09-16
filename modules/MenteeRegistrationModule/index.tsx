@@ -1,5 +1,12 @@
+'use client'
+
+import Card from "@/components/ui/Card"
+import RadioGroup from '@/components/ui/RadioGroup'
+import Image from "next/image"
+
 export const MenteeRegistrationModule = () => {
     return (
-        <h1>Harap mengisi kuesioner dengan serius karena akan memengaruhi step selanjutnya.</h1>
+        <section className="max-w-[1920px] min-h-[300vh] pt-[100px] overflow-x-hidden">
+        </section >
     )
 }

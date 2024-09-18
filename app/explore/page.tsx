@@ -1,11 +1,13 @@
 import Footer from '@/components/elements/Footer'
 import { ExploreFasilkomModule } from '@/modules/ExploreFasilkomModule'
+import CampusTour from '@/modules/ExploreFasilkomModule/TigaEnamPuluh'
 
 const Page = () => {
     return (
         <main>
-            <ExploreFasilkomModule />
-            <Footer />
+            {/* <ExploreFasilkomModule />
+            <Footer /> */}
+            <CampusTour/>
         </main>
     )
 }

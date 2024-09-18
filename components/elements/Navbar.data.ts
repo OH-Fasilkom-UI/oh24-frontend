@@ -17,7 +17,7 @@ export const NAVBAR_LINKS = [
     href: '/fwefwefw',
     icon: Building,
     label: 'About Fasilkom',
-    isExist: false,
+    isExist: true,
   },
   {
     href: '/wefwfew',

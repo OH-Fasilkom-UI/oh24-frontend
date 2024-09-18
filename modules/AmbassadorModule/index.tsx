@@ -11,7 +11,6 @@ import AmbassadorHelp from './sections/AmbassadorHelp'
 import AmbassadorProgramsDesktop from './sections/AmbassadorProgamsDesktop'
 import AmbassadorProgramsMobile from './sections/AmbassadorProgramsMobile'
 import WhatsAmbassador from './sections/WhatsAmbassador'
-import Video from './components/VideoBorder'
 
 const ambassTestimonyData = [
   {
@@ -98,18 +97,6 @@ const AmbassadorModule = () => {
       </div>
       <div className="mt-20 min-[2300px]:px-[360px] px-5 md:px-10 lg:px-32">
         <AmbassadorCarousel />
-      </div>
-      <div className="relative flex-grow mt-12">
-      <Image
-          src="/pesawat-kiri.png"
-          alt="pesawat-kiri"
-          width={200}
-          height={200}
-          className="flex relative top-40 z-5"
-        />
-      <Video/>
-      </div>
-      <div>
       </div>
       <div className="py-20 mt-20 flex flex-col gap-y-10 px-5 md:px-10 lg:px-32">
         <p className="font-riffic text-center text-Text/TextLightBG font-bold text-[36px] max-sm:text-[20px] max-md:text-[24px] leading-10 tracking-widest">

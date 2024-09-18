@@ -1,5 +1,5 @@
 import Footer from '@/components/elements/Footer'
-import { ProfilePageModule } from '@/modules'
+import { ProfilePageModule } from '@/modules/ProfilePageModules'
 
 function page() {
   return (

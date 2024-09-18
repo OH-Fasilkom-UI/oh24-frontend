@@ -36,7 +36,7 @@ export const WarnModal = ({ onClick }: { onClick: () => void }) => {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-      <div className="absolute w-[304px] h-[304px] max-[400px]:w-[240px] bottom-20 -right-[158px] max-[400px]:-right-[130px] sm:hidden animate-spin">
+      <div className="absolute w-[304px] h-[304px] max-[400px]:w-[240px] bottom-0 -right-[152px] max-[400px]:-right-[130px] sm:hidden animate-spin">
         <Image
           alt="contoh"
           src="/Circular.png"
@@ -45,7 +45,7 @@ export const WarnModal = ({ onClick }: { onClick: () => void }) => {
           className="object-contain"
         />
       </div>
-      <div className="absolute max-lg:w-[410px] max-sm:w-[300px] max-[400px]:w-[250px] max-[400px]:h-[350px] w-[500px] h-[400px] -left-[87px] max-sm:-left-[120px] -top-16 z-10 animate-float-vertical">
+      <div className="absolute max-lg:w-[410px] max-sm:w-[300px] max-[400px]:w-[250px] max-[400px]:h-[350px] w-[500px] h-[400px] -left-[87px] max-sm:-left-[120px] top-5 z-10 animate-float-vertical">
         <Image
           alt="contoh"
           src="/Whooshhh.png"

@@ -1,6 +1,7 @@
 'use client';
 
 import Image from "next/image";
+import QRCode from "react-qr-code";
 import { FC } from "react";
 
 interface Mentor {
@@ -12,7 +13,7 @@ interface AfterRegistrationModuleProps {
     mentors?: Mentor[];
     mentoringLink?: string;
     mainEventLink?: string;
-    qrCodeSrc?: string;
+    qrCodeValue?: string;
 }
 // sebenernya gw masih bingung nanti hubungin ke backendnya gimana, I assume bakal pake props, jadi gw bikin propsnya dulu
 const AfterRegistrationModule: FC<AfterRegistrationModuleProps> = ({
@@ -23,9 +24,8 @@ const AfterRegistrationModule: FC<AfterRegistrationModuleProps> = ({
     ],
     mentoringLink = "https://ristek.link/mentoring",
     mainEventLink = "https://ristek.link/mainevent",
-    qrCodeSrc = "/qr-code.png",
+    qrCodeValue= "oh24",
 }) => {
-
     return (
         <section className="max-w-[1920px] h-[190vh] max-sm:h-[220vh] pt-[100px] overflow-x-hidden flex flex-col items-center z-10 ">
             <h1 className="text-t3 text-Text/TextLightBG mt-16 mb-14 text-center">After Registration</h1>
@@ -55,12 +55,10 @@ const AfterRegistrationModule: FC<AfterRegistrationModuleProps> = ({
 
                     </div>
                     <div className="max-lg:mb-16">
-                        <Image
-                            src={qrCodeSrc}
-                            alt="QR Code"
-                            width={300}
-                            height={300}
-                            className="shadow-lg"
+                        <QRCode
+                            value={qrCodeValue}
+                            size={300}
+                            className="shadow-lg bg-white p-3"
                         />
                     </div>
                 </div>

@@ -25,7 +25,14 @@ export const PrestasiSection = () => {
           alt="Piala Prestasi"
           fill
           sizes="none"
-          className="object-contain max-md:rotate-12 absolute -translate-y-1/3 mx-auto max-w-[207px] max-h-[231px] top-0 max-md:max-w-[68px] max-md:max-h-[75px] max-md:translate-x-[250%] max-[380px]:translate-x-[175%]"
+          className="object-contain absolute -translate-y-1/3 mx-auto max-w-[207px] max-h-[231px] top-0 max-md:hidden"
+        />
+        <Image
+          src="/piala-mobile.png"
+          alt="Piala Prestasi"
+          width={68}
+          height={75}
+          className="absolute md:hidden right-0 top-0 translate-x-3 -translate-y-5"
         />
         <div className="grid grid-cols-1 max-md:mx-auto md:grid-cols-2 lg:grid-cols-4 md:gap-8 md:min-w-[288px] max-md:max-w-[180px]">
           {ISI_PRESTASI.map((item, index) => {
@@ -55,9 +62,9 @@ export const PrestasiSection = () => {
         <Image
           src="/ufoo.png"
           alt="Ufo"
-          fill
-          sizes="none"
-          className="object-contain absolute bottom-0 max-lg:translate-y-[60%] max-[900px]:translate-y-[40%] translate-y-1/4 left-1/2 -translate-x-[47%] max-w-[1006px] max-h-[676px] max-md:max-w-[605px] max-md:max-h-[407px] max-md:translate-y-[110%] max-md:-translate-x-[31%]"
+          width={200}
+          height={206}
+          className="absolute 2xl:left-5 left-0 bottom-0 translate-y-1/3 -translate-x-1/2 max-md:-translate-x-1/4"
         />
       </Card>
     </section>

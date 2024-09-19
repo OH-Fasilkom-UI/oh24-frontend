@@ -10,7 +10,7 @@ const ExploreAlumni = () => {
       <div className="flex items-center justify-center max-lg:flex-col-reverse min-h-max gap-12 my-16  ">
         <div>
           <div className="boxes flex max-lg:flex-col  max-sm:w-[300px] w-[580px] lg:w-[660px] xl:w-[830px] items-center justify-center px-6 py-6 min-h-80 gap-6 max-sm:min-h-52 max-sm:gap-2 bg-white shadow-lg shadow-[#435F9B] rounded-2xl">
-            <div className="flex flex-col ">
+            <div className="flex flex-col gap-2 ">
               <div className="flex items-center justify-between w-[100%] h-[30%] ">
                 <Image
                   src="/alumniLogo/Shoppee.png"

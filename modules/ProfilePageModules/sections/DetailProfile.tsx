@@ -13,9 +13,10 @@ import { useUserData } from '@/hooks/user'
 import { updateMyPersonalData } from '@/lib/api/user'
 import { Pencil, SquarePen } from 'lucide-react'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { PandaImages } from '../constant'
 import QRCode from "react-qr-code";
+
 interface FieldProps {
   label: string
   value?: string | null
@@ -33,7 +34,7 @@ const Field = ({ label, value = '' }: FieldProps) => {
 export const DetailProfile = () => {
   const { userData, isLoading } = useUserData({ personal: true })
   const [profilePict, setProfilePictSrc] = useState<number>(0)
-  const [popOpen, setPopOpen] = useState(false)
+  const [popOpen, popClose] = useState(false)
 
   useEffect(() => {
     setProfilePictSrc(userData?.personal.profilePic ?? 0)
@@ -57,8 +58,13 @@ export const DetailProfile = () => {
     return <Loader />
   }
 
-  // Extract QR Code value from userData
-  // const qrCodeValue = userData?.qrCodeValue || ''
+  const qrCodeSmallRef = useRef<HTMLDivElement>(null)
+  const handleScrollToQRCode = () => {
+    if (typeof window !== 'undefined') {
+      qrCodeSmallRef.current?.scrollIntoView({ behavior: 'smooth' })
+
+    }
+  }
   const qrCodeValue = 'oh24'
 
   return (
@@ -66,14 +72,13 @@ export const DetailProfile = () => {
       <h1 className="text-[36px] text-[#2E3881] font-bold font-riffic tracking-[0.075rem]">
         Profile
       </h1>
-      <div className="flex flex-col max-md:justify-center max-md:items-center md:flex-row md:gap-[108px] w-full">
-        <div className="flex flex-col items-center max-md:pb-10 md:w-1/2">
-          <div className="flex flex-col items-end w-full">
+      <div className="flex flex-col max-md:justify-center max-md:items-center md:flex-row md:gap-[108px]">
+        <div className='flex flex-col items-center max-md:pb-10'>
+          <div className="flex flex-col items-end">
             <Avatar className="w-[216px] h-[216px]">
               <AvatarImage src={PandaImages[profilePict].src} />
             </Avatar>
-
-            <Popover open={popOpen} onOpenChange={setPopOpen}>
+            <Popover open={popOpen} onOpenChange={popClose}>
               <PopoverTrigger className="p-5 max-md:hidden -translate-y-16 bg-[#5E31A6] text-[#E0ECFF] rounded-full">
                 <Pencil className="w-10 h-10 z-50" />
               </PopoverTrigger>
@@ -86,7 +91,7 @@ export const DetailProfile = () => {
                     <Avatar
                       onClick={() => {
                         handleProfileChange(index)
-                        setPopOpen(false)
+                        popClose(false)
                       }}
                       key={item.alt}
                       className="w-[108px] h-[108px] cursor-pointer"
@@ -122,27 +127,31 @@ export const DetailProfile = () => {
               </PopoverContent>
             </Popover>
           </div>
+
+          <Button className="mt-6 block lg:hidden bg-BlueRegion/Portage/600" onClick={handleScrollToQRCode}>
+            See QR Code
+          </Button>
+
           {qrCodeValue && (
-            <div className="mt-6">
+            <div className="mt-6 max-lg:hidden">
               <QRCode
                 value={qrCodeValue}
-                size={150}
+                size={300}
                 className="shadow-lg bg-white p-3 rounded-md"
               />
             </div>
           )}
-          {userData?.hasAmbassadorForm ? (
-            <p className="text-Text/TextLightBG text-lg font-bold max-w-44 text-center mt-4">
-              You have registered as an ambassador
-            </p>
-          ) : (
+
+          {userData?.hasAmbassadorForm ?
+            <p className='text-Text/TextLightBG text-lg font-bold max-w-44 text-center'>You have registered as an ambassador</p>
+            :
             <Link href="/ambassador/register">
-              <Button className="mt-4 flex items-center justify-center">
-                <SquarePen className="max-md:text-[12px] mr-2" />
+              <Button>
+                <SquarePen className="max-md:text-[12px]" />
                 Register Ambassador
               </Button>
             </Link>
-          )}
+          }
         </div>
         <div className="flex flex-col md:w-1/2 w-full">
           <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
@@ -180,6 +189,16 @@ export const DetailProfile = () => {
               value="https://ristek.link/mainevent"
             />
           </div>
+
+          {qrCodeValue && (
+            <div className="mt-8 lg:hidden" ref={qrCodeSmallRef}>
+              <QRCode
+                value={qrCodeValue}
+                size={150}
+                className="shadow-lg bg-white p-3 rounded-md"
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>

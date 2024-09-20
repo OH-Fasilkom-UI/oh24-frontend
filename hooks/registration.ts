@@ -1,5 +1,6 @@
 import { SubmitPersonalData, submitPersonalData } from '@/lib/api/registration'
 import { submitAmbassador, SubmitAmbassadorData } from '@/lib/api/registration-ambas'
+import { SubmitQuestionnaireData, submitQuestionnaire } from '@/lib/api/registration-mentee'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 export const useSubmitPersonalData = () => {
@@ -29,6 +30,26 @@ export const useSubmitAmbassadorData = () => {
     mutationKey: ['reg', 'ambas'],
     mutationFn: async (data: SubmitAmbassadorData) => {
       const res = await submitAmbassador(data)
+
+      if (!res.ok) {
+        throw new Error()
+      }
+
+      return res.json()
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['user', 'my'] })
+    },
+  })
+}
+
+export const useSubmitQuestionnaire = () => {
+  const queryClient = useQueryClient()
+  
+  return useMutation({
+    mutationKey: ['reg', 'mentee', 'questionnaire'],
+    mutationFn: async (data: SubmitQuestionnaireData) => {
+      const res = await submitQuestionnaire(data)
 
       if (!res.ok) {
         throw new Error()

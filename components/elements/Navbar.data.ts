@@ -5,7 +5,7 @@ export const NAVBAR_LINKS = [
     href: '/',
     icon: House,
     label: 'Home',
-    isExist: false,
+    isExist: true,
   },
   {
     href: '/ambassador',
@@ -14,10 +14,10 @@ export const NAVBAR_LINKS = [
     isExist: true,
   },
   {
-    href: '/fwefwefw',
+    href: '/explore',
     icon: Building,
     label: 'About Fasilkom',
-    isExist: false,
+    isExist: true,
   },
   {
     href: '/wefwfew',

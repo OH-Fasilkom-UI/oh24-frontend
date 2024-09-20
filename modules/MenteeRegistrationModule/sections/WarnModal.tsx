@@ -37,7 +37,7 @@ export const WarnModal = ({ onClick }: { onClick: () => void }) => {
           className="object-contain"
         />
       </div>
-      <div className="absolute max-lg:w-[410px] max-md:w-[300px] max-[400px]:w-[300px] max-[400px]:h-[100px] w-[500px] h-[400px] lg:-right-[120px] md:-right-[40px] max-md:-right-[75px] top-[220px] md:top-[120px] -z-10 animate-float-vertical">
+      <div className="absolute max-lg:w-[400px] max-md:w-[300px] max-[350px]:hidden  w-[500px] h-[400px] lg:-right-[120px] md:-right-[23px] max-md:-right-[75px] top-[220px] md:top-[120px] -z-10 animate-float-vertical">
         <Image
           alt="contoh"
           src="/Whooshhh.png"

@@ -50,6 +50,24 @@ export interface TicketData {
   createdAt: string
   id: string
   userId: string
+  rombel: RombelData | null
+  group: GroupData | null
+}
+
+export interface RombelData {
+  name: string
+  leaders: string[]
+  linkWA: string
+  updatedAt: string
+  createdAt: string
+}
+
+export interface GroupData {
+  number: number
+  leaders: string[]
+  linkWA: string
+  updatedAt: string
+  createdAt: string
 }
 
 export function formatPersonalData(

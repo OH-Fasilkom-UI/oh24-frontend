@@ -15,7 +15,7 @@ import { Pencil, SquarePen } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { PandaImages } from '../constant'
-
+import QRCode from "react-qr-code";
 interface FieldProps {
   label: string
   value?: string | null
@@ -33,7 +33,7 @@ const Field = ({ label, value = '' }: FieldProps) => {
 export const DetailProfile = () => {
   const { userData, isLoading } = useUserData({ personal: true })
   const [profilePict, setProfilePictSrc] = useState<number>(0)
-  const [popOpen, popClose] = useState(false)
+  const [popOpen, setPopOpen] = useState(false)
 
   useEffect(() => {
     setProfilePictSrc(userData?.personal.profilePic ?? 0)
@@ -57,18 +57,23 @@ export const DetailProfile = () => {
     return <Loader />
   }
 
+  // Extract QR Code value from userData
+  // const qrCodeValue = userData?.qrCodeValue || ''
+  const qrCodeValue = 'oh24'
+
   return (
     <div className="pt-[10rem] min-[1920px]:pt-[10rem] mb-10 flex flex-col md:px-[120px] xl:px-[190px] py-10 max-md:pb-96 justify-center items-center md:items-start md:justify-start gap-[35px]">
       <h1 className="text-[36px] text-[#2E3881] font-bold font-riffic tracking-[0.075rem]">
         Profile
       </h1>
-      <div className="flex flex-col max-md:justify-center max-md:items-center md:flex-row md:gap-[108px]">
-        <div className='flex flex-col items-center max-md:pb-10'>
-          <div className="flex flex-col items-end">
+      <div className="flex flex-col max-md:justify-center max-md:items-center md:flex-row md:gap-[108px] w-full">
+        <div className="flex flex-col items-center max-md:pb-10 md:w-1/2">
+          <div className="flex flex-col items-end w-full">
             <Avatar className="w-[216px] h-[216px]">
               <AvatarImage src={PandaImages[profilePict].src} />
             </Avatar>
-            <Popover open={popOpen} onOpenChange={popClose}>
+
+            <Popover open={popOpen} onOpenChange={setPopOpen}>
               <PopoverTrigger className="p-5 max-md:hidden -translate-y-16 bg-[#5E31A6] text-[#E0ECFF] rounded-full">
                 <Pencil className="w-10 h-10 z-50" />
               </PopoverTrigger>
@@ -81,7 +86,7 @@ export const DetailProfile = () => {
                     <Avatar
                       onClick={() => {
                         handleProfileChange(index)
-                        popClose(false)
+                        setPopOpen(false)
                       }}
                       key={item.alt}
                       className="w-[108px] h-[108px] cursor-pointer"
@@ -117,29 +122,64 @@ export const DetailProfile = () => {
               </PopoverContent>
             </Popover>
           </div>
-          {userData?.hasAmbassadorForm ?
-            <p className='text-Text/TextLightBG text-lg font-bold max-w-44 text-center'>You have registered as an ambassador</p>
-            :
+          {qrCodeValue && (
+            <div className="mt-6">
+              <QRCode
+                value={qrCodeValue}
+                size={150}
+                className="shadow-lg bg-white p-3 rounded-md"
+              />
+            </div>
+          )}
+          {userData?.hasAmbassadorForm ? (
+            <p className="text-Text/TextLightBG text-lg font-bold max-w-44 text-center mt-4">
+              You have registered as an ambassador
+            </p>
+          ) : (
             <Link href="/ambassador/register">
-              <Button>
-                <SquarePen className="max-md:text-[12px]" />
+              <Button className="mt-4 flex items-center justify-center">
+                <SquarePen className="max-md:text-[12px] mr-2" />
                 Register Ambassador
               </Button>
             </Link>
-          }
+          )}
         </div>
-        <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
-          <Field label="Nama Lengkap" value={userData?.personal?.fullName} />
-          <Field label="Email" value={userData?.email} />
-          <Field label="Domisili" value={userData?.personal?.domicile} />
-          <Field label="WhatsApp" value={userData?.personal?.phone} />
-          <Field label="Tanggal Lahir" value={userData?.personal?.dob} />
-          <Field label="Kelas" value={userData?.personal?.class} />
-          <Field label="Asal Sekolah" value={userData?.personal?.school} />
-          <Field
-            label="Nomor Telepon Orang Tua"
-            value={userData?.personal?.parentPhone}
-          />
+        <div className="flex flex-col md:w-1/2 w-full">
+          <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
+            <Field label="Nama Lengkap" value={userData?.personal?.fullName} />
+            <Field label="Email" value={userData?.email} />
+            <Field label="Domisili" value={userData?.personal?.domicile} />
+            <Field label="WhatsApp" value={userData?.personal?.phone} />
+            <Field label="Tanggal Lahir" value={userData?.personal?.dob} />
+            <Field label="Kelas" value={userData?.personal?.class} />
+            <Field label="Asal Sekolah" value={userData?.personal?.school} />
+            <Field
+              label="Nomor Telepon Orang Tua"
+              value={userData?.personal?.parentPhone}
+            />
+          </div>
+          <div className="mt-8 grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
+            <Field
+              label="Nama Mentor CS Connect"
+              // value={userData?.mentor?.name}
+              value="Default Mentor 1"
+            />
+            <Field
+              label="Nama Mentor CS Connect"
+              // value={userData?.mentor?.name}
+              value="Default Mentor 2"
+            />
+            <Field
+              label="Link Grup WhatsApp Mentoring CSConnect"
+              // value={userData?.mentor?.whatsappGroupLink}
+              value="https://ristek.link/mentoring"
+            />
+            <Field
+              label="Link Grup WhatsApp Rombel Main Event"
+              // value={userData?.mentor?.rombelGroupLink}
+              value="https://ristek.link/mainevent"
+            />
+          </div>
         </div>
       </div>
     </div>

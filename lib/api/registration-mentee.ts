@@ -1,15 +1,14 @@
 import { z } from 'zod'
 
 export enum Accommodation {
-  MOBIL,
-  KERETA,
-  PESAWAT,
-  BUS,
+  MOBILKERETAPESAWATBUS,
+  TIDAK_IKUT,
 }
 
 export enum Companion {
   TEMAN,
   KELUARGA,
+  TIDAK_IKUT
 }
 
 export enum EventName {

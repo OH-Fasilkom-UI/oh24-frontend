@@ -3,7 +3,7 @@ import RadioGroup from '@/components/ui/RadioGroup'
 export const AccomodationRadio = () => {
   return (
     <>
-      <RadioGroup.Item value="MOBIL/KERETA/PESAWAT/BUS" id="Mobil">
+      <RadioGroup.Item value="MOBILKERETAPESAWATBUS" id="Mobil">
         Mobil/Kereta/Pesawat/Bus
       </RadioGroup.Item>
       <RadioGroup.Item value="TIDAK_IKUT" id="TIDAK_IKUT">

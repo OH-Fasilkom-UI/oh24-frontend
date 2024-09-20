@@ -1,13 +1,13 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "@/components/ui/Card";
 import RadioGroup from '@/components/ui/RadioGroup';
 import Image from "next/image";
 import Input from '@/components/ui/Input';
 import { z } from 'zod';
 import Button from "@/components/ui/Button";
-import { toast } from '@/components/ui/Toast'
+import { toast } from '@/components/ui/Toast';
 
 const schema = z.object({
     eventDate: z.string(),
@@ -19,7 +19,27 @@ export const PickEventSection = () => {
     const [referralCode, setReferralCode] = useState<string>('');
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
-    // ini placeholder aja untuk validasi kode referral
+    const [isFullExperienceFull, setIsFullExperienceFull] = useState<boolean>(false);
+    const [isOnlineExperienceFull, setIsOnlineExperienceFull] = useState<boolean>(false);
+
+    // Placeholder fetch kapasitas event
+    useEffect(() => {
+        const fetchCapacityStatus = async () => {
+            setTimeout(() => {
+                const response = {
+                    fullExperience: false,
+                    onlineExperience: true
+                };
+
+                setIsFullExperienceFull(response.fullExperience);
+                setIsOnlineExperienceFull(response.onlineExperience);
+            }, 1000);
+        };
+
+        fetchCapacityStatus();
+    }, []);
+
+    // Placeholder for validasi kode referral
     const validateReferralCode = async (code: string): Promise<boolean> => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
@@ -39,7 +59,7 @@ export const PickEventSection = () => {
         });
 
         if (result.success) {
-            // Cek apakah eventDate sudah dipilih
+            // Check if eventDate is selected
             if (!eventDate) {
                 toast.error("Please select an event date.");
                 return;
@@ -47,16 +67,15 @@ export const PickEventSection = () => {
 
             setIsSubmitting(true);
 
-            // Validasi Referral Code
+            // Validate Referral Code
             try {
                 if (referralCode) {
                     await validateReferralCode(referralCode);
                     toast.success("Referral code is valid!");
                 } else {
-                    toast.info("No referral code provided.");
+                    toast.error("No referral code provided.");
                 }
                 // console.log("Form Submitted: ", result.data);
-                // Misalnya ada error saat validasi kode referral (backend error)
             } catch (error: any) {
                 toast.error(error.message || "Validation Failed");
             } finally {
@@ -80,15 +99,18 @@ export const PickEventSection = () => {
                     alt="Background"
                 />
             </div>
-            <div className="flex flex-col items-center px-5 md:px-10 lg:px-3">
+            <div className="flex flex-col items-center px-5 md:px-10 lg:px-3 pb-5">
                 <div className="w-full flex justify-center items-center mt-[2vw] z-20 gap-16 max-lg:flex-col">
 
                     {/* Card Main Event */}
-                    <Card className="w-[561px] h-[516px] flex flex-col justify-between items-center py-10 max-lg:h-fit max-md:w-[84vw] max-sm:w-[90vw]" style={{
-                        background: 'rgba(46, 56, 129, 0.9)',
-                        boxShadow: '-4px -4px 12px rgba(78, 86, 196, 0.5), 4px 4px 12px rgba(98, 163, 203, 0.5)',
-                        borderRadius: '32px'
-                    }}>
+                    <Card
+                        className={`w-[561px] h-[516px] flex flex-col justify-between items-center py-10 max-lg:h-fit max-md:w-[84vw] max-sm:w-[90vw] ${isFullExperienceFull ? 'bg-[#5C5A5AE6] pointer-events-none' : ''}`}
+                        style={{
+                            background: isFullExperienceFull ? 'rgba(92, 90, 90, 0.9)' : 'rgba(46, 56, 129, 0.9)',
+                            boxShadow: '-4px -4px 12px rgba(78, 86, 196, 0.5), 4px 4px 12px rgba(98, 163, 203, 0.5)',
+                            borderRadius: '32px'
+                        }}
+                    >
                         <div className="h-[60%]">
                             <h1 className="h-fit text-t3 text-shadow-pickEvent text-[#E0ECFF] flex justify-center mt-6 text-nowrap max-sm:text-t4 max-[400px]:text-[26px]">Full Experience</h1>
                             <div className="flex flex-col gap-5 mt-8 text-t7 max-sm:text-t8 max-[400px]:text-[12px]">
@@ -117,11 +139,27 @@ export const PickEventSection = () => {
                                 Pilih tanggal Main Event:
                             </h1>
                             <div className="flex gap-8 mt-2 mb-6">
-                                <RadioGroup size="small" color="light" value={eventDate} onValueChange={(value) => setEventDate(value)} className="flex-row flex gap-6 max-sm:flex-col max-sm:gap-4">
-                                    <RadioGroup.Item value="16 November 2024" id="16nov" className="inline-block">
+                                <RadioGroup
+                                    size="small"
+                                    color="light"
+                                    value={eventDate}
+                                    onValueChange={(value) => setEventDate(value)}
+                                    className="flex-row flex gap-6 max-sm:flex-col max-sm:gap-4"
+                                >
+                                    <RadioGroup.Item
+                                        value="16 November 2024"
+                                        id="16nov"
+                                        className="inline-block"
+                                        disabled={isFullExperienceFull}
+                                    >
                                         16 November 2024
                                     </RadioGroup.Item>
-                                    <RadioGroup.Item value="17 November 2024" id="17nov" className="inline-block">
+                                    <RadioGroup.Item
+                                        value="17 November 2024"
+                                        id="17nov"
+                                        className="inline-block"
+                                        disabled={isFullExperienceFull}
+                                    >
                                         17 November 2024
                                     </RadioGroup.Item>
                                 </RadioGroup>
@@ -131,9 +169,9 @@ export const PickEventSection = () => {
 
                     {/* Card Online */}
                     <Card
-                        className="w-[561px] h-[516px] flex flex-col justify-between items-center py-10 max-lg:h-fit max-md:w-[84vw] max-sm:w-[90vw]"
+                        className={`w-[561px] h-[516px] flex flex-col justify-between items-center py-10 max-lg:h-fit max-md:w-[84vw] max-sm:w-[90vw] ${isOnlineExperienceFull ? 'bg-[#5C5A5AE6] pointer-events-none' : ''}`}
                         style={{
-                            background: 'rgba(46, 56, 129, 0.9)',
+                            background: isOnlineExperienceFull ? 'rgba(92, 90, 90, 0.9)' : 'rgba(46, 56, 129, 0.9)',
                             boxShadow: '-4px -4px 12px rgba(78, 86, 196, 0.5), 4px 4px 12px rgba(98, 163, 203, 0.5)',
                             borderRadius: '32px'
                         }}
@@ -166,7 +204,11 @@ export const PickEventSection = () => {
                                     value={eventDate}
                                     onValueChange={(value) => setEventDate(value)}
                                 >
-                                    <RadioGroup.Item value="9 November 2024" id="9nov">
+                                    <RadioGroup.Item
+                                        value="9 November 2024"
+                                        id="9nov"
+                                        disabled={isOnlineExperienceFull}
+                                    >
                                         9 November 2024
                                     </RadioGroup.Item>
                                 </RadioGroup>
@@ -174,7 +216,6 @@ export const PickEventSection = () => {
                         </div>
                     </Card>
                 </div>
-
 
                 <form className="w-[27rem] mt-6 py-6 px-8 max-md:mt-16 max-lg:w-[561px] max-md:w-[84vw] z-10" style={{
                     background: 'rgba(46, 56, 129, 0.9)',
@@ -198,8 +239,6 @@ export const PickEventSection = () => {
                         {isSubmitting ? "Submitting..." : "Submit"}
                     </Button>
                 </div>
-
-
             </div>
             <Image
                 src="/pesawat-kanan-2.png"

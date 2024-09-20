@@ -25,24 +25,44 @@ import {
 } from '../elements/RadioItem'
 import { Accommodation, Companion } from '@/lib/api/registration-mentee'
 import { cn } from '@/lib/utils'
+import { useUserData } from '@/hooks/user'
+import { Loader } from '@/components/elements/Loader'
+import { useSubmitQuestionnaire } from '@/hooks/registration'
+import { toast } from '@/components/ui/Toast'
 
 export const Questioner = () => {
-  const isJabodetabek = false
+  const { userData, isLoading } = useUserData({ personal: true })
+  const { mutate: submit, isPending } = useSubmitQuestionnaire()
 
   const form = useForm<SubmitQuestionnaireData>({
     resolver: zodResolver(submitQuestionnaireSchema),
   })
 
-  const onSubmit = async (data: SubmitQuestionnaireData) => {}
+  const onSubmit = async (data: SubmitQuestionnaireData) => {
+    submit(data, {
+      onSuccess: () => {
+        toast.success('Berhasil mengirimkan data')
+      },
+      onError: () => {
+        toast.error('Terjadi Kesalahan!')
+      },
+    })
+  }
+
+  if (isLoading) {
+    return <Loader />
+  }
+
   return (
     <section
       className={cn(
         'min-h-[100vh] w-full px-[10vw] flex justify-center items-center',
-        !isJabodetabek && 'py-[20vh]'
+        userData?.personal?.domicile === 'NON_JABODETABEK' && 'py-[20vh]'
       )}
       style={{
-        backgroundImage: `url(${isJabodetabek ? bg2.src : bg.src})`,
-        backgroundSize: isJabodetabek ? 'cover' : 'contain',
+        backgroundImage: `url(${userData?.personal?.domicile === 'JABODETABEK' ? bg2.src : bg.src})`,
+        backgroundSize:
+          userData?.personal?.domicile === 'JABODETABEK' ? 'cover' : 'contain',
         backgroundPosition: 'bottom',
         backgroundRepeat: 'no-repeat',
       }}
@@ -135,7 +155,7 @@ export const Questioner = () => {
                 </FormItem>
               )}
             />
-            {!isJabodetabek && (
+            {userData?.personal?.domicile === 'NON_JABODETABEK' && (
               <>
                 <div className="absolute max-lg:w-[410px] max-md:w-[300px] max-[400px]:w-[300px] max-[400px]:h-[100px] w-[500px] h-[400px] right-0 top-[40vh] max-xl:hidden z-10 animate-float-vertical">
                   <Image
@@ -217,6 +237,7 @@ export const Questioner = () => {
             )}
           </div>
           <Button
+            disabled={isPending}
             type="submit"
             className="w-full max-sm:w-[90px] mx-auto"
             variant={'ghost'}

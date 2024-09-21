@@ -24,7 +24,7 @@ const FlipCard = ({
       onClick={() => setOpened(!opened)}
     >
       <div
-        className={`${opened ? 'rotate-x-180' : 'rotate-x-0'} absolute w-full h-full top-0 left-0 bg-[#2E3881E5] rounded-[5%] backface-hidden transition-transform duration-500 flex items-center flex-col justify-center gap-4 xl:gap-8 overflow-hidden shadow-[4px_4px_12px_#62A3CB80,-4px_-4px_12px_#4E56C480]`}
+        className={`${opened ? 'rotate-x-180' : 'rotate-x-0'} z-30 absolute w-full h-full top-0 left-0 bg-[#2E3881E5] rounded-[5%] backface-hidden transition-transform duration-500 flex items-center flex-col justify-center gap-4 xl:gap-8 overflow-hidden shadow-[4px_4px_12px_#62A3CB80,-4px_-4px_12px_#4E56C480]`}
       >
         {defaultIcon}
         {hoverIcon}
@@ -34,7 +34,7 @@ const FlipCard = ({
         {background}
       </div>
       <div
-        className={`${opened ? 'rotate-x-0' : 'rotate-x-180'} absolute w-full h-full top-0 left-0 bg-[#2E3881E5] rounded-[5%] backface-hidden transition-transform duration-500 pl-10 pr-4 md:pl-12 md:pr-5 py-10 lg:pl-16 lg:pr-6 lg:py-12 overflow-hidden shadow-[4px_4px_12px_#62A3CB80,-4px_-4px_12px_#4E56C480]`}
+        className={`${opened ? 'rotate-x-0' : 'rotate-x-180'} z-50 absolute w-full h-full top-0 left-0 bg-[#2E3881E5] rounded-[5%] backface-hidden transition-transform duration-500 pl-10 pr-4 md:pl-12 md:pr-5 py-10 lg:pl-16 lg:pr-6 lg:py-12 overflow-hidden shadow-[4px_4px_12px_#62A3CB80,-4px_-4px_12px_#4E56C480]`}
       >
         <div
           className={`${opened ? 'pointer-events-auto' : 'pointer-events-none'} ${scrollbar.darkScrollbar} xl:text-3xl md:text-2xl text-xl overflow-y-auto h-full w-full overflow-x-hidden pr-6 md:pr-7 lg:pr-8`}
@@ -125,7 +125,16 @@ const ExploreFasilkomPrograms = () => {
       <h1 className="text-center text-Text/TextLightBG font-riffic mb-8 sm:mb-12 text-[30px] sm:text-[48px] tracking-wider">
         Program Studi
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-2 sm:grid-rows-1 xl:gap-24 lg:gap-20 gap-12 justify-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-2 sm:grid-rows-1 xl:gap-24 lg:gap-20 md:gap-12 sm:gap-6 gap-12 justify-items-center">
+        <div className="absolute w-[150px] h-[103.75px] max-sm:top-[47%] max-sm:left-[60%] sm:right-2 sm:top-40 md:w-[180px] md:h-[124.05px] md:right-4 md:top-36 lg:w-[240px] lg:h-[165.87px] lg:top-32 lg:right-12 xl:w-[270px] xl:h-[186.6px] xl:right-20 xl:top-28 z-40">
+          <Image
+            src="/drone.png"
+            alt="drone"
+            fill
+            sizes="none"
+            className="object-contain"
+          />
+        </div>
         <FlipCard
           defaultIcon={defaultIcon1}
           hoverIcon={hoverIcon1}

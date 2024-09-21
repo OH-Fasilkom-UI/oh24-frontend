@@ -2,6 +2,7 @@ import Testimonials from "@/components/elements/Testimonials";
 import Image from "next/image";
 import { TESTIMONY_DATA, WHAT_IS_OH_DATA } from "./constant";
 import FAQ from "./sections/FAQ";
+import Partners from "./sections/Partners";
 import WhatIsOpenHouse from "./sections/WhatIsOpenHouse";
 
 export const LandingPageModule = () => {
@@ -22,6 +23,7 @@ export const LandingPageModule = () => {
                     </h1>
                     <Testimonials testimonyData={TESTIMONY_DATA} />
                 </div>
+                <Partners />
                 <FAQ />
             </div>
         </main>

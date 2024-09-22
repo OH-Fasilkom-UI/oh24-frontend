@@ -21,22 +21,34 @@ const ExploreContact = () => {
       </h1>
       <div className="flex items-center">
         <div className="h-full w-full">
-          <a href="" className="flex py-1 items-center">
+          <a
+            href="https://www.instagram.com/ohfasilkom"
+            target="_blank"
+            className="flex py-1 items-center"
+          >
             <Instagram className="w-5 lg:w-7 mr-2" />
             <h1 className="font-tex-gyre font-semibold text-sm md:text-xl lg:text-4xl hover:underline">
-              @linkkesosmed1
+              @ohfasilkom
             </h1>
           </a>
-          <a href="" className="flex py-1 items-center">
+          <a
+            href="https://twitter.com/OHFasilkom"
+            target="_blank"
+            className="flex py-1 items-center"
+          >
             <Twitter className="w-5 lg:w-7 mr-2" />
             <h1 className="font-tex-gyre font-semibold text-sm md:text-xl lg:text-4xl hover:underline">
-              @linkkesosmed2
+              @OHFasilkom
             </h1>
           </a>
-          <a href="" className="flex py-1 items-center">
+          <a
+            href="https://www.youtube.com/@FasilkomUIOfficial"
+            target="_blank"
+            className="flex py-1 items-center"
+          >
             <Youtube className="w-5 lg:w-7 mr-2" />
             <h1 className="font-tex-gyre font-semibold text-sm md:text-xl lg:text-4xl hover:underline">
-              @linkkesosmed3
+              @FasilkomUIOfficial
             </h1>
           </a>
         </div>

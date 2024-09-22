@@ -3,7 +3,7 @@ import { Instagram, Twitter, Youtube } from 'lucide-react'
 
 const ExploreContact = () => {
   return (
-    <section className="grid grid-cols-[3fr_2fr] grid-rows-[auto_auto_1fr] sm:grid-rows-[2fr_1fr_2fr] mt-12 mb-8  text-Text/TextLightBG">
+    <section className="grid grid-cols-[3fr_2fr] grid-rows-[auto_auto_1fr] sm:grid-rows-[2fr_1fr_2fr] mt-12 mb-[400px] min-[440px]:mb-[560px] sm:mb-[400px] md:mb-[500px] lg:mb-[600px] xl:mb-[800px] 2xl:mb-[960px] text-Text/TextLightBG">
       <div className="text-2xl md:text-4xl xl:text-5xl flex items-center">
         <h1>Ingin lebih dekat dengan dunia Mahasiswa Fasilkom UI?</h1>
       </div>

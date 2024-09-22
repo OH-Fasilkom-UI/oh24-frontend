@@ -5,7 +5,7 @@ const Page = () => {
   return (
     <main>
       <ExploreModule />
-      {/* <Footer /> */}
+      <Footer />
     </main>
   )
 }

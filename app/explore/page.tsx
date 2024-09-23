@@ -5,7 +5,6 @@ const Page = () => {
     return (
         <main className="relative">
             <ExploreModule />
-
             <div
                 className='mt-[700px] md:mt-[1200px]'
             >

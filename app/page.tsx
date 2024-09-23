@@ -11,6 +11,5 @@ export default function Home() {
         <Footer />
       </div>
     </main>
-    // redirect('/ambassador')
   )
 }

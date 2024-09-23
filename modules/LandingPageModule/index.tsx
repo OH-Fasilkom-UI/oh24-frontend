@@ -1,4 +1,5 @@
 import LandingPageHero from './components/LandingPageHero'
+import LandingPageTimeline from './sections/LandingPageTimeline'
 import Image from 'next/image'
 import glow from '@/public/landing-page-glow.png'
 import cities from '@/public/landing-page-cities.png'
@@ -53,6 +54,7 @@ const LandingPageModule = () => {
         />
         <div className="min-h-screen bg-[#075C9D] -z-50 absolute inset-0 m-auto mt-[27rem] sm:mt-[46rem] lg:mt-[48rem]"></div>
         <LandingPageHero />
+        <LandingPageTimeline />
       </div>
     </main>
   )

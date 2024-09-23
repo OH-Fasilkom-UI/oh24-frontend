@@ -3,6 +3,7 @@ import ExploreAlumni from '@/modules/ExploreFasilkomModule/sections/ExploreAlumn
 import ExploreFasilkomPrograms from '@/modules/ExploreFasilkomModule/sections/ExploreFasilkomPrograms'
 import ExploreModule from '@/modules/ExploreModule'
 import ExploreFacility from '@/modules/ExploreModule/components/ExploreFacility'
+import { JalurMasukModule } from '@/modules/JalurMasukModule'
 import PrestasiModule from '@/modules/PrestasiModule'
 
 const Page = () => {
@@ -13,7 +14,12 @@ const Page = () => {
             <ExploreAlumni />
             <ExploreFasilkomPrograms />
             <ExploreFacility />
-            {/* <Footer /> */}
+            <JalurMasukModule />
+            <footer
+                className='mt-[350px] md:mt-[800px]'
+            >
+                <Footer />
+            </footer>
         </main>
     )
 }

@@ -1,5 +1,5 @@
 import Footer from '@/components/elements/Footer'
-import { ExploreModule } from '@/modules/ExploreModule'
+import ExploreModule from '@/modules/ExploreModule'
 
 const Page = () => {
     return (

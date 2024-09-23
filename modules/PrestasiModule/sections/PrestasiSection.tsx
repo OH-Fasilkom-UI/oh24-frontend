@@ -15,7 +15,7 @@ export const PrestasiSection = () => {
         className="w-full h-full relative"
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(46, 56, 129, 0.85), rgba(46, 56, 129, 0.85)), url(${bg.src})`,
-          backgroundSize: '100% 100%',
+          backgroundSize: '100%',
           backgroundPosition: 'bottom',
           backgroundRepeat: 'no-repeat',
         }}
@@ -40,19 +40,19 @@ export const PrestasiSection = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col items-center text-center mb-[58px] max-md:mb-[38px]"
+                className="flex flex-col items-center text-center my-5 md:my-16"
               >
                 <Icon className="w-[70px] h-[70px] max-md:mb-3 mb-8 mt-[74px max-md:w-[21px] max-md:h-[21px]" />
-                <h3 className="text-[30px] max-md:text-[14px] font-bold mb-3 font-riffic tracking-wider">
+                <h3 className="text-3xl max-md:text-xl font-bold mb-3 font-riffic tracking-wider">
                   {item.title}
                 </h3>
-                <p className="text-xl max-md:text-xs font-riffic font-bold tracking-widest mb-1">
+                <p className="text-xl max-md:text-sm font-riffic font-bold tracking-widest mb-1">
                   {item.description}
                 </p>
-                <p className="text-[20px] mb-3 max-md:text-xs  font-bold font-tex-gyre">
+                <p className="text-[20px] mb-3 max-md:text-sm  font-bold font-tex-gyre">
                   {item.status}
                 </p>
-                <p className="text-2xl font-bold max-md:text-xs  font-tex-gyre">
+                <p className="text-2xl font-bold max-md:text-sm  font-tex-gyre">
                   {item.metrics}
                 </p>
               </div>
@@ -64,7 +64,7 @@ export const PrestasiSection = () => {
           alt="Ufo"
           width={200}
           height={206}
-          className="absolute 2xl:left-5 left-0 bottom-0 translate-y-1/3 -translate-x-1/2 max-md:-translate-x-1/4"
+          className="absolute 2xl:-left-20 -left-10 -bottom-32 animate-float-vertical"
         />
       </Card>
     </section>

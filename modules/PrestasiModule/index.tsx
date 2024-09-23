@@ -1,9 +1,7 @@
-import React from 'react'
 import { PrestasiSection } from './sections/PrestasiSection'
-import Image from 'next/image'
 
-const PrestasiModule = () => {
+const ExplorePrestasiModule = () => {
   return <PrestasiSection />
 }
 
-export default PrestasiModule
+export default ExplorePrestasiModule

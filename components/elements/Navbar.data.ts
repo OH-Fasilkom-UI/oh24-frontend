@@ -1,4 +1,11 @@
-import { Building, CircleUserRound, FileText, House, SquareUserRound, Users } from 'lucide-react'
+import {
+  Building,
+  CircleUserRound,
+  FileText,
+  House,
+  SquareUserRound,
+  Users,
+} from 'lucide-react'
 
 export const NAVBAR_LINKS = [
   {
@@ -14,10 +21,10 @@ export const NAVBAR_LINKS = [
     isExist: true,
   },
   {
-    href: '/fwefwefw',
+    href: '/explore',
     icon: Building,
     label: 'About Fasilkom',
-    isExist: false,
+    isExist: true,
   },
   {
     href: '/wefwfew',

@@ -1,11 +1,15 @@
 import Footer from '@/components/elements/Footer'
-import { ExploreFasilkomModule } from '@/modules/ExploreFasilkomModule'
+import ExploreModule from '@/modules/ExploreModule'
 
 const Page = () => {
     return (
-        <main>
-            <ExploreFasilkomModule />
-            <Footer />
+        <main className="relative">
+            <ExploreModule />
+            <div
+                className='mt-[700px] md:mt-[1200px]'
+            >
+                <Footer />
+            </div>
         </main>
     )
 }

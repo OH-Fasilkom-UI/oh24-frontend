@@ -1,5 +1,9 @@
-import { redirect } from "next/navigation";
+import LandingPageModule from '@/modules/LandingPageModule'
 
 export default function Home() {
-  return redirect('/ambassador')
+  return (
+    <main>
+      <LandingPageModule />
+    </main>
+  )
 }

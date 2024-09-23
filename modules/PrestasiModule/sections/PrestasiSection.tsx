@@ -15,7 +15,7 @@ export const PrestasiSection = () => {
         className="w-full h-full relative"
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(46, 56, 129, 0.85), rgba(46, 56, 129, 0.85)), url(${bg.src})`,
-          backgroundSize: '100% 100%',
+          backgroundSize: '100%',
           backgroundPosition: 'bottom',
           backgroundRepeat: 'no-repeat',
         }}
@@ -40,7 +40,7 @@ export const PrestasiSection = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col items-center text-center mb-[58px] max-md:mb-[38px]"
+                className="flex flex-col items-center text-center my-0 md:my-16 mb-5 md:mb-20"
               >
                 <Icon className="w-[70px] h-[70px] max-md:mb-3 mb-8 mt-[74px max-md:w-[21px] max-md:h-[21px]" />
                 <h3 className="text-[30px] max-md:text-[14px] font-bold mb-3 font-riffic tracking-wider">

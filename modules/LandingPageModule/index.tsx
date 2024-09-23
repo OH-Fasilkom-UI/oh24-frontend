@@ -35,7 +35,7 @@ const LandingPageModule = () => {
         <Image
           src={bridge}
           alt="bridge"
-          className="object-contain -z-10 absolute inset-0 m-auto mt-[26rem] sm:mt-[44rem] lg:mt-[45rem] max-[400px]:max-w-[500px] max-w-[650px] sm:max-w-[1000px] lg:max-w-[1300px] xl:max-w-[1600px] max-h-[1080px]"
+          className="object-contain -z-10 absolute inset-0 m-auto mt-[26rem] sm:mt-[44rem] lg:mt-[45rem] max-[400px]:max-w-[500px] max-w-[650px] sm:max-w-[1000px] lg:max-w-[1300px] xl:max-w-[2100px] max-h-[1080px]"
         />
         <Image
           src={train1}

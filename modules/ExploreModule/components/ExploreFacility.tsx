@@ -123,7 +123,7 @@ const ExploreFacility = () => {
         {FACILITIES[index].desc}
       </animated.div>
       <Button
-        className="bg-Misc/Ziggurat/400 mb-24 md:mb-8 lg:text-xl xl:text-2xl 2xl:text-3xl"
+        className="bg-Misc/Ziggurat/400 mb-24 md:mb-8"
         onClick={() => setLookup(!lookup)}
       >
         Lihat Selengkapnya

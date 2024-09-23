@@ -3,9 +3,7 @@ import AmbassadorModule from '@/modules/AmbassadorModule'
 
 const Page = () => {
   return (
-    <main
-      className='relative'
-    >
+    <main className="relative">
       <AmbassadorModule />
       <Footer />
     </main>

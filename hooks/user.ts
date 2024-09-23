@@ -10,6 +10,7 @@ import {
 import paths from '@/lib/paths'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { redirect, usePathname } from 'next/navigation'
+import { useEffect } from 'react'
 
 export function useUserData<T extends UserDataJoins>(
   joins: T | {} = {},
@@ -18,7 +19,7 @@ export function useUserData<T extends UserDataJoins>(
   const queryClient = useQueryClient()
   const currentPath = usePathname()
 
-  const { data, isError, ...rest } = useQuery<UserData<T>>({
+  const { data, error, ...rest } = useQuery<UserData<T>>({
     queryKey: ['user', 'my', joins],
     queryFn: async () => {
       const res = await getMyUserData(joins)
@@ -35,31 +36,33 @@ export function useUserData<T extends UserDataJoins>(
     },
   })
 
-  if (redirects) {
-    if (isError) {
-      // not logged in users trying to visit protected URLs
-      toast.error('Silakan masuk terlebih dahulu.')
-      redirect(paths.login)
-    }
+  useEffect(() => {
+    if (redirects) {
+      if (error != null) {
+        // not logged in users trying to visit protected URLs
+        toast.error('Silakan masuk terlebih dahulu.')
+        redirect(paths.login)
+      }
 
-    if (currentPath === paths.login) {
-      redirect(paths.profilePage)
-    }
+      if (currentPath === paths.login) {
+        redirect(paths.profilePage)
+      }
 
-    if (currentPath === paths.profilePage && data?.hasPersonal === false) {
-      redirect(paths.personalDataForm)
-    }
+      if (currentPath === paths.profilePage && data?.hasPersonal === false) {
+        redirect(paths.personalDataForm)
+      }
 
-    if (currentPath === paths.personalDataForm && data?.hasPersonal === true) {
-      toast.error('Akun anda sudah terdaftar!')
-      redirect(paths.profilePage)
-    }
+      if (currentPath === paths.personalDataForm && data?.hasPersonal === true) {
+        toast.error('Akun anda sudah terdaftar!')
+        redirect(paths.profilePage)
+      }
 
-    if (currentPath === paths.registerAmbassador && data?.hasAmbassador === true) {
-      toast.error('Akun anda sudah terdaftar!')
-      redirect(paths.profilePage)
+      if (currentPath === paths.registerAmbassador && data?.hasAmbassador === true) {
+        toast.error('Akun anda sudah terdaftar!')
+        redirect(paths.profilePage)
+      }
     }
-  }
+  })
 
   return { userData: data, ...rest }
 }

@@ -13,7 +13,7 @@ const ExploreHero = () => {
   const [isAchievementHovered, setIsAchievementHovered] = useState(false)
 
   return (
-    <section className="relative xl:mt-[194px] mt-[120px] flex flex-col">
+    <section className="relative xl:mt-[194px] mt-[120px] flex flex-col overflow-hidden">
       <div className="relative flex flex-col text-center justify-center gap-3 sm:gap-7 md:gap-5 xl:gap-10 px-10 md:px-10 lg:px-32 z-10">
         <h1 className="font-bold font-riffic text-Text/TextLightBG leading-[48px] text-6xl max-2xl:text-5xl max-xl:text-4xl max-lg:text-3xl max-sm:text-2xl max-md:leading-[36px] lg:whitespace-nowrap tracking-widest">
           Fakultas Ilmu Komputer

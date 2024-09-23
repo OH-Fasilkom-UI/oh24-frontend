@@ -4,7 +4,7 @@ import {
   SISTEM_INFORMASI,
   ISI_ILMU_KOMPUTER,
   KKI_ILMU_KOMPUTER,
-} from '../constant'
+} from '../../constant'
 import Image from 'next/image'
 
 export const JalurMasukSectionDesktop = () => {

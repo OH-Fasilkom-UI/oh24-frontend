@@ -5,7 +5,11 @@ const Page = () => {
     return (
         <main className="relative">
             <ExploreModule />
-            <Footer />
+            <div
+                className='mt-[700px] md:mt-[1200px]'
+            >
+                <Footer />
+            </div>
         </main>
     )
 }

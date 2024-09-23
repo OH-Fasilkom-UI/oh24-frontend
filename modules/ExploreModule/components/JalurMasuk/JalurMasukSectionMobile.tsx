@@ -7,12 +7,12 @@ import {
   SISTEM_INFORMASI,
   ISI_ILMU_KOMPUTER,
   KKI_ILMU_KOMPUTER,
-} from '../constant'
+} from '../../constant'
 
 export const JalurMasukSectionMobile = () => {
   return (
-    <section className="pt-20 flex flex-col gap-6 justify-center">
-      <h2 className="text-[30px] text-center font-riffic font-bold text-Text/TextLightBG tracking-wider">
+    <section className="pt-20 flex flex-col gap-6 justify-center px-5 md:px-20">
+      <h2 className="text-[30px] text-center font-riffic font-bold text-Text/TextLightBG tracking-wider px-5">
         Jalur Masuk Fasilkom UI
       </h2>
       <Tabs defaultValue="sistem informasi" className="mx-auto rounded-2xl">

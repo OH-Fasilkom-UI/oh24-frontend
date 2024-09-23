@@ -1,4 +1,5 @@
 import ExploreAlumni from './components/ExploreAlumni'
+import ExploreFasilkomPrograms from './components/ExploreFasilkomPrograms'
 import ExploreHero from './components/ExploreHero'
 import { PrestasiSection } from './components/PrestasiSection'
 
@@ -9,6 +10,7 @@ const ExploreModule = () => {
         <ExploreHero />
         <ExploreAlumni />
         <PrestasiSection />
+        <ExploreFasilkomPrograms />
       </div>
     </main>
   )

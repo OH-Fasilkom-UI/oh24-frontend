@@ -1,4 +1,5 @@
 import LandingPageHero from './components/LandingPageHero'
+import LandingPageTimeline from './sections/LandingPageTimeline'
 import Image from 'next/image'
 import glow from '@/public/landing-page-glow.png'
 import cities from '@/public/landing-page-cities.png'

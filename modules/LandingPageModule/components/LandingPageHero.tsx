@@ -1,6 +1,4 @@
-'use client'
 import Countdown from '@/components/elements/Countdown'
-import { Primary } from '@/components/stories/Button.stories'
 import Button from '@/components/ui/Button'
 import { SquarePen } from 'lucide-react'
 
@@ -13,7 +11,7 @@ const LandingPageHero = () => {
       </h2>
       <div className="mt-6 sm:mt-12">
         <Countdown
-          targetDate={new Date('2024-09-19T23:59:00')}
+          targetDate={new Date('2024-10-19T23:59:00')}
           displayDate
           classNameType="sm:text-xl text-white"
           classNameBlock=" w-[60px] h-[70px] sm:w-20 sm:h-24 sm:w-28 sm:h-32 mt-3 mb-3 sm:mb-8"

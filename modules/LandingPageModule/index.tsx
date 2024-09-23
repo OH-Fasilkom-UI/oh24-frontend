@@ -1,13 +1,5 @@
-import LandingPageTimeline from './sections/LandingPageTimeline'
-
-const LandingPageModule = () => {
-  return (
-    <main className="min-h-screen flex flex-col z-20 w-full relative">
-      <div className="relative flex-grow mt-10 px-5 md:px-10 lg:px-32">
-        <LandingPageTimeline />
-      </div>
-    </main>
-  )
+export const LandingPageModule = () => {
+    return (
+        <h1>Open House Fasilkom UI 2024</h1>
+    )
 }
-
-export default LandingPageModule

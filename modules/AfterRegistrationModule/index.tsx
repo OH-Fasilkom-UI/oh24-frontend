@@ -3,29 +3,25 @@
 import Image from "next/image";
 import QRCode from "react-qr-code";
 import { FC } from "react";
+import { useUserData } from "@/hooks/user";
+import { Loader } from "@/components/elements/Loader";
+import { redirect } from "next/dist/server/api-utils";
 
-interface Mentor {
-    id: number;
-    name: string;
-}
-
-interface AfterRegistrationModuleProps {
-    mentors?: Mentor[];
-    mentoringLink?: string;
-    mainEventLink?: string;
-    qrCodeValue?: string;
-}
-// sebenernya gw masih bingung nanti hubungin ke backendnya gimana, I assume bakal pake props, jadi gw bikin propsnya dulu
-const AfterRegistrationModule: FC<AfterRegistrationModuleProps> = ({
-    // Default value klo ga props ga diisi
-    mentors = [
-        { id: 1, name: 'Default Mentor 1' },
-        { id: 2, name: 'Default Mentor 2' },
-    ],
-    mentoringLink = "https://ristek.link/mentoring",
-    mainEventLink = "https://ristek.link/mainevent",
-    qrCodeValue= "oh24",
+const AfterRegistrationModule = ({
 }) => {
+    const qrCodeValue = "oh24";
+    const { userData, isLoading } = useUserData({ ticket: true });
+    const leadersArray: string[] = userData?.ticket?.group?.leaders || [];
+
+    const leaders = leadersArray.reduce((acc, leader, index) => {
+        acc[index + 1] = leader;
+        return acc;
+    }, {} as Record<number, string>);
+
+
+    if (isLoading) {
+        return <Loader />
+    }
     return (
         <section className="max-w-[1920px] h-[190vh] max-sm:h-[220vh] pt-[100px] overflow-x-hidden flex flex-col items-center z-10 ">
             <h1 className="text-t3 text-Text/TextLightBG mt-16 mb-14 text-center">After Registration</h1>
@@ -35,9 +31,9 @@ const AfterRegistrationModule: FC<AfterRegistrationModuleProps> = ({
                         <div>
                             <h3 className="text-t6 max-sm:text-t7 font-bold mb-1">Nama Mentor CS Connect:</h3>
                             <ol>
-                                {mentors.map((mentor, index) => (
-                                    <li key={mentor.id} className="ml-4">
-                                        {index + 1}. {mentor.name}
+                                {Object.entries(leaders).map(([key, leader]) => (
+                                    <li key={key} className="ml-4">
+                                        {key}. {leader}
                                     </li>
                                 ))}
                             </ol>
@@ -45,18 +41,18 @@ const AfterRegistrationModule: FC<AfterRegistrationModuleProps> = ({
 
                         <div>
                             <h3 className="text-t6 max-sm:text-t7  font-bold mb-1">Link Grup WhatsApp Mentoring CS Connect:</h3>
-                            <a href={mentoringLink} target="_blank" rel="noopener noreferrer">{mentoringLink}</a>
+                            <a href={userData?.ticket?.group?.linkWA} target="_blank" rel="noopener noreferrer">{userData?.ticket?.group?.linkWA}</a>
                         </div>
 
                         <div>
                             <h3 className="text-t6 max-sm:text-t7 font-bold mb-1">Link Grup WhatsApp Rombel Main Event:</h3>
-                            <a href={mainEventLink} target="_blank" rel="noopener noreferrer">{mainEventLink}</a>
+                            <a href={userData?.ticket.rombel?.linkWA} target="_blank" rel="noopener noreferrer">{userData?.ticket.rombel?.linkWA}</a>
                         </div>
 
                     </div>
                     <div className="max-lg:mb-16">
                         <QRCode
-                            value={qrCodeValue}
+                            value={userData?.ticket?.userId ?? qrCodeValue}
                             size={300}
                             className="shadow-lg bg-white p-3"
                         />

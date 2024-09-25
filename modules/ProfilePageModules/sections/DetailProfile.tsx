@@ -133,14 +133,17 @@ export const DetailProfile = () => {
             </Popover>
           </div>
 
-          <Button className="mt-6 block lg:hidden bg-BlueRegion/Portage/600" onClick={handleScrollToQRCode}>
-            See QR Code
-          </Button>
+          {
+            userData?.ticket &&
+            (<Button className="mt-6 block lg:hidden bg-BlueRegion/Portage/600" onClick={handleScrollToQRCode}>
+              See QR Code
+            </Button>)
+          }
 
-          {qrCodeValue && (
+          {userData?.ticket && (
             <div className="mt-6 max-lg:hidden">
               <QRCode
-                value={qrCodeValue}
+                value={userData?.ticket.userId ?? 'oh24'}
                 size={300}
                 className="shadow-lg bg-white p-3 rounded-md"
               />
@@ -172,31 +175,33 @@ export const DetailProfile = () => {
               value={userData?.personal?.parentPhone}
             />
           </div>
-          <div className="mt-8 grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
-            <Field
-              label="Nama Mentor CS Connect"
-              value={leadersString}
-            />
-            <Field
-              label="Link Grup WhatsApp Mentoring CSConnect"
-              value={userData?.ticket?.group?.linkWA}
-            // value="https://ristek.link/mentoring"
-            />
-            <Field
-              label="Link Grup WhatsApp Rombel Main Event"
-              value={userData?.ticket?.rombel?.linkWA}
-            // value="https://ristek.link/mainevent"
-            />
-          </div>
+          {userData?.ticket && (
+            <>
+              <div className="mt-8 grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
+                <Field
+                  label="Nama Mentor CS Connect"
+                  value={leadersString}
+                />
+                <Field
+                  label="Link Grup WhatsApp Mentoring CSConnect"
+                  value={userData?.ticket?.group?.linkWA}
+                />
+                <Field
+                  label="Link Grup WhatsApp Rombel Main Event"
+                  value={userData?.ticket?.rombel?.linkWA}
+                />
+              </div>
 
-          {qrCodeValue && (
-            <div className="mt-8 lg:hidden" ref={qrCodeSmallRef}>
-              <QRCode
-                value={userData?.ticket?.userId ?? 'oh24'}
-                size={150}
-                className="shadow-lg bg-white p-3 rounded-md"
-              />
-            </div>
+              {userData?.ticket?.userId && (
+                <div className="mt-8 lg:hidden" ref={qrCodeSmallRef}>
+                  <QRCode
+                    value={userData?.ticket?.userId ?? 'oh24'}
+                    size={150}
+                    className="shadow-lg bg-white p-3 rounded-md"
+                  />
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>

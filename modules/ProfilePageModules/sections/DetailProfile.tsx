@@ -32,7 +32,7 @@ const Field = ({ label, value = '' }: FieldProps) => {
 }
 
 export const DetailProfile = () => {
-  const { userData, isLoading } = useUserData({ personal: true })
+  const { userData, isLoading } = useUserData({ personal: true, ticket: true })
   const [profilePict, setProfilePictSrc] = useState<number>(0)
   const [popOpen, popClose] = useState(false)
 
@@ -57,6 +57,11 @@ export const DetailProfile = () => {
   if (isLoading) {
     return <Loader />
   }
+
+  const leadersString = userData?.ticket?.group?.leaders
+    ?.map((leader, index) => `${index + 1}. ${leader}`)
+    .join('<br>');
+
 
   const qrCodeSmallRef = useRef<HTMLDivElement>(null)
   const handleScrollToQRCode = () => {
@@ -170,23 +175,17 @@ export const DetailProfile = () => {
           <div className="mt-8 grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
             <Field
               label="Nama Mentor CS Connect"
-              // value={userData?.mentor?.name}
-              value="Default Mentor 1"
-            />
-            <Field
-              label="Nama Mentor CS Connect"
-              // value={userData?.mentor?.name}
-              value="Default Mentor 2"
+              value={leadersString}
             />
             <Field
               label="Link Grup WhatsApp Mentoring CSConnect"
-              // value={userData?.mentor?.whatsappGroupLink}
-              value="https://ristek.link/mentoring"
+              value={userData?.ticket?.group?.linkWA}
+            // value="https://ristek.link/mentoring"
             />
             <Field
               label="Link Grup WhatsApp Rombel Main Event"
-              // value={userData?.mentor?.rombelGroupLink}
-              value="https://ristek.link/mainevent"
+              value={userData?.ticket?.rombel?.linkWA}
+            // value="https://ristek.link/mainevent"
             />
           </div>
 

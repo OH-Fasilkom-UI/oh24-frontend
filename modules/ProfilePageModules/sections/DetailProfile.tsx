@@ -192,7 +192,7 @@ export const DetailProfile = () => {
           {qrCodeValue && (
             <div className="mt-8 lg:hidden" ref={qrCodeSmallRef}>
               <QRCode
-                value={qrCodeValue}
+                value={userData?.ticket?.userId ?? 'oh24'}
                 size={150}
                 className="shadow-lg bg-white p-3 rounded-md"
               />

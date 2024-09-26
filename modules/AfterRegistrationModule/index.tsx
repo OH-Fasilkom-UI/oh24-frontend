@@ -2,10 +2,8 @@
 
 import Image from "next/image";
 import QRCode from "react-qr-code";
-import { FC } from "react";
 import { useUserData } from "@/hooks/user";
 import { Loader } from "@/components/elements/Loader";
-import { redirect } from "next/dist/server/api-utils";
 
 const AfterRegistrationModule = ({
 }) => {

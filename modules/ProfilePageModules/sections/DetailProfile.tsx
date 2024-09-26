@@ -13,8 +13,9 @@ import { useUserData } from '@/hooks/user'
 import { updateMyPersonalData } from '@/lib/api/user'
 import { Pencil, SquarePen } from 'lucide-react'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { PandaImages } from '../constant'
+import QRCode from "react-qr-code";
 
 interface FieldProps {
   label: string
@@ -31,7 +32,8 @@ const Field = ({ label, value = '' }: FieldProps) => {
 }
 
 export const DetailProfile = () => {
-  const { userData, isLoading } = useUserData({ personal: true })
+  const qrCodeSmallRef = useRef<HTMLDivElement>(null)
+  const { userData, isLoading } = useUserData({ personal: true, ticket: true })
   const [profilePict, setProfilePictSrc] = useState<number>(0)
   const [popOpen, popClose] = useState(false)
 
@@ -55,6 +57,17 @@ export const DetailProfile = () => {
 
   if (isLoading) {
     return <Loader />
+  }
+
+  const leadersString = userData?.ticket?.group?.leaders
+    ?.map((leader, index) => `${index + 1}. ${leader}`)
+    .join('<br>');
+
+
+  const handleScrollToQRCode = () => {
+    if (typeof window !== 'undefined') {
+      qrCodeSmallRef.current?.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 
   return (
@@ -117,29 +130,65 @@ export const DetailProfile = () => {
               </PopoverContent>
             </Popover>
           </div>
-          {/* {userData?.hasAmbassadorForm ?
-            <p className='text-Text/TextLightBG text-lg font-bold max-w-44 text-center'>You have registered as an ambassador</p>
-            :
-            <Link href="/ambassador/register">
-              <Button disabled>
-                <SquarePen className="max-md:text-[12px]" />
-                Register Ambassador
-              </Button>
-            </Link>
-          } */}
+          {
+            userData?.ticket &&
+            (<Button className="mt-6 block lg:hidden bg-BlueRegion/Portage/600" onClick={handleScrollToQRCode}>
+              See QR Code
+            </Button>)
+          }
+
+          {userData?.ticket && (
+            <div className="mt-6 max-lg:hidden">
+              <QRCode
+                value={userData?.ticket.userId ?? 'oh24'}
+                size={300}
+                className="shadow-lg bg-white p-3 rounded-md"
+              />
+            </div>
+          )}
         </div>
-        <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
-          <Field label="Nama Lengkap" value={userData?.personal?.fullName} />
-          <Field label="Email" value={userData?.email} />
-          <Field label="Domisili" value={userData?.personal?.domicile} />
-          <Field label="WhatsApp" value={userData?.personal?.phone} />
-          <Field label="Tanggal Lahir" value={userData?.personal?.dob} />
-          <Field label="Kelas" value={userData?.personal?.class} />
-          <Field label="Asal Sekolah" value={userData?.personal?.school} />
-          <Field
-            label="Nomor Telepon Orang Tua"
-            value={userData?.personal?.parentPhone}
-          />
+        <div className="flex flex-col md:w-1/2 w-full">
+          <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
+            <Field label="Nama Lengkap" value={userData?.personal?.fullName} />
+            <Field label="Email" value={userData?.email} />
+            <Field label="Domisili" value={userData?.personal?.domicile} />
+            <Field label="WhatsApp" value={userData?.personal?.phone} />
+            <Field label="Tanggal Lahir" value={userData?.personal?.dob} />
+            <Field label="Kelas" value={userData?.personal?.class} />
+            <Field label="Asal Sekolah" value={userData?.personal?.school} />
+            <Field
+              label="Nomor Telepon Orang Tua"
+              value={userData?.personal?.parentPhone}
+            />
+          </div>
+          {userData?.ticket && (
+            <>
+              <div className="mt-8 grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
+                <Field
+                  label="Nama Mentor CS Connect"
+                  value={leadersString}
+                />
+                <Field
+                  label="Link Grup WhatsApp Mentoring CSConnect"
+                  value={userData?.ticket?.group?.linkWA}
+                />
+                <Field
+                  label="Link Grup WhatsApp Rombel Main Event"
+                  value={userData?.ticket?.rombel?.linkWA}
+                />
+              </div>
+
+              {userData?.ticket?.userId && (
+                <div className="mt-8 lg:hidden" ref={qrCodeSmallRef}>
+                  <QRCode
+                    value={userData?.ticket?.userId ?? 'oh24'}
+                    size={150}
+                    className="shadow-lg bg-white p-3 rounded-md"
+                  />
+                </div>
+              )}
+            </>
+          )}
         </div>
       </div>
     </div>

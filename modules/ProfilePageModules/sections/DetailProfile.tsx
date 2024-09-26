@@ -32,6 +32,7 @@ const Field = ({ label, value = '' }: FieldProps) => {
 }
 
 export const DetailProfile = () => {
+  const qrCodeSmallRef = useRef<HTMLDivElement>(null)
   const { userData, isLoading } = useUserData({ personal: true, ticket: true })
   const [profilePict, setProfilePictSrc] = useState<number>(0)
   const [popOpen, popClose] = useState(false)
@@ -63,14 +64,11 @@ export const DetailProfile = () => {
     .join('<br>');
 
 
-  const qrCodeSmallRef = useRef<HTMLDivElement>(null)
   const handleScrollToQRCode = () => {
     if (typeof window !== 'undefined') {
       qrCodeSmallRef.current?.scrollIntoView({ behavior: 'smooth' })
-
     }
   }
-  const qrCodeValue = 'oh24'
 
   return (
     <div className="pt-[10rem] min-[1920px]:pt-[10rem] mb-10 flex flex-col md:px-[120px] xl:px-[190px] py-10 max-md:pb-96 justify-center items-center md:items-start md:justify-start gap-[35px]">

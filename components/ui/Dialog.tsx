@@ -13,15 +13,20 @@ const DialogPortal = DialogPrimitive.Portal
 
 const DialogClose = DialogPrimitive.Close
 
+type DialogOverlayProps = {
+  notBlur?: boolean
+}
+
 const DialogOverlay = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Overlay>,
+  DialogOverlayProps &
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
->(({ className, ...props }, ref) => (
+>(({ className, notBlur=false, ...props }, ref) => (
   <DialogPrimitive.Overlay
     ref={ref}
     className={cn(
       'fixed inset-0 z-50 bg-[black/80] backdrop-blur-[20px] data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
-      className
+      className, notBlur && 'backdrop-blur-[0px]'
     )}
     {...props}
   />
@@ -30,15 +35,16 @@ DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
 
 type DialogContentProps = {
   showCloseButton?: boolean
+  notBlur?: boolean
 }
 
 const DialogContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
   DialogContentProps &
     React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
->(({ className, children, showCloseButton = false, ...props }, ref) => (
+>(({ className, children, notBlur, showCloseButton = false, ...props }, ref) => (
   <DialogPortal>
-    <DialogOverlay />
+    <DialogOverlay notBlur={notBlur} />
     <DialogPrimitive.Content
       ref={ref}
       className={cn(

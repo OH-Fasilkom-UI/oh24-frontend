@@ -27,10 +27,10 @@ export const NAVBAR_LINKS = [
     isExist: true,
   },
   {
-    href: '/wefwfew',
+    href: '/register',
     icon: FileText,
     label: 'Registration Page',
-    isExist: false,
+    isExist: true,
   },
   {
     href: '/wefwefw',

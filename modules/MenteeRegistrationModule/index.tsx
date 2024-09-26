@@ -1,12 +1,14 @@
 'use client'
-
-import Card from "@/components/ui/Card"
-import RadioGroup from '@/components/ui/RadioGroup'
-import Image from "next/image"
+import { WarnModal } from './sections/WarnModal'
+import { Questioner } from './sections/Questioner'
+import { useState } from 'react'
 
 export const MenteeRegistrationModule = () => {
-    return (
-        <section className="max-w-[1920px] min-h-[300vh] pt-[100px] overflow-x-hidden">
-        </section >
-    )
+  const [page, setPage] = useState(0)
+  return (
+    <main className="min-h-screen flex items-center justify-center">
+      {page === 0 && <WarnModal onClick={() => setPage(page + 1)} />}
+      {page === 1 && <Questioner />}
+    </main>
+  )
 }

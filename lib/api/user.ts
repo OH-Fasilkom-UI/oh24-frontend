@@ -45,6 +45,31 @@ export interface PersonalData {
   parentPhone: string
 }
 
+export interface TicketData {
+  updatedAt: string
+  createdAt: string
+  id: string
+  userId: string
+  rombel: RombelData | null
+  group: GroupData | null
+}
+
+export interface RombelData {
+  name: string
+  leaders: string[]
+  linkWA: string
+  updatedAt: string
+  createdAt: string
+}
+
+export interface GroupData {
+  number: number
+  leaders: string[]
+  linkWA: string
+  updatedAt: string
+  createdAt: string
+}
+
 export function formatPersonalData(
   data?: PersonalData
 ): PersonalData | undefined {
@@ -77,6 +102,7 @@ export interface UserDataJoins {
   referral?: boolean
   attending?: boolean
   ambassador?: boolean
+  ticket?: boolean
 }
 
 export interface UserData<T extends UserDataJoins = {}> {
@@ -95,6 +121,7 @@ export interface UserData<T extends UserDataJoins = {}> {
   referralCode: any
 
   personal: T['personal'] extends true ? PersonalData : undefined
+  ticket: T['ticket'] extends true ? TicketData : undefined
 }
 
 export const getMyUserData = (joins: UserDataJoins = {}) => {

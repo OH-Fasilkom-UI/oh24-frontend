@@ -10,7 +10,7 @@ interface TabsListProps
   withBG?: boolean
 }
 
-const TabsList = React.forwardRef<
+export const TabsList = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.List>,
   TabsListProps
 >(({ className, withBG, ...props }, ref) => (
@@ -37,7 +37,7 @@ interface TabsTriggerProps
   withIcon?: IconType
 }
 
-const TabsTrigger = React.forwardRef<
+export const TabsTrigger = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Trigger>,
   TabsTriggerProps
 >(({ className, children, withNumber, withIcon: WithIcon, ...props }, ref) => (
@@ -67,7 +67,7 @@ const TabsTrigger = React.forwardRef<
 ))
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
 
-const TabsContent = React.forwardRef<
+export const TabsContent = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
 >(({ className, ...props }, ref) => (
@@ -89,9 +89,7 @@ interface TabsType extends TabsPrimitiveType {
   Content: typeof TabsContent
 }
 
-const Tabs = TabsPrimitive.Root as TabsType
+export const Tabs = TabsPrimitive.Root as TabsType
 Tabs.List = TabsList
 Tabs.Trigger = TabsTrigger
 Tabs.Content = TabsContent
-
-export default Tabs

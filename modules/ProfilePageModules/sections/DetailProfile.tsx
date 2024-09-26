@@ -130,7 +130,6 @@ export const DetailProfile = () => {
               </PopoverContent>
             </Popover>
           </div>
-
           {
             userData?.ticket &&
             (<Button className="mt-6 block lg:hidden bg-BlueRegion/Portage/600" onClick={handleScrollToQRCode}>
@@ -147,17 +146,6 @@ export const DetailProfile = () => {
               />
             </div>
           )}
-
-          {userData?.hasAmbassadorForm ?
-            <p className='text-Text/TextLightBG text-lg font-bold max-w-44 text-center'>You have registered as an ambassador</p>
-            :
-            <Link href="/ambassador/register">
-              <Button>
-                <SquarePen className="max-md:text-[12px]" />
-                Register Ambassador
-              </Button>
-            </Link>
-          }
         </div>
         <div className="flex flex-col md:w-1/2 w-full">
           <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">

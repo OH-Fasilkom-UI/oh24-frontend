@@ -30,7 +30,7 @@ import { Loader } from '@/components/elements/Loader'
 import { useSubmitQuestionnaire } from '@/hooks/registration'
 import { toast } from '@/components/ui/Toast'
 
-export const Questioner = () => {
+export const Questioner = ({ onClick }: { onClick: () => void }) => {
   const { userData, isLoading } = useUserData({ personal: true })
   const { mutate: submit, isPending } = useSubmitQuestionnaire()
 
@@ -42,6 +42,7 @@ export const Questioner = () => {
     submit(data, {
       onSuccess: () => {
         toast.success('Berhasil mengirimkan data')
+        onClick()
       },
       onError: () => {
         toast.error('Terjadi Kesalahan!')

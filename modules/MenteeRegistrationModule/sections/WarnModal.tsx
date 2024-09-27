@@ -1,12 +1,4 @@
 import React from 'react'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogFooter,
-} from '@/components/ui/Dialog'
 import { AlertTriangle } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import Image from 'next/image'

@@ -114,6 +114,7 @@ export interface UserData<T extends UserDataJoins = {}> {
   eligibleFor: EventName[]
   hasPersonal: boolean
   hasQuestionnaire: boolean
+  hasTicket: boolean
   hasAttending: boolean
   hasAmbassador: boolean
   hasAmbassadorForm: boolean

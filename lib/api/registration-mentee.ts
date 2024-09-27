@@ -44,7 +44,7 @@ export function submitQuestionnaire(data: SubmitQuestionnaireData) {
 }
 
 export const submitEventSchema = z.object({
-  event: z.nativeEnum(EventName),
+  event: z.string(),
   referral: z.string().optional(),
 })
 

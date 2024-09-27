@@ -1,9 +1,25 @@
+"use client"
 import React from 'react'
 import { AlertTriangle } from 'lucide-react'
 import Button from '@/components/ui/Button'
 import Image from 'next/image'
+import { useUserData } from '@/hooks/user'
+import { Loader } from '@/components/elements/Loader'
+import { redirect } from 'next/navigation'
+import { toast } from '@/components/ui/Toast'
 
 export const WarnModal = ({ onClick }: { onClick: () => void }) => {
+  const { userData, isLoading } = useUserData({ personal: true })
+  
+  if (isLoading) {
+    return <Loader />
+  }
+
+  if (userData?.hasTicket && userData.hasQuestionnaire) {
+    toast.info("Kamu sudah mendaftar menjadi mentee")
+    redirect("/profile")
+  }
+
   return (
     <div className="relative">
       <div className="max-md:w-[190px] md:rounded-[24px] rounded-[18px] flex flex-col px-8 py-9 bg-[#F0F8FF]">

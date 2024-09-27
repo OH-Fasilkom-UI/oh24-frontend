@@ -54,6 +54,11 @@ export const Questioner = ({ onClick }: { onClick: () => void }) => {
     return <Loader />
   }
 
+  if (userData?.hasQuestionnaire) {
+    onClick()
+    return null
+  }
+
   return (
     <section
       className={cn(

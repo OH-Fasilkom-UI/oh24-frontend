@@ -67,7 +67,7 @@ const AmbassadorModule = () => {
           alt="pesawat-kiri"
           width={100}
           height={100}
-          className="md:left-0 max-md:w-[150px] max-md:-top-32 md:-top-20 max-md:left-0 lg:top-[100px] absolute animate-float-vertical"
+          className="md:left-0 max-md:w-[150px] max-md:-top-32 md:-top-40 max-md:left-0 lg:top-[100px] absolute animate-float-vertical"
         />
         <Image
           src="/pesawat-kiri.png"

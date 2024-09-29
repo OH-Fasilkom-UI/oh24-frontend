@@ -5,6 +5,7 @@ import { TESTIMONY_DATA } from './constant'
 import FAQ from './sections/FAQ'
 import LandingPageTimeline from './sections/LandingPageTimeline'
 import Partners from './sections/Partners'
+import Videos from './sections/Videos'
 import WhatIsOpenHouse from './sections/WhatIsOpenHouse'
 
 const LandingPageModule = () => {
@@ -16,6 +17,7 @@ const LandingPageModule = () => {
       </div>
       <WhatIsOpenHouse />
       <LandingPageTimeline />
+      <Videos />
       <div className="relative">
         <Image
           src={'/bg-testimony-partners-faq.png'}

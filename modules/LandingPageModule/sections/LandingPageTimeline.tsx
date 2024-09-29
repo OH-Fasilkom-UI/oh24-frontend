@@ -200,7 +200,7 @@ const Timeline = () => {
 
 const LandingPageTimeline = () => {
   return (
-    <section className="my-20 max-w-screen-xl mx-auto">
+    <section className="md:my-20 max-w-screen-xl mx-auto px-5">
       <h1 className="text-center text-Text/TextLightBG font-riffic mb-2 sm:mb-4 text-[36px] sm:text-[48px] tracking-wider">
         Timeline
       </h1>

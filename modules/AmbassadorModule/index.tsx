@@ -110,14 +110,22 @@ const AmbassadorModule = () => {
       </div>
       <div className="mt-[200px] md:mb-[75vh] mb-[40vh] px-5 md:px-10 lg:px-32">
         <ContactPerson>
-          <Link href={'https://wa.me/6282112641122'} target='_blank' className='w-full'>
-            <Button className='w-full'>
+          <Link
+            href={'https://wa.me/6282112641122'}
+            target="_blank"
+            className="w-full"
+          >
+            <Button className="w-full">
               <MessageSquare size={24} />
               <span>Bintoro</span>
             </Button>
           </Link>
-          <Link href={'https://wa.me/6281292292933'} target='_blank' className='w-full'>
-            <Button className='w-full'>
+          <Link
+            href={'https://wa.me/6281292292933'}
+            target="_blank"
+            className="w-full"
+          >
+            <Button className="w-full">
               <MessageSquare size={24} />
               <span>Omar</span>
             </Button>

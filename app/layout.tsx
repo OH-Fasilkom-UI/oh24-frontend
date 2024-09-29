@@ -8,7 +8,6 @@ import Providers from './providers'
 
 import bg from '@/public/main-wave.svg'
 
-
 const rifficFont = localFont({
   src: './fonts/rifficfree-bold.ttf',
   weight: '700',
@@ -78,7 +77,8 @@ export default function RootLayout({
           suppressHydrationWarning
           suppressContentEditableWarning
         >
-          <main className='max-w-[1920px] mx-auto'
+          <main
+            className="max-w-[1920px] mx-auto"
             style={{
               backgroundImage: `url(${bg.src})`,
               backgroundSize: 'cover',
@@ -87,9 +87,7 @@ export default function RootLayout({
             }}
           >
             <Navbar />
-            <main>
-              {children}
-            </main>
+            <main>{children}</main>
           </main>
           <Toaster position="top-center" />
           <Alerter />

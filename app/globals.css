@@ -104,13 +104,12 @@ h6 {
   transition-duration: 0.5s;
 }
 
-
 nav {
   width: inherit;
   max-width: inherit;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-    cursor: pointer;
+input[type='date']::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
 }

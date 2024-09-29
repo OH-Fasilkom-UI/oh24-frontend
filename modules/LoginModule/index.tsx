@@ -5,11 +5,9 @@ import { LoginPage } from './sections/LoginPage'
 
 export const LoginModule = () => {
   return (
-    <main className='min-h-screen flex flex-col gap-[60vh] md:gap-[70vh] lg:gap-[110vh]'>
-      <LoginPage /> 
-      <div
-        className='relative'
-      >
+    <main className="min-h-screen flex flex-col gap-[60vh] md:gap-[70vh] lg:gap-[110vh]">
+      <LoginPage />
+      <div className="relative">
         <Image
           src="/login-desktop.png"
           alt="login"

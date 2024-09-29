@@ -1,5 +1,8 @@
 import { SubmitPersonalData, submitPersonalData } from '@/lib/api/registration'
-import { submitAmbassador, SubmitAmbassadorData } from '@/lib/api/registration-ambas'
+import {
+  submitAmbassador,
+  SubmitAmbassadorData,
+} from '@/lib/api/registration-ambas'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 export const useSubmitPersonalData = () => {

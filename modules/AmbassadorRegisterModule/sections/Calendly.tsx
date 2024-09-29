@@ -7,7 +7,11 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { CalendlyProps } from '../interface'
 
-export const Calendly: React.FC<CalendlyProps> = ({ isPending, showCalendly, onSubmit }) => {
+export const Calendly: React.FC<CalendlyProps> = ({
+  isPending,
+  showCalendly,
+  onSubmit,
+}) => {
   const [showFinalize, setShowFinalize] = useState(false)
   return (
     <section
@@ -33,7 +37,10 @@ export const Calendly: React.FC<CalendlyProps> = ({ isPending, showCalendly, onS
           <h1 className="text-Text/TextLightBG text-[30px] lg:text-[48px] font-bold font-riffic tracking-wider lg:pt-4 pt-2 lg:pb-8 pb-4">
             Pilih Tanggal <br className="lg:hidden" /> Interview
           </h1>
-          <Link href="https://calendly.com/ohambassador2024/interview-ambassador-2" target="_blank">
+          <Link
+            href="https://calendly.com/ohambassador2024/interview-ambassador-2"
+            target="_blank"
+          >
             <Button variant={'secondary'} onClick={() => setShowFinalize(true)}>
               Open Calendly
             </Button>

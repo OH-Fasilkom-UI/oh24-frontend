@@ -1,0 +1,24 @@
+/* width */
+.darkScrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.darkScrollbar::-webkit-scrollbar-track {
+  background-color: #0e426c;
+  border-radius: 5px;
+  box-shadow:
+    4px 4px 12px #62a3cb80,
+    -4px -4px 12px #4e56c480;
+}
+
+/* Handle */
+.darkScrollbar::-webkit-scrollbar-thumb {
+  background: #e0ecff;
+}
+
+/* Handle on hover */
+.darkScrollbar::-webkit-scrollbar-thumb:hover {
+  background: #e0ecfff0;
+  transition-duration: 0.5s;
+}

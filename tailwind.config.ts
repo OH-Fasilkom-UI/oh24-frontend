@@ -432,7 +432,7 @@ const config = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'float-vertical': 'float-vertical 5s ease-in-out infinite',
         'float-horizontal': 'float-horizontal 5s ease-in-out infinite',
-        'spin': 'spin 10s linear infinite',
+        spin: 'spin 10s linear infinite',
         swing: 'swing 1s infinite',
       },
     },
@@ -446,6 +446,22 @@ const config = {
         },
       }
       addUtilities(newUtilities, ['responsive', 'hover'])
+    },
+    function ({ addUtilities }: any) {
+      addUtilities({
+        '.backface-visible': {
+          'backface-visibility': 'visible',
+        },
+        '.backface-hidden': {
+          'backface-visibility': 'hidden',
+        },
+        '.rotate-x-0': {
+          transform: 'rotateX(0deg)',
+        },
+        '.rotate-x-180': {
+          transform: 'rotateX(180deg)',
+        },
+      })
     },
   ],
 } satisfies Config

@@ -63,7 +63,7 @@ export const DetailProfile = () => {
         Profile
       </h1>
       <div className="flex flex-col max-md:justify-center max-md:items-center md:flex-row md:gap-[108px]">
-        <div className='flex flex-col items-center max-md:pb-10'>
+        <div className="flex flex-col items-center max-md:pb-10">
           <div className="flex flex-col items-end">
             <Avatar className="w-[216px] h-[216px]">
               <AvatarImage src={PandaImages[profilePict].src} />

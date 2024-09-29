@@ -1,7 +1,5 @@
-import PacilTour from "./components/PacilTour"
+import PacilTour from './components/PacilTour'
 
 export const ExploreFasilkomModule = () => {
-    return (
-    <PacilTour/>
-        )
+  return <PacilTour />
 }

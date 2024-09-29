@@ -10,16 +10,23 @@ export const submitAmbassadorSchema = z.object({
   expectations: z.string().max(255, 'Max 255 karakter'),
 
   introductionVideoLink: z.string().url().max(255, 'Max 255 karakter'),
-  instagramLink: z.string().max(255, 'Max 255 karakter').refine((value) => !value.includes('@'), {
-    message: "Username tidak boleh mengandung dengan '@'",
-  }),
-  tiktokLink: z.string().max(255, 'Max 255 karakter').refine((value) => !value.includes('@'), {
-    message: "Username tidak boleh mengandung dengan '@'",
-  }),
+  instagramLink: z
+    .string()
+    .max(255, 'Max 255 karakter')
+    .refine((value) => !value.includes('@'), {
+      message: "Username tidak boleh mengandung dengan '@'",
+    }),
+  tiktokLink: z
+    .string()
+    .max(255, 'Max 255 karakter')
+    .refine((value) => !value.includes('@'), {
+      message: "Username tidak boleh mengandung dengan '@'",
+    }),
   twitterLink: z
     .string()
     .optional()
-    .or(z.literal('').transform(() => undefined)).refine((value) => !value?.includes('@'), {
+    .or(z.literal('').transform(() => undefined))
+    .refine((value) => !value?.includes('@'), {
       message: "Username tidak boleh mengandung dengan '@'",
     }),
   ableToAttend: z.string().max(255),

@@ -19,10 +19,7 @@ const NavbarMobile = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
   const { isAuthenticated } = useIsAuthenticated()
   const { mutate: logout, isPending } = useLogout()
-  const { isLoading: userDataLoading } = useUserData(
-    { personal: true },
-    false
-  )
+  const { isLoading: userDataLoading } = useUserData({ personal: true }, false)
 
   return (
     <Popover open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -57,7 +54,7 @@ const NavbarMobile = () => {
             {link.label}
           </Link>
         ))}
-        {(userDataLoading || isPending) ? (
+        {userDataLoading || isPending ? (
           'loading...'
         ) : isAuthenticated ? (
           <>

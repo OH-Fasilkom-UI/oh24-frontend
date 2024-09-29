@@ -36,11 +36,8 @@ const RouteLink = (props: LinkProps) => {
 }
 
 const Footer = () => {
-
   return (
-    <footer
-      className="relative flex items-end z-0"
-    >
+    <footer className="relative flex items-end z-0">
       <Image
         src={'/footer.png'}
         alt="Footer Background"

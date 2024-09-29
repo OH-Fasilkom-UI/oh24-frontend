@@ -18,11 +18,15 @@ export const BackModal: React.FC<BackModalProps> = ({
       open={showModal}
       onOpenChange={setShowModal}
       buttons={[
-        <Button onClick={() => router.push('/ambassador')} key="close" className='w-full md:max-w-[200px]'>
+        <Button
+          onClick={() => router.push('/ambassador')}
+          key="close"
+          className="w-full md:max-w-[200px]"
+        >
           Keluar
         </Button>,
         <Button
-          className='w-full md:max-w-[200px]'
+          className="w-full md:max-w-[200px]"
           variant="secondary"
           onClick={() => setShowModal(false)}
           key="back"

@@ -1,8 +1,8 @@
 export interface WhatIsOpenHouseProps {
-    data: WhatIsOpenHouseItemProps[] | undefined;
+  data: WhatIsOpenHouseItemProps[] | undefined
 }
 
 export interface WhatIsOpenHouseItemProps {
-    src: string;
-    alt: string;
+  src: string
+  alt: string
 }

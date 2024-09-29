@@ -52,12 +52,18 @@ export function useUserData<T extends UserDataJoins>(
         redirect(paths.personalDataForm)
       }
 
-      if (currentPath === paths.personalDataForm && data?.hasPersonal === true) {
+      if (
+        currentPath === paths.personalDataForm &&
+        data?.hasPersonal === true
+      ) {
         toast.error('Akun anda sudah terdaftar!')
         redirect(paths.profilePage)
       }
 
-      if (currentPath === paths.registerAmbassador && data?.hasAmbassador === true) {
+      if (
+        currentPath === paths.registerAmbassador &&
+        data?.hasAmbassador === true
+      ) {
         toast.error('Akun anda sudah terdaftar!')
         redirect(paths.profilePage)
       }
@@ -82,6 +88,6 @@ export const usePersonalDataMutation = () => {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['user', 'my'] })
-    }
+    },
   })
 }

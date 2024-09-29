@@ -1,13 +1,13 @@
-import Image from 'next/image'
-import { SquarePen } from 'lucide-react'
 import Countdown from '@/components/elements/Countdown'
 import Button from '@/components/ui/Button'
-import glow from '@/public/landing-page-glow.png'
-import cities from '@/public/landing-page-cities.png'
 import bridge from '@/public/landing-page-bridge.png'
+import cities from '@/public/landing-page-cities.png'
+import effect from '@/public/landing-page-effect.png'
+import glow from '@/public/landing-page-glow.png'
 import train1 from '@/public/landing-page-train1.png'
 import train2 from '@/public/landing-page-train2.png'
-import effect from '@/public/landing-page-effect.png'
+import { SquarePen } from 'lucide-react'
+import Image from 'next/image'
 import styles from '../moving.module.css'
 
 const LandingPageHero = () => {

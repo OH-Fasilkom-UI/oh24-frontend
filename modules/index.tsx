@@ -1,1 +1,1 @@
-export * from './ProfilePageModules';
+export * from './ProfilePageModules'

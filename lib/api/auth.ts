@@ -1,4 +1,4 @@
-import { UserData } from "./user"
+import { UserData } from './user'
 
 export const isAuthenticated = () => {
   return fetch('/api/auth/user')

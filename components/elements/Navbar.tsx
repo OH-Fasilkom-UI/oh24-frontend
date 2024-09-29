@@ -17,7 +17,7 @@ export const Navbar = () => {
       transition={{ duration: 0.5 }}
       className="z-50 backdrop-blur-sm fixed w-full flex justify-between items-center px-4 md:px-12 py-4 bg-white/30"
     >
-      <Link href='/'>
+      <Link href="/">
         <div className="relative w-[170px] h-[44px]">
           <Image
             alt="contoh"

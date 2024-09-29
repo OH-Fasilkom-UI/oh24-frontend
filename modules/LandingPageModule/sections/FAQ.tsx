@@ -1,13 +1,13 @@
-"use client";
+'use client'
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/Accordion";
-import Image from "next/image";
-import { FAQ_DATA } from "../constant";
+} from '@/components/ui/Accordion'
+import Image from 'next/image'
+import { FAQ_DATA } from '../constant'
 
 const FAQ = () => {
   return (
@@ -55,11 +55,11 @@ const FAQ = () => {
                 </AccordionContent>
               </AccordionItem>
             </div>
-          );
+          )
         })}
       </Accordion>
     </section>
-  );
-};
+  )
+}
 
-export default FAQ;
+export default FAQ

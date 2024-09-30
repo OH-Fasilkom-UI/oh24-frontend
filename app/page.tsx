@@ -5,10 +5,7 @@ export default function Home() {
   return (
     <main className="relative">
       <LandingPageModule />
-
-      <div className="mt-[320px]">
-        <Footer />
-      </div>
+      <Footer />
     </main>
   )
 }

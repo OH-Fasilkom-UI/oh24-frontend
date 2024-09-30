@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const Videos = () => {
   return (
-    <section className="relative pt-24 md:pt-32 pb-16 md:pb-32 lg:pb-72">
+    <section className="relative pt-24 md:pt-32 pb-8 md:pb-32 lg:pb-72">
       <Image
         src={KapalKiri}
         alt="kapal-kiri"

@@ -8,9 +8,7 @@ import { useRouter } from 'next/navigation'
 export default function NotFound() {
   const router = useRouter()
   return (
-    <div
-      className="flex flex-col items-center h-[100vh] max-md:pt-[40vh] pt-[10vh] gap-3"
-    >
+    <div className="flex flex-col items-center h-[100vh] max-md:pt-[40vh] pt-[10vh] gap-3">
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}

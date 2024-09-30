@@ -49,8 +49,8 @@ const AmbassadorCarousel = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className='lg:-translate-x-20 -translate-x-5'/>
-        <CarouselNext className='lg:translate-x-20 translate-x-5'/>
+        <CarouselPrevious className="lg:-translate-x-20 -translate-x-5" />
+        <CarouselNext className="lg:translate-x-20 translate-x-5" />
       </Carousel>
     </div>
   )

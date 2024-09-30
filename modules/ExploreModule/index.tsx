@@ -1,11 +1,11 @@
 import ExploreAlumni from './components/ExploreAlumni'
+import ExploreContact from './components/ExploreContact'
 import ExploreFacility from './components/ExploreFacility'
 import ExploreFasilkomPrograms from './components/ExploreFasilkomPrograms'
 import ExploreHero from './components/ExploreHero'
 import { JalurMasukSectionDesktop } from './components/JalurMasuk/JalurMasukSectionDesktop'
 import { JalurMasukSectionMobile } from './components/JalurMasuk/JalurMasukSectionMobile'
 import { PrestasiSection } from './components/PrestasiSection'
-import ExploreContact from './components/ExploreContact'
 
 const ExploreModule = () => {
   return (

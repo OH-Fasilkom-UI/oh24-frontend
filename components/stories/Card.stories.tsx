@@ -41,7 +41,9 @@ export const Main = () => (
     <Card
       title="Lorem"
       buttons={[
-        <Button key={0} variant="secondary">Register</Button>,
+        <Button key={0} variant="secondary">
+          Register
+        </Button>,
         <Button key={1}>Register</Button>,
       ]}
       className="max-w-lg"
@@ -60,7 +62,9 @@ export const Main = () => (
       title="Lorem"
       asset={<Clapperboard size="8rem" />}
       buttons={[
-        <Button key={0} variant="secondary">Register</Button>,
+        <Button key={0} variant="secondary">
+          Register
+        </Button>,
         <Button key={1}>Register</Button>,
       ]}
       className="max-w-lg"
@@ -86,7 +90,9 @@ export const Main = () => (
         />
       }
       buttons={[
-        <Button key={0} variant="secondary">Register</Button>,
+        <Button key={0} variant="secondary">
+          Register
+        </Button>,
         <Button key={1}>Register</Button>,
       ]}
       className="max-w-lg"

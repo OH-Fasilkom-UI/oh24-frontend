@@ -460,10 +460,10 @@ const config = {
           'backface-visibility': 'hidden',
         },
         '.rotate-x-0': {
-          'transform': 'rotateX(0deg)'
+          transform: 'rotateX(0deg)',
         },
         '.rotate-x-180': {
-          'transform': 'rotateX(180deg)'
+          transform: 'rotateX(180deg)',
         },
       })
     },

@@ -1,13 +1,14 @@
-import Image from 'next/image'
-import { SquarePen } from 'lucide-react'
 import Countdown from '@/components/elements/Countdown'
 import Button from '@/components/ui/Button'
-import glow from '@/public/landing-page-glow.png'
-import cities from '@/public/landing-page-cities.png'
 import bridge from '@/public/landing-page-bridge.png'
+import cities from '@/public/landing-page-cities.png'
+import effect from '@/public/landing-page-effect.png'
+import glow from '@/public/landing-page-glow.png'
 import train1 from '@/public/landing-page-train1.png'
 import train2 from '@/public/landing-page-train2.png'
-import effect from '@/public/landing-page-effect.png'
+import { SquarePen } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../moving.module.css'
 
 const LandingPageHero = () => {
@@ -66,16 +67,20 @@ const LandingPageHero = () => {
           />
         </div>
         <div className="flex gap-4 sm:gap-12 my-6 sm:my-12">
-          <Button className=" w-[130px] sm:w-[200px] text-[10px] sm:text-[12px]">
-            About OH 2024
-          </Button>
-          <Button
-            variant="tertiary"
-            className="w-[120px] h-[40px] sm:w-[180px] sm:h-[50px] text-[10px] sm:text-[12px]"
-          >
-            Register
-            <SquarePen />
-          </Button>
+          <Link href="/explore">
+            <Button className=" w-[130px] sm:w-[200px] text-[10px] sm:text-[12px]">
+              About OH 2024
+            </Button>
+          </Link>
+          <Link href="/register">
+            <Button
+              variant="tertiary"
+              className="w-[120px] h-[40px] sm:w-[180px] sm:h-[50px] text-[10px] sm:text-[12px]"
+            >
+              Register
+              <SquarePen />
+            </Button>
+          </Link>
         </div>
       </div>
     </>

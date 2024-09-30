@@ -1,6 +1,8 @@
 import { SubmitPersonalData, submitPersonalData } from '@/lib/api/registration'
-import { submitAmbassador, SubmitAmbassadorData } from '@/lib/api/registration-ambas'
-import { SubmitEventData, SubmitQuestionnaireData, submitEvent, submitQuestionnaire } from '@/lib/api/registration-mentee'
+import {
+  submitAmbassador,
+  SubmitAmbassadorData,
+} from '@/lib/api/registration-ambas'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 export const useSubmitPersonalData = () => {
@@ -45,7 +47,7 @@ export const useSubmitAmbassadorData = () => {
 
 export const useSubmitQuestionnaire = () => {
   const queryClient = useQueryClient()
-  
+
   return useMutation({
     mutationKey: ['reg', 'mentee', 'questionnaire'],
     mutationFn: async (data: SubmitQuestionnaireData) => {

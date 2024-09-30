@@ -67,7 +67,7 @@ const AmbassadorModule = () => {
           alt="pesawat-kiri"
           width={100}
           height={100}
-          className="md:left-0 max-md:w-[150px] max-md:-top-32 md:-top-20 max-md:left-0 lg:top-[100px] absolute animate-float-vertical"
+          className="md:left-0 max-md:w-[150px] max-md:-top-32 md:-top-40 max-md:left-0 lg:top-[100px] absolute animate-float-vertical"
         />
         <Image
           src="/pesawat-kiri.png"
@@ -110,14 +110,22 @@ const AmbassadorModule = () => {
       </div>
       <div className="mt-[200px] md:mb-[75vh] mb-[40vh] px-5 md:px-10 lg:px-32">
         <ContactPerson>
-          <Link href={'https://wa.me/6282112641122'} target='_blank' className='w-full'>
-            <Button className='w-full'>
+          <Link
+            href={'https://wa.me/6282112641122'}
+            target="_blank"
+            className="w-full"
+          >
+            <Button className="w-full">
               <MessageSquare size={24} />
               <span>Bintoro</span>
             </Button>
           </Link>
-          <Link href={'https://wa.me/6281292292933'} target='_blank' className='w-full'>
-            <Button className='w-full'>
+          <Link
+            href={'https://wa.me/6281292292933'}
+            target="_blank"
+            className="w-full"
+          >
+            <Button className="w-full">
               <MessageSquare size={24} />
               <span>Omar</span>
             </Button>

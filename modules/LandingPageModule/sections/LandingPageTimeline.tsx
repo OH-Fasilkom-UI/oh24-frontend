@@ -1,7 +1,7 @@
 'use client'
 import { CheckCircleIcon, CircleDotIcon } from 'lucide-react'
-import { ReactNode, useState } from 'react'
 import Image from 'next/image'
+import { ReactNode, useState } from 'react'
 
 const TimelineData = [
   {
@@ -200,14 +200,14 @@ const Timeline = () => {
 
 const LandingPageTimeline = () => {
   return (
-    <div className="my-20">
+    <section className="max-w-screen-xl mx-auto px-5">
       <h1 className="text-center text-Text/TextLightBG font-riffic mb-2 sm:mb-4 text-[36px] sm:text-[48px] tracking-wider">
         Timeline
       </h1>
       <div className="flex justify-center pt-16 sm:pt-24 lg:pt-32">
         <Timeline />
       </div>
-    </div>
+    </section>
   )
 }
 

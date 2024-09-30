@@ -15,10 +15,7 @@ export const AccomodationRadio = () => {
       <RadioGroup.Item value="BUS" id="Bus">
         Bus
       </RadioGroup.Item>
-      <RadioGroup.Item
-        value="TIDAK_IKUT"
-        id="Tidak Mengikuti Main Event"
-      >
+      <RadioGroup.Item value="TIDAK_IKUT" id="Tidak Mengikuti Main Event">
         Tidak Mengikuti Main Event
       </RadioGroup.Item>
     </>

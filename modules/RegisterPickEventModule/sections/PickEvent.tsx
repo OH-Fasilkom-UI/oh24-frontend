@@ -84,11 +84,11 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
       submit(result.data, {
         onSuccess: () => {
           toast.success('Berhasil mendaftar')
-          onClick();
+          onClick()
         },
         onError: () => {
           toast.error('Referral tidak valid')
-        }
+        },
       })
     } else {
       const errorMessages = result.error.errors
@@ -103,7 +103,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
     return <Loader />
   }
 
-  if (userData?.hasTicket){
+  if (userData?.hasTicket) {
     onClick()
     return null
   }

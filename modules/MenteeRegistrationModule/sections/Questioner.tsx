@@ -1,14 +1,7 @@
 'use client'
-import React from 'react'
-import bg2 from '@/public/KotaBelakang.png'
-import bg from '@/public/KotaDikit.png'
-import Image from 'next/image'
-import {
-  submitQuestionnaireSchema,
-  SubmitQuestionnaireData,
-} from '@/lib/api/registration-mentee'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
+
+import { Loader } from '@/components/elements/Loader'
+import Button from '@/components/ui/Button'
 import {
   Form,
   FormControl,
@@ -16,19 +9,27 @@ import {
   FormItem,
   FormMessage,
 } from '@/components/ui/form'
-import Button from '@/components/ui/Button'
 import RadioGroup from '@/components/ui/RadioGroup'
+import { toast } from '@/components/ui/Toast'
+import { useSubmitQuestionnaire } from '@/hooks/registration'
+import { useUserData } from '@/hooks/user'
+import {
+  Accommodation,
+  Companion,
+  SubmitQuestionnaireData,
+  submitQuestionnaireSchema,
+} from '@/lib/api/registration-mentee'
+import { cn } from '@/lib/utils'
+import bg2 from '@/public/KotaBelakang.png'
+import bg from '@/public/KotaDikit.png'
+import { zodResolver } from '@hookform/resolvers/zod'
+import Image from 'next/image'
+import { useForm } from 'react-hook-form'
 import {
   AccomodationRadio,
   CompanionRadio,
   InterestRadio,
 } from '../elements/RadioItem'
-import { Accommodation, Companion } from '@/lib/api/registration-mentee'
-import { cn } from '@/lib/utils'
-import { useUserData } from '@/hooks/user'
-import { Loader } from '@/components/elements/Loader'
-import { useSubmitQuestionnaire } from '@/hooks/registration'
-import { toast } from '@/components/ui/Toast'
 
 export const Questioner = ({ onClick }: { onClick: () => void }) => {
   const { userData, isLoading } = useUserData({ personal: true })

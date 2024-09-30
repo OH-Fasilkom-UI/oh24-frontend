@@ -1,23 +1,23 @@
-"use client"
-import React from 'react'
-import { AlertTriangle } from 'lucide-react'
-import Button from '@/components/ui/Button'
-import Image from 'next/image'
-import { useUserData } from '@/hooks/user'
+'use client'
+
 import { Loader } from '@/components/elements/Loader'
-import { redirect } from 'next/navigation'
+import Button from '@/components/ui/Button'
 import { toast } from '@/components/ui/Toast'
+import { useUserData } from '@/hooks/user'
+import { AlertTriangle } from 'lucide-react'
+import Image from 'next/image'
+import { redirect } from 'next/navigation'
 
 export const WarnModal = ({ onClick }: { onClick: () => void }) => {
   const { userData, isLoading } = useUserData({ personal: true })
-  
+
   if (isLoading) {
     return <Loader />
   }
 
   if (userData?.hasTicket && userData.hasQuestionnaire) {
-    toast.info("Kamu sudah mendaftar menjadi mentee")
-    redirect("/profile")
+    toast.info('Kamu sudah mendaftar menjadi mentee')
+    redirect('/profile')
   }
 
   return (
@@ -30,7 +30,7 @@ export const WarnModal = ({ onClick }: { onClick: () => void }) => {
           Harap mengisi kuesioner dengan serius karena akan memengaruhi step
           selanjutnya.
         </p>
-        <div className='flex justify-end max-sm:mx-auto'>
+        <div className="flex justify-end max-sm:mx-auto">
           <Button className="mt-4" onClick={onClick}>
             Next
           </Button>

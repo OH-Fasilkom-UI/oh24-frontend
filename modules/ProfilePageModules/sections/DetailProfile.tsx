@@ -15,7 +15,7 @@ import { Pencil, SquarePen } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { PandaImages } from '../constant'
-import QRCode from "react-qr-code";
+import QRCode from 'react-qr-code'
 
 interface FieldProps {
   label: string
@@ -61,8 +61,7 @@ export const DetailProfile = () => {
 
   const leadersString = userData?.ticket?.group?.leaders
     ?.map((leader, index) => `${index + 1}. ${leader}`)
-    .join('<br>');
-
+    .join('<br>')
 
   const handleScrollToQRCode = () => {
     if (typeof window !== 'undefined') {
@@ -130,12 +129,14 @@ export const DetailProfile = () => {
               </PopoverContent>
             </Popover>
           </div>
-          {
-            userData?.ticket &&
-            (<Button className="mt-6 block lg:hidden bg-BlueRegion/Portage/600" onClick={handleScrollToQRCode}>
+          {userData?.ticket && (
+            <Button
+              className="mt-6 block lg:hidden bg-BlueRegion/Portage/600"
+              onClick={handleScrollToQRCode}
+            >
               See QR Code
-            </Button>)
-          }
+            </Button>
+          )}
 
           {userData?.ticket && (
             <div className="mt-6 max-lg:hidden">
@@ -164,10 +165,7 @@ export const DetailProfile = () => {
           {userData?.ticket && (
             <>
               <div className="mt-8 grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
-                <Field
-                  label="Nama Mentor CS Connect"
-                  value={leadersString}
-                />
+                <Field label="Nama Mentor CS Connect" value={leadersString} />
                 <Field
                   label="Link Grup WhatsApp Mentoring CSConnect"
                   value={userData?.ticket?.group?.linkWA}

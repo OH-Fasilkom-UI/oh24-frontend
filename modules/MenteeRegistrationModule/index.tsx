@@ -1,10 +1,11 @@
 'use client'
-import { WarnModal } from './sections/WarnModal'
-import { Questioner } from './sections/Questioner'
-import { useState } from 'react'
-import { PickEventModule } from '../RegisterPickEventModule'
-import AfterRegistrationModule from '../AfterRegistrationModule'
+
 import { cn } from '@/lib/utils'
+import { useState } from 'react'
+import AfterRegistrationModule from '../AfterRegistrationModule'
+import { PickEventModule } from '../RegisterPickEventModule'
+import { Questioner } from './sections/Questioner'
+import { WarnModal } from './sections/WarnModal'
 
 export const MenteeRegistrationModule = () => {
   const [page, setPage] = useState(0)

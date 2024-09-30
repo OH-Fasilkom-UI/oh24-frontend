@@ -3,6 +3,12 @@ import {
   submitAmbassador,
   SubmitAmbassadorData,
 } from '@/lib/api/registration-ambas'
+import {
+  submitEvent,
+  SubmitEventData,
+  submitQuestionnaire,
+  SubmitQuestionnaireData,
+} from '@/lib/api/registration-mentee'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 export const useSubmitPersonalData = () => {

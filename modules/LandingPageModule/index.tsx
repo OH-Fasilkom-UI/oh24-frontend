@@ -12,7 +12,7 @@ const LandingPageModule = () => {
   return (
     <main className="flex flex-col z-20 w-full relative overflow-hidden pb-[400px] md:pb-[800px]">
       <div className="relative pb-16 md:pb-24 flex-grow px-5  md:px-10 mt-20 lg:mt-0 lg:px-32">
-        <div className="min-h-screen bg-[#075C9D] -z-50 absolute inset-0 m-auto mt-[27rem] sm:mt-[46rem] lg:mt-[48rem]"></div>
+        <div className="h-64 md:min-h-screen bg-[#075C9D] -z-50 absolute inset-0 m-auto mt-[27rem] sm:mt-[46rem] lg:mt-[48rem]"></div>
         <LandingPageHero />
       </div>
       <WhatIsOpenHouse />

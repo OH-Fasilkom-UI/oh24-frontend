@@ -35,6 +35,7 @@ const config = {
       },
       textShadow: {
         ambassador: '0 0 36px #E0ECFF',
+        pickEvent: '0 0 12px #ffffff80',
       },
       backgroundImage: {
         'gradient-custom':
@@ -443,6 +444,9 @@ const config = {
       const newUtilities = {
         '.text-shadow-ambassador': {
           textShadow: theme('textShadow.ambassador'),
+        },
+        '.text-shadow-pickEvent': {
+          textShadow: '0 0 12px #ffffff80',
         },
       }
       addUtilities(newUtilities, ['responsive', 'hover'])

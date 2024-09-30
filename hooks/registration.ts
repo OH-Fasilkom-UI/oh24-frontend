@@ -44,3 +44,43 @@ export const useSubmitAmbassadorData = () => {
     },
   })
 }
+
+export const useSubmitQuestionnaire = () => {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationKey: ['reg', 'mentee', 'questionnaire'],
+    mutationFn: async (data: SubmitQuestionnaireData) => {
+      const res = await submitQuestionnaire(data)
+
+      if (!res.ok) {
+        throw new Error()
+      }
+
+      return res.json()
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['user', 'my'] })
+    },
+  })
+}
+
+export const useSubmitEvent = () => {
+  const queryClient = useQueryClient()
+
+  return useMutation({
+    mutationKey: ['reg', 'mentee', 'event'],
+    mutationFn: async (data: SubmitEventData) => {
+      const res = await submitEvent(data)
+
+      if (res.status === 400) {
+        throw new Error()
+      }
+
+      return res.json()
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['user', 'my'] })
+    },
+  })
+}

@@ -5,6 +5,7 @@ import ExploreFasilkomPrograms from './components/ExploreFasilkomPrograms'
 import ExploreHero from './components/ExploreHero'
 import { JalurMasukSectionDesktop } from './components/JalurMasuk/JalurMasukSectionDesktop'
 import { JalurMasukSectionMobile } from './components/JalurMasuk/JalurMasukSectionMobile'
+import PacilTour from './components/PacilTour'
 import { PrestasiSection } from './components/PrestasiSection'
 
 const ExploreModule = () => {
@@ -22,6 +23,7 @@ const ExploreModule = () => {
         <div className="lg:hidden block">
           <JalurMasukSectionMobile />
         </div>
+        <PacilTour />
         <ExploreContact />
       </div>
     </main>

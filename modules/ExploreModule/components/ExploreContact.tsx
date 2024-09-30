@@ -1,9 +1,9 @@
-import Image from 'next/image'
 import { Instagram, Twitter, Youtube } from 'lucide-react'
+import Image from 'next/image'
 
 const ExploreContact = () => {
   return (
-    <section className="grid grid-cols-[3fr_2fr] grid-rows-[auto_auto_1fr] sm:grid-rows-[2fr_1fr_2fr] mt-12 mb-[400px] min-[440px]:mb-[560px] sm:mb-[400px] md:mb-[500px] lg:mb-[600px] xl:mb-[800px] 2xl:mb-[960px] text-Text/TextLightBG px-20">
+    <section className="grid grid-cols-[3fr_2fr] grid-rows-[auto_auto_1fr] sm:grid-rows-[2fr_1fr_2fr] mt-12 mb-[400px] min-[440px]:mb-[560px] sm:mb-[400px] md:mb-[500px] lg:mb-[600px] xl:mb-[800px] 2xl:mb-[960px] text-Text/TextLightBG px-5 md:px-20">
       <div className="text-2xl md:text-4xl xl:text-5xl flex items-center">
         <h1>Ingin lebih dekat dengan dunia Mahasiswa Fasilkom UI?</h1>
       </div>

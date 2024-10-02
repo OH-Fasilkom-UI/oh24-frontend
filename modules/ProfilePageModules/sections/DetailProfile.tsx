@@ -11,11 +11,10 @@ import {
 } from '@/components/ui/popover'
 import { useUserData } from '@/hooks/user'
 import { updateMyPersonalData } from '@/lib/api/user'
-import { Pencil, SquarePen } from 'lucide-react'
-import Link from 'next/link'
+import { Pencil } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
-import { PandaImages } from '../constant'
 import QRCode from 'react-qr-code'
+import { PandaImages } from '../constant'
 
 interface FieldProps {
   label: string

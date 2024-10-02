@@ -18,14 +18,21 @@ import { PandaImages } from '../constant'
 
 interface FieldProps {
   label: string
-  value?: string | null
+  values?: string[] | null
+  link?: boolean
 }
 
-const Field = ({ label, value = '' }: FieldProps) => {
+const Field = ({ label, values = [''], link }: FieldProps) => {
   return (
     <div className="text-Text/TextLightBG flex flex-col gap-1 max-md:text-center">
       <p className="text-lg font-bold">{label}</p>
-      <p className="text-md font-normal">{value}</p>
+      {values?.map((value) => <>
+        {
+          link
+            ? <a className="text-md font-normal" href={value}>{value}</a>
+            : <p className="text-md font-normal">{value}</p>
+        }
+      </>)}
     </div>
   )
 }
@@ -60,7 +67,6 @@ export const DetailProfile = () => {
 
   const leadersString = userData?.ticket?.group?.leaders
     ?.map((leader, index) => `${index + 1}. ${leader}`)
-    .join('<br>')
 
   const handleScrollToQRCode = () => {
     if (typeof window !== 'undefined') {
@@ -149,29 +155,31 @@ export const DetailProfile = () => {
         </div>
         <div className="flex flex-col md:w-1/2 w-full">
           <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
-            <Field label="Nama Lengkap" value={userData?.personal?.fullName} />
-            <Field label="Email" value={userData?.email} />
-            <Field label="Domisili" value={userData?.personal?.domicile} />
-            <Field label="WhatsApp" value={userData?.personal?.phone} />
-            <Field label="Tanggal Lahir" value={userData?.personal?.dob} />
-            <Field label="Kelas" value={userData?.personal?.class} />
-            <Field label="Asal Sekolah" value={userData?.personal?.school} />
+            <Field label="Nama Lengkap" values={[userData?.personal?.fullName!]} />
+            <Field label="Email" values={[userData?.email!]} />
+            <Field label="Domisili" values={[userData?.personal?.domicile!]} />
+            <Field label="WhatsApp" values={[userData?.personal?.phone!]} />
+            <Field label="Tanggal Lahir" values={[userData?.personal?.dob!]} />
+            <Field label="Kelas" values={[userData?.personal?.class!]} />
+            <Field label="Asal Sekolah" values={[userData?.personal?.school!]} />
             <Field
               label="Nomor Telepon Orang Tua"
-              value={userData?.personal?.parentPhone}
+              values={[userData?.personal?.parentPhone!]}
             />
           </div>
           {userData?.ticket && (
             <>
               <div className="mt-8 grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
-                <Field label="Nama Mentor CS Connect" value={leadersString} />
+                <Field label="Nama Mentor CS Connect" values={leadersString} />
                 <Field
                   label="Link Grup WhatsApp Mentoring CSConnect"
-                  value={userData?.ticket?.group?.linkWA}
+                  values={[userData?.ticket?.group?.linkWA!]}
+                  link
                 />
                 <Field
                   label="Link Grup WhatsApp Rombel Main Event"
-                  value={userData?.ticket?.rombel?.linkWA}
+                  values={[userData?.ticket?.rombel?.linkWA!]}
+                  link
                 />
               </div>
 

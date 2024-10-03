@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export const PrestasiSection = () => {
   return (
-    <section id='prestasi' className="pt-20 mx-20 max-md:mx-6">
+    <section id='prestasi' className="pt-20 mx-20 max-md:mx-6 relative">
       <h2 className="font-riffic text-Text/TextLightBG text-5xl font-bold text-center tracking-widest mb-[80px] max-md:mb-8">
         Prestasi
       </h2>
@@ -59,14 +59,14 @@ export const PrestasiSection = () => {
             )
           })}
         </div>
-        <Image
-          src="/ufoo.png"
-          alt="Ufo"
-          width={200}
-          height={206}
-          className="absolute 2xl:-left-20 -left-10 -bottom-32 animate-float-vertical"
-        />
       </Card>
+      <Image
+        src="/ufoo.png"
+        alt="Ufo"
+        width={200}
+        height={206}
+        className="absolute -left-20 -bottom-32 animate-float-vertical"
+      />
     </section>
   )
 }

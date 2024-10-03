@@ -43,7 +43,7 @@ const FlipCard = ({
           <h2 className="text-center mb-4 md:mb-6 xl:mb-8 font-tex-gyre font-bold text-Misc/Mischka/50">
             {title}
           </h2>
-          <p className="font-tex-gyre text-Text/TextDarkBG text-justify text-lg md:text-2xl">
+          <p className="font-tex-gyre text-Text/TextDarkBG text-justify text-lg md:text-xl">
             {children}
           </p>
         </div>

@@ -16,7 +16,7 @@ const ExploreContact = () => {
           className="w-full object-contain max-w-sm ml-auto"
         />
       </div>
-      <h1 className="max-sm:col-span-2 max-sm:text-center text-sm md:text-xl lg:text-3xl font-tex-gyre font-semibold py-4 sm:py-3">
+      <h1 className="max-sm:col-span-2 max-sm:text-center text-sm md:text-xl lg:text-2xl font-tex-gyre font-semibold py-4 sm:py-3">
         Yuk Follow Sosial Media Kami!
       </h1>
       <div className="flex items-center">
@@ -27,7 +27,7 @@ const ExploreContact = () => {
             className="flex py-1 items-center gap-2"
           >
             <Instagram className="w-5 lg:w-7 mr-2 h-auto gap-2" />
-            <h1 className="font-tex-gyre font-semibold text-sm md:text-xl lg:text-3xl hover:underline">
+            <h1 className="font-tex-gyre font-semibold text-sm md:text-xl lg:text-2xl hover:underline">
               @ohfasilkom
             </h1>
           </a>
@@ -37,7 +37,7 @@ const ExploreContact = () => {
             className="flex py-1 items-center gap-2"
           >
             <Twitter className="w-5 lg:w-7 mr-2 h-auto" />
-            <h1 className="font-tex-gyre font-semibold text-sm md:text-xl lg:text-3xl hover:underline">
+            <h1 className="font-tex-gyre font-semibold text-sm md:text-xl lg:text-2xl hover:underline">
               @OHFasilkom
             </h1>
           </a>
@@ -47,7 +47,7 @@ const ExploreContact = () => {
             className="flex py-1 items-center gap-2"
           >
             <Youtube className="w-5 lg:w-7 mr-2 h-auto" />
-            <h1 className="font-tex-gyre font-semibold text-sm md:text-xl lg:text-3xl hover:underline">
+            <h1 className="font-tex-gyre font-semibold text-sm md:text-xl lg:text-2xl hover:underline">
               @FasilkomUIOfficial
             </h1>
           </a>

@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const ExploreAlumni = () => {
   return (
-    <div className=" flex flex-col items-center mt-20">
+    <div id='alumni' className=" flex flex-col items-center mt-20">
       <h2 className=" max-sm:w-[280px]  text-Text/TextLightBG font-bold text-center max-[400px]:text-[26px] max-sm:text-[35px] text-[48px]">
         Where Our Alumni Are Now
       </h2>

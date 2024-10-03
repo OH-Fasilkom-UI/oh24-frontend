@@ -20,6 +20,7 @@ const FlipCard = ({
 
   return (
     <div
+      id='jurusan'
       className="relative aspect-square group cursor-pointer w-full max-sm:max-h-96 max-sm:max-w-96"
       onClick={() => setOpened(!opened)}
     >

@@ -17,10 +17,10 @@ const ExploreModule = () => {
         <PrestasiSection />
         <ExploreFasilkomPrograms />
         <ExploreFacility />
-        <div className="lg:block hidden">
+        <div className="lg:block hidden" id='jalur-masuk'>
           <JalurMasukSectionDesktop />
         </div>
-        <div className="lg:hidden block">
+        <div className="lg:hidden block" id='jalur-masuk'>
           <JalurMasukSectionMobile />
         </div>
         <PacilTour />

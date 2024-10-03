@@ -44,7 +44,7 @@ const ExploreFacility = () => {
   })
 
   return (
-    <section className="relative flex flex-col items-center text-center justify-center">
+    <section id="fasilitas" className="relative flex flex-col items-center text-center justify-center">
       <h1 className="my-2 md:my-4 xl:my-6 2xl:my-10 font-bold font-riffic text-Text/TextLightBG leading-[48px] text-6xl max-2xl:text-3xl max-xl:text-2xl max-lg:text-xl max-sm:text-lg max-md:leading-[36px] lg:whitespace-nowrap tracking-widest">
         Fasilitas Fasilkom UI
       </h1>

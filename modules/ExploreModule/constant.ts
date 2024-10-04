@@ -6,51 +6,33 @@ import { Globe2 } from 'lucide-react'
 export const FACILITIES = [
   {
     id: 1,
-    image: '/facility/student-lounge.png',
-    title: 'Student Longue',
-    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem laudantium, tempora quia ab neque, amet ratione excepturi deserunt, consequuntur minima quis! Quaerat rerum in nam sequi dolores maiores laudantium non!',
+    image: '/facility/auditorium.jpg',
+    title: 'Auditorium',
+    desc: 'Auditorium yang luas dan modern, dilengkapi dengan sistem akustik yang canggih, cocok untuk acara seminar, konferensi, dan pertunjukan seni. Mampu menampung ratusan penonton dengan fasilitas kursi yang nyaman.'
   },
   {
     id: 2,
-    image: '/facility/tokopedia-ai.png',
-    title: 'Tokopedia AI Center',
-    desc: 'Selamat datang di pusat inovasi kecerdasan buatan! Tokopedia AI Center di Fasilkom UI adalah tempat di mana teknologi AI dikembangkan dan diteliti, siap membawa masa depan teknologi ke level berikutnya!',
+    image: '/facility/balgebun.jpeg',
+    title: 'Kantin Balgebun',
+    desc: 'Kantin Balgebun menawarkan berbagai pilihan makanan dan minuman yang lezat dan sehat. Suasana yang nyaman membuatnya menjadi tempat ideal untuk bersantai dan berinteraksi dengan teman-teman.'
   },
   {
     id: 3,
-    image: '/facility/student-lounge.png',
-    title: 'Student Lounge',
-    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem laudantium, tempora quia ab neque, amet ratione excepturi deserunt, consequuntur minima quis! Quaerat rerum in nam sequi dolores maiores laudantium non!',
+    image: '/facility/gedung-baru.jpeg',
+    title: 'Gedung Baru',
+    desc: 'Gedung Baru memiliki desain arsitektur yang modern dan fasilitas terbaru untuk mendukung kegiatan akademis. Dilengkapi ruang kelas, laboratorium, dan area belajar yang memadai untuk mendukung pembelajaran.'
   },
   {
     id: 4,
-    image: '/facility/tokopedia-ai.png',
-    title: 'Tokopedia AI Center',
-    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem laudantium, tempora quia ab neque, amet ratione excepturi deserunt, consequuntur minima quis! Quaerat rerum in nam sequi dolores maiores laudantium non!',
+    image: '/facility/gedung-lama.jpg',
+    title: 'Gedung Lama',
+    desc: 'Gedung Lama merupakan bangunan bersejarah yang tetap terjaga dengan baik. Menawarkan suasana klasik dengan fasilitas yang tetap fungsional, ideal untuk kegiatan diskusi, pertemuan, dan workshop.'
   },
   {
     id: 5,
-    image: '/facility/tokopedia-ai.png',
-    title: 'Tokopedia AI Center',
-    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem laudantium, tempora quia ab neque, amet ratione excepturi deserunt, consequuntur minima quis! Quaerat rerum in nam sequi dolores maiores laudantium non!',
-  },
-  {
-    id: 6,
-    image: '/facility/tokopedia-ai.png',
-    title: 'Tokopedia AI Center',
-    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem laudantium, tempora quia ab neque, amet ratione excepturi deserunt, consequuntur minima quis! Quaerat rerum in nam sequi dolores maiores laudantium non!',
-  },
-  {
-    id: 7,
-    image: '/facility/tokopedia-ai.png',
-    title: 'Tokopedia AI Center',
-    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem laudantium, tempora quia ab neque, amet ratione excepturi deserunt, consequuntur minima quis! Quaerat rerum in nam sequi dolores maiores laudantium non!',
-  },
-  {
-    id: 8,
-    image: '/facility/tokopedia-ai.png',
-    title: 'Tokopedia AI Center',
-    desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem laudantium, tempora quia ab neque, amet ratione excepturi deserunt, consequuntur minima quis! Quaerat rerum in nam sequi dolores maiores laudantium non!',
+    image: '/facility/sekre-square.jpg',
+    title: 'Sekre Square',
+    desc: 'Sekre Square adalah area terbuka yang menyenangkan untuk bersosialisasi dan beraktivitas. Dikelilingi taman hijau, tempat ini sering digunakan untuk berbagai acara kampus, pasar seni, dan kegiatan komunitas.'
   },
 ]
 

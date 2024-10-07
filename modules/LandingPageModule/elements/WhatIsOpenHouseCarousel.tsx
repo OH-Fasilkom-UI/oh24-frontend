@@ -27,7 +27,7 @@ const WhatIsOpenHouseCarousel: React.FC<PropType> = (props) => {
   const tweenNodes = useRef<HTMLElement[]>([])
   const [activeSlideIndex, setActiveSlideIndex] = useState(0)
   const [lastVisibleSlideIndex, setLastVisibleSlideIndex] = useState(2)
-  const [isMdOrLarger, setIsMdOrLarger] = useState(window.innerWidth >= 768)
+  const [isMdOrLarger, setIsMdOrLarger] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {

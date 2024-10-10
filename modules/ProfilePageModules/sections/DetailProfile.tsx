@@ -25,7 +25,7 @@ interface FieldProps {
 const Field = ({ label, values = [''], link }: FieldProps) => {
   return (
     <div className="text-Text/TextLightBG flex flex-col gap-1 max-md:text-center">
-      <p className="text-lg font-bold">{label}</p>
+      <p className="text-lg font-bold text-nowrap">{label}</p>
       {values?.map((value) => <>
         {
           link
@@ -66,7 +66,7 @@ export const DetailProfile = () => {
   }
 
   const leadersString = userData?.ticket?.group?.leaders
-    ?.map((leader, index) => `${index + 1}. ${leader}`)
+    ?.map((leader: string, index: number) => `${index + 1}. ${leader}`)
 
   const handleScrollToQRCode = () => {
     if (typeof window !== 'undefined') {
@@ -90,6 +90,7 @@ export const DetailProfile = () => {
                 <Pencil className="w-10 h-10 z-50" />
               </PopoverTrigger>
               <PopoverContent className="flex flex-col w-fit" side={'right'}>
+
                 <h1 className="text-[#2E3881] text-[16px] font-tex-gyre font-bold mb-3">
                   Choose Your Panda!
                 </h1>
@@ -134,9 +135,10 @@ export const DetailProfile = () => {
               </PopoverContent>
             </Popover>
           </div>
+
           {userData?.ticket && (
             <Button
-              className="mt-6 block lg:hidden bg-BlueRegion/Portage/600"
+              className="mt-6 block lg:hidden bg-BlueRegion/Portgage/600"
               onClick={handleScrollToQRCode}
             >
               See QR Code
@@ -172,7 +174,7 @@ export const DetailProfile = () => {
               <div className="mt-8 grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
                 <Field label="Nama Mentor CS Connect" values={leadersString} />
                 <Field
-                  label="Link Grup WhatsApp Mentoring CSConnect"
+                  label="Link Grup WhatsApp Mentoring CS Connect"
                   values={[userData?.ticket?.group?.linkWA!]}
                   link
                 />
@@ -184,7 +186,7 @@ export const DetailProfile = () => {
               </div>
 
               {userData?.ticket?.userId && (
-                <div className="mt-8 lg:hidden" ref={qrCodeSmallRef}>
+                <div className="flex flex-row justify-center mt-8 lg:hidden" ref={qrCodeSmallRef}>
                   <QRCode
                     value={userData?.ticket?.userId ?? 'oh24'}
                     size={150}

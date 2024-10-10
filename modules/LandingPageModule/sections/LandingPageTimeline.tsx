@@ -7,38 +7,38 @@ const TimelineData = [
   {
     title: 'Grand Opening',
     content:
-      'Grand Opening adalah acara pembuka yang menandai dimulainya Open House Fasilkom UI 2024. Di sini, kamu bakal disambut dengan berbagai sambutan dari elemen Fasilkom UI, nonton video teaser dan overview acara, menikmati penampilan guest star, dan juga persembahan spesial dari UKF Fasilkom UI. Seru banget, kan?',
-    imageSrc: '/',
+      'Grand Opening adalah acara pembuka yang menandai dimulainya Open House Fasilkom UI 2024. Di sini, kamu bakal disambut dengan berbagai sambutan dari Fasilkom UI. Saksikan cerita di belakang Open House Fasilkom. Seru banget, kan?',
+    imageSrc: '/LandingTimeline/GrandOpening.jpg',
   },
   {
     title: 'Open Registration',
     content:
       'Daftarkan segera dirimu untuk mengikuti exclusive mentoring dan dapatkan pengalaman tak terlupakan di Main Event Open House Fasilkom UI 2024!',
-    imageSrc: '/',
+    imageSrc: '/LandingTimeline/OpenRegistration.jpg',
   },
   {
     title: 'Fasilkom Rewind',
     content:
       'Fasilkom Rewind adalah video seru yang merangkum semua momen keren mahasiswa selama di Fasilkom. Video ini dibuat buat kasih kamu gambaran asik tentang kehidupan di Fasilkom dan bikin kamu makin tertarik buat ikutan Open House Fasilkom UI.',
-    imageSrc: '/',
+    imageSrc: '/LandingTimeline/FasilkomRewind.jpg',
   },
   {
     title: 'CS Connect',
     content:
       'CS Connect adalah acara seru yang punya Talkshow Online buat ngobrol santai seputar Fasilkom UI. Setelah itu, ada sesi mentoring online yang bikin kamu lebih kenal jurusan-jurusan di Fasilkom UI dan dapet info penting buat Main Event selanjutnya. Jangan sampai ketinggalan!',
-    imageSrc: '/',
+    imageSrc: '/LandingTimeline/CSConnect.jpg',
   },
   {
     title: 'Main Event',
     content:
       'Rasakan serunya jadi mahasiswa Fasilkom UI lewat rangkaian Main Event, acara utama dari Open House Fasilkom! Kamu bakal diajak keliling gedung Fasilkom, kenalan sama kultur-kultur unik di dalamnya, ikut kelas interaktif bareng dosen Fasilkom, mencoba teknologi-teknologi canggih, dan pastinya, seru-seruan dengan fun coding. Acara ini bakal bikin kamu lebih dekat dengan Fasilkom UI dan membantu kamu melihat apakah Fasilkom UI adalah tempat yang pas buatmu.',
-    imageSrc: '/',
+    imageSrc: '/LandingTimeline/MainEvent.jpg',
   },
   {
     title: 'Grand Closing',
     content:
       'Grand Closing merupakan acara penutupan dari seluruh rangkaian acara Open House Fasilkom UI 2024. Pada Grand Closing, akan ditampilkan video rekap perjalanan acara Open House Fasilkom UI 2024 serta video apresiasi dari mentor serta panitia untuk peserta. Harapannya, peserta dapat mengakhiri rangkaian acara Open House Fasilkom UI 2022 dengan kesan yang baik dan tertarik untuk bergabung ke dalam keluarga besar Fasilkom UI.',
-    imageSrc: '/',
+    imageSrc: '/LandingTimeline/GrandClosing.jpg',
   },
 ]
 
@@ -127,7 +127,15 @@ const TimelineSelector = ({
 const TimelineContent = ({ selectedIndex }: { selectedIndex: number }) => {
   return (
     <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-x-4 sm:gap-x-6 lg:gap-x-8 xl:gap-x-10 relative width-full bg-BlueRegion/CeruleanBlue/900 p-6 py-7 sm:p-12 lg:p-16 xl:p-24 rounded-b-[0.8rem] md:rounded-b-[1.4rem] lg:rounded-b-[2rem]">
-      <div className="relative z-20 bg-[#E3DEF9] aspect-[4/3] rounded-[0.8rem] md:rounded-[1.2rem] lg:rounded-[1.6rem] xl:rounded-[2rem] shadow-[4px_4px_12px_#62A3CB80,-4px_-4px_12px_#4E56C480]"></div>
+      <div className="relative z-20 bg-[#E3DEF9] aspect-[4/3] rounded-[0.8rem] md:rounded-[1.2rem] lg:rounded-[1.6rem] xl:rounded-[2rem] shadow-[4px_4px_12px_#62A3CB80,-4px_-4px_12px_#4E56C480]">
+        <Image
+          src={TimelineData[selectedIndex].imageSrc}
+          alt="timeline image"
+          fill
+          sizes="none"
+          className="object-cover rounded-[0.8rem] md:rounded-[1.2rem] lg:rounded-[1.6rem] xl:rounded-[2rem] shadow-[4px_4px_12px_#62A3CB80,-4px_-4px_12px_#4E56C480]"
+        />
+      </div>
       <div className=" relative z-20">
         <h1 className="text-[#E3DEF9] font-riffic mb-2 xl:mb-6 text-[16px] sm:text-[22px] lg:text-[28px] tracking-wider">
           {TimelineData[selectedIndex].title}

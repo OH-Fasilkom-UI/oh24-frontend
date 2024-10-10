@@ -13,7 +13,7 @@ export const PacilTour = () => {
         src={GedungLama}
         alt="Gedung Lama"
       />
-      <div className="absolute top-24 left-5">
+      <div className="absolute top-24 w-full flex items-center justify-center md:left-5 md:block">
         <Card className="w-[60%]  sm:w-[500px] h-[40%] p-5 md:p-8 bg-opacity-90 rounded-[24px] md:rounded-[32px] text-center items-center justify-center shadow-lg shadow-blue-900">
           <div className="flex flex-col justify-center items-center">
             <h2 className="text-lg font-bold">360 Campus View</h2>

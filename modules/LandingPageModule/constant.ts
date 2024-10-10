@@ -2,27 +2,27 @@ import { WhatIsOpenHouseItemProps } from './interface'
 
 export const WHAT_IS_OH_DATA: WhatIsOpenHouseItemProps[] = [
   {
-    src: '/image.jpg',
+    src: '/WhatIsOh/WhatisOH1.jpg',
     alt: '',
   },
   {
-    src: '/image.jpg',
+    src: '/WhatIsOh/WhatisOH2.jpg',
     alt: '',
   },
   {
-    src: '/image.jpg',
+    src: '/WhatIsOh/WhatisOH3.jpg',
     alt: '',
   },
   {
-    src: '/image.jpg',
+    src: '/WhatIsOh/WhatisOH4.jpg',
     alt: '',
   },
   {
-    src: '/image.jpg',
+    src: '/WhatIsOh/WhatisOH5.jpg',
     alt: '',
   },
   {
-    src: '/image.jpg',
+    src: '/WhatIsOh/WhatisOH6.jpg',
     alt: '',
   },
 ]

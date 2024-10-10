@@ -39,10 +39,15 @@ export const Questioner = ({ onClick }: { onClick: () => void }) => {
     resolver: zodResolver(submitQuestionnaireSchema),
   })
 
+  const delay = (ms: number) => {
+    return new Promise((resolve) => setTimeout(resolve, ms))
+  }
+
   const onSubmit = async (data: SubmitQuestionnaireData) => {
     submit(data, {
-      onSuccess: () => {
+      onSuccess: async () => {
         toast.success('Berhasil mengirimkan data')
+        await delay(5000)
         onClick()
       },
       onError: () => {

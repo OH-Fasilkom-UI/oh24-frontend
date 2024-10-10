@@ -157,7 +157,7 @@ const TimelineContent = ({ selectedIndex }: { selectedIndex: number }) => {
           alt="city asset 1"
           fill
           sizes="none"
-          className="object-contain"
+          className="object-contain opacity-35"
         />
       </div>
       <div className="absolute z-10 w-[115px] h-[115px] sm:w-[18vw] sm:h-[18vw] xl:w-[18rem] xl:h-[18rem] -bottom-[0.5px] left-[130px] sm:left-[23vw] xl:left-[20rem]">
@@ -166,7 +166,7 @@ const TimelineContent = ({ selectedIndex }: { selectedIndex: number }) => {
           alt="city asset 2"
           fill
           sizes="none"
-          className="object-contain"
+          className="object-contain opacity-35"
         />
       </div>
     </div>

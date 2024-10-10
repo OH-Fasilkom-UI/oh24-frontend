@@ -53,14 +53,14 @@ const LandingPageHero = () => {
         height={500}
         className={`object-contain -z-30 absolute mt-[25rem] sm:mt-[43rem] lg:mt-[44rem] xl:mt-[43rem]  right-0   max-w-[200px] sm:max-w-[300px] lg:max-w-[400px] xl:max-w-[800px] max-h-[300px] animate-move2 ${styles.animateMove2}`}
       />
-      <div className="mt-[100px] sm:mt-[180px] flex flex-col items-center">
+      <div className="mt-[100px] sm:mt-[180px] flex flex-col items-center ">
         <h2 className="font-bold text-center text-Text/TextLightBG leading-[50px] text-[26px] sm:text-t2 max-sm:leading-[29px] tracking-wider">
           Open House
           <br /> &nbsp;Fasilkom UI 2024
         </h2>
         <div className="mt-6 sm:mt-12">
           <Countdown
-            targetDate={new Date('2024-10-19T23:59:00')}
+            targetDate={new Date('2024-10-17T10:00:00')}
             displayDate
             classNameType="sm:text-xl text-white"
             classNameBlock=" w-[60px] h-[70px] sm:w-20 sm:h-24 sm:w-28 sm:h-32 mt-3 mb-3 sm:mb-8"
@@ -74,6 +74,7 @@ const LandingPageHero = () => {
           </Link>
           <Link href="/register">
             <Button
+              disabled
               variant="tertiary"
               className="w-[120px] h-[40px] sm:w-[180px] sm:h-[50px] text-[10px] sm:text-[12px]"
             >

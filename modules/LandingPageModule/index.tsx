@@ -17,7 +17,7 @@ const LandingPageModule = () => {
       </div>
       <WhatIsOpenHouse />
       <LandingPageTimeline />
-      <Videos />
+      {/* <Videos /> */}
       <div className="relative pt-20 md:pt-32">
         <Image
           src={'/bg-testimony-partners-faq.png'}

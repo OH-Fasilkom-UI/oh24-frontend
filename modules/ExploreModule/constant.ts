@@ -56,7 +56,7 @@ export const ISI_PRESTASI = [
     title: '#1',
     description: 'Juara Umum',
     status: 'GEMASTIK',
-    metrics: '(GEMASTIK 2016-2020)',
+    metrics: '(GEMASTIK 2016-2020, 2024)',
   },
   {
     icon: Globe2,

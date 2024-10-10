@@ -1,7 +1,10 @@
 import { z } from 'zod'
 
 export enum Accommodation {
-  MOBILKERETAPESAWATBUS,
+  MOBIL,
+  KERETA,
+  PESAWAT,
+  BUS,
   TIDAK_IKUT,
 }
 

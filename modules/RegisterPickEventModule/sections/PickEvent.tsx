@@ -157,11 +157,10 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
                   <h1>2. Main Event</h1>
                   <ul className="list-disc ml-10">
                     <li>
-                      <strong>Tanggal:</strong> 23 November 2024 dan 24 November
-                      2024
+                      <strong>Tanggal:</strong> Sabtu, 23 November 2024
                     </li>
                     <li>
-                      <strong>Waktu:</strong> 09.00 - 16.30
+                      <strong>Waktu:</strong> 07.00 - 13.00 <strong>(Sesi Pagi)</strong> dan 12.00 - 18.00 <strong>(Sesi Siang)</strong>
                     </li>
                     <li>
                       <strong>Tempat:</strong> Gedung Lama, Fasilkom UI
@@ -173,7 +172,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
 
             <div className="flex justify-center items-center flex-col mt-8">
               <h1 className="text-t6 max-sm:text-t7 ">
-                Pilih tanggal Main Event:
+                Pilih sesi Main Event:
               </h1>
               <div className="flex gap-8 mt-2 mb-6">
                 <RadioGroup
@@ -191,7 +190,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
                       isFullExperienceFull || isOneofExperienceFull === 1
                     }
                   >
-                    16 November 2024
+                    Sesi Pagi
                   </RadioGroup.Item>
                   <RadioGroup.Item
                     value="FULL_EXPERIENCE_2"
@@ -201,7 +200,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
                       isFullExperienceFull || isOneofExperienceFull === 2
                     }
                   >
-                    17 November 2024
+                    Sesi Siang
                   </RadioGroup.Item>
                 </RadioGroup>
               </div>
@@ -232,7 +231,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
                       <strong>Tanggal:</strong> Sabtu, 9 November 2024
                     </li>
                     <li>
-                      <strong>Waktu:</strong> 12.00 - 16.00
+                      <strong>Waktu:</strong> 13.00 - 16.00
                     </li>
                     <li>
                       <strong>Tempat:</strong> Zoom Meeting

@@ -25,7 +25,7 @@ interface FieldProps {
 const Field = ({ label, values = [''], link }: FieldProps) => {
   return (
     <div className="text-Text/TextLightBG flex flex-col gap-1 max-md:items-center max-md:text-center">
-      <p className="text-lg font-bold max-md:w-[70%]">{label}</p>
+      <p className="text-lg font-bold max-md:w-[80%]">{label}</p>
       {values?.map((value) => <>
         {
           link

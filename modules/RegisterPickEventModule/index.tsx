@@ -10,16 +10,14 @@ export const PickEventModule = ({ onClick }: { onClick: () => void }) => {
   const [showButton, setShowButton] = useState(true)
 
   useEffect(() => {
-    const hideButton = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 5000))
+    window.addEventListener('scroll', () => {
       setShowButton(false)
-    }
-    hideButton()
+    })
   }, [])
 
   return (
     <section className="max-w-[1920px] h-fit py-[20rem] pt-[100px] overflow-x-hidden">
-      <div className={`fixed bottom-6 z-50 left-[50%] -translate-x-[50%] ${!showButton && 'hidden'}`}>
+      <div className={`fixed bottom-6 z-50 left-[50%] -translate-x-[50%] ${!showButton && 'hidden'} max-lg:hidden`}>
         <ScrollLink to="RegisterAccordion" smooth={true} duration={500}>
           <Button
             className='animate-bounce duration-1000 flex gap-4'

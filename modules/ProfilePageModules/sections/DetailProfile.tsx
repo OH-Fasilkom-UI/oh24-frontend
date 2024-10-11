@@ -24,8 +24,8 @@ interface FieldProps {
 
 const Field = ({ label, values = [''], link }: FieldProps) => {
   return (
-    <div className="text-Text/TextLightBG flex flex-col gap-1 max-md:text-center">
-      <p className="text-lg font-bold text-nowrap">{label}</p>
+    <div className="text-Text/TextLightBG flex flex-col gap-1 max-md:items-center max-md:text-center">
+      <p className="text-lg font-bold max-md:w-[70%]">{label}</p>
       {values?.map((value) => <>
         {
           link
@@ -69,10 +69,17 @@ export const DetailProfile = () => {
     ?.map((leader: string, index: number) => `${index + 1}. ${leader}`)
 
   const handleScrollToQRCode = () => {
-    if (typeof window !== 'undefined') {
-      qrCodeSmallRef.current?.scrollIntoView({ behavior: 'smooth' })
+    if (typeof window !== 'undefined' && qrCodeSmallRef.current) {
+      const offset = 250;
+      const elementPosition = qrCodeSmallRef.current.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
-  }
+  };
 
   return (
     <div className="pt-[10rem] min-[1920px]:pt-[10rem] mb-10 flex flex-col md:px-[120px] xl:px-[190px] py-10 max-md:pb-96 justify-center items-center md:items-start md:justify-start gap-[35px]">
@@ -138,7 +145,7 @@ export const DetailProfile = () => {
 
           {userData?.ticket && (
             <Button
-              className="mt-6 block lg:hidden bg-BlueRegion/Portgage/600"
+              className="mt-6 block md:hidden bg-BlueRegion/Portgage/600"
               onClick={handleScrollToQRCode}
             >
               See QR Code
@@ -146,7 +153,7 @@ export const DetailProfile = () => {
           )}
 
           {userData?.ticket && (
-            <div className="mt-6 max-lg:hidden">
+            <div className="mt-6 max-md:hidden">
               <QRCode
                 value={userData?.ticket.userId ?? 'oh24'}
                 size={300}
@@ -171,7 +178,7 @@ export const DetailProfile = () => {
           </div>
           {userData?.ticket && (
             <>
-              <div className="mt-8 grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
+              <div className="mt-6 grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
                 <Field label="Nama Mentor CS Connect" values={leadersString} />
                 <Field
                   label="Link Grup WhatsApp Mentoring CS Connect"
@@ -186,7 +193,7 @@ export const DetailProfile = () => {
               </div>
 
               {userData?.ticket?.userId && (
-                <div className="flex flex-row justify-center mt-8 lg:hidden" ref={qrCodeSmallRef}>
+                <div className="flex flex-row justify-center mt-8 md:hidden" ref={qrCodeSmallRef}>
                   <QRCode
                     value={userData?.ticket?.userId ?? 'oh24'}
                     size={150}

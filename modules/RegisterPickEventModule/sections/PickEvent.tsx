@@ -1,16 +1,16 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import Card from '@/components/ui/Card'
-import RadioGroup from '@/components/ui/RadioGroup'
-import Image from 'next/image'
-import Input from '@/components/ui/Input'
-import Button from '@/components/ui/Button'
-import { toast } from '@/components/ui/Toast'
-import { useUserData } from '@/hooks/user'
 import { Loader } from '@/components/elements/Loader'
+import Button from '@/components/ui/Button'
+import Card from '@/components/ui/Card'
+import Input from '@/components/ui/Input'
+import RadioGroup from '@/components/ui/RadioGroup'
+import { toast } from '@/components/ui/Toast'
 import { useSubmitEvent } from '@/hooks/registration'
+import { useUserData } from '@/hooks/user'
 import { submitEventSchema } from '@/lib/api/registration-mentee'
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
 interface Event {
   events: {
     name: string
@@ -63,7 +63,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
 
     setIsFullExperienceFull(
       !eligibleFor.includes('FULL_EXPERIENCE_1') ||
-        !eligibleFor.includes('FULL_EXPERIENCE_2')
+      !eligibleFor.includes('FULL_EXPERIENCE_2')
     )
     setIsOnlineExperienceFull(!eligibleFor.includes('ONLINE_EXPERIENCE'))
   }, [isLoading])

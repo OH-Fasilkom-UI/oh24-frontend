@@ -56,7 +56,6 @@ export function useUserData<T extends UserDataJoins>(
         currentPath === paths.personalDataForm &&
         data?.hasPersonal === true
       ) {
-        toast.error('Akun anda sudah terdaftar!')
         redirect(paths.profilePage)
       }
 
@@ -64,7 +63,6 @@ export function useUserData<T extends UserDataJoins>(
         currentPath === paths.registerAmbassador &&
         data?.hasAmbassador === true
       ) {
-        toast.error('Akun anda sudah terdaftar!')
         redirect(paths.profilePage)
       }
     }

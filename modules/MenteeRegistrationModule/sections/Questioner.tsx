@@ -41,8 +41,9 @@ export const Questioner = ({ onClick }: { onClick: () => void }) => {
 
   const onSubmit = async (data: SubmitQuestionnaireData) => {
     submit(data, {
-      onSuccess: () => {
+      onSuccess: async () => {
         toast.success('Berhasil mengirimkan data')
+        await new Promise((resolve) => setTimeout(resolve, 5000))
         onClick()
       },
       onError: () => {

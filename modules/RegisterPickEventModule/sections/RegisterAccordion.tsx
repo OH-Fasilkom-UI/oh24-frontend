@@ -53,7 +53,7 @@ export const EventFAQAccordion = [
 
 const RegisterAccordion = () => {
   return (
-    <div className="w-full h-[70vh] max-lg:h-[50vh] mt-[45rem] max-lg:mt-[8rem] flex flex-col items-center">
+    <div id='RegisterAccordion' className="w-full h-[20vh] max-lg:h-[16vh] mt-[48rem] max-lg:mt-8 flex flex-col items-center">
       <h1 className="text-[#B91B70] text-t3 max-lg:text-t4 max-md:text-t5 mb-16 text-center w-[83vw]">
         Masih bingung mau pilih opsi yang mana? 🤔
       </h1>

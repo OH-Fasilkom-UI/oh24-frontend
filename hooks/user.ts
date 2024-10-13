@@ -1,6 +1,5 @@
 import { toast } from '@/components/ui/Toast'
 import {
-  formatPersonalData,
   getMyUserData,
   updateMyPersonalData,
   UpdatePersonalData,
@@ -31,7 +30,6 @@ export function useUserData<T extends UserDataJoins>(
       }
 
       const data = await res.json()
-      data.user.personal = formatPersonalData(data.user.personal)
       return data.user
     },
   })

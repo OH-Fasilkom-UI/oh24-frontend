@@ -10,9 +10,9 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover'
 import { useUserData } from '@/hooks/user'
-import { updateMyPersonalData } from '@/lib/api/user'
+import { formatPersonalData, updateMyPersonalData } from '@/lib/api/user'
 import { Pencil } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import QRCode from 'react-qr-code'
 import { PandaImages } from '../constant'
 
@@ -47,6 +47,8 @@ export const DetailProfile = () => {
   const [profilePict, setProfilePictSrc] = useState<number>(0)
   const [popOpen, popClose] = useState(false)
 
+  const personalData = useMemo(() => formatPersonalData(userData?.personal), [userData])
+
   useEffect(() => {
     setProfilePictSrc(userData?.personal.profilePic ?? 0)
   }, [userData])
@@ -77,7 +79,7 @@ export const DetailProfile = () => {
     if (typeof window !== 'undefined' && qrCodeSmallRef.current) {
       const offset = 250
       const elementPosition =
-        qrCodeSmallRef.current.getBoundingClientRect().top + window.pageYOffset
+        qrCodeSmallRef.current.getBoundingClientRect().top + window.scrollY
       const offsetPosition = elementPosition - offset
 
       window.scrollTo({
@@ -171,20 +173,20 @@ export const DetailProfile = () => {
           <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
             <Field
               label="Nama Lengkap"
-              values={[userData?.personal?.fullName!]}
+              values={[personalData?.fullName!]}
             />
             <Field label="Email" values={[userData?.email!]} />
-            <Field label="Domisili" values={[userData?.personal?.domicile!]} />
-            <Field label="WhatsApp" values={[userData?.personal?.phone!]} />
-            <Field label="Tanggal Lahir" values={[userData?.personal?.dob!]} />
-            <Field label="Kelas" values={[userData?.personal?.class!]} />
+            <Field label="Domisili" values={[personalData?.domicile!]} />
+            <Field label="WhatsApp" values={[personalData?.phone!]} />
+            <Field label="Tanggal Lahir" values={[personalData?.dob!]} />
+            <Field label="Kelas" values={[personalData?.class!]} />
             <Field
               label="Asal Sekolah"
-              values={[userData?.personal?.school!]}
+              values={[personalData?.school!]}
             />
             <Field
               label="Nomor Telepon Orang Tua"
-              values={[userData?.personal?.parentPhone!]}
+              values={[personalData?.parentPhone!]}
             />
           </div>
           {userData?.ticket && (

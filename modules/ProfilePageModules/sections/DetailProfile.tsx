@@ -15,6 +15,7 @@ import { Pencil } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import QRCode from 'react-qr-code'
 import { PandaImages } from '../constant'
+import Link from 'next/link'
 
 interface FieldProps {
   label: string
@@ -29,9 +30,9 @@ const Field = ({ label, values = [''], link }: FieldProps) => {
       {values?.map((value) => (
         <>
           {link ? (
-            <a className="text-md font-normal" href={value}>
+            <Link className="text-md font-normal" href={value}>
               {value}
-            </a>
+            </Link>
           ) : (
             <p className="text-md font-normal">{value}</p>
           )}
@@ -150,13 +151,17 @@ export const DetailProfile = () => {
             </Popover>
           </div>
 
-          {userData?.ticket && (
+          {userData?.ticket ? (
             <Button
               className="mt-6 block md:hidden bg-BlueRegion/Portgage/600"
               onClick={handleScrollToQRCode}
             >
               See QR Code
             </Button>
+          ) : (
+            <Link href="/register">
+              <Button className="max-w-36">Registrasi Peserta</Button>
+            </Link>
           )}
 
           {userData?.ticket && (

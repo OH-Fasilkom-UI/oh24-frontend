@@ -159,8 +159,8 @@ export const DetailProfile = () => {
               See QR Code
             </Button>
           ) : (
-            <Link href="/register">
-              <Button className="max-w-36">Registrasi Peserta</Button>
+            <Link href="/register" className="pointer-events-none">
+              <Button className="max-w-36" disabled>Registrasi Peserta</Button>
             </Link>
           )}
 

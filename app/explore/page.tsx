@@ -1,13 +1,13 @@
 import Footer from '@/components/elements/Footer'
-import { ExploreFasilkomModule } from '@/modules/ExploreFasilkomModule'
+import ExploreModule from '@/modules/ExploreModule'
 
 const Page = () => {
-    return (
-        <main>
-            <ExploreFasilkomModule />
-            <Footer />
-        </main>
-    )
+  return (
+    <main className="relative">
+      <ExploreModule />
+      <Footer />
+    </main>
+  )
 }
 
 export default Page

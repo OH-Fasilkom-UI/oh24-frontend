@@ -4,7 +4,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
-import { Skeleton } from "@/components/ui/skeleton"
+import { Skeleton } from '@/components/ui/skeleton'
 import { useIsAuthenticated, useLogout } from '@/hooks/auth'
 import { useUserData } from '@/hooks/user'
 import paths from '@/lib/paths'

@@ -10,30 +10,45 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover'
 import { useUserData } from '@/hooks/user'
-import { updateMyPersonalData } from '@/lib/api/user'
-import { Pencil, SquarePen } from 'lucide-react'
-import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { formatPersonalData, updateMyPersonalData } from '@/lib/api/user'
+import { Pencil } from 'lucide-react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import QRCode from 'react-qr-code'
 import { PandaImages } from '../constant'
+import Link from 'next/link'
 
 interface FieldProps {
   label: string
-  value?: string | null
+  values?: string[] | null
+  link?: boolean
 }
 
-const Field = ({ label, value = '' }: FieldProps) => {
+const Field = ({ label, values = [''], link }: FieldProps) => {
   return (
-    <div className="text-Text/TextLightBG flex flex-col gap-1 max-md:text-center">
-      <p className="text-lg font-bold">{label}</p>
-      <p className="text-md font-normal">{value}</p>
+    <div className="text-Text/TextLightBG flex flex-col gap-1 max-md:items-center max-md:text-center">
+      <p className="text-lg font-bold max-md:w-[80%]">{label}</p>
+      {values?.map((value) => (
+        <>
+          {link ? (
+            <Link className="text-md font-normal" href={value}>
+              {value}
+            </Link>
+          ) : (
+            <p className="text-md font-normal">{value}</p>
+          )}
+        </>
+      ))}
     </div>
   )
 }
 
 export const DetailProfile = () => {
-  const { userData, isLoading } = useUserData({ personal: true })
+  const qrCodeSmallRef = useRef<HTMLDivElement>(null)
+  const { userData, isLoading } = useUserData({ personal: true, ticket: true })
   const [profilePict, setProfilePictSrc] = useState<number>(0)
   const [popOpen, popClose] = useState(false)
+
+  const personalData = useMemo(() => formatPersonalData(userData?.personal), [userData])
 
   useEffect(() => {
     setProfilePictSrc(userData?.personal.profilePic ?? 0)
@@ -57,13 +72,31 @@ export const DetailProfile = () => {
     return <Loader />
   }
 
+  const leadersString = userData?.ticket?.group?.leaders?.map(
+    (leader: string, index: number) => `${index + 1}. ${leader}`
+  )
+
+  const handleScrollToQRCode = () => {
+    if (typeof window !== 'undefined' && qrCodeSmallRef.current) {
+      const offset = 250
+      const elementPosition =
+        qrCodeSmallRef.current.getBoundingClientRect().top + window.scrollY
+      const offsetPosition = elementPosition - offset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      })
+    }
+  }
+
   return (
     <div className="pt-[10rem] min-[1920px]:pt-[10rem] mb-10 flex flex-col md:px-[120px] xl:px-[190px] py-10 max-md:pb-96 justify-center items-center md:items-start md:justify-start gap-[35px]">
       <h1 className="text-[36px] text-[#2E3881] font-bold font-riffic tracking-[0.075rem]">
         Profile
       </h1>
       <div className="flex flex-col max-md:justify-center max-md:items-center md:flex-row md:gap-[108px]">
-        <div className='flex flex-col items-center max-md:pb-10'>
+        <div className="flex flex-col items-center max-md:pb-10">
           <div className="flex flex-col items-end">
             <Avatar className="w-[216px] h-[216px]">
               <AvatarImage src={PandaImages[profilePict].src} />
@@ -117,29 +150,80 @@ export const DetailProfile = () => {
               </PopoverContent>
             </Popover>
           </div>
-          {/* {userData?.hasAmbassadorForm ?
-            <p className='text-Text/TextLightBG text-lg font-bold max-w-44 text-center'>You have registered as an ambassador</p>
-            :
-            <Link href="/ambassador/register">
-              <Button disabled>
-                <SquarePen className="max-md:text-[12px]" />
-                Register Ambassador
-              </Button>
+
+          {userData?.ticket ? (
+            <Button
+              className="mt-6 block md:hidden bg-BlueRegion/Portgage/600"
+              onClick={handleScrollToQRCode}
+            >
+              See QR Code
+            </Button>
+          ) : (
+            <Link href="/register">
+              <Button className="max-w-36">Registrasi Peserta</Button>
             </Link>
-          } */}
+          )}
+
+          {userData?.ticket && (
+            <div className="mt-6 max-md:hidden">
+              <QRCode
+                value={userData?.ticket.userId ?? 'oh24'}
+                size={300}
+                className="shadow-lg bg-white p-3 rounded-md"
+              />
+            </div>
+          )}
         </div>
-        <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
-          <Field label="Nama Lengkap" value={userData?.personal?.fullName} />
-          <Field label="Email" value={userData?.email} />
-          <Field label="Domisili" value={userData?.personal?.domicile} />
-          <Field label="WhatsApp" value={userData?.personal?.phone} />
-          <Field label="Tanggal Lahir" value={userData?.personal?.dob} />
-          <Field label="Kelas" value={userData?.personal?.class} />
-          <Field label="Asal Sekolah" value={userData?.personal?.school} />
-          <Field
-            label="Nomor Telepon Orang Tua"
-            value={userData?.personal?.parentPhone}
-          />
+        <div className="flex flex-col md:w-1/2 w-full">
+          <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
+            <Field
+              label="Nama Lengkap"
+              values={[personalData?.fullName!]}
+            />
+            <Field label="Email" values={[userData?.email!]} />
+            <Field label="Domisili" values={[personalData?.domicile!]} />
+            <Field label="WhatsApp" values={[personalData?.phone!]} />
+            <Field label="Tanggal Lahir" values={[personalData?.dob!]} />
+            <Field label="Kelas" values={[personalData?.class!]} />
+            <Field
+              label="Asal Sekolah"
+              values={[personalData?.school!]}
+            />
+            <Field
+              label="Nomor Telepon Orang Tua"
+              values={[personalData?.parentPhone!]}
+            />
+          </div>
+          {userData?.ticket && (
+            <>
+              <div className="mt-6 grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
+                <Field label="Nama Mentor CS Connect" values={leadersString} />
+                <Field
+                  label="Link Grup WhatsApp Mentoring CS Connect"
+                  values={[userData?.ticket?.group?.linkWA!]}
+                  link
+                />
+                <Field
+                  label="Link Grup WhatsApp Rombel Main Event"
+                  values={[userData?.ticket?.rombel?.linkWA!]}
+                  link
+                />
+              </div>
+
+              {userData?.ticket?.userId && (
+                <div
+                  className="flex flex-row justify-center mt-8 md:hidden"
+                  ref={qrCodeSmallRef}
+                >
+                  <QRCode
+                    value={userData?.ticket?.userId ?? 'oh24'}
+                    size={150}
+                    className="shadow-lg bg-white p-3 rounded-md"
+                  />
+                </div>
+              )}
+            </>
+          )}
         </div>
       </div>
     </div>

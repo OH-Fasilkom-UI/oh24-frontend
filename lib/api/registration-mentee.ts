@@ -5,11 +5,13 @@ export enum Accommodation {
   KERETA,
   PESAWAT,
   BUS,
+  TIDAK_IKUT,
 }
 
 export enum Companion {
   TEMAN,
   KELUARGA,
+  TIDAK_IKUT,
 }
 
 export enum EventName {
@@ -19,9 +21,9 @@ export enum EventName {
 }
 
 export const submitQuestionnaireSchema = z.object({
-  answers: z.tuple([z.number(), z.number(), z.number()]),
-  accommodation: z.nativeEnum(Accommodation).optional(),
-  companion: z.nativeEnum(Companion).optional(),
+  answers: z.tuple([z.string(), z.string(), z.string()]),
+  accommodation: z.string().optional(),
+  companion: z.string().optional(),
 })
 
 export type SubmitQuestionnaireData = z.infer<typeof submitQuestionnaireSchema>
@@ -29,7 +31,15 @@ export type SubmitQuestionnaireData = z.infer<typeof submitQuestionnaireSchema>
 export function submitQuestionnaire(data: SubmitQuestionnaireData) {
   return fetch('/api/reg/mentee/questionnaire', {
     method: 'POST',
-    body: JSON.stringify(data),
+    body: JSON.stringify({
+      answers: data.answers.map((answer) => Number(answer)) as unknown as [
+        Number,
+        Number,
+        Number,
+      ],
+      accommodation: data.accommodation,
+      companion: data.companion,
+    }),
     headers: {
       'Content-Type': 'application/json',
     },
@@ -37,7 +47,7 @@ export function submitQuestionnaire(data: SubmitQuestionnaireData) {
 }
 
 export const submitEventSchema = z.object({
-  event: z.nativeEnum(EventName),
+  event: z.string(),
   referral: z.string().optional(),
 })
 

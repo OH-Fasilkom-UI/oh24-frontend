@@ -25,7 +25,7 @@ export const LeftSideForm = <
     <div className="bg-[#2E3881E5] rounded-t-[32px] lg:rounded-[32px] py-8 px-5 lg:px-10 flex flex-col gap-[22px] lg:gap-8 lg:w-1/2">
       <FormField
         control={form.control}
-        name={"infoSource" as Path<T>}
+        name={'infoSource' as Path<T>}
         render={({ field }) => (
           <FormItem>
             <FormLabel htmlFor="infoSource" className="max-lg:text-[12px]">
@@ -48,7 +48,7 @@ export const LeftSideForm = <
       />
       <FormField
         control={form.control}
-        name={"reasonForJoining" as Path<T>}
+        name={'reasonForJoining' as Path<T>}
         render={({ field }) => (
           <FormItem>
             <FormControl>
@@ -63,7 +63,7 @@ export const LeftSideForm = <
       />
       <FormField
         control={form.control}
-        name={"expectations" as Path<T>}
+        name={'expectations' as Path<T>}
         render={({ field }) => (
           <FormItem>
             <FormControl>
@@ -79,7 +79,7 @@ export const LeftSideForm = <
       <InputForm
         form={form}
         icon={<AtSign />}
-        name={"instagramLink" as Path<T>}
+        name={'instagramLink' as Path<T>}
         label="Akun Instagram"
         placeholder="Isikan dengan nama akun Instagram"
       />
@@ -87,25 +87,25 @@ export const LeftSideForm = <
         placeholder="Isikan dengan nama akun Tiktok"
         icon={<AtSign />}
         form={form}
-        name={"tiktokLink" as Path<T>}
+        name={'tiktokLink' as Path<T>}
         label="Akun Tiktok"
       />
       <InputForm
         placeholder="Isikan dengan nama akun Twitter"
         icon={<AtSign />}
         form={form}
-        name={"twitterLink" as Path<T>}
+        name={'twitterLink' as Path<T>}
         label="Akun Twitter (opsional)"
       />
       <FormField
         control={form.control}
-        name={"followIG" as Path<T>}
+        name={'followIG' as Path<T>}
         render={({ field }) => (
           <FormItem>
             <FormControl>
               <FileInput
                 label="Bukti Follow IG OH Fasilkom"
-                secondaryMessage='Unggah file JPG/PNG/JPEG dengan maksimum 2MB'
+                secondaryMessage="Unggah file JPG/PNG/JPEG dengan maksimum 2MB"
                 file={field.value}
                 setFile={field.onChange}
                 {...field}
@@ -117,13 +117,13 @@ export const LeftSideForm = <
       />
       <FormField
         control={form.control}
-        name={"story" as Path<T>}
+        name={'story' as Path<T>}
         render={({ field }) => (
           <FormItem>
             <FormControl>
               <FileInput
                 label="Bukti Post Insta Story"
-                secondaryMessage='Unggah file JPG/PNG/JPEG dengan maksimum 2MB'
+                secondaryMessage="Unggah file JPG/PNG/JPEG dengan maksimum 2MB"
                 file={field.value}
                 setFile={field.onChange}
                 {...field}

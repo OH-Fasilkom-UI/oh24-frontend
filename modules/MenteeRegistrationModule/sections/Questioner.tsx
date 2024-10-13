@@ -94,7 +94,7 @@ export const Questioner = ({ onClick }: { onClick: () => void }) => {
                     <RadioGroup
                       size="small"
                       color="light"
-                      className="flex flex-col md:gap-4 gap-2 sm:justify-center items-center tracking-wide max-sm:text-[8px]"
+                      className="flex flex-col flex-wrap sm:flex-row md:gap-x-[26px] gap-y-2 gap-x-2 justify-center md:items-center tracking-wide max-sm:text-[8px]"
                       onValueChange={(value: string) =>
                         field.onChange(value as unknown as Number)
                       }
@@ -121,7 +121,7 @@ export const Questioner = ({ onClick }: { onClick: () => void }) => {
                     <RadioGroup
                       size="small"
                       color="light"
-                      className="flex flex-col md:gap-4 gap-2 sm:justify-center items-center tracking-wide max-sm:text-[8px]"
+                      className="flex flex-col flex-wrap sm:flex-row md:gap-x-[26px] gap-y-2 gap-x-2 justify-center md:items-center tracking-wide max-sm:text-[8px]"
                       onValueChange={(value: string) =>
                         field.onChange(value as unknown as Number)
                       }
@@ -149,7 +149,7 @@ export const Questioner = ({ onClick }: { onClick: () => void }) => {
                     <RadioGroup
                       size="small"
                       color="light"
-                      className="flex flex-col md:gap-4 gap-2 sm:justify-center items-center tracking-wide max-sm:text-[8px]"
+                      className="flex flex-col flex-wrap sm:flex-row md:gap-x-[26px] gap-y-2 gap-x-2 justify-center md:items-center tracking-wide max-sm:text-[8px]"
                       onValueChange={(value: string) =>
                         field.onChange(value as unknown as Number)
                       }
@@ -198,7 +198,7 @@ export const Questioner = ({ onClick }: { onClick: () => void }) => {
                         <RadioGroup
                           size="small"
                           color="light"
-                          className="flex flex-col sm:flex-row md:gap-[26px] gap-2 justify-center md:items-center tracking-wide max-sm:text-[8px]"
+                          className="flex flex-col flex-wrap sm:flex-row md:gap-x-[26px] gap-y-2 gap-x-2 justify-center md:items-center tracking-wide max-sm:text-[8px]"
                           onValueChange={(value: string) =>
                             field.onChange(value as unknown as Accommodation)
                           }
@@ -227,7 +227,7 @@ export const Questioner = ({ onClick }: { onClick: () => void }) => {
                         <RadioGroup
                           size="small"
                           color="light"
-                          className="flex flex-col sm:flex-row md:gap-[26px] gap-2 justify-center md:items-center tracking-wide max-sm:text-[8px]"
+                          className="flex flex-col flex-wrap sm:flex-row md:gap-x-[26px] gap-y-2 gap-x-2 justify-center md:items-center tracking-wide max-sm:text-[8px]"
                           onValueChange={(value: string) =>
                             field.onChange(value as unknown as Companion)
                           }

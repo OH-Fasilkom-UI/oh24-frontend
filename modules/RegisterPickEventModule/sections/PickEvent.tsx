@@ -63,7 +63,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
 
     setIsFullExperienceFull(
       !eligibleFor.includes('FULL_EXPERIENCE_1') ||
-      !eligibleFor.includes('FULL_EXPERIENCE_2')
+        !eligibleFor.includes('FULL_EXPERIENCE_2')
     )
     setIsOnlineExperienceFull(!eligibleFor.includes('ONLINE_EXPERIENCE'))
   }, [isLoading])
@@ -160,7 +160,9 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
                       <strong>Tanggal:</strong> Sabtu, 23 November 2024
                     </li>
                     <li>
-                      <strong>Waktu:</strong> 07.00 - 13.00 <strong>(Sesi Pagi)</strong> dan 12.00 - 18.00 <strong>(Sesi Siang)</strong>
+                      <strong>Waktu:</strong> 07.00 - 13.00{' '}
+                      <strong>(Sesi Pagi)</strong> dan 12.00 - 18.00{' '}
+                      <strong>(Sesi Siang)</strong>
                     </li>
                     <li>
                       <strong>Tempat:</strong> Gedung Lama, Fasilkom UI

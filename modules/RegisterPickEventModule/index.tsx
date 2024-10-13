@@ -17,12 +17,16 @@ export const PickEventModule = ({ onClick }: { onClick: () => void }) => {
 
   return (
     <section className="max-w-[1920px] h-fit py-[20rem] pt-[100px] overflow-x-hidden">
-      <div className={`fixed bottom-6 z-50 left-[50%] -translate-x-[50%] ${!showButton && 'hidden'} max-lg:hidden`}>
+      <div
+        className={`fixed bottom-6 z-50 left-[50%] -translate-x-[50%] ${!showButton && 'hidden'} max-lg:hidden`}
+      >
         <ScrollLink to="RegisterAccordion" smooth={true} duration={500}>
           <Button
-            className='animate-bounce duration-1000 flex gap-4'
+            className="animate-bounce duration-1000 flex gap-4"
             variant={'ghost'}
-            onClick={() => { setShowButton(false) }}
+            onClick={() => {
+              setShowButton(false)
+            }}
           >
             <ArrowDown />
             Masih bingung 🤔

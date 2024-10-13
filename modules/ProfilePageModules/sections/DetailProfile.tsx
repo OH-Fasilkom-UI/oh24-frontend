@@ -26,13 +26,17 @@ const Field = ({ label, values = [''], link }: FieldProps) => {
   return (
     <div className="text-Text/TextLightBG flex flex-col gap-1 max-md:items-center max-md:text-center">
       <p className="text-lg font-bold max-md:w-[80%]">{label}</p>
-      {values?.map((value) => <>
-        {
-          link
-            ? <a className="text-md font-normal" href={value}>{value}</a>
-            : <p className="text-md font-normal">{value}</p>
-        }
-      </>)}
+      {values?.map((value) => (
+        <>
+          {link ? (
+            <a className="text-md font-normal" href={value}>
+              {value}
+            </a>
+          ) : (
+            <p className="text-md font-normal">{value}</p>
+          )}
+        </>
+      ))}
     </div>
   )
 }
@@ -65,21 +69,23 @@ export const DetailProfile = () => {
     return <Loader />
   }
 
-  const leadersString = userData?.ticket?.group?.leaders
-    ?.map((leader: string, index: number) => `${index + 1}. ${leader}`)
+  const leadersString = userData?.ticket?.group?.leaders?.map(
+    (leader: string, index: number) => `${index + 1}. ${leader}`
+  )
 
   const handleScrollToQRCode = () => {
     if (typeof window !== 'undefined' && qrCodeSmallRef.current) {
-      const offset = 250;
-      const elementPosition = qrCodeSmallRef.current.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - offset;
+      const offset = 250
+      const elementPosition =
+        qrCodeSmallRef.current.getBoundingClientRect().top + window.pageYOffset
+      const offsetPosition = elementPosition - offset
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
-      });
+        behavior: 'smooth',
+      })
     }
-  };
+  }
 
   return (
     <div className="pt-[10rem] min-[1920px]:pt-[10rem] mb-10 flex flex-col md:px-[120px] xl:px-[190px] py-10 max-md:pb-96 justify-center items-center md:items-start md:justify-start gap-[35px]">
@@ -97,7 +103,6 @@ export const DetailProfile = () => {
                 <Pencil className="w-10 h-10 z-50" />
               </PopoverTrigger>
               <PopoverContent className="flex flex-col w-fit" side={'right'}>
-
                 <h1 className="text-[#2E3881] text-[16px] font-tex-gyre font-bold mb-3">
                   Choose Your Panda!
                 </h1>
@@ -164,13 +169,19 @@ export const DetailProfile = () => {
         </div>
         <div className="flex flex-col md:w-1/2 w-full">
           <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
-            <Field label="Nama Lengkap" values={[userData?.personal?.fullName!]} />
+            <Field
+              label="Nama Lengkap"
+              values={[userData?.personal?.fullName!]}
+            />
             <Field label="Email" values={[userData?.email!]} />
             <Field label="Domisili" values={[userData?.personal?.domicile!]} />
             <Field label="WhatsApp" values={[userData?.personal?.phone!]} />
             <Field label="Tanggal Lahir" values={[userData?.personal?.dob!]} />
             <Field label="Kelas" values={[userData?.personal?.class!]} />
-            <Field label="Asal Sekolah" values={[userData?.personal?.school!]} />
+            <Field
+              label="Asal Sekolah"
+              values={[userData?.personal?.school!]}
+            />
             <Field
               label="Nomor Telepon Orang Tua"
               values={[userData?.personal?.parentPhone!]}
@@ -193,7 +204,10 @@ export const DetailProfile = () => {
               </div>
 
               {userData?.ticket?.userId && (
-                <div className="flex flex-row justify-center mt-8 md:hidden" ref={qrCodeSmallRef}>
+                <div
+                  className="flex flex-row justify-center mt-8 md:hidden"
+                  ref={qrCodeSmallRef}
+                >
                   <QRCode
                     value={userData?.ticket?.userId ?? 'oh24'}
                     size={150}

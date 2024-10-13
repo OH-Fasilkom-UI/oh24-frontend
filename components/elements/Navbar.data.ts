@@ -18,7 +18,7 @@ export const NAVBAR_LINKS = [
     href: '/ambassador',
     icon: SquareUserRound,
     label: 'Ambassador',
-    isExist: true,
+    isExist: false,
   },
   {
     href: '/explore',
@@ -30,7 +30,7 @@ export const NAVBAR_LINKS = [
     href: '/register',
     icon: FileText,
     label: 'Registration Page',
-    isExist: true,
+    isExist: false,
   },
   {
     href: '/wefwefw',

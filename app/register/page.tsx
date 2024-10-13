@@ -1,11 +1,12 @@
-import { MenteeRegistrationModule } from '@/modules/MenteeRegistrationModule'
+import { redirect } from 'next/navigation'
 
 const Page = () => {
-  return (
-    <main>
-      <MenteeRegistrationModule />
-    </main>
-  )
+  redirect('/')
+  // return (
+  //   <main>
+  //     <MenteeRegistrationModule />
+  //   </main>
+  // )
 }
 
 export default Page

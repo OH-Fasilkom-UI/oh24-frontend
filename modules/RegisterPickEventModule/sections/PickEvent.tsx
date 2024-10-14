@@ -133,7 +133,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
               borderRadius: '32px',
             }}
           >
-            <div className="h-[60%]">
+            <div>
               <h1 className="h-fit text-t3 text-shadow-pickEvent text-[#E0ECFF] flex justify-center mt-6 text-nowrap max-sm:text-t4 max-[400px]:text-[26px]">
                 Full Experience
               </h1>
@@ -172,7 +172,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
               </div>
             </div>
 
-            <div className="flex justify-center items-center flex-col mt-8">
+            <div className="flex justify-center items-center flex-col mt-10">
               <h1 className="text-t6 max-sm:text-t7 ">
                 Pilih sesi Main Event:
               </h1>

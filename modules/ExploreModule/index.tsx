@@ -7,10 +7,12 @@ import { JalurMasukSectionDesktop } from './components/JalurMasuk/JalurMasukSect
 import { JalurMasukSectionMobile } from './components/JalurMasuk/JalurMasukSectionMobile'
 import PacilTour from './components/PacilTour'
 import { PrestasiSection } from './components/PrestasiSection'
+import { RegistOrtuPopup } from './components/RegisOrtuPopup'
 
 const ExploreModule = () => {
   return (
     <main className="flex flex-col z-20 w-full relative">
+      <RegistOrtuPopup />
       <div className="relative flex-grow">
         <ExploreHero />
         <ExploreAlumni />

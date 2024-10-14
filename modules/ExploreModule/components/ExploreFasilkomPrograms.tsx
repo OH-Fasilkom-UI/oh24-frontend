@@ -123,7 +123,7 @@ const ExploreFasilkomPrograms = () => {
 
   return (
     <div className="my-20 px-5 md:px-20">
-      <h1 className="text-center text-Text/TextLightBG font-riffic mb-8 sm:mb-12 text-[30px] sm:text-[48px] tracking-wider">
+      <h1 className="text-center text-Text/TextLightBG font-riffic mb-8 sm:mb-12 text-6xl max-2xl:text-5xl max-xl:text-4xl max-lg:text-3xl max-sm:text-2xl max-md:leading-[36px] tracking-wider">
         Program Studi
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-2 sm:grid-rows-1 xl:gap-24 lg:gap-20 md:gap-12 sm:gap-6 gap-12 justify-items-center">

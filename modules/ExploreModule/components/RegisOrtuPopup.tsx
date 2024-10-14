@@ -26,10 +26,10 @@ export const RegistOrtuPopup = () => {
                         width={300}
                         height={300}
                         alt="Register Ortu Popup"
-                        className="w-32 h-32 "
+                        className="w-20 h-20 md:w-32 md:h-32 "
                     />
                 </div>
-                <h1 className="w-[200px] text-center bg-white rounded-full py-2 text-Text/TextLightBG">Registrasi Parent's Talkshow</h1>
+                <h1 className="w-[150px] md:w-[200px] text-xs md:text-sm text-center bg-white rounded-full py-2 text-Text/TextLightBG">Registrasi Parent's Talkshow</h1>
             </div>
         </Link>
     )

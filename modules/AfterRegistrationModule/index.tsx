@@ -1,11 +1,11 @@
 'use client'
 
+import { Loader } from '@/components/elements/Loader'
+import { useUserData } from '@/hooks/user'
 import Image from 'next/image'
 import QRCode from 'react-qr-code'
-import { useUserData } from '@/hooks/user'
-import { Loader } from '@/components/elements/Loader'
 
-const AfterRegistrationModule = ({}) => {
+const AfterRegistrationModule = ({ }) => {
   const qrCodeValue = 'oh24'
   const { userData, isLoading } = useUserData({ ticket: true })
   const leadersArray: string[] = userData?.ticket?.group?.leaders || []
@@ -55,18 +55,20 @@ const AfterRegistrationModule = ({}) => {
               </a>
             </div>
 
-            <div>
-              <h3 className="text-t6 max-sm:text-t7 font-bold mb-1">
-                Link Grup WhatsApp Rombel Main Event:
-              </h3>
-              <a
-                href={userData?.ticket.rombel?.linkWA}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {userData?.ticket.rombel?.linkWA}
-              </a>
-            </div>
+            {userData?.ticket?.rombel &&
+              <div>
+                <h3 className="text-t6 max-sm:text-t7 font-bold mb-1">
+                  Link Grup WhatsApp Rombel Main Event:
+                </h3>
+                <a
+                  href={userData?.ticket.rombel?.linkWA}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {userData?.ticket.rombel?.linkWA}
+                </a>
+              </div>
+            }
           </div>
           <div className="max-lg:mb-16">
             <QRCode

@@ -203,11 +203,13 @@ export const DetailProfile = () => {
                   values={[userData?.ticket?.group?.linkWA!]}
                   link
                 />
-                <Field
-                  label="Link Grup WhatsApp Rombel Main Event"
-                  values={[userData?.ticket?.rombel?.linkWA!]}
-                  link
-                />
+                {userData?.ticket.rombel &&
+                  <Field
+                    label="Link Grup WhatsApp Rombel Main Event"
+                    values={[userData?.ticket?.rombel?.linkWA!]}
+                    link
+                  />
+                }
               </div>
 
               {userData?.ticket?.userId && (

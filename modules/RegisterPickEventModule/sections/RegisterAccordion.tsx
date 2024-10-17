@@ -54,9 +54,9 @@ const RegisterAccordion = () => {
   return (
     <div
       id="RegisterAccordion"
-      className="w-full mt-[30rem] max-lg:mt-8 flex flex-col items-center"
+      className="w-full mt-[36rem] max-lg:mt-8 flex flex-col items-center"
     >
-      <h1 className="text-[#B91B70] text-t3 max-lg:text-t4 max-md:text-t5 mb-16 text-center w-[83vw]">
+      <h1 className="text-[#B91B70] text-t3 max-lg:text-t4 max-md:text-t5 mb-16 text-center w-[83vw] z-50">
         Masih bingung mau pilih opsi yang mana? 🤔
       </h1>
       <Accordion

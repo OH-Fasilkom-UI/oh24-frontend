@@ -48,7 +48,10 @@ export const DetailProfile = () => {
   const [profilePict, setProfilePictSrc] = useState<number>(0)
   const [popOpen, popClose] = useState(false)
 
-  const personalData = useMemo(() => formatPersonalData(userData?.personal), [userData])
+  const personalData = useMemo(
+    () => formatPersonalData(userData?.personal),
+    [userData]
+  )
 
   useEffect(() => {
     setProfilePictSrc(userData?.personal.profilePic ?? 0)
@@ -171,24 +174,21 @@ export const DetailProfile = () => {
                 size={300}
                 className="shadow-lg bg-white p-3 rounded-md"
               />
+              <p className="font-bold text-center mt-5">
+                Scan saat Main Event!
+              </p>
             </div>
           )}
         </div>
         <div className="flex flex-col md:w-1/2 w-full">
           <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
-            <Field
-              label="Nama Lengkap"
-              values={[personalData?.fullName!]}
-            />
+            <Field label="Nama Lengkap" values={[personalData?.fullName!]} />
             <Field label="Email" values={[userData?.email!]} />
             <Field label="Domisili" values={[personalData?.domicile!]} />
             <Field label="WhatsApp" values={[personalData?.phone!]} />
             <Field label="Tanggal Lahir" values={[personalData?.dob!]} />
             <Field label="Kelas" values={[personalData?.class!]} />
-            <Field
-              label="Asal Sekolah"
-              values={[personalData?.school!]}
-            />
+            <Field label="Asal Sekolah" values={[personalData?.school!]} />
             <Field
               label="Nomor Telepon Orang Tua"
               values={[personalData?.parentPhone!]}
@@ -203,16 +203,18 @@ export const DetailProfile = () => {
                   values={[userData?.ticket?.group?.linkWA!]}
                   link
                 />
-                <Field
-                  label="Link Grup WhatsApp Rombel Main Event"
-                  values={[userData?.ticket?.rombel?.linkWA!]}
-                  link
-                />
+                {userData?.ticket.rombel &&
+                  <Field
+                    label="Link Grup WhatsApp Rombel Main Event"
+                    values={[userData?.ticket?.rombel?.linkWA!]}
+                    link
+                  />
+                }
               </div>
 
               {userData?.ticket?.userId && (
                 <div
-                  className="flex flex-row justify-center mt-8 md:hidden"
+                  className="flex flex-col items-center gap-3.5 mt-8 md:hidden"
                   ref={qrCodeSmallRef}
                 >
                   <QRCode
@@ -220,6 +222,7 @@ export const DetailProfile = () => {
                     size={150}
                     className="shadow-lg bg-white p-3 rounded-md"
                   />
+                  <p className="font-bold text-center">Scan saat Main Event!</p>
                 </div>
               )}
             </>

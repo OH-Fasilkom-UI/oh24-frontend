@@ -63,7 +63,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
 
     setIsFullExperienceFull(
       !eligibleFor.includes('FULL_EXPERIENCE_1') ||
-      !eligibleFor.includes('FULL_EXPERIENCE_2')
+        !eligibleFor.includes('FULL_EXPERIENCE_2')
     )
     setIsOnlineExperienceFull(!eligibleFor.includes('ONLINE_EXPERIENCE'))
   }, [isLoading])
@@ -207,7 +207,12 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
                 </RadioGroup>
               </div>
             </div>
-            <p className={`text-center text-rose-300 font-bold ${!isFullExperienceFull && 'hidden'}`}>Mohon maaf, kamu belum bisa mengikuti Full Experience Open House Fasilkom UI 2024 karena keterbatasan kuota peserta Main Event.</p>
+            <p
+              className={`text-center text-rose-300 font-bold ${!isFullExperienceFull && 'hidden'}`}
+            >
+              Mohon maaf, kamu belum bisa mengikuti Full Experience Open House
+              Fasilkom UI 2024 karena keterbatasan kuota peserta Main Event.
+            </p>
           </Card>
 
           {/* Card Online */}

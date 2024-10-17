@@ -5,7 +5,7 @@ import { useUserData } from '@/hooks/user'
 import Image from 'next/image'
 import QRCode from 'react-qr-code'
 
-const AfterRegistrationModule = ({ }) => {
+const AfterRegistrationModule = ({}) => {
   const qrCodeValue = 'oh24'
   const { userData, isLoading } = useUserData({ ticket: true })
   const leadersArray: string[] = userData?.ticket?.group?.leaders || []
@@ -55,7 +55,7 @@ const AfterRegistrationModule = ({ }) => {
               </a>
             </div>
 
-            {userData?.ticket?.rombel &&
+            {userData?.ticket?.rombel && (
               <div>
                 <h3 className="text-t6 max-sm:text-t7 font-bold mb-1">
                   Link Grup WhatsApp Rombel Main Event:
@@ -68,7 +68,7 @@ const AfterRegistrationModule = ({ }) => {
                   {userData?.ticket.rombel?.linkWA}
                 </a>
               </div>
-            }
+            )}
           </div>
           <div className="max-lg:mb-16">
             <QRCode
@@ -76,7 +76,7 @@ const AfterRegistrationModule = ({ }) => {
               size={300}
               className="shadow-lg bg-white p-3"
             />
-            <p className='font-bold text-center mt-5'>Scan saat Main Event!</p>
+            <p className="font-bold text-center mt-5">Scan saat Main Event!</p>
           </div>
         </div>
         <div className="absolute w-[1300px] max-lg:w-[1000px] max-sm:w-[800px] max-[450px]:w-[700px] max-lg:-bottom-32 max-lg:left-1/2 max-lg:-translate-x-1/2">

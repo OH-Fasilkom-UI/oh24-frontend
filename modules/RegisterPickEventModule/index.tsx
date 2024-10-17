@@ -20,7 +20,12 @@ export const PickEventModule = ({ onClick }: { onClick: () => void }) => {
       <div
         className={`fixed bottom-6 z-50 left-[50%] -translate-x-[50%] ${!showButton && 'hidden'} max-lg:hidden`}
       >
-        <ScrollLink to="RegisterAccordion" smooth={true} duration={500} offset={-200}>
+        <ScrollLink
+          to="RegisterAccordion"
+          smooth={true}
+          duration={500}
+          offset={-200}
+        >
           <Button
             className="animate-bounce duration-1000 flex gap-4"
             variant={'ghost'}

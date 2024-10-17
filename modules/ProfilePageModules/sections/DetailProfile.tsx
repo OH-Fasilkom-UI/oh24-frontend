@@ -48,7 +48,10 @@ export const DetailProfile = () => {
   const [profilePict, setProfilePictSrc] = useState<number>(0)
   const [popOpen, popClose] = useState(false)
 
-  const personalData = useMemo(() => formatPersonalData(userData?.personal), [userData])
+  const personalData = useMemo(
+    () => formatPersonalData(userData?.personal),
+    [userData]
+  )
 
   useEffect(() => {
     setProfilePictSrc(userData?.personal.profilePic ?? 0)
@@ -176,19 +179,13 @@ export const DetailProfile = () => {
         </div>
         <div className="flex flex-col md:w-1/2 w-full">
           <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
-            <Field
-              label="Nama Lengkap"
-              values={[personalData?.fullName!]}
-            />
+            <Field label="Nama Lengkap" values={[personalData?.fullName!]} />
             <Field label="Email" values={[userData?.email!]} />
             <Field label="Domisili" values={[personalData?.domicile!]} />
             <Field label="WhatsApp" values={[personalData?.phone!]} />
             <Field label="Tanggal Lahir" values={[personalData?.dob!]} />
             <Field label="Kelas" values={[personalData?.class!]} />
-            <Field
-              label="Asal Sekolah"
-              values={[personalData?.school!]}
-            />
+            <Field label="Asal Sekolah" values={[personalData?.school!]} />
             <Field
               label="Nomor Telepon Orang Tua"
               values={[personalData?.parentPhone!]}

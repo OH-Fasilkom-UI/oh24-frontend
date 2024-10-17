@@ -174,6 +174,9 @@ export const DetailProfile = () => {
                 size={300}
                 className="shadow-lg bg-white p-3 rounded-md"
               />
+              <p className="font-bold text-center mt-5">
+                Scan saat Main Event!
+              </p>
             </div>
           )}
         </div>
@@ -209,7 +212,7 @@ export const DetailProfile = () => {
 
               {userData?.ticket?.userId && (
                 <div
-                  className="flex flex-row justify-center mt-8 md:hidden"
+                  className="flex flex-col items-center gap-3.5 mt-8 md:hidden"
                   ref={qrCodeSmallRef}
                 >
                   <QRCode
@@ -217,6 +220,7 @@ export const DetailProfile = () => {
                     size={150}
                     className="shadow-lg bg-white p-3 rounded-md"
                   />
+                  <p className="font-bold text-center">Scan saat Main Event!</p>
                 </div>
               )}
             </>

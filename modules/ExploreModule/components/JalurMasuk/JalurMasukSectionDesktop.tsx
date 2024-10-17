@@ -10,7 +10,7 @@ import Image from 'next/image'
 export const JalurMasukSectionDesktop = () => {
   return (
     <section className="pt-20">
-      <h2 className="text-5xl mb-8 text-Text/TextLightBG tracking-wider font-riffic font-bold text-center">
+      <h2 className="text-6xl max-2xl:text-5xl max-xl:text-4xl max-lg:text-3xl max-sm:text-2xl max-md:leading-[36px] mb-8 text-Text/TextLightBG tracking-wider font-riffic font-bold text-center">
         Jalur Masuk Fasilkom UI
       </h2>
       <Tabs defaultValue="sistem informasi" className="mx-auto rounded-2xl">

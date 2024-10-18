@@ -76,9 +76,9 @@ const Footer = () => {
             <div className="hidden lg:flex flex-col justify-center gap-8 font-tex-gyre text-Text/TextDarkBG font-bold text-base">
               <RouteLink href="/ambassador">Ambassador</RouteLink>
               <RouteLink href="/dashboard">Dashboard</RouteLink>
-              <RouteLink href="/registration-page">Registration Page</RouteLink>
-              <RouteLink href="/merchandise">Merchandise</RouteLink>
-              <RouteLink href="/wall-of-fame">Wall of Fame</RouteLink>
+              <RouteLink href="/">Registration Page</RouteLink>
+              <RouteLink href="/">Merchandise</RouteLink>
+              <RouteLink href="/">Wall of Fame</RouteLink>
             </div>
           </div>
           <div className="flex gap-10 lg:gap-16 xl:gap-32 font-tex-gyre font-bold text-white justify-end">

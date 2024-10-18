@@ -123,7 +123,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
         <div className="w-full flex justify-center items-center mt-[2vw] z-20 gap-16 max-lg:flex-col">
           {/* Card Main Event */}
           <Card
-            className={`w-[561px] h-[516px] flex flex-col justify-between items-center py-10 max-lg:h-fit max-md:w-[84vw] max-sm:w-[90vw] ${isFullExperienceFull ? 'bg-[#5C5A5AE6] pointer-events-none' : ''}`}
+            className={`w-[561px] h-[543px] flex flex-col justify-between items-center py-10 max-lg:h-fit max-md:w-[84vw] max-sm:w-[90vw] ${isFullExperienceFull ? 'bg-[#5C5A5AE6] pointer-events-none' : ''}`}
             style={{
               background: isFullExperienceFull
                 ? 'rgba(92, 90, 90, 0.9)'
@@ -207,11 +207,17 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
                 </RadioGroup>
               </div>
             </div>
+            <p
+              className={`text-center text-rose-300 font-bold ${!isFullExperienceFull && 'hidden'}`}
+            >
+              Mohon maaf, kamu belum bisa mengikuti Full Experience Open House
+              Fasilkom UI 2024 karena keterbatasan kuota peserta Main Event.
+            </p>
           </Card>
 
           {/* Card Online */}
           <Card
-            className={`w-[561px] h-[516px] flex flex-col justify-between items-center py-10 max-lg:h-fit max-md:w-[84vw] max-sm:w-[90vw] ${isOnlineExperienceFull ? 'bg-[#5C5A5AE6] pointer-events-none' : ''}`}
+            className={`w-[561px] h-[543px] flex flex-col justify-between items-center py-10 max-lg:h-fit max-md:w-[84vw] max-sm:w-[90vw] ${isOnlineExperienceFull ? 'bg-[#5C5A5AE6] pointer-events-none' : ''}`}
             style={{
               background: isOnlineExperienceFull
                 ? 'rgba(92, 90, 90, 0.9)'

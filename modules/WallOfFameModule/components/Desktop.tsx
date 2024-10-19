@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import { Cards } from './Cards'
 import { ArrowRightCircle } from 'lucide-react'
 
 interface DesktopProps {
@@ -71,8 +72,8 @@ const Desktop: React.FC<DesktopProps> = ({
         >
           {navmenuData[selectedIndex]}
         </h1>
-        <div className="absolute bg-white opacity-50 w-[45%] h-[67.3%] right-[3%] top-[5%]">
-          {/* Component radhya */}
+        <div className="flex flex-wrap absolute w-[45%] h-[67.3%] right-[3%] top-[5%] overflow-auto pb-4 2xl:pb-8">
+          <Cards />
         </div>
         <Image
           src="/computer-screen.png"

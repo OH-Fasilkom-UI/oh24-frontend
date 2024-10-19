@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import { Cards } from './Cards'
 import { ChevronDown } from 'lucide-react'
 
 interface MobileProps {
@@ -96,8 +97,10 @@ const Mobile: React.FC<MobileProps> = ({
         >
           {navmenuData[selectedIndex]}
         </h1>
-        <div className="absolute bg-white opacity-50 w-[89.2%] h-[69%] top-[23%]">
-          {/* Component radhya */}
+        <div className="absolute w-[89.2%] h-[69%] top-[23%] overflow-x-auto overflow-y-hidden">
+          <div className="flex w-max">
+            <Cards />
+          </div>
         </div>
         <Image
           src="/mobile-screen.png"

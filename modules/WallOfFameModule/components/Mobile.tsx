@@ -96,7 +96,7 @@ const Mobile: React.FC<MobileProps> = ({
         >
           {navmenuData[selectedIndex]}
         </h1>
-        <div className="absolute bg-white w-[89.2%] h-[69%] top-[23%]">
+        <div className="absolute bg-white opacity-50 w-[89.2%] h-[69%] top-[23%]">
           {/* Component radhya */}
         </div>
         <Image

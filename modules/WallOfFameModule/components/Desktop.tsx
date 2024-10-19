@@ -2,13 +2,13 @@ import React from 'react'
 import Image from 'next/image'
 import { ArrowRightCircle } from 'lucide-react'
 
-interface NavmenuDesktopProps {
+interface DesktopProps {
   navmenuData: string[]
   selectedIndex: number
   setSelectedIndex: (index: number) => void
 }
 
-const NavmenuDesktop: React.FC<NavmenuDesktopProps> = ({
+const NavmenuDesktop: React.FC<DesktopProps> = ({
   navmenuData,
   selectedIndex,
   setSelectedIndex,
@@ -50,12 +50,6 @@ const NavmenuDesktop: React.FC<NavmenuDesktopProps> = ({
   )
 }
 
-interface DesktopProps {
-  navmenuData: string[]
-  selectedIndex: number
-  setSelectedIndex: (index: number) => void
-}
-
 const Desktop: React.FC<DesktopProps> = ({
   navmenuData,
   selectedIndex,
@@ -77,7 +71,7 @@ const Desktop: React.FC<DesktopProps> = ({
         >
           {navmenuData[selectedIndex]}
         </h1>
-        <div className="absolute bg-white w-[45%] h-[67.3%] right-[3%] top-[5%]">
+        <div className="absolute bg-white opacity-50 w-[45%] h-[67.3%] right-[3%] top-[5%]">
           {/* Component radhya */}
         </div>
         <Image

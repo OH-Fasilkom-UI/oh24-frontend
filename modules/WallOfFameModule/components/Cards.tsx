@@ -12,11 +12,18 @@ export const Cards: React.FC<CardsProps> = ({ cards }) => {
       {cards.map((data, index) => (
         <div
           key={index}
-          className="bg-[#3B478B] w-[calc(89.2vw*0.57)] md:w-[37%] h-fit rounded-[22px] md:rounded-[18px] 2xl:rounded-[30px] flex flex-col items-center text-white mt-3 min-[520px]:mt-6 md:mt-[6%] mx-3 md:mx-[3%]"
+          className="bg-[#3B478B] w-[calc(89.2vw*0.57)] md:w-[37%] h-fit rounded-[22px] md:rounded-[18px] 2xl:rounded-[30px] flex flex-col items-center text-white mt-3 min-[520px]:mt-6 md:mt-[6%] mx-3 md:mx-[3%] relative group"
           style={{
             boxShadow: '0px 0px 6px 2px rgba(78, 86, 196, 0.7)',
           }}
         >
+          <Image
+            src="/mahkota.png"
+            alt="mahkota"
+            width={140}
+            height={200}
+            className="w-[40%] absolute -top-[12%] left-[35%] hidden group-hover:block"
+          />
           <div className="w-[55%] aspect-[7/10] mt-[6%] rounded-[6px] 2xl:rounded-[10px] overflow-hidden">
             <Image
               src={data.foto}

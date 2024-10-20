@@ -2,14 +2,22 @@ import React from 'react'
 import Image from 'next/image'
 import { Cards } from './Cards'
 import { ChevronDown } from 'lucide-react'
+import { CardsData } from '../constant'
 
 interface MobileProps {
   navmenuData: string[]
   selectedIndex: number
   setSelectedIndex: (index: number) => void
+  filteredCards: typeof CardsData
 }
 
-const NavMenuMobile: React.FC<MobileProps> = ({
+interface NavmenuProps {
+  navmenuData: string[]
+  selectedIndex: number
+  setSelectedIndex: (index: number) => void
+}
+
+const NavmenuMobile: React.FC<NavmenuProps> = ({
   navmenuData,
   selectedIndex,
   setSelectedIndex,
@@ -80,10 +88,11 @@ const Mobile: React.FC<MobileProps> = ({
   navmenuData,
   selectedIndex,
   setSelectedIndex,
+  filteredCards,
 }) => {
   return (
     <div className="flex flex-wrap pt-12 px-3 justify-center md:hidden">
-      <NavMenuMobile
+      <NavmenuMobile
         navmenuData={navmenuData}
         selectedIndex={selectedIndex}
         setSelectedIndex={setSelectedIndex}
@@ -99,7 +108,7 @@ const Mobile: React.FC<MobileProps> = ({
         </h1>
         <div className="absolute w-[89.2%] h-[69%] top-[23%] overflow-x-auto overflow-y-hidden">
           <div className="flex w-max">
-            <Cards />
+            <Cards cards={filteredCards} />
           </div>
         </div>
         <Image

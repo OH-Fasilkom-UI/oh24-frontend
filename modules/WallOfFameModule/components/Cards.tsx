@@ -1,62 +1,15 @@
 import Image from 'next/image'
 import Button from '@/components/ui/Button'
+import { CardsData } from '../constant'
 
-const CardsData = [
-  {
-    foto: '/Testimony/VazhaK.jpg',
-    nama: 'Paja Kari India',
-    posisi: 'HR',
-    jurusan: 'Sistem Informasi 2024',
-    bidang: 'Data Science',
-  },
-  {
-    foto: '/Testimony/VazhaK.jpg',
-    nama: 'Paja Kari India',
-    posisi: 'HR',
-    jurusan: 'Sistem Informasi 2024',
-    bidang: 'Data Science',
-  },
-  {
-    foto: '/Testimony/VazhaK.jpg',
-    nama: 'Paja Kari India',
-    posisi: 'HR',
-    jurusan: 'Sistem Informasi 2024',
-    bidang: 'Data Science',
-  },
-  {
-    foto: '/Testimony/VazhaK.jpg',
-    nama: 'Paja Kari India',
-    posisi: 'HR',
-    jurusan: 'Sistem Informasi 2024',
-    bidang: 'Data Science',
-  },
-  {
-    foto: '/Testimony/VazhaK.jpg',
-    nama: 'Paja Kari India',
-    posisi: 'HR',
-    jurusan: 'Sistem Informasi 2024',
-    bidang: 'Data Science',
-  },
-  {
-    foto: '/Testimony/VazhaK.jpg',
-    nama: 'Paja Kari India',
-    posisi: 'HR',
-    jurusan: 'Sistem Informasi 2024',
-    bidang: 'Data Science',
-  },
-  {
-    foto: '/Testimony/VazhaK.jpg',
-    nama: 'Paja Kari India',
-    posisi: 'HR',
-    jurusan: 'Sistem Informasi 2024',
-    bidang: 'Data Science',
-  },
-]
+interface CardsProps {
+  cards: typeof CardsData
+}
 
-export const Cards = () => {
+export const Cards: React.FC<CardsProps> = ({ cards }) => {
   return (
     <>
-      {CardsData.map((data, index) => (
+      {cards.map((data, index) => (
         <div
           key={index}
           className="bg-[#3B478B] w-[calc(89.2vw*0.57)] md:w-[37%] h-fit rounded-[22px] md:rounded-[18px] 2xl:rounded-[30px] flex flex-col items-center text-white mt-3 min-[520px]:mt-6 md:mt-[6%] mx-3 md:mx-[3%]"

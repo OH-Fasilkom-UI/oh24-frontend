@@ -2,14 +2,22 @@ import React from 'react'
 import Image from 'next/image'
 import { Cards } from './Cards'
 import { ArrowRightCircle } from 'lucide-react'
+import { CardsData } from '../constant'
 
 interface DesktopProps {
   navmenuData: string[]
   selectedIndex: number
   setSelectedIndex: (index: number) => void
+  filteredCards: typeof CardsData
 }
 
-const NavmenuDesktop: React.FC<DesktopProps> = ({
+interface NavmenuProps {
+  navmenuData: string[]
+  selectedIndex: number
+  setSelectedIndex: (index: number) => void
+}
+
+const NavmenuDesktop: React.FC<NavmenuProps> = ({
   navmenuData,
   selectedIndex,
   setSelectedIndex,
@@ -55,6 +63,7 @@ const Desktop: React.FC<DesktopProps> = ({
   navmenuData,
   selectedIndex,
   setSelectedIndex,
+  filteredCards,
 }) => {
   return (
     <div className="md:flex flex-wrap pt-12 px-12 justify-center hidden">
@@ -73,7 +82,7 @@ const Desktop: React.FC<DesktopProps> = ({
           {navmenuData[selectedIndex]}
         </h1>
         <div className="flex flex-wrap absolute w-[45%] h-[67.3%] right-[3%] top-[5%] overflow-auto pb-4 2xl:pb-8">
-          <Cards />
+          <Cards cards={filteredCards} />
         </div>
         <Image
           src="/computer-screen.png"

@@ -70,11 +70,11 @@ export interface GroupData {
   createdAt: string
 }
 
-export function formatPersonalData(
-  data?: PersonalData
-): PersonalData | undefined {
+export function formatPersonalData<T extends PersonalData | undefined>(
+  data: T
+): T {
   if (!data) {
-    return undefined
+    return data
   }
 
   // This looks so bad lmao

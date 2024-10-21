@@ -27,7 +27,12 @@ const ExploreHero = () => {
       </div>
       <div className="w-screen absolute top-[68px] min-[370px]:top-[42px] min-[480px]:top-0 min-[520px]:-top-[42px] md:top-0 lg:-top-[32px] min-[1576px]:-top-[86px]">
         <div className="w-full">
-          <ScrollLink to="jalur-masuk" smooth={true} duration={500} offset={-50}>
+          <ScrollLink
+            to="jalur-masuk"
+            smooth={true}
+            duration={500}
+            offset={-50}
+          >
             <Image
               src={
                 isJalurMasukHovered
@@ -117,11 +122,11 @@ const ExploreHero = () => {
             className="w-full max-md:block hidden object-contain"
           />
           <div className="absolute bottom-[8%] min-[520px]:bottom-[16%] md:bottom-[24%] flex flex-col w-full justify-center gap-3 my-5 lg:my-20 items-center">
-              <ScrollLink to="prestasi" smooth={true} duration={500} offset={-50}>
-                <Button className="bg-Misc/Ziggurat/400 max-md:text-[12px] lg:text-xl">
-                  Lihat Pencapaian Kami
-                </Button>
-              </ScrollLink>
+            <ScrollLink to="prestasi" smooth={true} duration={500} offset={-50}>
+              <Button className="bg-Misc/Ziggurat/400 max-md:text-[12px] lg:text-xl">
+                Lihat Pencapaian Kami
+              </Button>
+            </ScrollLink>
             <Link href="https://cs.ui.ac.id/" target="_blank">
               <Button className="bg-BlueRegion/Cornflower/50 text-Text/TextLightBG md:w-full max-md:text-[12px] lg:text-xl">
                 Kunjungi Website Resmi Fasilkom UI

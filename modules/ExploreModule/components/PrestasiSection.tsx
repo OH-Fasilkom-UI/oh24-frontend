@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export const PrestasiSection = () => {
   return (
-    <section id='prestasi' className="pt-20 mx-20 max-md:mx-6 relative">
+    <section id="prestasi" className="pt-20 mx-20 max-md:mx-6 relative">
       <h2 className="font-riffic text-Text/TextLightBG text-5xl font-bold text-center tracking-widest mb-[80px] max-md:mb-8">
         Prestasi
       </h2>

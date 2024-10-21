@@ -47,7 +47,8 @@ const AmbassadorHeroContent = () => {
         <Link href="/ambassador/register">
           <Button
             disabled
-            className="bg-Misc/Ziggurat/400 w-[180px] md:w-full max-w-[180px] max-md:text-[12px]">
+            className="bg-Misc/Ziggurat/400 w-[180px] md:w-full max-w-[180px] max-md:text-[12px]"
+          >
             <User className="max-md:text-[12px]" />
             Register
           </Button>

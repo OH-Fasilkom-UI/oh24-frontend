@@ -63,7 +63,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
 
     setIsFullExperienceFull(
       !eligibleFor.includes('FULL_EXPERIENCE_1') ||
-      !eligibleFor.includes('FULL_EXPERIENCE_2')
+        !eligibleFor.includes('FULL_EXPERIENCE_2')
     )
     setIsOnlineExperienceFull(!eligibleFor.includes('ONLINE_EXPERIENCE'))
   }, [isLoading])
@@ -123,7 +123,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
         <div className="w-full flex justify-center items-center mt-[2vw] z-20 gap-16 max-lg:flex-col">
           {/* Card Main Event */}
           <Card
-            className={`w-[561px] h-[516px] flex flex-col justify-between items-center py-10 max-lg:h-fit max-md:w-[84vw] max-sm:w-[90vw] ${isFullExperienceFull ? 'bg-[#5C5A5AE6] pointer-events-none' : ''}`}
+            className={`w-[561px] h-[543px] flex flex-col justify-between items-center py-10 max-lg:h-fit max-md:w-[84vw] max-sm:w-[90vw] ${isFullExperienceFull ? 'bg-[#5C5A5AE6] pointer-events-none' : ''}`}
             style={{
               background: isFullExperienceFull
                 ? 'rgba(92, 90, 90, 0.9)'
@@ -133,7 +133,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
               borderRadius: '32px',
             }}
           >
-            <div className="h-[60%]">
+            <div>
               <h1 className="h-fit text-t3 text-shadow-pickEvent text-[#E0ECFF] flex justify-center mt-6 text-nowrap max-sm:text-t4 max-[400px]:text-[26px]">
                 Full Experience
               </h1>
@@ -160,7 +160,9 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
                       <strong>Tanggal:</strong> Sabtu, 23 November 2024
                     </li>
                     <li>
-                      <strong>Waktu:</strong> 07.00 - 13.00 <strong>(Sesi Pagi)</strong> dan 12.00 - 18.00 <strong>(Sesi Siang)</strong>
+                      <strong>Waktu:</strong> 07.00 - 13.00{' '}
+                      <strong>(Sesi Pagi)</strong> dan 12.00 - 18.00{' '}
+                      <strong>(Sesi Siang)</strong>
                     </li>
                     <li>
                       <strong>Tempat:</strong> Gedung Lama, Fasilkom UI
@@ -170,7 +172,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
               </div>
             </div>
 
-            <div className="flex justify-center items-center flex-col mt-8">
+            <div className="flex justify-center items-center flex-col mt-10">
               <h1 className="text-t6 max-sm:text-t7 ">
                 Pilih sesi Main Event:
               </h1>
@@ -205,11 +207,17 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
                 </RadioGroup>
               </div>
             </div>
+            <p
+              className={`text-center text-rose-300 font-bold ${!isFullExperienceFull && 'hidden'}`}
+            >
+              Mohon maaf, kamu belum bisa mengikuti Full Experience Open House
+              Fasilkom UI 2024 karena keterbatasan kuota peserta Main Event.
+            </p>
           </Card>
 
           {/* Card Online */}
           <Card
-            className={`w-[561px] h-[516px] flex flex-col justify-between items-center py-10 max-lg:h-fit max-md:w-[84vw] max-sm:w-[90vw] ${isOnlineExperienceFull ? 'bg-[#5C5A5AE6] pointer-events-none' : ''}`}
+            className={`w-[561px] h-[543px] flex flex-col justify-between items-center py-10 max-lg:h-fit max-md:w-[84vw] max-sm:w-[90vw] ${isOnlineExperienceFull ? 'bg-[#5C5A5AE6] pointer-events-none' : ''}`}
             style={{
               background: isOnlineExperienceFull
                 ? 'rgba(92, 90, 90, 0.9)'

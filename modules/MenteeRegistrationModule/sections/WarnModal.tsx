@@ -22,7 +22,7 @@ export const WarnModal = ({ onClick }: { onClick: () => void }) => {
 
   return (
     <div className="relative">
-      <div className="max-md:w-[190px] md:rounded-[24px] rounded-[18px] flex flex-col px-8 py-9 bg-[#F0F8FF]">
+      <div className="md:rounded-[24px] rounded-[18px] flex flex-col mx-4 px-8 py-9 bg-[#F0F8FF]">
         <div className="max-md:mx-auto">
           <AlertTriangle size={48} className="text-Text/TextLightBG" />
         </div>

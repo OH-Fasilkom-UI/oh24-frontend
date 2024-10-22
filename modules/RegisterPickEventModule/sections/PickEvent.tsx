@@ -271,6 +271,12 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
                 </RadioGroup>
               </div>
             </div>
+            <p
+              className={`text-center text-rose-300 font-bold ${!isOnlineExperienceFull && 'hidden'}`}
+            >
+              Mohon maaf, kamu belum bisa mengikuti Online Experience Open House
+              Fasilkom UI 2024 karena keterbatasan kuota peserta.
+            </p>
           </Card>
         </div>
 

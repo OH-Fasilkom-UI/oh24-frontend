@@ -157,12 +157,14 @@ export const DetailProfile = () => {
           </div>
 
           {userData?.ticket ? (
-            <Button
-              className="mt-6 block md:hidden bg-BlueRegion/Portgage/600"
-              onClick={handleScrollToQRCode}
-            >
-              See QR Code
-            </Button>
+            userData?.ticket?.eventName.startsWith("FULL") && (
+              <Button
+                className="mt-6 block md:hidden bg-BlueRegion/Portgage/600"
+                onClick={handleScrollToQRCode}
+              >
+                See QR Code
+              </Button>
+            )
           ) : (
             <Link href="/register">
               <Button className="max-w-36">Registrasi Peserta</Button>

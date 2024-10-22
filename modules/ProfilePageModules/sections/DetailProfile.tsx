@@ -75,9 +75,11 @@ export const DetailProfile = () => {
     return <Loader />
   }
 
-  const leadersString = userData?.ticket?.group?.leaders?.map(
-    (leader: string, index: number) => `${index + 1}. ${leader}`
-  )
+  const leadersString = userData?.ticket?.group?.leaders.length == 0
+    ? ['Belum ada']
+    : userData?.ticket?.group?.leaders.map(
+        (leader: string, index: number) => `${index + 1}. ${leader}`
+      )
 
   const handleScrollToQRCode = () => {
     if (typeof window !== 'undefined' && qrCodeSmallRef.current) {
@@ -167,7 +169,7 @@ export const DetailProfile = () => {
             </Link>
           )}
 
-          {userData?.ticket && (
+          {userData?.ticket?.eventName.startsWith('FULL') && (
             <div className="mt-6 max-md:hidden">
               <QRCode
                 value={userData?.ticket.userId ?? 'oh24'}
@@ -200,19 +202,19 @@ export const DetailProfile = () => {
                 <Field label="Nama Mentor CS Connect" values={leadersString} />
                 <Field
                   label="Link Grup WhatsApp Mentoring CS Connect"
-                  values={[userData?.ticket?.group?.linkWA!]}
+                  values={[userData?.ticket?.group?.linkWA || 'Belum ada']}
                   link
                 />
                 {userData?.ticket.rombel &&
                   <Field
                     label="Link Grup WhatsApp Rombel Main Event"
-                    values={[userData?.ticket?.rombel?.linkWA!]}
+                    values={[userData?.ticket?.rombel?.linkWA || 'Belum ada']}
                     link
                   />
                 }
               </div>
 
-              {userData?.ticket?.userId && (
+              {userData?.ticket?.eventName?.startsWith('FULL') && (
                 <div
                   className="flex flex-col items-center gap-3.5 mt-8 md:hidden"
                   ref={qrCodeSmallRef}

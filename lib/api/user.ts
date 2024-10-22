@@ -23,8 +23,8 @@ enum Role {
 
 enum EventName {
   ONLINE_EXPERIENCE = 'ONLINE_EXPERIENCE',
-  OFFLINE_EXPERIENCE_1 = 'OFFLINE_EXPERIENCE_1',
-  OFFLINE_EXPERIENCE_2 = 'OFFLINE_EXPERIENCE_2',
+  FULL_EXPERIENCE_1 = 'FULL_EXPERIENCE_1',
+  FULL_EXPERIENCE_2 = 'FULL_EXPERIENCE_2',
 }
 
 export interface PersonalData {
@@ -50,6 +50,7 @@ export interface TicketData {
   createdAt: string
   id: string
   userId: string
+  eventName: EventName
   rombel: RombelData | null
   group: GroupData | null
 }

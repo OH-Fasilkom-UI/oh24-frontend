@@ -15,11 +15,13 @@ import {
   CarouselButton,
   usePrevNextButtons,
 } from './WhatIsOpenHouseCarouselButton'
+import { useRouter } from 'next/navigation'
 
 type PropType = {
   slides: WhatIsOpenHouseItemProps[]
   options?: EmblaOptionsType
 }
+
 
 const WhatIsOpenHouseCarousel: React.FC<PropType> = (props) => {
   const { slides, options } = props
@@ -28,6 +30,8 @@ const WhatIsOpenHouseCarousel: React.FC<PropType> = (props) => {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0)
   const [lastVisibleSlideIndex, setLastVisibleSlideIndex] = useState(2)
   const [isMdOrLarger, setIsMdOrLarger] = useState(true)
+
+  const router = useRouter();
 
   useEffect(() => {
     const handleResize = () => {
@@ -125,7 +129,11 @@ const WhatIsOpenHouseCarousel: React.FC<PropType> = (props) => {
         </div>
         <CarouselButton direction="next" onClick={onNextButtonClick} />
       </div>
-      <Button className="mt-6">
+      <Button
+        onClick={() => {
+          router.push('/explore')
+        }}
+        className="mt-6">
         <p className="text-sm">Learn More</p>
         <ExternalLink size={18} />
       </Button>

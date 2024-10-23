@@ -1,3 +1,4 @@
+'use client'
 import ContactPerson from '@/components/elements/ContactPerson'
 import Testimonials from '@/components/elements/Testimonials'
 import Button from '@/components/ui/Button'

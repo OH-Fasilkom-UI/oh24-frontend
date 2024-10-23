@@ -29,7 +29,7 @@ export const WHAT_IS_OH_DATA: WhatIsOpenHouseItemProps[] = [
 
 export const TESTIMONY_DATA = [
   {
-    name: 'Oscar Glad Winfi Simanullang',
+    name: 'Oscar Glad Winfi',
     foto: '/testimony/OscarSimanullang.jpg',
     testimonial:
       '“Menurutku pengalaman OH 2023 memberikan motivasi tersendiri bagiku untuk semakin semangat mengejar Fasilkom UI di tahun 2024. Selain itu, OH juga menjadi pengalaman menarik bagiku karena banyak info tentang Pacil yang baru aku ketahui dengan mengikuti OH 2023”',
@@ -40,13 +40,6 @@ export const TESTIMONY_DATA = [
     testimonial:
       '“Seru, menyenangkan, dan tentunya kakak2 mentornya ramah2. Selain itu, informasi yang diberikan juga informatif dan insightful. Acaranya seru banget apalagi pas tour de campus dan fun coding. 10/10 ”',
     foto: '/testimony/MuhammadAzkaAwliya.jpeg',
-    namaDanSekolah: 'Full Experience',
-  },
-  {
-    name: 'Rindu Aurellia Zahra',
-    testimonial:
-      '“Seru banget banget bangettt ketemu sama temen2 yang satu frekuensi, kating yang baik dan helpfullll khususnya my love ka nia, ka anggun, also vic and vpic dec my love ka ella, ka jah and ka aimee pokoknya mereka semua kayak mamaku yang super duper baik banget, GA BAKAL NYESEL DAN MAU BGT BGT BUAT KOLABORASI SAMPE OH SELESAI ATAU SAMPE AKU LULUS DI PACIL HOHO i love them so much!!! oh bantu aku buat ningkatin kualitas diriku juga”',
-    foto: '/testimony/marsonhere.jpeg',
     namaDanSekolah: 'Full Experience',
   },
   {

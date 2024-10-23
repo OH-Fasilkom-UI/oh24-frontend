@@ -41,8 +41,9 @@ export const Questioner = ({ onClick }: { onClick: () => void }) => {
 
   const onSubmit = async (data: SubmitQuestionnaireData) => {
     submit(data, {
-      onSuccess: () => {
+      onSuccess: async () => {
         toast.success('Berhasil mengirimkan data')
+        await new Promise((resolve) => setTimeout(resolve, 5000))
         onClick()
       },
       onError: () => {
@@ -63,7 +64,7 @@ export const Questioner = ({ onClick }: { onClick: () => void }) => {
   return (
     <section
       className={cn(
-        'min-h-[100vh] w-full px-[10vw] flex justify-center items-center',
+        'min-h-[100vh] w-full px-[10vw] flex justify-center items-center py-52',
         userData?.personal?.domicile === 'NON_JABODETABEK' && 'py-[20vh]'
       )}
       style={{
@@ -93,7 +94,7 @@ export const Questioner = ({ onClick }: { onClick: () => void }) => {
                     <RadioGroup
                       size="small"
                       color="light"
-                      className="grid sm:grid-rows-2 grid-rows-3 grid-flow-col md:gap-[26px] gap-2 sm:justify-center items-center tracking-wide max-sm:text-[8px]"
+                      className="flex flex-col md:gap-4 gap-2 sm:justify-center items-center tracking-wide max-sm:text-[8px]"
                       onValueChange={(value: string) =>
                         field.onChange(value as unknown as Number)
                       }
@@ -120,7 +121,7 @@ export const Questioner = ({ onClick }: { onClick: () => void }) => {
                     <RadioGroup
                       size="small"
                       color="light"
-                      className="grid sm:grid-rows-2 grid-rows-3 grid-flow-col md:gap-[26px] gap-2 sm:justify-center items-center tracking-wide max-sm:text-[8px]"
+                      className="flex flex-col md:gap-4 gap-2 sm:justify-center items-center tracking-wide max-sm:text-[8px]"
                       onValueChange={(value: string) =>
                         field.onChange(value as unknown as Number)
                       }
@@ -148,7 +149,7 @@ export const Questioner = ({ onClick }: { onClick: () => void }) => {
                     <RadioGroup
                       size="small"
                       color="light"
-                      className="grid sm:grid-rows-2 grid-rows-3 grid-flow-col md:gap-[26px] gap-2 sm:justify-center items-center tracking-wide max-sm:text-[8px]"
+                      className="flex flex-col md:gap-4 gap-2 sm:justify-center items-center tracking-wide max-sm:text-[8px]"
                       onValueChange={(value: string) =>
                         field.onChange(value as unknown as Number)
                       }

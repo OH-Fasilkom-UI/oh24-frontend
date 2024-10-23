@@ -74,7 +74,6 @@ const LandingPageHero = () => {
           </Link>
           <Link href="/register">
             <Button
-              disabled
               variant="tertiary"
               className="w-[120px] h-[40px] sm:w-[180px] sm:h-[50px] text-[10px] sm:text-[12px]"
             >

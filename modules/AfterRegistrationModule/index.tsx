@@ -51,7 +51,7 @@ const AfterRegistrationModule = ({}) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {userData?.ticket?.group?.linkWA}
+                {userData?.ticket?.group?.linkWA || 'Belum Ada'}
               </a>
             </div>
 
@@ -70,14 +70,16 @@ const AfterRegistrationModule = ({}) => {
               </div>
             )}
           </div>
-          <div className="max-lg:mb-16">
-            <QRCode
-              value={userData?.ticket?.userId ?? qrCodeValue}
-              size={300}
-              className="shadow-lg bg-white p-3"
-            />
-            <p className="font-bold text-center mt-5">Scan saat Main Event!</p>
-          </div>
+          {userData?.ticket?.eventName?.startsWith('FULL') && (
+            <div className="max-lg:mb-16">
+              <QRCode
+                value={userData?.ticket?.userId ?? qrCodeValue}
+                size={300}
+                className="shadow-lg bg-white p-3"
+              />
+              <p className="font-bold text-center mt-5">Scan saat Main Event!</p>
+            </div>
+          )}
         </div>
         <div className="absolute w-[1300px] max-lg:w-[1000px] max-sm:w-[800px] max-[450px]:w-[700px] max-lg:-bottom-32 max-lg:left-1/2 max-lg:-translate-x-1/2">
           <Image

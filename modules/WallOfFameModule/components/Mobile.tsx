@@ -110,7 +110,7 @@ const MobileOverview: React.FC<MobileOverviewProps> = ({
         {navMenuData[selectedIndex]}
       </h1>
       <div className="absolute w-[89.2%] h-[69%] top-[23%] overflow-x-auto overflow-y-hidden">
-        <div className="flex w-max">{children}</div>
+        <div className="flex w-max mt-8">{children}</div>
       </div>
       <Image
         src="/mobile-screen.png"

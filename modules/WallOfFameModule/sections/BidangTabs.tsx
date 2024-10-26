@@ -51,6 +51,7 @@ const BidangTabs: React.FC = () => {
   }, [autoSlideActive])
 
   useEffect(() => {
+    // Ilangin if else di sini kalo High-Achieving Student nya bukan kayak yg dimaksud
     if (selectedIndex === 0) {
       setFilteredCards(cardsData)
     } else {

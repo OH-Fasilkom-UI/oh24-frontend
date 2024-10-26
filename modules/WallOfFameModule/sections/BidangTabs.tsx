@@ -45,6 +45,7 @@ const BidangTabs: React.FC = () => {
       }, 5000)
     }
 
+    // Di bawah ini buat clear auto-slidenya
     return () => {
       if (interval) clearInterval(interval)
     }

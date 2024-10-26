@@ -23,7 +23,7 @@ interface navMenuProps {
 
 const Mobile = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex flex-wrap pt-12 px-0 sm:px-4 justify-center md:hidden">
+    <div className="flex flex-col flex-wrap pt-12 px-0 sm:px-4 justify-center md:hidden">
       {children}
     </div>
   )

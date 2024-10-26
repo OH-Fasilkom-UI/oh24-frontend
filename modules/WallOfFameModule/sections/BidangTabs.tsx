@@ -70,11 +70,11 @@ const BidangTabs: React.FC = () => {
               setFocusedIndex(undefined)
             }}
             variant="primary"
-            className="flex items-center self-start mb-3 lg:mb-6 text-[9px] md:text-xs min-[996px]:text-xs xl:text-[14px] 2xl:text-lg"
+            className="flex items-center self-start mb-6 md:text-xs xl:text-[14px] 2xl:text-lg"
           >
-            <button className="inline relative h-[1.5em] w-[1.5em]">
+            <div className="inline relative h-[1.5em] w-[1.5em]">
               <ArrowLeft className="absolute w-full h-full top-0"></ArrowLeft>
-            </button>
+            </div>
             Back
           </Button>
           <NavMenuDesktop
@@ -87,6 +87,18 @@ const BidangTabs: React.FC = () => {
           />
         </Desktop>
         <Mobile>
+          <Button
+            onClick={() => {
+              setFocusedIndex(undefined)
+            }}
+            variant="primary"
+            className="flex items-center self-start mb-6 text-base sm:text-lg"
+          >
+            <div className="inline relative h-[1.5em] w-[1.5em]">
+              <ArrowLeft className="absolute w-full h-full top-0"></ArrowLeft>
+            </div>
+            Back
+          </Button>
           <NavMenuMobile
             selectedIndex={selectedIndex}
             handleNavClick={handleNavClick}

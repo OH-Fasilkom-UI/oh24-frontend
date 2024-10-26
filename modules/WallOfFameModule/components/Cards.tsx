@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import Button from '@/components/ui/Button'
-import { CardsData } from '../constant'
+import { cardsDataType } from '../constant'
 
 interface CardsProps {
-  cards: typeof CardsData
+  cards: cardsDataType
+  handleCardClick: (index: number) => void
 }
 
-export const Cards: React.FC<CardsProps> = ({ cards }) => {
+export const Cards: React.FC<CardsProps> = ({ cards, handleCardClick }) => {
   return (
     <>
       {cards.map((data, index) => (
@@ -42,6 +43,7 @@ export const Cards: React.FC<CardsProps> = ({ cards }) => {
           <Button
             className="w-[80%] md:rounded-[6px] 2xl:rounded-[12px] text-[10px] min-[520px]:text-[18px] md:text-[9px] lg:text-[12px] 2xl:text-[16px] md:py-0.5 lg:py-1 xl:py-2 md:px-0 mt-[4%] mb-[8%]"
             variant="tertiary"
+            onClick={() => handleCardClick(index)}
           >
             View More
           </Button>

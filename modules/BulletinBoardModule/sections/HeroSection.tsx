@@ -188,7 +188,7 @@ const HeroSection = () => {
                     <br />Jangan sampai ketinggalan ya!
                 </h2>
             )}
-
+        
             <Link href="/register">
                 <Button className="w-[130px] sm:w-[200px] text-[12px] sm:text-[12px] mt-4">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

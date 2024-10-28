@@ -52,12 +52,12 @@ const Modal = ({
           <ScrollArea className="max-h-screen">
             <div
               className={twMerge(
-                'flex gap-y-4 gap-x-8 px-6 sm:px-10 mt-2',
+                'flex gap-y-4 mt-2',
                 'flex-col items-center text-center'
               )}
             >
               <div>{Icon && <Icon size="4rem" />}</div>
-              <div className="flex flex-col space-y-1.5">
+              <div className="flex flex-col space-y-1.5 w-full">
                 <DialogPrimitive.Title className="text-3xl font-bold leading-none">
                   {title}
                 </DialogPrimitive.Title>

@@ -1,14 +1,44 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import Modal from '@/components/ui/Modal'
 import Button from '@/components/ui/Button'
-import { User } from 'lucide-react'
+import {
+  User,
+  Search,
+  ShoppingCart,
+  X,
+  ChevronRight,
+  ChevronLeft,
+} from 'lucide-react'
 import Image from 'next/image'
-import { Search } from 'lucide-react'
-import { ShoppingCart } from 'lucide-react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
-import { X } from 'lucide-react'
 
 export const TataCaraModule = () => {
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  const slides = [
+    {
+      image: '/panda-modal/panda-pertama.png',
+      text: 'Lihat-lihat dan pilih merch yang tersedia di website OH',
+    },
+    {
+      image: '/panda-modal/panda-kedua.png',
+      text: 'Lihat-lihat dan pilih merch yang tersedia di website OH',
+    },
+    {
+      image: '/panda-modal/panda-ketiga.png',
+      text: 'Lihat-lihat dan pilih merch yang tersedia di website OH',
+    },
+  ]
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1))
+  }
+
   return (
     <Modal
       title=""
@@ -18,65 +48,89 @@ export const TataCaraModule = () => {
         </Button>
       }
     >
-      <DialogPrimitive.Close asChild>
-        <X size={48} className="text-white justify-end" />
-      </DialogPrimitive.Close>
-      <div className="h-auto">
-        <h1 className="text-Text/TextDarkBG text-center text-3xl font-bold tracking-widest leading-[40px]">
+      <div className="flex justify-end">
+        <DialogPrimitive.Close asChild>
+          <X
+            size={48}
+            className="text-white max-[350px]:-translate-x-4 max-md:-translate-y-5 -translate-x-5 cursor-pointer max-md:size-6"
+          />
+        </DialogPrimitive.Close>
+      </div>
+      <div className="h-auto flex flex-col justify-center items-center">
+        <h1 className="text-Text/TextDarkBG max-[350px]:text-[18px] text-center justify-center max-md:leading-7 max-md:text-[20px] text-3xl font-bold tracking-widest leading-10">
           How to Buy Our Merch?
         </h1>
-        <div className="flex flex-row mt-11 gap-x-[144px]">
-          <div className="flex flex-col w-[266px] ">
-            <div className="relative w-[266px] h-[289px]">
+
+        <div className="hidden xl:flex flex-row mt-11 md:gap-x-[144px]">
+          {slides.map((slide, index) => (
+            <div key={index} className="flex flex-col w-[266px]">
+              <div className="relative w-[266px] h-[289px]">
+                <Image
+                  src={slide.image}
+                  alt={`panda ${index + 1}`}
+                  fill
+                  sizes="none"
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-[16px] text-white font-tex-gyre font-bold leading-6 mt-4">
+                {slide.text}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="xl:hidden relative mt-11 mx-auto">
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/3 md:translate-x-36 translate-x-1/2 translate-y-1/2 z-10 text-white"
+          >
+            <ChevronLeft size={24} />
+          </button>
+
+          <div className="flex flex-col items-center mx-8">
+            <div className="relative w-[200px] h-[217px]">
               <Image
-                src="/panda-modal/panda-pertama.png"
-                alt="panda pertama"
+                src={slides[currentSlide].image}
+                alt={`panda ${currentSlide + 1}`}
                 fill
-                sizes="266px"
+                sizes="none"
                 className="object-contain"
               />
             </div>
-            <p className="text-[16px] text-white font-tex-gyre font-bold leading-6 mt-4">
-              Lihat-lihat dan pilih merch yang tersedia di website OH
+            <p className="text-[16px] text-white font-tex-gyre font-bold leading-6 mt-4 text-center">
+              {slides[currentSlide].text}
             </p>
           </div>
-          <div className="flex flex-col w-[266px] ">
-            <div className="relative w-[266px] h-[289px]">
-              <Image
-                src="/panda-modal/panda-kedua.png"
-                alt="panda pertama"
-                fill
-                sizes="266px"
-                className="object-contain"
+
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/3 translate-y-1/2 md:-translate-x-36 -translate-x-1/2 z-10 text-white"
+          >
+            <ChevronRight size={24} />
+          </button>
+
+          <div className="flex justify-center gap-2 mt-4">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-2 h-2 rounded-full ${
+                  currentSlide === index ? 'bg-white' : 'bg-white/50'
+                }`}
               />
-            </div>
-            <p className="text-[16px] text-white font-tex-gyre font-bold leading-6 mt-4">
-              Lihat-lihat dan pilih merch yang tersedia di website OH
-            </p>
-          </div>
-          <div className="flex flex-col w-[266px] ">
-            <div className="relative w-[266px] h-[289px]">
-              <Image
-                src="/panda-modal/panda-ketiga.png"
-                alt="panda pertama"
-                fill
-                sizes="266px"
-                className="object-contain"
-              />
-            </div>
-            <p className="text-[16px] text-white font-tex-gyre font-bold leading-6 mt-4">
-              Lihat-lihat dan pilih merch yang tersedia di website OH
-            </p>
+            ))}
           </div>
         </div>
-        <div className="flex gap-x-4 justify-center mt-[44px]">
+
+        <div className="flex max-md:flex-col max-md:items-center max-md:gap-y-2 gap-x-4 justify-center mt-[44px]">
           <DialogPrimitive.Close asChild>
             <Button variant="tertiary">
               <Search />
               Continue Browsing
             </Button>
           </DialogPrimitive.Close>
-          <Button variant="secondary">
+          <Button className="px-[53px]" variant="secondary">
             <ShoppingCart />
             Order Now
           </Button>

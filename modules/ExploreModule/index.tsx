@@ -12,7 +12,7 @@ import { RegistOrtuPopup } from './components/RegisOrtuPopup'
 const ExploreModule = () => {
   return (
     <main className="flex flex-col z-20 w-full relative">
-      {/* <RegistOrtuPopup /> */}
+      <RegistOrtuPopup />
       <div className="relative flex-grow">
         <ExploreHero />
         <ExploreAlumni />

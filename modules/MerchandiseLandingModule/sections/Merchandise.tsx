@@ -3,6 +3,7 @@ import Button from '@/components/ui/Button'
 import Image from 'next/image'
 import { User } from 'lucide-react'
 import { CardMerchandise } from '../constant'
+import Link from 'next/link'
 
 export const Merchandise = () => {
   return (
@@ -63,9 +64,10 @@ export const Merchandise = () => {
       </div>
       <div className="my-12 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-x-11 gap-y-14 px-2 md:px-10">
         {CardMerchandise.map((card, index) => (
-          <div
+          <Link 
+            href={`merchandise/${index}`}
             key={index}
-            className="flex flex-col gap-3 p-[52px] bg-[#2E3881E5] shadow-timeline rounded-[32px]"
+            className="flex flex-col gap-3 p-[52px] bg-[#2E3881E5] shadow-timeline rounded-[32px] transition-all delay-150 duration-300 hover:animate-swing"
           >
             <Image
               src={card.image}
@@ -76,7 +78,7 @@ export const Merchandise = () => {
             />
             <h3 className="md:text-t5 text-t9 font-bold font-riffic text-white">{card.title}</h3>
             <p className="text-justify text-t7 max-md:text-[8px] text-Text/TextDarkBG">{card.description}</p>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

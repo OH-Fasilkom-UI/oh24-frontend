@@ -60,7 +60,7 @@ const LandingPageHero = () => {
         </h2>
         <div className="mt-6 sm:mt-12">
           <Countdown
-            targetDate={new Date('2024-10-17T10:00:00')}
+            targetDate={new Date('2024-10-23T10:00:00')}
             displayDate
             classNameType="sm:text-xl text-white"
             classNameBlock=" w-[60px] h-[70px] sm:w-20 sm:h-24 sm:w-28 sm:h-32 mt-3 mb-3 sm:mb-8"
@@ -74,7 +74,6 @@ const LandingPageHero = () => {
           </Link>
           <Link href="/register">
             <Button
-              disabled
               variant="tertiary"
               className="w-[120px] h-[40px] sm:w-[180px] sm:h-[50px] text-[10px] sm:text-[12px]"
             >

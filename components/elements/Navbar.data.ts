@@ -18,7 +18,7 @@ export const NAVBAR_LINKS = [
     href: '/ambassador',
     icon: SquareUserRound,
     label: 'Ambassador',
-    isExist: true,
+    isExist: false,
   },
   {
     href: '/explore',

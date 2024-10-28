@@ -23,8 +23,8 @@ enum Role {
 
 enum EventName {
   ONLINE_EXPERIENCE = 'ONLINE_EXPERIENCE',
-  OFFLINE_EXPERIENCE_1 = 'OFFLINE_EXPERIENCE_1',
-  OFFLINE_EXPERIENCE_2 = 'OFFLINE_EXPERIENCE_2',
+  FULL_EXPERIENCE_1 = 'FULL_EXPERIENCE_1',
+  FULL_EXPERIENCE_2 = 'FULL_EXPERIENCE_2',
 }
 
 export interface PersonalData {
@@ -50,6 +50,7 @@ export interface TicketData {
   createdAt: string
   id: string
   userId: string
+  eventName: EventName
   rombel: RombelData | null
   group: GroupData | null
 }
@@ -70,11 +71,11 @@ export interface GroupData {
   createdAt: string
 }
 
-export function formatPersonalData(
-  data?: PersonalData
-): PersonalData | undefined {
+export function formatPersonalData<T extends PersonalData | undefined>(
+  data: T
+): T {
   if (!data) {
-    return undefined
+    return data
   }
 
   // This looks so bad lmao

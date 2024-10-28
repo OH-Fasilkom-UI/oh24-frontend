@@ -1,9 +1,9 @@
 'use client'
 
+import { Loader } from '@/components/elements/Loader'
+import { useUserData } from '@/hooks/user'
 import Image from 'next/image'
 import QRCode from 'react-qr-code'
-import { useUserData } from '@/hooks/user'
-import { Loader } from '@/components/elements/Loader'
 
 const AfterRegistrationModule = ({}) => {
   const qrCodeValue = 'oh24'
@@ -51,30 +51,35 @@ const AfterRegistrationModule = ({}) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {userData?.ticket?.group?.linkWA}
+                {userData?.ticket?.group?.linkWA || 'Belum Ada'}
               </a>
             </div>
 
-            <div>
-              <h3 className="text-t6 max-sm:text-t7 font-bold mb-1">
-                Link Grup WhatsApp Rombel Main Event:
-              </h3>
-              <a
-                href={userData?.ticket.rombel?.linkWA}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {userData?.ticket.rombel?.linkWA}
-              </a>
+            {userData?.ticket?.rombel && (
+              <div>
+                <h3 className="text-t6 max-sm:text-t7 font-bold mb-1">
+                  Link Grup WhatsApp Rombel Main Event:
+                </h3>
+                <a
+                  href={userData?.ticket.rombel?.linkWA}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {userData?.ticket.rombel?.linkWA}
+                </a>
+              </div>
+            )}
+          </div>
+          {userData?.ticket?.eventName?.startsWith('FULL') && (
+            <div className="max-lg:mb-16">
+              <QRCode
+                value={userData?.ticket?.userId ?? qrCodeValue}
+                size={300}
+                className="shadow-lg bg-white p-3"
+              />
+              <p className="font-bold text-center mt-5">Scan saat Main Event!</p>
             </div>
-          </div>
-          <div className="max-lg:mb-16">
-            <QRCode
-              value={userData?.ticket?.userId ?? qrCodeValue}
-              size={300}
-              className="shadow-lg bg-white p-3"
-            />
-          </div>
+          )}
         </div>
         <div className="absolute w-[1300px] max-lg:w-[1000px] max-sm:w-[800px] max-[450px]:w-[700px] max-lg:-bottom-32 max-lg:left-1/2 max-lg:-translate-x-1/2">
           <Image

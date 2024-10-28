@@ -5,7 +5,7 @@ function page() {
   return (
     <>
       <ProfilePageModule />
-      <div className='mt-96'>
+      <div className="mt-96">
         <Footer />
       </div>
     </>

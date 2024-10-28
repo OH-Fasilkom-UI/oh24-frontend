@@ -71,12 +71,12 @@ export const Merchandise = () => {
           </Button>
         </div>
       </div>
-      <div className="my-12 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-11 gap-y-14 px-2 md:px-10">
+      <div className="my-12 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-11 gap-y-14 px-2 md:px-6 lg:px-10">
         {CardMerchandise.map((card, index) => (
           <Link 
             href={`merchandise/${index}`}
             key={index}
-            className="flex flex-col gap-3 px-4 py-5 md:p-[52px] bg-[#2E3881E5] shadow-timeline rounded-[32px] transition-all delay-150 duration-300 hover:animate-swing"
+            className="flex flex-col gap-3 px-4 py-5 md:p-8 lg:p-[52px] bg-[#2E3881E5] shadow-timeline rounded-[32px] transition-all delay-150 duration-300 hover:animate-swing"
           >
             <Image
               src={card.image}

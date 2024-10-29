@@ -1,4 +1,4 @@
-import BulletinBoard from './BulletinBoard'
+import BulletinBoard from './sections/BulletinBoard'
 
 const BulletinBoardModule = () => {
   return (

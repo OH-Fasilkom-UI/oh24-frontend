@@ -4,8 +4,8 @@ import BoardDesktop from '@/public/bulletin-board/board-desktop.png'
 import BoardMobile from '@/public/bulletin-board/board-mobile.png'
 import Sign from '@/public/bulletin-board/sign.png'
 import Image from 'next/image'
-import BulletinCard from './BulletinCard'
-import { BULLETIN_BOARD_DATA } from './constant'
+import { BULLETIN_BOARD_DATA } from '../constant'
+import BulletinCard from '../components/BulletinCard'
 
 const BulletinBoard = () => {
   return (

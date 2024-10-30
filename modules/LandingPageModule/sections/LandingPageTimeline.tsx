@@ -37,7 +37,7 @@ const TimelineData = [
   {
     title: 'Grand Closing',
     content:
-      'Grand Closing merupakan acara penutupan dari seluruh rangkaian acara Open House Fasilkom UI 2024. Pada Grand Closing, akan ditampilkan video rekap perjalanan acara Open House Fasilkom UI 2024 serta video apresiasi dari mentor serta panitia untuk peserta. Harapannya, peserta dapat mengakhiri rangkaian acara Open House Fasilkom UI 2022 dengan kesan yang baik dan tertarik untuk bergabung ke dalam keluarga besar Fasilkom UI.',
+      'Grand Closing merupakan acara penutupan dari seluruh rangkaian acara Open House Fasilkom UI 2024. Pada Grand Closing, akan ditampilkan video rekap perjalanan acara Open House Fasilkom UI 2024 serta video apresiasi dari mentor serta panitia untuk peserta. Harapannya, peserta dapat mengakhiri rangkaian acara Open House Fasilkom UI 2024 dengan kesan yang baik dan tertarik untuk bergabung ke dalam keluarga besar Fasilkom UI.',
     imageSrc: '/LandingTimeline/GrandClosing.jpg',
   },
 ]

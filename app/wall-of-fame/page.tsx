@@ -1,13 +1,7 @@
-import HeroWallofFame from '@/modules/WallofFameModule/sections/WofHero'
+import { WallOfFameModule } from '@/modules/WallOfFameModule'
 
 const Page = () => {
-  return (
-    <div className="relatiive min-h-screen">
-      <div className="z-10 relative">
-        <HeroWallofFame />
-      </div>
-    </div>
-  )
+  return <WallOfFameModule />
 }
 
 export default Page

@@ -79,8 +79,8 @@ export const DetailProfile = () => {
     userData?.ticket?.group?.leaders.length == 0
       ? ['Belum ada']
       : userData?.ticket?.group?.leaders.map(
-          (leader: string, index: number) => `${index + 1}. ${leader}`
-        )
+        (leader: string, index: number) => `${index + 1}. ${leader}`
+      )
 
   const handleScrollToQRCode = () => {
     if (typeof window !== 'undefined' && qrCodeSmallRef.current) {
@@ -167,7 +167,7 @@ export const DetailProfile = () => {
               </Button>
             )
           ) : (
-            <Link href="/register" className="pointer-events-none">
+            <Link href="/register">
               <Button className="max-w-36">Registrasi Peserta</Button>
             </Link>
           )}

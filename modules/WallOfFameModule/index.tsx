@@ -1,11 +1,16 @@
+'use client'
+
+import { useState } from 'react'
 import BidangTabs from './sections/BidangTabs'
+import Hero from './sections/Hero'
 
 export const WallOfFameModule = () => {
+  const [page, setPage] = useState(0)
+
   return (
-    <main className="flex flex-col z-20 w-full relative overflow-hidden">
-      <div className="relative pb-16 md:pb-24 px-5 flex-grow mt-20">
-        <BidangTabs />
-      </div>
-    </main>
+    <>
+      {page === 0 && <Hero onClick={() => setPage(1)} />}
+      {page === 1 && <BidangTabs />}
+    </>
   )
 }

@@ -1,12 +1,13 @@
-import Image from 'next/image'
 import Button from '@/components/ui/Button'
-import { CardsData } from '../constant'
+import Image from 'next/image'
+import { cardsDataType } from '../constant'
 
 interface CardsProps {
-  cards: typeof CardsData
+  cards: cardsDataType
+  handleCardClick: (index: number) => void
 }
 
-export const Cards: React.FC<CardsProps> = ({ cards }) => {
+export const Cards: React.FC<CardsProps> = ({ cards, handleCardClick }) => {
   return (
     <>
       {cards.map((data, index) => (
@@ -36,12 +37,13 @@ export const Cards: React.FC<CardsProps> = ({ cards }) => {
           <h1 className="font-tex-gyre text-sm min-[520px]:text-[20px] md:text-[10px] lg:text-[14px] mt-1 min-[520px]:my-2 md:my-0 lg:mt-1 2xl:text-[18px] font-semibold">
             {data.nama}
           </h1>
-          <h2 className="font-tex-gyre text-[10px] min-[520px]:text-[16px] md:text-[6px] lg:text-[8px] 2xl:text-[14px] opacity-[0.79]">
+          <h2 className="font-tex-gyre text-center px-2 md:px-3 md:mt-1 text-[10px] min-[520px]:text-[16px] md:text-[6px] lg:text-[8px] 2xl:text-[14px] opacity-[0.79]">
             {data.posisi} | {data.jurusan}
           </h2>
           <Button
             className="w-[80%] md:rounded-[6px] 2xl:rounded-[12px] text-[10px] min-[520px]:text-[18px] md:text-[9px] lg:text-[12px] 2xl:text-[16px] md:py-0.5 lg:py-1 xl:py-2 md:px-0 mt-[4%] mb-[8%]"
             variant="tertiary"
+            onClick={() => handleCardClick(index)}
           >
             View More
           </Button>

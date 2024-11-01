@@ -210,8 +210,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
             <p
               className={`text-center text-rose-300 font-bold ${!isFullExperienceFull && 'hidden'}`}
             >
-              Mohon maaf, kamu belum bisa mengikuti Full Experience Open House
-              Fasilkom UI 2024 karena keterbatasan kuota peserta Main Event.
+              Mohon maaf, data yang dimasukkan tidak memenuhi kriteria.
             </p>
           </Card>
 
@@ -274,8 +273,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
             <p
               className={`text-center text-rose-300 font-bold ${!isOnlineExperienceFull && 'hidden'}`}
             >
-              Mohon maaf, kamu belum bisa mengikuti Online Experience Open House
-              Fasilkom UI 2024 karena keterbatasan kuota peserta.
+              Mohon maaf, data yang dimasukkan tidak memenuhi kriteria.
             </p>
           </Card>
         </div>

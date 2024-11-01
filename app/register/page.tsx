@@ -1,5 +1,5 @@
 // import { MenteeRegistrationModule } from "@/modules/MenteeRegistrationModule"
-import { redirect } from "next/navigation"
+import { redirect } from 'next/navigation'
 
 const Page = () => {
   return redirect('/')

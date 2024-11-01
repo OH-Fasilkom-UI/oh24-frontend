@@ -1,10 +1,14 @@
-import React from 'react'
-import Image from 'next/image'
-import { ChevronDown } from 'lucide-react'
-import { navMenuData, cardsDataType } from '../constant'
 import Button from '@/components/ui/Button'
 import useEmblaCarousel from 'embla-carousel-react'
-import { ArrowLeftCircle, ArrowRightCircle, Dot } from 'lucide-react'
+import {
+  ArrowLeftCircle,
+  ArrowRightCircle,
+  ChevronDown,
+  Dot,
+} from 'lucide-react'
+import Image from 'next/image'
+import React from 'react'
+import { cardsDataType, navMenuData } from '../constant'
 
 interface MobileCarouselProps {
   filteredCards: cardsDataType
@@ -23,7 +27,7 @@ interface navMenuProps {
 
 const Mobile = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex flex-col flex-wrap pt-12 px-0 sm:px-4 justify-center md:hidden">
+    <div className="flex flex-col flex-wrap pt-20 px-5 sm:px-4 justify-center md:hidden">
       {children}
     </div>
   )
@@ -41,7 +45,7 @@ const NavMenuMobile: React.FC<navMenuProps> = ({
   }
 
   return (
-    <div className="w-full relative inline-block mb-12">
+    <div className="w-full relative inline-block my-6">
       <div>
         <button
           type="button"
@@ -248,4 +252,4 @@ const MobileCarousel: React.FC<MobileCarouselProps> = ({
   )
 }
 
-export { Mobile, NavMenuMobile, MobileOverview, MobileCarousel }
+export { Mobile, MobileCarousel, MobileOverview, NavMenuMobile }

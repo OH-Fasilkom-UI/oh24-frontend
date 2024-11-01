@@ -1,9 +1,9 @@
-import React from 'react'
-import Image from 'next/image'
 import Button from '@/components/ui/Button'
-import { navMenuData, cardsDataType } from '../constant'
 import useEmblaCarousel from 'embla-carousel-react'
 import { ArrowLeftCircle, ArrowRightCircle, Dot } from 'lucide-react'
+import Image from 'next/image'
+import React from 'react'
+import { cardsDataType, navMenuData } from '../constant'
 
 interface DesktopOverviewProps {
   selectedIndex: number
@@ -21,7 +21,7 @@ interface NavMenuProps {
 }
 
 const Desktop = ({ children }: { children: React.ReactNode }) => (
-  <div className="md:flex flex-col flex-wrap pt-12 px-12 items-center hidden">
+  <div className="md:flex flex-col flex-wrap pt-20 px-12 items-center hidden">
     {children}
   </div>
 )
@@ -31,7 +31,7 @@ const NavMenuDesktop: React.FC<NavMenuProps> = ({
   handleNavClick,
 }) => {
   return (
-    <div className="w-full flex h-14 mb-12 2xl:h-20 items-center">
+    <div className="w-full flex h-12 my-6 2xl:h-16 items-center">
       <div
         className="bg-[#3B478B] gap-4 w-full h-full rounded-full px-2.5 2xl:px-6"
         style={{
@@ -43,7 +43,7 @@ const NavMenuDesktop: React.FC<NavMenuProps> = ({
             <li
               key={index}
               onClick={() => handleNavClick(index)}
-              className={`transition duration-300 cursor-pointer font-riffic py-3 px-1.5 min-[996px]:px-4 2xl:px-6 text-[9px] lg:text-xs xl:text-[14px] 2xl:text-lg rounded-full ${
+              className={`transition duration-300 cursor-pointer font-riffic px-2 lg:px-4 2xl:px-6 py-1 md:py-2 text-[9px] md:text-[10px] lg:text-[12px] 2xl:text-lg rounded-full ${
                 selectedIndex === index
                   ? 'bg-BlueRegion/Cornflower/200 text-Text/TextLightBG'
                   : 'text-BlueRegion/Cornflower/200'
@@ -75,7 +75,7 @@ const DesktopOverview: React.FC<DesktopOverviewProps> = ({
   children,
 }) => {
   return (
-    <div className="relative">
+    <div className="relative max-w-screen-xl">
       <h1
         className="block absolute top-[12%] left-[7%] text-4xl lg:text-5xl xl:text-6xl w-[35%] leading-tight text-PurpleRegion/MoonRaker/800"
         style={{
@@ -239,4 +239,4 @@ const DesktopCarousel: React.FC<DesktopCarouselProps> = ({
   )
 }
 
-export { Desktop, NavMenuDesktop, DesktopOverview, DesktopCarousel }
+export { Desktop, DesktopCarousel, DesktopOverview, NavMenuDesktop }

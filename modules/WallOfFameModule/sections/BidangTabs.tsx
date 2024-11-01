@@ -1,21 +1,20 @@
-'use client'
-import { useState, useEffect, useCallback } from 'react'
+import Button from '@/components/ui/Button'
+import { ArrowLeft } from 'lucide-react'
+import { useCallback, useEffect, useState } from 'react'
+import { Cards } from '../components/Cards'
 import {
   Desktop,
-  NavMenuDesktop,
-  DesktopOverview,
   DesktopCarousel,
+  DesktopOverview,
+  NavMenuDesktop,
 } from '../components/Desktop'
 import {
   Mobile,
-  NavMenuMobile,
-  MobileOverview,
   MobileCarousel,
+  MobileOverview,
+  NavMenuMobile,
 } from '../components/Mobile'
 import { cardsData, navMenuData } from '../constant'
-import { Cards } from '../components/Cards'
-import Button from '@/components/ui/Button'
-import { ArrowLeft } from 'lucide-react'
 
 const BidangTabs: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = useState(0)
@@ -72,11 +71,9 @@ const BidangTabs: React.FC = () => {
               setFocusedIndex(undefined)
             }}
             variant="primary"
-            className="flex items-center self-start mb-6 md:text-xs xl:text-[14px] 2xl:text-lg"
+            className="flex justify-center items-center self-start mt-6 text-base sm:text-lg"
           >
-            <div className="inline relative h-[1.5em] w-[1.5em]">
-              <ArrowLeft className="absolute w-full h-full top-0"></ArrowLeft>
-            </div>
+            <ArrowLeft className="w-5"></ArrowLeft>
             Back
           </Button>
           <NavMenuDesktop
@@ -94,11 +91,9 @@ const BidangTabs: React.FC = () => {
               setFocusedIndex(undefined)
             }}
             variant="primary"
-            className="flex items-center self-start mb-6 text-base sm:text-lg"
+            className="flex justify-center items-center self-start mt-6 text-base sm:text-lg"
           >
-            <div className="inline relative h-[1.5em] w-[1.5em]">
-              <ArrowLeft className="absolute w-full h-full top-0"></ArrowLeft>
-            </div>
+            <ArrowLeft className="w-5"></ArrowLeft>
             Back
           </Button>
           <NavMenuMobile

@@ -1,8 +1,8 @@
-import Image from 'next/image'
 import Button from '@/components/ui/Button'
 import background from '@/public/wall-of-fame/bg-hero.png'
+import Image from 'next/image'
 
-const Hero = () => {
+const Hero = ({ onClick }: { onClick: () => void }) => {
   return (
     <div className="relative flex justify-center items-center h-screen">
       <Image
@@ -23,7 +23,9 @@ const Hero = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-        <Button className="bg-[#4141EA] text-white">View More</Button>
+        <Button className="bg-[#4141EA] text-white" onClick={onClick}>
+          View More
+        </Button>
       </div>
     </div>
   )

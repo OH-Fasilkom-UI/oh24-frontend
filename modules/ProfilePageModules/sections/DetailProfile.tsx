@@ -188,7 +188,7 @@ export const DetailProfile = () => {
           <div className="grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
             <Field label="Nama Lengkap" values={[personalData?.fullName!]} />
             <Field label="Email" values={[userData?.email!]} />
-            <Field label="Domisili" values={[personalData?.domicile!]} />
+            <Field label="Domisili" values={['Indonesia']} />
             <Field label="WhatsApp" values={[personalData?.phone!]} />
             <Field label="Tanggal Lahir" values={[personalData?.dob!]} />
             <Field label="Kelas" values={[personalData?.class!]} />

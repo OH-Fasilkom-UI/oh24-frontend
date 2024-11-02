@@ -9,7 +9,7 @@ import BulletinCard from '../components/BulletinCard'
 
 const BulletinBoard = () => {
   return (
-    <div className="relative my-24 flex max-md:max-w-sm mx-auto">
+    <div className="relative my-32 flex max-md:max-w-sm mx-auto">
       <Image
         src={Sign}
         alt="Sign"

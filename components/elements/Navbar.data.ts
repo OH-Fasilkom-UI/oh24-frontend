@@ -33,10 +33,10 @@ export const NAVBAR_LINKS = [
     isExist: true,
   },
   {
-    href: '/wefwefw',
+    href: '/wall-of-fame',
     icon: Users,
     label: 'Wall of Fame',
-    isExist: false,
+    isExist: true,
   },
 ]
 

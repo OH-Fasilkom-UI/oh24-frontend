@@ -1,8 +1,10 @@
 import BulletinBoard from './sections/BulletinBoard'
+import HeroSection from './sections/HeroSection'
 
 const BulletinBoardModule = () => {
   return (
-    <main className="px-5 md:px-10 lg:px-16 xl:px-20 pt-[80px] pb-[600px] sm:pb[500px] md:pb-[500px] lg:pb-[640px] xl:pb-[750px] 2xl:pb-[780px] max-w-[1440px] w-full mx-auto min-h-screen">
+    <main className="px-5 md:px-10 lg:px-16 xl:px-20 pb-[450px] md:pb-[550px] lg:pb-[650px] xl:pb-[700px] 2xl:pb-[750px] max-w-[1440px] w-full mx-auto">
+      <HeroSection />
       <BulletinBoard />
     </main>
   )

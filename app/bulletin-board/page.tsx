@@ -1,7 +1,7 @@
 import Footer from '@/components/elements/Footer'
 import BulletinBoardModule from '@/modules/BulletinBoardModule'
 
-export default function BulletinBoard() {
+const Page = () => {
   return (
     <main className="relative">
       <BulletinBoardModule />
@@ -9,3 +9,5 @@ export default function BulletinBoard() {
     </main>
   )
 }
+
+export default Page

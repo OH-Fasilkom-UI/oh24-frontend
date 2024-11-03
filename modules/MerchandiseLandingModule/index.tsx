@@ -5,26 +5,26 @@ import { Hero } from './sections/Hero'
 import { Merchandise } from './sections/Merchandise'
 
 export const MerchandiseLandingModule = () => {
-  const [page, setPage] = useState(1)
-  const handleChangePage = () => {
-    setPage(2)
-    localStorage.setItem('merchandisePage', '2')
-  }
+  const [page, setPage] = useState(0)
 
   useEffect(() => {
-    checkPage()
-  }, [])
-
-  const checkPage = () => {
     const page = localStorage.getItem('merchandisePage')
     if (page) {
       setPage(parseInt(page))
     }
-  }
+  }, [page])
+
   return (
     <main className="min-h-[100vh]">
-      {page === 1 && <Hero onClick={() => handleChangePage()} />}
-      {page === 2 && <Merchandise />}
+      {page === 0 && (
+        <Hero
+          onClick={() => {
+            setPage(1)
+            localStorage.setItem('merchandisePage', '1')
+          }}
+        />
+      )}
+      {page === 1 && <Merchandise />}
     </main>
   )
 }

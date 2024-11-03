@@ -1,4 +1,8 @@
 import Button from '@/components/ui/Button'
+import Background from '@/public/WallOfFame/Background.png'
+import ComputerDesktop from '@/public/WallOfFame/ComputerDesktop.png'
+import PandaKanan from '@/public/WallOfFame/PandaKanan.png'
+import PandaKiri from '@/public/WallOfFame/PandaKiri.png'
 import useEmblaCarousel from 'embla-carousel-react'
 import { ArrowLeftCircle, ArrowRightCircle, Dot } from 'lucide-react'
 import Image from 'next/image'
@@ -43,11 +47,10 @@ const NavMenuDesktop: React.FC<NavMenuProps> = ({
             <li
               key={index}
               onClick={() => handleNavClick(index)}
-              className={`transition duration-300 cursor-pointer font-riffic px-2 lg:px-4 2xl:px-6 py-1 md:py-2 text-[9px] md:text-[10px] lg:text-[12px] 2xl:text-lg rounded-full ${
-                selectedIndex === index
-                  ? 'bg-BlueRegion/Cornflower/200 text-Text/TextLightBG'
-                  : 'text-BlueRegion/Cornflower/200'
-              }`}
+              className={`transition duration-300 cursor-pointer font-riffic px-2 lg:px-4 2xl:px-6 py-1 md:py-2 text-[9px] md:text-[10px] lg:text-[12px] 2xl:text-lg rounded-full ${selectedIndex === index
+                ? 'bg-BlueRegion/Cornflower/200 text-Text/TextLightBG'
+                : 'text-BlueRegion/Cornflower/200'
+                }`}
               style={{
                 boxShadow:
                   selectedIndex === index
@@ -88,8 +91,8 @@ const DesktopOverview: React.FC<DesktopOverviewProps> = ({
         {children}
       </div>
       <Image
-        src="/computer-screen.png"
-        alt="jalur-masuk"
+        src={ComputerDesktop}
+        alt="Computer Screen"
         width={1593.66}
         height={1011.25}
         className="object-contain"
@@ -132,7 +135,13 @@ const DesktopCarousel: React.FC<DesktopCarouselProps> = ({
           {filteredCards.map((card, index) => {
             return (
               <div
-                className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] min-w-full min-h-[36rem] xl:min-h-[40rem] bg-[url('/wof-background.png')] bg-no-repeat bg-center bg-cover rounded-3xl overflow-hidden py-12"
+                className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] min-w-full min-h-[36rem] xl:min-h-[40rem] bg-cover rounded-3xl overflow-hidden py-12"
+                style={{
+                  backgroundImage: `url(${Background.src})`,
+                  backgroundSize: '100% 75%',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                }}
                 key={index}
               >
                 <div className="relative">
@@ -221,16 +230,16 @@ const DesktopCarousel: React.FC<DesktopCarouselProps> = ({
       </div>
       <div className="absolute bottom-12 -left-12 size-48 lg:bottom-4 lg:left-0 lg:size-72">
         <Image
-          src="/wof-panda-kiri.png"
-          alt="panda flashlight left"
+          src={PandaKiri}
+          alt="Left Panda"
           fill
           className="object-contain"
         />
       </div>
       <div className="absolute bottom-12 -right-12 size-48 lg:bottom-4 lg:right-0 lg:size-72">
         <Image
-          src="/wof-panda-kanan.png"
-          alt="panda flashlight right"
+          src={PandaKanan}
+          alt="Right Panda"
           fill
           className="object-contain"
         />
@@ -240,3 +249,4 @@ const DesktopCarousel: React.FC<DesktopCarouselProps> = ({
 }
 
 export { Desktop, DesktopCarousel, DesktopOverview, NavMenuDesktop }
+

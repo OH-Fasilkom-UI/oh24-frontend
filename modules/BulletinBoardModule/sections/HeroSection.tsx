@@ -1,8 +1,9 @@
 'use client'
-import { useState, useEffect } from 'react'
-import PandaDuduk from '../components/PandaDuduk'
+
 import Button from '@/components/ui/Button'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import PandaDuduk from '../components/PandaDuduk'
 
 const BREAKPOINT_CONFIGS = {
   xl: {
@@ -34,19 +35,19 @@ const BREAKPOINT_CONFIGS = {
 
 // Tipe kursi yang ditunjukin, gelap atau terang
 const PANDA_TYPES = [
-  'gelap',
-  'terang',
-  'gelap',
-  'terang',
-  'gelap',
-  'terang',
-  'gelap',
-  'terang',
-  'gelap',
-  'terang',
-  'gelap',
-  'terang',
-  'gelap',
+  'Blue',
+  'Pink',
+  'Blue',
+  'Pink',
+  'Blue',
+  'Pink',
+  'Blue',
+  'Pink',
+  'Blue',
+  'Pink',
+  'Blue',
+  'Pink',
+  'Blue',
 ]
 
 // Pola tampilan panda
@@ -153,7 +154,7 @@ const HeroSection = () => {
   )
   const visibleIndices = new Set(
     DISPLAY_PATTERNS[breakpoint][
-      pandasToShow as keyof (typeof DISPLAY_PATTERNS)[typeof breakpoint]
+    pandasToShow as keyof (typeof DISPLAY_PATTERNS)[typeof breakpoint]
     ]
   )
 

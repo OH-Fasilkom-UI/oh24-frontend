@@ -1,4 +1,5 @@
 import Button from '@/components/ui/Button'
+import Mahkota from '@/public/WallOfFame/mahkota.png'
 import Image from 'next/image'
 import { cardsDataType } from '../constant'
 
@@ -19,7 +20,7 @@ export const Cards: React.FC<CardsProps> = ({ cards, handleCardClick }) => {
           }}
         >
           <Image
-            src="/mahkota.png"
+            src={Mahkota}
             alt="mahkota"
             width={140}
             height={200}

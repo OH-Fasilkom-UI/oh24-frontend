@@ -1,11 +1,11 @@
 'use client'
 
-import BoardDesktop from '@/public/bulletin-board/board-desktop.png'
-import BoardMobile from '@/public/bulletin-board/board-mobile.png'
-import Sign from '@/public/bulletin-board/sign.png'
+import BoardDesktop from '@/public/BulletinBoard/BoardDesktop.png'
+import BoardMobile from '@/public/BulletinBoard/BoardMobile.png'
+import Sign from '@/public/BulletinBoard/Sign.png'
 import Image from 'next/image'
-import { BULLETIN_BOARD_DATA } from '../constant'
 import BulletinCard from '../components/BulletinCard'
+import { BULLETIN_BOARD_DATA } from '../constant'
 
 const BulletinBoard = () => {
   return (

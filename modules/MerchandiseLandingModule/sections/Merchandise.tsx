@@ -1,4 +1,8 @@
 import Button from '@/components/ui/Button'
+import Banner from '@/public/Merchandise/Banner.png'
+import BannerMobile from '@/public/Merchandise/BannerMobile.png'
+import Pesawat from '@/public/Merchandise/Pesawat.png'
+import TabungBaju from '@/public/Merchandise/TabungBaju.png'
 import { User } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -20,7 +24,7 @@ export const Merchandise = () => {
         <div className="absolute w-full 2xl:h-[330px] lg:h-[240px] xl:h-[300px] sm:h-[150px] max-sm:hidden rounded-[32px] bottom-0">
           <Image
             alt="Banner"
-            src="/Merchandise/MerchandiseBanner.png"
+            src={Banner}
             fill
             sizes="none"
             className="object-contain rounded-[32px]"
@@ -29,7 +33,7 @@ export const Merchandise = () => {
         <div className="absolute w-full h-[120px] sm:hidden rounded-[32px] bottom-0">
           <Image
             alt="Banner"
-            src="/Merchandise/MerchandiseBannerMob.png"
+            src={BannerMobile}
             fill
             sizes="none"
             className="object-cover rounded-[32px]"
@@ -38,7 +42,7 @@ export const Merchandise = () => {
         <div className="absolute md:w-[190px] md:h-[197px] max-lg:hidden pt-8 lg:right-[10%] animate-float-horizontal">
           <Image
             alt="Pesawat"
-            src="/Merchandise/Pesawat.png"
+            src={Pesawat}
             fill
             sizes="none"
             className="object-contain"
@@ -47,7 +51,7 @@ export const Merchandise = () => {
         <div className="relative sm:w-[120px] sm:h-[197px] w-[45px] h-[75px] pt-8 animate-swing">
           <Image
             alt="Tabung"
-            src="/Merchandise/TabungBaju.png"
+            src={TabungBaju}
             fill
             sizes="none"
             className="object-contain"

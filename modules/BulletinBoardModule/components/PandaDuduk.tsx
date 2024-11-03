@@ -9,9 +9,9 @@ interface PandaDudukProps {
 const PandaDuduk: React.FC<PandaDudukProps> = ({ type, show, className }) => {
   let src = ''
   if (show) {
-    src = `/bulletin-board/kursi-panda-show-${type}.png`
+    src = `/BulletinBoard/Chair${type}.png`
   } else {
-    src = `/bulletin-board/kursi-panda-${type}.png`
+    src = `/BulletinBoard/Chair${type}Panda.png`
   }
   if (!className) {
     className = ''

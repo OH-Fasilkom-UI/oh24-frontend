@@ -1,12 +1,12 @@
 import Button from '@/components/ui/Button'
-import background from '@/public/wall-of-fame/bg-hero.png'
+import HeroBackground from '@/public/WallOfFame/HeroBackground.png'
 import Image from 'next/image'
 
 const Hero = ({ onClick }: { onClick: () => void }) => {
   return (
     <div className="relative flex justify-center items-center h-screen">
       <Image
-        src={background}
+        src={HeroBackground}
         alt="Hero Wall of Fame"
         width={2000}
         className="absolute top-0 left-0 w-full h-full object-cover max-sm:brightness-75"

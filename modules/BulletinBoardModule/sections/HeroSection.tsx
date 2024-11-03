@@ -154,7 +154,7 @@ const HeroSection = () => {
   )
   const visibleIndices = new Set(
     DISPLAY_PATTERNS[breakpoint][
-    pandasToShow as keyof (typeof DISPLAY_PATTERNS)[typeof breakpoint]
+      pandasToShow as keyof (typeof DISPLAY_PATTERNS)[typeof breakpoint]
     ]
   )
 

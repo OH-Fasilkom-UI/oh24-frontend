@@ -47,10 +47,11 @@ const NavMenuDesktop: React.FC<NavMenuProps> = ({
             <li
               key={index}
               onClick={() => handleNavClick(index)}
-              className={`transition duration-300 cursor-pointer font-riffic px-2 lg:px-4 2xl:px-6 py-1 md:py-2 text-[9px] md:text-[10px] lg:text-[12px] 2xl:text-lg rounded-full ${selectedIndex === index
-                ? 'bg-BlueRegion/Cornflower/200 text-Text/TextLightBG'
-                : 'text-BlueRegion/Cornflower/200'
-                }`}
+              className={`transition duration-300 cursor-pointer font-riffic px-2 lg:px-4 2xl:px-6 py-1 md:py-2 text-[9px] md:text-[10px] lg:text-[12px] 2xl:text-lg rounded-full ${
+                selectedIndex === index
+                  ? 'bg-BlueRegion/Cornflower/200 text-Text/TextLightBG'
+                  : 'text-BlueRegion/Cornflower/200'
+              }`}
               style={{
                 boxShadow:
                   selectedIndex === index
@@ -249,4 +250,3 @@ const DesktopCarousel: React.FC<DesktopCarouselProps> = ({
 }
 
 export { Desktop, DesktopCarousel, DesktopOverview, NavMenuDesktop }
-

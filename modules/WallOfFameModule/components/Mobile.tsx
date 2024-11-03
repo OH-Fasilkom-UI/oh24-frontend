@@ -60,15 +60,17 @@ const NavMenuMobile: React.FC<navMenuProps> = ({
         >
           {navMenuData[selectedIndex]}
           <ChevronDown
-            className={`-mr-1 ml-2 h-5 sm:h-7 aspect-square transition-transform duration-300 ${isOpen ? 'transform rotate-180' : ''
-              }`}
+            className={`-mr-1 ml-2 h-5 sm:h-7 aspect-square transition-transform duration-300 ${
+              isOpen ? 'transform rotate-180' : ''
+            }`}
             aria-hidden="true"
           />
         </button>
       </div>
       <div
-        className={`origin-top-right absolute right-0 mt-2 w-full rounded-md shadow-lg bg-Text/TextLightBG ring-1 ring-black ring-opacity-5 transition-all duration-300 ease-in-out transform z-[9999] ${isOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0'
-          }`}
+        className={`origin-top-right absolute right-0 mt-2 w-full rounded-md shadow-lg bg-Text/TextLightBG ring-1 ring-black ring-opacity-5 transition-all duration-300 ease-in-out transform z-[9999] ${
+          isOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0'
+        }`}
       >
         <div
           className="py-1"
@@ -80,10 +82,11 @@ const NavMenuMobile: React.FC<navMenuProps> = ({
             <a
               key={option}
               href="#"
-              className={`block px-4 py-2 text-sm font-bold text-BlueRegion/Portgage/100 ${selectedIndex === index
-                ? 'bg-[#39459f]'
-                : 'hover:bg-[#39459f] hover:text-Text/TextLightBG'
-                } transition-colors duration-200`}
+              className={`block px-4 py-2 text-sm font-bold text-BlueRegion/Portgage/100 ${
+                selectedIndex === index
+                  ? 'bg-[#39459f]'
+                  : 'hover:bg-[#39459f] hover:text-Text/TextLightBG'
+              } transition-colors duration-200`}
               role="menuitem"
               onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                 e.preventDefault()
@@ -253,4 +256,3 @@ const MobileCarousel: React.FC<MobileCarouselProps> = ({
 }
 
 export { Mobile, MobileCarousel, MobileOverview, NavMenuMobile }
-

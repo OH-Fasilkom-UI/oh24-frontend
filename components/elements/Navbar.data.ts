@@ -3,7 +3,7 @@ import {
   CircleUserRound,
   FileText,
   House,
-  SquareUserRound,
+  ShoppingBag,
   Users,
 } from 'lucide-react'
 
@@ -15,12 +15,6 @@ export const NAVBAR_LINKS = [
     isExist: true,
   },
   {
-    href: '/ambassador',
-    icon: SquareUserRound,
-    label: 'Ambassador',
-    isExist: false,
-  },
-  {
     href: '/explore',
     icon: Building,
     label: 'About Fasilkom',
@@ -30,6 +24,12 @@ export const NAVBAR_LINKS = [
     href: '/register',
     icon: FileText,
     label: 'Registration Page',
+    isExist: true,
+  },
+  {
+    href: '/merchandise',
+    icon: ShoppingBag,
+    label: 'Merchandise',
     isExist: true,
   },
   {

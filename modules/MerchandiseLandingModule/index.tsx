@@ -1,5 +1,6 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+
+import { useEffect, useState } from 'react'
 import { Hero } from './sections/Hero'
 import { Merchandise } from './sections/Merchandise'
 

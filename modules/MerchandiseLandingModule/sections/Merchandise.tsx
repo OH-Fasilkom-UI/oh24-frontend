@@ -1,9 +1,8 @@
-import React from 'react'
 import Button from '@/components/ui/Button'
-import Image from 'next/image'
 import { User } from 'lucide-react'
-import { CardMerchandise } from '../constant'
+import Image from 'next/image'
 import Link from 'next/link'
+import { CardMerchandise } from '../constant'
 
 export const Merchandise = () => {
   return (
@@ -59,21 +58,21 @@ export const Merchandise = () => {
             variant={'tertiary'}
             className="flex items-center justify-center gap-3 max-sm:text-t9"
           >
-            <User className='max-sm:size-[18px]' />
+            <User className="max-sm:size-[18px]" />
             Beli
           </Button>
           <Button
             variant={'secondary'}
             className="flex items-center justify-center gap-3 max-sm:text-t9"
           >
-            <User className='max-sm:size-[18px]' />
+            <User className="max-sm:size-[18px]" />
             Cara Pembelian
           </Button>
         </div>
       </div>
       <div className="my-12 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-11 gap-y-14 px-2 md:px-6 lg:px-10">
         {CardMerchandise.map((card, index) => (
-          <Link 
+          <Link
             href={`merchandise/${index}`}
             key={index}
             className="flex flex-col gap-3 px-4 py-5 md:p-8 lg:p-[52px] bg-[#2E3881E5] shadow-timeline rounded-[32px] transition-all delay-150 duration-300 hover:animate-swing"
@@ -85,8 +84,12 @@ export const Merchandise = () => {
               height={200}
               className="mx-auto max-sm:h-[112px] h-[200px] object-contain"
             />
-            <h3 className="md:text-t5 text-t9 font-bold font-riffic text-white">{card.title}</h3>
-            <p className="text-justify text-t7 max-sm:text-[9px] text-Text/TextDarkBG">{card.description}</p>
+            <h3 className="md:text-t5 text-t9 font-bold font-riffic text-white">
+              {card.title}
+            </h3>
+            <p className="text-justify text-t7 max-sm:text-[9px] text-Text/TextDarkBG">
+              {card.description}
+            </p>
           </Link>
         ))}
       </div>

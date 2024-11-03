@@ -3,6 +3,7 @@ import {
   CircleUserRound,
   FileText,
   House,
+  Presentation,
   ShoppingBag,
   Users,
 } from 'lucide-react'
@@ -27,15 +28,21 @@ export const NAVBAR_LINKS = [
     isExist: true,
   },
   {
-    href: '/merchandise',
-    icon: ShoppingBag,
-    label: 'Merchandise',
-    isExist: true,
-  },
-  {
     href: '/wall-of-fame',
     icon: Users,
     label: 'Wall of Fame',
+    isExist: true,
+  },
+  {
+    href: '/bulletin-board',
+    icon: Presentation,
+    label: 'Bulletin Board',
+    isExist: true,
+  },
+  {
+    href: '/merchandise',
+    icon: ShoppingBag,
+    label: 'Merchandise',
     isExist: true,
   },
 ]

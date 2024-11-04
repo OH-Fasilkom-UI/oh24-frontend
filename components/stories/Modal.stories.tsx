@@ -47,7 +47,9 @@ export const Main = () => (
       icon={SquareCheckBig}
       title="Heading"
       buttons={[
-        <Modal.Button key={0} closeOnClick>Yes</Modal.Button>,
+        <Modal.Button key={0} closeOnClick>
+          Yes
+        </Modal.Button>,
         <Modal.Button key={1} closeOnClick variant="secondary">
           No
         </Modal.Button>,

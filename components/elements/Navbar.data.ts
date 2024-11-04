@@ -1,35 +1,49 @@
-import { Building, CircleUserRound, FileText, House, SquareUserRound, Users } from 'lucide-react'
+import {
+  Building,
+  CircleUserRound,
+  FileText,
+  House,
+  Presentation,
+  ShoppingBag,
+  Users,
+} from 'lucide-react'
 
 export const NAVBAR_LINKS = [
   {
     href: '/',
     icon: House,
     label: 'Home',
-    isExist: false,
-  },
-  {
-    href: '/ambassador',
-    icon: SquareUserRound,
-    label: 'Ambassador',
     isExist: true,
   },
   {
-    href: '/fwefwefw',
+    href: '/explore',
     icon: Building,
     label: 'About Fasilkom',
-    isExist: false,
+    isExist: true,
   },
   {
-    href: '/wefwfew',
+    href: '/register',
     icon: FileText,
     label: 'Registration Page',
-    isExist: false,
+    isExist: true,
   },
   {
-    href: '/wefwefw',
+    href: '/wall-of-fame',
     icon: Users,
     label: 'Wall of Fame',
-    isExist: false,
+    isExist: true,
+  },
+  {
+    href: '/bulletin-board',
+    icon: Presentation,
+    label: 'Bulletin Board',
+    isExist: true,
+  },
+  {
+    href: '/merchandise',
+    icon: ShoppingBag,
+    label: 'Merchandise',
+    isExist: true,
   },
 ]
 

@@ -16,12 +16,12 @@ const containerVariants = {
       staggerChildren: 0.2, // Stagger timing
     },
   },
-};
+}
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
-};
+}
 
 const Testimonials = ({
   testimonyData = testimonials,
@@ -36,9 +36,7 @@ const Testimonials = ({
   const inViewChildren = useInView(childrenRef, { once: true })
 
   return (
-    <section
-      className='w-full'
-    >
+    <section className="w-full">
       <div
         style={{
           backgroundImage: `url(${bg.src})`,
@@ -78,9 +76,7 @@ const Testimonials = ({
       </div>
       <div>
         <ScrollArea className="pt-10 pb-10 overflow-visible max-h-[570px]">
-          <div
-            className="flex flex-row max-md:gap-[10px] gap-[40px] justify-center min-h-[180px] md:min-h-[300px]"
-          >
+          <div className="flex flex-row max-md:gap-[10px] gap-[40px] justify-center min-h-[180px] md:min-h-[300px]">
             {(testimonyData ?? testimonials).map((testi, index) => (
               <div
                 onClick={() => setActive(index)}
@@ -88,8 +84,9 @@ const Testimonials = ({
                 className="flex flex-col justify-center items-center gap-2 lg:gap-[24px] duration-300 cursor-pointer h-fit"
               >
                 <div
-                  className={`flex p-2 md:p-6 rounded-2xl items-center flex-col ${active === index ? 'bg-Text/TextLightBG' : 'bg-[#1C274F]'
-                    } text-center gap-2 max-md:w-[120px] max-md:h-[142px] max-md:pt-[12px] w-[190px] h-[236px]`}
+                  className={`flex p-2 md:p-6 rounded-2xl items-center flex-col ${
+                    active === index ? 'bg-Text/TextLightBG' : 'bg-[#1C274F]'
+                  } text-center gap-2 max-md:w-[120px] max-md:h-[142px] max-md:pt-[12px] w-[190px] h-[236px]`}
                 >
                   <Avatar>
                     <AvatarImage

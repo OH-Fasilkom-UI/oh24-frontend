@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/react'
-import Tabs from '../ui/Tabs'
+import { Tabs } from '../ui/Tabs'
 import { Settings, User } from 'lucide-react'
 
 const meta: Meta<typeof Tabs> = {

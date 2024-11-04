@@ -41,9 +41,7 @@ const AmbassadorProgramsDesktop = () => {
               pengalaman hands-on mengenai ilmu yang dapat diaplikasikan di
               dunia nyata.
             </p>
-            <AnimatedTrain
-              className='-left-32 bottom-8 '
-            />
+            <AnimatedTrain className="-left-32 bottom-8 " />
           </Card>
 
           {/* Section 5 */}

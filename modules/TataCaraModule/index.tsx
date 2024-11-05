@@ -60,15 +60,15 @@ export const TataCaraModule = () => {
       trigger={
         <Button
           variant="secondary"
-          className="px-8 py-3"
+          className="flex items-center justify-center gap-3 max-sm:text-t9"
           onClick={() => setIsOpen(true)}
         >
-          Cara Pembelian <User size={24} />
+          <User className="max-sm:size-[18px]" /> Cara Pembelian
         </Button>
       }
       onOpenChange={setIsOpen}
     >
-      <div className="flex justify-end">
+      <div className="flex justify-end -mt-8">
         <DialogPrimitive.Close asChild>
           <X
             size={48}
@@ -77,7 +77,7 @@ export const TataCaraModule = () => {
           />
         </DialogPrimitive.Close>
       </div>
-      <div className="h-auto flex flex-col justify-center items-center">
+      <div className="h-auto flex flex-col justify-center items-center py-5">
         <h1 className="text-Text/TextDarkBG max-[350px]:text-[18px] text-center justify-center max-md:leading-7 max-md:text-[20px] text-3xl font-bold tracking-widest leading-10">
           How to Buy Our Merch?
         </h1>
@@ -87,9 +87,10 @@ export const TataCaraModule = () => {
             <div
               key={index}
               className={`flex flex-col w-[266px] transition-all duration-500 transform
-                ${visibleSlides.includes(index)
-                  ? 'opacity-100 translate-x-0'
-                  : 'opacity-0 translate-x-full'
+                ${
+                  visibleSlides.includes(index)
+                    ? 'opacity-100 translate-x-0'
+                    : 'opacity-0 translate-x-full'
                 }`}
             >
               <div className="relative w-[266px] h-[289px]">
@@ -143,8 +144,9 @@ export const TataCaraModule = () => {
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full ${currentSlide === index ? 'bg-white' : 'bg-white/50'
-                  }`}
+                className={`w-2 h-2 rounded-full ${
+                  currentSlide === index ? 'bg-white' : 'bg-white/50'
+                }`}
               />
             ))}
           </div>

@@ -202,14 +202,23 @@ export const DetailProfile = () => {
           {userData?.ticket && (
             <>
               <div className="mt-6 grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
-                <Field label="Event yang Diikuti" values={[(() => {
-                  switch (userData.ticket.eventName) {
-                    case 'FULL_EXPERIENCE_1': return 'Full Experience Pagi';
-                    case 'FULL_EXPERIENCE_2': return 'Full Experience Siang';
-                    case 'ONLINE_EXPERIENCE': return 'Online Experience';
-                    default: return '';
-                  }
-                })()]} />
+                <Field
+                  label="Event yang Diikuti"
+                  values={[
+                    (() => {
+                      switch (userData.ticket.eventName) {
+                        case 'FULL_EXPERIENCE_1':
+                          return 'Full Experience Pagi'
+                        case 'FULL_EXPERIENCE_2':
+                          return 'Full Experience Siang'
+                        case 'ONLINE_EXPERIENCE':
+                          return 'Online Experience'
+                        default:
+                          return ''
+                      }
+                    })(),
+                  ]}
+                />
                 <Field label="Nama Mentor CS Connect" values={leadersString} />
                 <Field
                   label="Link Grup WhatsApp Mentoring CS Connect"

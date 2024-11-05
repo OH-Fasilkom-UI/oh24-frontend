@@ -1,5 +1,6 @@
 import Button from '@/components/ui/Button'
 import { merchandiseData } from '@/modules/MerchandiseModule/constant'
+import { TataCaraModule } from '@/modules/TataCaraModule'
 import Banner from '@/public/Merchandise/Banner.png'
 import BannerMobile from '@/public/Merchandise/BannerMobile.png'
 import Pesawat from '@/public/Merchandise/Pesawat.png'
@@ -65,13 +66,7 @@ export const Merchandise = () => {
             <User className="max-sm:size-[18px]" />
             Beli
           </Button>
-          <Button
-            variant={'secondary'}
-            className="flex items-center justify-center gap-3 max-sm:text-t9"
-          >
-            <User className="max-sm:size-[18px]" />
-            Cara Pembelian
-          </Button>
+          <TataCaraModule />
         </div>
       </div>
       <div className="my-12 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-11 gap-y-14 px-2 md:px-6 lg:px-10">

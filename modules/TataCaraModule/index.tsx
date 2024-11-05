@@ -1,17 +1,18 @@
 'use client'
-import React, { useState, useEffect } from 'react'
-import Modal from '@/components/ui/Modal'
+
 import Button from '@/components/ui/Button'
+import Modal from '@/components/ui/Modal'
+import * as DialogPrimitive from '@radix-ui/react-dialog'
 import {
-  User,
+  ChevronLeft,
+  ChevronRight,
   Search,
   ShoppingCart,
+  User,
   X,
-  ChevronRight,
-  ChevronLeft,
 } from 'lucide-react'
 import Image from 'next/image'
-import * as DialogPrimitive from '@radix-ui/react-dialog'
+import { useEffect, useState } from 'react'
 
 export const TataCaraModule = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -86,10 +87,9 @@ export const TataCaraModule = () => {
             <div
               key={index}
               className={`flex flex-col w-[266px] transition-all duration-500 transform
-                ${
-                  visibleSlides.includes(index)
-                    ? 'opacity-100 translate-x-0'
-                    : 'opacity-0 translate-x-full'
+                ${visibleSlides.includes(index)
+                  ? 'opacity-100 translate-x-0'
+                  : 'opacity-0 translate-x-full'
                 }`}
             >
               <div className="relative w-[266px] h-[289px]">
@@ -143,9 +143,8 @@ export const TataCaraModule = () => {
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full ${
-                  currentSlide === index ? 'bg-white' : 'bg-white/50'
-                }`}
+                className={`w-2 h-2 rounded-full ${currentSlide === index ? 'bg-white' : 'bg-white/50'
+                  }`}
               />
             ))}
           </div>

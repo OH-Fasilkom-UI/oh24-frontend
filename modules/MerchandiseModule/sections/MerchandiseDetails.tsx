@@ -10,7 +10,7 @@ import CarouselsMobile from '../components/ImageCarouselMobile'
 import { merchandiseData } from '../constant'
 
 const MerchandiseDetails = ({ productId }: { productId: string }) => {
-  const product = merchandiseData.find(item => item.id === productId)
+  const product = merchandiseData.find((item) => item.id === productId)
   const priceRef = useRef<HTMLDivElement>(null)
   const [isPriceOutOfView, setIsPriceOutOfView] = useState(false)
 
@@ -91,7 +91,9 @@ const MerchandiseDetails = ({ productId }: { productId: string }) => {
             />
           </div>
 
-          <p className="text-[#2E3881] mt-7 text-justify">{product?.description}</p>
+          <p className="text-[#2E3881] mt-7 text-justify">
+            {product?.description}
+          </p>
         </div>
       </div>
 
@@ -129,10 +131,11 @@ const MerchandiseDetails = ({ productId }: { productId: string }) => {
         </ul>
       </div>
       <div
-        className={`fixed z-50 bottom-0 left-0 right-0 bg-[#343799] text-white p-4 px-4 sm:px-12 lg:px-28 flex justify-end sm:justify-between items-center shadow-lg  transform transition-all duration-500 ease-in-out opacity-100 translate-y-0 ${isPriceOutOfView
-          ? 'sm:translate-y-0 sm:opacity-100'
-          : 'sm:translate-y-40 sm:opacity-0'
-          }`}
+        className={`fixed z-50 bottom-0 left-0 right-0 bg-[#343799] text-white p-4 px-4 sm:px-12 lg:px-28 flex justify-end sm:justify-between items-center shadow-lg  transform transition-all duration-500 ease-in-out opacity-100 translate-y-0 ${
+          isPriceOutOfView
+            ? 'sm:translate-y-0 sm:opacity-100'
+            : 'sm:translate-y-40 sm:opacity-0'
+        }`}
       >
         <div className="hidden gap-5 justify-center items-center sm:flex">
           <Image

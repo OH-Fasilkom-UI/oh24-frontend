@@ -16,7 +16,8 @@ interface FAQInterface {
 
 const AmbassadorFAQData: FAQInterface[] = [
   {
-    question: 'Siapa aja sih yang bisa mendaftar menjadi Ambassador OH Fasilkom UI 2024?',
+    question:
+      'Siapa aja sih yang bisa mendaftar menjadi Ambassador OH Fasilkom UI 2024?',
     answer:
       'Ambassador Open House Fasilkom UI ditujukan kepada anak-anak SMA sederajat/semi gap/gap year yang punya semangat untuk memperkenalkan Open House Fasilkom UI!',
   },
@@ -36,7 +37,8 @@ const AmbassadorFAQData: FAQInterface[] = [
       'Terdapat 2 tahap yaa, tahap pertama yaitu seleksi berkas, selanjutnya jika tugas-tugas yang kamu kumpulkan sesuai dan memenuhi kriteria maka akan dilanjutkan dengan tahap interview. Ini bagian yang paling seru karena kamu akan berkesempatan buat bertemu langsung dengan kakak-kakak Fasilkom UI yang keren-keren banget. Kamu bisa manfaatin ini untuk tanya-tanya seputar Fasilkom UI yaa.',
   },
   {
-    question: 'Kak emang bener kalo jadi OH Ambassador bisa berkemungkinan jadi maba Fasilkom UI?',
+    question:
+      'Kak emang bener kalo jadi OH Ambassador bisa berkemungkinan jadi maba Fasilkom UI?',
     answer:
       'Dengan menjadi Ambassador, tidak ada jaminan apapun untuk diterima sebagai mahasiswa Fasilkom yaa! Tetapi spesial program untuk ambassador membuka kesempatan agar kalian dapat bertanya-tanya mengenai informasi jalur masuk Fasilkom UI. Selain itu, kalian juga bisa jadi lebih siap menjadi anak Fasilkom dan menambah relasi! HEHEHE liat aja di testimoni Ambassador 2023 (banyak yang masuk Fasilkom UI loh!)',
   },
@@ -46,12 +48,12 @@ const AmbassadorFAQData: FAQInterface[] = [
       'Open Recruitment OH Ambassador akan berlangsung selama 3 minggu nih sampai tanggal 8 September dan pengumuman ambassadornya akan seminggu setelahnya. Special program Ambassador akan dimulai dari pertengahan bulan september sampai Main Event OH.',
   },
   {
-    question: 'Kak kalau misalnya aku ga ikut banyak kegiatan organisasi emangnya bisa diterima kak?',
+    question:
+      'Kak kalau misalnya aku ga ikut banyak kegiatan organisasi emangnya bisa diterima kak?',
     answer:
       'Bisa dongg, karena selain organisasi faktor keberhasilanmu sangat ditentukan oleh tugas video perkenalan kamu nih, kemampuan komunikasi, serta skill marketing kamu di sesi interview nanti! Jadi buat sekeren mungkin yaa tugasnyaa!!',
-  }
+  },
 ]
-
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -61,26 +63,24 @@ const containerVariants = {
       staggerChildren: 0.2, // Stagger each child by 0.2 seconds
     },
   },
-};
+}
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { delay: 0.1} },
-};
+  visible: { opacity: 1, y: 0, transition: { delay: 0.1 } },
+}
 
 const AmbassadorAccordion = () => {
-
   return (
-    <div
-      className="w-full"
-    >
-      <Accordion type="single" collapsible className="flex flex-col lg:gap-4 z-20">
+    <div className="w-full">
+      <Accordion
+        type="single"
+        collapsible
+        className="flex flex-col lg:gap-4 z-20"
+      >
         {AmbassadorFAQData.map((faq, index) => {
           return (
-            <div
-              key={index}
-              className='my-2'
-            >
+            <div key={index} className="my-2">
               <AccordionItem value={`item-${index}`}>
                 <AccordionTrigger className="max-md:text-[16px] max-sm:text-[12px] text-start">
                   {faq.question}
@@ -90,7 +90,7 @@ const AmbassadorAccordion = () => {
                 </AccordionContent>
               </AccordionItem>
             </div>
-          );
+          )
         })}
       </Accordion>
     </div>

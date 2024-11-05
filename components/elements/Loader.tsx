@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export const Loader = () => {
   return (
-    <div className='h-screen flex justify-center'>
+    <div className="h-screen flex justify-center">
       <div className="flex flex-col gap-9 p-4 h-[250px] mt-[20vh] animate-pulse rounded-[32px] bg-Misc/ShuttleGray/700/20">
         <div className="relative w-[220px] h-[194px]">
           <Image

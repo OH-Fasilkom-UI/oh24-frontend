@@ -12,7 +12,7 @@ jobs:
       - name: SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
-          script: ~/deploy.sh deploy_frontend ${{ github.ref_name }}
+          script: echo "temporarily disable"
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}

@@ -1,5 +1,11 @@
-import { redirect } from "next/navigation";
+import Footer from '@/components/elements/Footer'
+import LandingPageModule from '@/modules/LandingPageModule'
 
 export default function Home() {
-  return redirect('/ambassador')
+  return (
+    <main className="relative">
+      <LandingPageModule />
+      <Footer />
+    </main>
+  )
 }

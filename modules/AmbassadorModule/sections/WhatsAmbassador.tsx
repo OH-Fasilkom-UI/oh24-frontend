@@ -19,7 +19,7 @@ const WhatsAmbassador = () => {
               width={42}
               quality={100}
               height={59}
-              className='max-sm:block hidden min-[300px]:absolute -top-10 min-[450px]:-top-5 min-[550px]:right-10 max-sm:right-0 max-[320px]:right-1 max-[360px]:right-2 max-[400px]:right-4 max-[430px]:right-6 sm:right-5 transform animate-swing'
+              className="max-sm:block hidden min-[300px]:absolute -top-10 min-[450px]:-top-5 min-[550px]:right-10 max-sm:right-0 max-[320px]:right-1 max-[360px]:right-2 max-[400px]:right-4 max-[430px]:right-6 sm:right-5 transform animate-swing"
             />
           </div>
           <p className="font-tex-gyre text-[16px] max-md:leading-4  font-bold leading-6 max-md:text-[12px] max-xl:text-[13px] max-sm:text-center text-Text/TextLightBG">

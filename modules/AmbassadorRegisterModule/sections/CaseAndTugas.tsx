@@ -52,8 +52,8 @@ export const CaseAndTugas = () => {
         router.push('/ambassador')
       },
       onError: () => {
-        toast.error("Terjadi Kesalahan!")
-      }
+        toast.error('Terjadi Kesalahan!')
+      },
     })
   }
 
@@ -65,11 +65,8 @@ export const CaseAndTugas = () => {
     return <Loader />
   }
 
-
   return (
-    <section
-      className='flex flex-col gap-10 min-h-screen'
-    >
+    <section className="flex flex-col gap-10 min-h-screen">
       <BackModal showModal={showModal} setShowModal={setShowModal} />
       <Button
         onClick={handleBack}
@@ -86,9 +83,7 @@ export const CaseAndTugas = () => {
       >
         Tugas Calon Ambassador
       </h1>
-      <div
-        className='w-full flex justify-center'
-      >
+      <div className="w-full flex justify-center">
         <p
           className={cn(
             'text-Text/TextLightBG md:text-[20px] text-sm leading-5 md:leading-9 text-center font-bold max-w-[800px]',

@@ -44,21 +44,20 @@ const Modal = ({
           onInteractOutside={(e) => disableClickOutside && e.preventDefault()}
           onEscapeKeyDown={(e) => disableClickOutside && e.preventDefault()}
           className={twMerge(
-            'text-Text/TextLightBG bg-BlueRegion/Cornflower/50 fixed left-[50%] top-[50%] z-50 grid translate-x-[-50%] translate-y-[-50%] gap-4 bg-background duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] rounded-3xl',
+            'text-Text/TextLightBG h-fit bg-Text/TextLightBG fixed left-[50%] top-[50%] z-50 grid translate-x-[-50%] translate-y-[-50%] gap-4 duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] rounded-3xl',
             'py-6 sm:py-8',
-            'w-[90vw] max-w-xl md:max-w-4xl'
+            'w-[90vw] max-w-xl md:max-w-7xl'
           )}
         >
-          <ScrollArea className="max-h-96">
+          <ScrollArea className="max-h-screen">
             <div
               className={twMerge(
-                'flex gap-y-4 gap-x-8 px-6 sm:px-10 mt-2',
-                'md:flex-row md:items-start md:text-left',
+                'flex gap-y-4 mt-2',
                 'flex-col items-center text-center'
               )}
             >
               <div>{Icon && <Icon size="4rem" />}</div>
-              <div className="flex flex-col space-y-1.5">
+              <div className="flex flex-col space-y-1.5 w-full">
                 <DialogPrimitive.Title className="text-3xl font-bold leading-none">
                   {title}
                 </DialogPrimitive.Title>

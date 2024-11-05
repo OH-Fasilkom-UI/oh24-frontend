@@ -1,10 +1,10 @@
 'use client'
 
-import * as React from 'react'
-import useEmblaCarousel, { UseEmblaCarouselType } from 'embla-carousel-react'
-import { CircleArrowRight, CircleArrowLeft } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import useEmblaCarousel, { UseEmblaCarouselType } from 'embla-carousel-react'
+import { CircleArrowLeft, CircleArrowRight } from 'lucide-react'
 import Image from 'next/image'
+import * as React from 'react'
 
 type CarouselApi = UseEmblaCarouselType[1]
 

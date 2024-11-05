@@ -1,4 +1,5 @@
 import Button from '@/components/ui/Button'
+import { merchandiseData } from '@/modules/MerchandiseModule/constant'
 import Banner from '@/public/Merchandise/Banner.png'
 import BannerMobile from '@/public/Merchandise/BannerMobile.png'
 import Pesawat from '@/public/Merchandise/Pesawat.png'
@@ -6,7 +7,6 @@ import TabungBaju from '@/public/Merchandise/TabungBaju.png'
 import { User } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { CardMerchandise } from '../constant'
 
 export const Merchandise = () => {
   return (
@@ -75,24 +75,26 @@ export const Merchandise = () => {
         </div>
       </div>
       <div className="my-12 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-11 gap-y-14 px-2 md:px-6 lg:px-10">
-        {CardMerchandise.map((card, index) => (
+        {merchandiseData.map((product) => (
           <Link
-            href={`merchandise/${index}`}
-            key={index}
+            href={`merchandise/${product.id}`}
+            key={product.id}
             className="flex flex-col gap-3 px-4 py-5 md:p-8 lg:p-[52px] bg-[#2E3881E5] shadow-timeline rounded-[32px] transition-all delay-150 duration-300 hover:animate-swing"
           >
             <Image
-              src={card.image}
-              alt={card.title}
+              src={product.image[0]}
+              alt={product.title}
               width={200}
               height={200}
               className="mx-auto max-sm:h-[112px] h-[200px] object-contain"
             />
             <h3 className="md:text-t5 text-t9 font-bold font-riffic text-white">
-              {card.title}
+              {product.title}
             </h3>
             <p className="text-justify text-t7 max-sm:text-[9px] text-Text/TextDarkBG">
-              {card.description}
+              {product.description.length > 100
+                ? `${product.description.slice(0, 100)}...`
+                : product.description}
             </p>
           </Link>
         ))}

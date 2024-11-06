@@ -64,7 +64,7 @@ const MerchandiseDetails = ({ productId }: { productId: string }) => {
 
         {/* Product Details */}
         <div className="w-full lg:w-[600px] xl:w-[800px] sm:h-[500px] max-sm:px-8 overflow-auto text-[#2E3881] pr-16">
-          <h1 className="text-2xl  lg:text-3xl xl:text-5xl  font-bold font-tex-gyre ">
+          <h1 className="text-2xl lg:text-3xl xl:text-5xl font-bold font-tex-gyre ">
             {product?.title}
           </h1>
           <p
@@ -87,7 +87,7 @@ const MerchandiseDetails = ({ productId }: { productId: string }) => {
               alt="panda"
               width={500}
               height={500}
-              className="object-cover max-w-[100px] xl:max-w-[200px]"
+              className="object-cover max-w-[100px] xl:max-w-[180px]"
             />
           </div>
 
@@ -116,7 +116,7 @@ const MerchandiseDetails = ({ productId }: { productId: string }) => {
                       alt="other items"
                       width={150}
                       height={150}
-                      className="object-cover w-54 h-full sm:mb-2"
+                      className="object-contain w-full max-sm:h-[75px] h-[150px] sm:mb-2"
                     />
                     <p className="text-white font-black text-xs sm:text-lg">
                       {items.title}

@@ -62,7 +62,7 @@ const Carousels = ({ images }: CarouselProps) => {
                 alt={`Carousel Image ${index + 1}`}
                 width={500}
                 height={500}
-                className="object-cover max-w-[200px] lg:max-w-[300px]"
+                className="object-contain max-w-[200px] lg:max-w-[300px] max-h-[200px] lg:max-h-[300px]"
               />
             </div>
           ))}

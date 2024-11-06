@@ -11,7 +11,7 @@ const MerchandisePage = ({ params }: MerchandisePageProps) => {
   return (
     <main className="relative">
       <MerchandiseDetails productId={params.productId} />
-      <div className="mt-[2000px] sm:mt-[1600px] lg:mt-[1200px]">
+      <div className="mt-[1420px] sm:mt-[900px] lg:mt-[1100px]">
         <Footer />
       </div>
     </main>

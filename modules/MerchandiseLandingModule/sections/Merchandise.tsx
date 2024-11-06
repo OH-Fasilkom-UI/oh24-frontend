@@ -11,7 +11,7 @@ import Link from 'next/link'
 
 export const Merchandise = () => {
   return (
-    <section className="flex flex-col items-center justify-start w-full h-full py-[15dvh] px-6 md:px-[93px]">
+    <section className="flex flex-col items-center justify-start w-full h-full py-[12dvh] md:py-[15dvh] px-6 md:px-[93px]">
       <h1 className="md:text-t2 text-t5 text-[#B92677] font-riffic font-bold text-center">
         Merchandise Open House Fasilkom UI 2024
       </h1>
@@ -69,26 +69,31 @@ export const Merchandise = () => {
           <TataCaraModule />
         </div>
       </div>
-      <div className="my-12 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-x-11 gap-y-14 px-2 md:px-6 lg:px-10">
+      <div className="my-12 grid lg:grid-cols-3 grid-cols-2 gap-x-4 md:gap-x-6 lg:gap-x-11 gap-y-8 md:gap-y-14 xl:px-10">
         {merchandiseData.map((product) => (
           <Link
             href={`merchandise/${product.id}`}
             key={product.id}
-            className="flex flex-col gap-3 px-4 py-5 md:p-8 lg:p-[52px] bg-[#2E3881E5] shadow-timeline rounded-[32px] transition-all delay-150 duration-300 hover:animate-swing"
+            className="flex flex-col gap-3 px-4 py-5 md:p-8 lg:p-[52px] bg-[#2E3881E5] shadow-timeline rounded-[20px] md:rounded-[32px] transition-all delay-150 duration-300 hover:animate-swing"
           >
             <Image
               src={product.image[0]}
               alt={product.title}
               width={200}
               height={200}
-              className="mx-auto max-sm:h-[112px] h-[200px] object-contain"
+              className="mx-auto w-full max-sm:h-[112px] h-[200px] object-contain"
             />
-            <h3 className="md:text-t5 text-t9 font-bold font-riffic text-white">
+            <h3 className="md:text-t5 text-t7 font-bold font-riffic tracking-wider text-white">
               {product.title}
             </h3>
-            <p className="text-justify text-t7 max-sm:text-[9px] text-Text/TextDarkBG">
-              {product.description.length > 100
-                ? `${product.description.slice(0, 100)}...`
+            <p className="sm:hidden text-justify text-t9 text-Text/TextDarkBG">
+              {product.description.length > 60
+                ? `${product.description.slice(0, 60)}...`
+                : product.description}
+            </p>
+            <p className="max-sm:hidden text-justify text-t8 md:text-t7 text-Text/TextDarkBG">
+              {product.description.length > 120
+                ? `${product.description.slice(0, 120)}...`
                 : product.description}
             </p>
           </Link>

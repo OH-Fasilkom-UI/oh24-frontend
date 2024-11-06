@@ -51,15 +51,10 @@ const BidangTabs: React.FC = () => {
   }, [autoSlideActive])
 
   useEffect(() => {
-    // Ilangin if else di sini kalo High-Achieving Student nya bukan kayak yg dimaksud
-    if (selectedIndex === 0) {
-      setFilteredCards(cardsData)
-    } else {
-      const filtered = cardsData.filter(
-        (card) => card.bidang === navMenuData[selectedIndex]
-      )
-      setFilteredCards(filtered)
-    }
+    const filtered = cardsData.filter(
+      (card) => card.bidang === navMenuData[selectedIndex]
+    )
+    setFilteredCards(filtered)
   }, [selectedIndex])
 
   if (focusedIndex !== undefined) {
@@ -71,7 +66,7 @@ const BidangTabs: React.FC = () => {
               setFocusedIndex(undefined)
             }}
             variant="primary"
-            className="flex justify-center items-center self-start mt-6 text-base sm:text-lg"
+            className="flex justify-center items-center self-start mt-4 text-base sm:text-lg"
           >
             <ArrowLeft className="w-5"></ArrowLeft>
             Back
@@ -91,7 +86,7 @@ const BidangTabs: React.FC = () => {
               setFocusedIndex(undefined)
             }}
             variant="primary"
-            className="flex justify-center items-center self-start mt-6 text-base sm:text-lg"
+            className="flex justify-center items-center self-start mt-4 text-base sm:text-lg"
           >
             <ArrowLeft className="w-5"></ArrowLeft>
             Back

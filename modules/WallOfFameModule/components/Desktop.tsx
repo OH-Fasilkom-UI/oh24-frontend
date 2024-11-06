@@ -6,6 +6,7 @@ import PandaKiri from '@/public/WallOfFame/PandaKiri.png'
 import useEmblaCarousel from 'embla-carousel-react'
 import { ArrowLeftCircle, ArrowRightCircle, Dot } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import { cardsDataType, navMenuData } from '../constant'
 
@@ -42,7 +43,7 @@ const NavMenuDesktop: React.FC<NavMenuProps> = ({
           boxShadow: '-6px -6px 16px 0px rgba(78, 86, 196, 0.7)',
         }}
       >
-        <ul className="h-full w-full flex justify-between items-center">
+        <ul className="h-full w-full flex gap-5 items-center">
           {navMenuData.map((item, index) => (
             <li
               key={index}
@@ -136,10 +137,9 @@ const DesktopCarousel: React.FC<DesktopCarouselProps> = ({
           {filteredCards.map((card, index) => {
             return (
               <div
-                className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] min-w-full min-h-[36rem] xl:min-h-[40rem] bg-cover rounded-3xl overflow-hidden py-12"
+                className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] min-w-full min-h-[36rem] xl:min-h-[40rem] bg-cover rounded-3xl overflow-hidden gap-10 px-10 py-12"
                 style={{
                   backgroundImage: `url(${Background.src})`,
-                  backgroundSize: '100% 75%',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat',
                 }}
@@ -151,30 +151,35 @@ const DesktopCarousel: React.FC<DesktopCarouselProps> = ({
                     alt={`Foto Profil ${card.nama}`}
                     fill
                     sizes="none"
-                    className="object-cover"
+                    className="object-cover rounded-2xl"
                   />
                 </div>
-                <div className="pl-12 pr-20 lg:pl-20 lg:pr-32 py-4">
-                  <h1 className="font-riffic font-bold text-3xl xl:text-4xl text-white mb-0">
+                <div>
+                  <h1 className="font-riffic tracking-wider font-bold text-3xl xl:text-4xl text-white mb-0">
                     {card.nama}
                   </h1>
-                  <h2 className="font-tex-gyre font-bold text-lg xl:text-xl text-white mb-10 xl:mb-14">
-                    {card.posisi}
+                  <h2 className="font-tex-gyre font-bold text-lg xl:text-xl text-white mb-8 xl:mb-10">
+                    {card.jurusan}
                   </h2>
-                  <p className="font-tex-gyre font-bold text-xl xl:text-2xl text-white mb-10 xl:mb-14">
-                    {card.deskripsi}
+                  <p className="w-full whitespace-pre-line font-tex-gyre font-bold text-lg text-justify max-h-[320px] pr-3 overflow-auto text-white mb-10 xl:mb-14">
+                    {card.deskripsi.split('\n').map((item, index) => (
+                      <p key={index} className="mt-2.5 indent-2.5">
+                        {item}
+                      </p>
+                    ))}
                   </p>
-                  <div className="flex gap-x-4 gap-y-1 justify-between flex-wrap">
+                  <div className="flex gap-x-16 gap-y-1 flex-wrap">
                     {card.kontak.map((kontak, index) => {
                       return (
-                        <a
+                        <Link
                           href={kontak.link}
+                          target="_blank"
                           className="block font-tex-gyre text-md xl:text-lg font-bold text-white"
                           key={index}
                         >
                           <Dot className="inline-block scale-[400%] -translate-y-[10%] text-BlueRegion/Portgage/600"></Dot>
                           {kontak.teks}
-                        </a>
+                        </Link>
                       )
                     })}
                   </div>

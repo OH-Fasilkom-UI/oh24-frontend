@@ -1,4 +1,5 @@
 import Button from '@/components/ui/Button'
+import Background from '@/public/WallOfFame/BackgroundMobile.png'
 import ComputerMobile from '@/public/WallOfFame/ComputerMobile.png'
 import PandaKanan from '@/public/WallOfFame/PandaKanan.png'
 import PandaKiri from '@/public/WallOfFame/PandaKiri.png'
@@ -10,6 +11,7 @@ import {
   Dot,
 } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import { cardsDataType, navMenuData } from '../constant'
 
@@ -48,7 +50,7 @@ const NavMenuMobile: React.FC<navMenuProps> = ({
   }
 
   return (
-    <div className="w-full relative inline-block my-6">
+    <div className="w-full relative inline-block mt-3 mb-6">
       <div>
         <button
           type="button"
@@ -164,10 +166,15 @@ const MobileCarousel: React.FC<MobileCarouselProps> = ({
           {filteredCards.map((card, index) => {
             return (
               <div
-                className="min-w-full min-h-[36rem] bg-[url('/wof-background.png')] bg-no-repeat bg-center bg-cover rounded-3xl overflow-hidden px-8 py-24 sm:px-16"
+                className="min-w-full min-h-[36rem] bg-cover rounded-3xl overflow-hidden px-6 pt-6 pb-28 sm:px-16"
+                style={{
+                  backgroundImage: `url(${Background.src})`,
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                }}
                 key={index}
               >
-                <div className="relative w-full max-w-[20rem] aspect-square mb-10 mx-auto">
+                <div className="relative w-full max-w-[20rem] aspect-square mb-6 mx-auto">
                   <Image
                     src={card.foto}
                     alt={`Foto Profil ${card.nama}`}
@@ -177,26 +184,31 @@ const MobileCarousel: React.FC<MobileCarouselProps> = ({
                   />
                 </div>
                 <div className="">
-                  <h1 className="font-riffic font-bold text-xl sm:text-2xl text-white mb-0">
+                  <h1 className="font-riffic tracking-wider font-bold text-2xl sm:text-2xl text-white mb-0">
                     {card.nama}
                   </h1>
-                  <h2 className="font-tex-gyre font-bold text-md sm:text-lg text-white mb-6 sm:mb-8">
-                    {card.posisi}
+                  <h2 className="font-tex-gyre font-bold text-lg xl:text-xl text-white mb-4">
+                    {card.jurusan}
                   </h2>
-                  <p className="font-tex-gyre font-bold text-lg sm:text-xl text-white mb-6 sm:mb-8">
-                    {card.deskripsi}
+                  <p className="w-full whitespace-pre-line font-tex-gyre font-bold text-sm text-justify max-h-[320px] pr-3 overflow-auto text-white mb-10 xl:mb-14">
+                    {card.deskripsi.split('\n').map((item, index) => (
+                      <p key={index} className="mt-2.5 indent-2.5">
+                        {item}
+                      </p>
+                    ))}
                   </p>
-                  <div className="grid grid-cols-2 grid-flow-row gap-x-4 gap-y-1">
+                  <div className="flex gap-x-16 gap-y-1 flex-wrap">
                     {card.kontak.map((kontak, index) => {
                       return (
-                        <a
+                        <Link
                           href={kontak.link}
-                          className="block font-tex-gyre text-sm sm:text-md font-bold text-white"
+                          target="_blank"
+                          className="block font-tex-gyre text-md xl:text-lg font-bold text-white"
                           key={index}
                         >
-                          <Dot className="inline-block scale-[300%] -translate-y-[10%] text-BlueRegion/Portgage/600"></Dot>
+                          <Dot className="inline-block scale-[400%] -translate-y-[10%] text-BlueRegion/Portgage/600"></Dot>
                           {kontak.teks}
-                        </a>
+                        </Link>
                       )
                     })}
                   </div>
@@ -235,7 +247,7 @@ const MobileCarousel: React.FC<MobileCarouselProps> = ({
           <ArrowRightCircle className="absolute inset-0 w-[50%] h-[50%] top-[25%] left-[25%]" />
         </Button>
       </div>
-      <div className="absolute bottom-32 -left-6 size-36 sm:bottom-24 sm:size-48">
+      <div className="absolute bottom-32 -left-4 size-36 sm:bottom-24 sm:size-48">
         <Image
           src={PandaKiri}
           alt="Left Panda"
@@ -243,7 +255,7 @@ const MobileCarousel: React.FC<MobileCarouselProps> = ({
           className="object-contain"
         />
       </div>
-      <div className="absolute bottom-32 -right-6 size-36 sm:bottom-24 sm:size-48">
+      <div className="absolute bottom-32 -right-4 size-36 sm:bottom-24 sm:size-48">
         <Image
           src={PandaKanan}
           alt="Right Panda"

@@ -34,9 +34,9 @@ const CarouselsMobile = ({ images }: CarouselProps) => {
             <div key={index} className="min-w-full flex justify-center">
               <Image
                 src={src}
-                alt={`img`}
-                width={250}
-                height={250}
+                alt={`Carousel Image ${index + 1}`}
+                width={1000}
+                height={1000}
                 className="object-cover w-4/6 h-full"
               />
             </div>

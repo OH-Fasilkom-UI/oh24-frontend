@@ -60,9 +60,9 @@ const Carousels = ({ images }: CarouselProps) => {
               <Image
                 src={src}
                 alt={`Carousel Image ${index + 1}`}
-                width={500}
-                height={500}
-                className="object-contain max-w-[200px] lg:max-w-[300px] max-h-[200px] lg:max-h-[300px]"
+                width={1000}
+                height={1000}
+                className="object-contain max-w-[200px] lg:max-w-[300px] max-h-[200px] lg:max-h-[300px] rounded-xl"
               />
             </div>
           ))}

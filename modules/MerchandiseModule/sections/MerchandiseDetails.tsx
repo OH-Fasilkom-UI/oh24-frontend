@@ -85,8 +85,8 @@ const MerchandiseDetails = ({ productId }: { productId: string }) => {
             <Image
               src={'/pandacart.png'}
               alt="panda"
-              width={500}
-              height={500}
+              width={1000}
+              height={1000}
               className="object-cover max-w-[100px] xl:max-w-[180px]"
             />
           </div>
@@ -109,19 +109,19 @@ const MerchandiseDetails = ({ productId }: { productId: string }) => {
                 <Link key={items.id} href={`/merchandise/${items.id}`}>
                   <li
                     key={index}
-                    className=" bg-[#2E3881] p-5 pb-7 h-[160px] sm:h-[280px] rounded-3xl flex flex-col w-[120px] sm:w-[200px] justify-center items-center gap-2"
+                    className=" bg-[#2E3881] p-5 pb-7 h-[200px] sm:h-[280px] rounded-3xl flex flex-col w-[140px] sm:w-[200px] justify-center items-center gap-2"
                   >
                     <Image
                       src={items.image[0]}
                       alt="other items"
-                      width={150}
-                      height={150}
-                      className="object-contain w-full max-sm:h-[75px] h-[150px] sm:mb-2"
+                      width={1000}
+                      height={1000}
+                      className="w-full h-fit rounded-lg md:rounded-xl sm:mb-2"
                     />
-                    <p className="text-white font-black text-xs sm:text-lg">
+                    <p className="text-center text-white font-black text-xs sm:text-lg">
                       {items.title}
                     </p>
-                    <p className="text-white font-black text-sm sm:text-xl">
+                    <p className="text-center text-white font-black text-sm sm:text-xl">
                       {items.price}
                     </p>
                   </li>

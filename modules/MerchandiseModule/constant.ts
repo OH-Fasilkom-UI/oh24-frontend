@@ -122,6 +122,7 @@ export const merchandiseData: MerchandiseProps[] = [
       '/Merchandise/Products/TShirtHitam1.png',
       '/Merchandise/Products/TShirtHitam2.png',
       '/Merchandise/Products/TShirtHitam3.png',
+      '/Merchandise/Products/TShirtHitam4.png',
     ],
     price: 'Rp100.000',
     description:
@@ -135,6 +136,7 @@ export const merchandiseData: MerchandiseProps[] = [
       '/Merchandise/Products/TShirtPutih1.png',
       '/Merchandise/Products/TShirtPutih2.png',
       '/Merchandise/Products/TShirtPutih3.png',
+      '/Merchandise/Products/TShirtPutih4.png',
     ],
     price: 'Rp100.000',
     description:

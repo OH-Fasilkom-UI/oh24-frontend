@@ -74,14 +74,14 @@ export const Merchandise = () => {
           <Link
             href={`merchandise/${product.id}`}
             key={product.id}
-            className="flex flex-col gap-3 px-4 py-5 md:p-8 lg:p-[52px] bg-[#2E3881E5] shadow-timeline rounded-[20px] md:rounded-[32px] transition-all delay-150 duration-300 hover:animate-swing"
+            className="flex flex-col gap-3 px-4 py-5 md:p-8 lg:p-[40px] bg-[#2E3881E5] shadow-timeline rounded-[20px] md:rounded-[32px] transition-all delay-150 duration-300 hover:animate-swing"
           >
             <Image
               src={product.image[0]}
               alt={product.title}
-              width={200}
-              height={200}
-              className="mx-auto w-full max-sm:h-[112px] h-[200px] object-contain"
+              width={10000}
+              height={10000}
+              className="mx-auto w-full h-fit rounded-lg md:rounded-xl"
             />
             <h3 className="md:text-t5 text-t7 font-bold font-riffic tracking-wider text-white">
               {product.title}

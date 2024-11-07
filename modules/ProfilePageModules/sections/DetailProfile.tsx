@@ -168,7 +168,9 @@ export const DetailProfile = () => {
             )
           ) : (
             <Link href="/register">
-              <Button className="max-w-36">Registrasi Peserta</Button>
+              <Button className="max-w-36" disabled>
+                Registrasi Peserta
+              </Button>
             </Link>
           )}
 

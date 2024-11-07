@@ -19,9 +19,14 @@ const Hero = ({ onClick }: { onClick: () => void }) => {
         <h1 className="text-4xl md:text-6xl font-riffic text-gray-300 tracking-wide">
           Wall of Fame
         </h1>
-        <p className="py-1 md:py-2 font-tex-gyre text-sm md:text-lg text-gray-200 max-w-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <p className="py-1 md:py-2 font-tex-gyre text-xs md:text-sm tracking-wider text-justify text-gray-200 max-w-xl">
+          Wall of Fame Open House Fasilkom UI 2024 hadir untuk mengapresiasi
+          individu-individu yang telah menciptakan inovasi berharga di
+          masyarakat. Melalui platform ini, kisah inspiratif terkait perjuangan,
+          kreativitas, dan dedikasi mereka ditampilkan sebagai sumber inspirasi
+          dan motivasi bagi siswa-siswi SMA dan mahasiswa Fasilkom UI yang masih
+          mencari passion mereka serta untuk turut berkontribusi dalam masa
+          depan teknologi.
         </p>
         <Button className="bg-[#4141EA] text-white" onClick={onClick}>
           View More

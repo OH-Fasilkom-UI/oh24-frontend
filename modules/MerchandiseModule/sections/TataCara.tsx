@@ -14,7 +14,7 @@ import {
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
-export const TataCaraModule = () => {
+export const TataCara = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
   const [visibleSlides, setVisibleSlides] = useState<number[]>([])

@@ -1,6 +1,5 @@
 import Button from '@/components/ui/Button'
 import { merchandiseData } from '@/modules/MerchandiseModule/constant'
-import { TataCaraModule } from '@/modules/TataCaraModule'
 import Banner from '@/public/Merchandise/Banner.png'
 import BannerMobile from '@/public/Merchandise/BannerMobile.png'
 import Pesawat from '@/public/Merchandise/Pesawat.png'
@@ -8,6 +7,7 @@ import TabungBaju from '@/public/Merchandise/TabungBaju.png'
 import { User } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { TataCara } from './TataCara'
 
 export const Merchandise = () => {
   return (
@@ -66,7 +66,7 @@ export const Merchandise = () => {
             <User className="max-sm:size-[18px]" />
             Beli
           </Button>
-          <TataCaraModule />
+          <TataCara />
         </div>
       </div>
       <div className="my-12 grid lg:grid-cols-3 grid-cols-2 gap-x-4 md:gap-x-6 lg:gap-x-11 gap-y-8 md:gap-y-14 xl:px-10">

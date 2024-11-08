@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { Hero } from './sections/Hero'
 import { Merchandise } from './sections/Merchandise'
 
-export const MerchandiseLandingModule = () => {
+export const MerchandiseModule = () => {
   const [page, setPage] = useState(0)
 
   useEffect(() => {

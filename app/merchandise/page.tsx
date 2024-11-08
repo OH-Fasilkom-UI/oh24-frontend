@@ -1,8 +1,7 @@
-import React from 'react'
-import { MerchandiseLandingModule } from '@/modules/MerchandiseLandingModule'
+import { MerchandiseModule } from '@/modules/MerchandiseModule'
 
 const Merchandise = () => {
-  return <MerchandiseLandingModule />
+  return <MerchandiseModule />
 }
 
 export default Merchandise

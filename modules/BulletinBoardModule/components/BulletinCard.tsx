@@ -10,12 +10,10 @@ import {
 const BulletinCard = ({
   color,
   title,
-  subtitle,
   description,
 }: {
   color: string
   title: string
-  subtitle: string
   description: string
 }) => {
   let classNameCard
@@ -77,9 +75,6 @@ const BulletinCard = ({
             {title}
           </DialogTitle>
           <DialogDescription className={textColor}>
-            <p className="text-start text-lg md:text-xl font-semibold tracking-wider py-1 md:py-3">
-              {subtitle}
-            </p>
             <p className="text-start max-md:text-xs">{description}</p>
           </DialogDescription>
         </DialogHeader>

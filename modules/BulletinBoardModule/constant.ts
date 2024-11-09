@@ -1,72 +1,37 @@
 export const BULLETIN_BOARD_DATA = [
   {
     color: 'blue',
-    title: 'Pacil Lorem Ipsum!',
-    subtitle: 'Lorem ipsum dolor sit amet',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    title: 'Top Ranked',
+    description: "Among Indonesia's best in Computer Science! 🌏",
   },
   {
     color: 'red',
-    title: 'Pacil Lorem Ipsum!',
-    subtitle: 'Lorem ipsum dolor sit amet',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    title: 'Coding Champions',
+    description: 'ICPC World Finalists, placing 21st globally! 🏆',
   },
   {
     color: 'yellow',
-    title: 'Pacil Lorem Ipsum!',
-    subtitle: 'Lorem ipsum dolor sit amet',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    title: 'COMPFEST',
+    description: "Hosts one of Indonesia's biggest student-led IT events! 🚀",
   },
   {
     color: 'white',
-    title: 'Pacil Lorem Ipsum!',
-    subtitle: 'Lorem ipsum dolor sit amet',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    title: 'Forbes 30 Under 30',
+    description: 'Alumni behind some amazing startup success! 💸',
+  },
+  {
+    color: 'white',
+    title: 'Cutting-Edge Labs',
+    description: 'Seven labs for AI, Machine Learning, and more! 🔬',
   },
   {
     color: 'yellow',
-    title: 'Pacil Lorem Ipsum!',
-    subtitle: 'Lorem ipsum dolor sit amet',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    title: 'Global Partners',
+    description: 'Collaborations with top universities worldwide! 🌐',
   },
   {
     color: 'red',
-    title: 'Pacil Lorem Ipsum!',
-    subtitle: 'Lorem ipsum dolor sit amet',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  },
-  {
-    color: 'blue',
-    title: 'Pacil Lorem Ipsum!',
-    subtitle: 'Lorem ipsum dolor sit amet',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  },
-  {
-    color: 'white',
-    title: 'Pacil Lorem Ipsum!',
-    subtitle: 'Lorem ipsum dolor sit amet',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  },
-  {
-    color: 'red',
-    title: 'Pacil Lorem Ipsum!',
-    subtitle: 'Lorem ipsum dolor sit amet',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  },
-  {
-    color: 'blue',
-    title: 'Pacil Lorem Ipsum!',
-    subtitle: 'Lorem ipsum dolor sit amet',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    title: 'Innovative Research',
+    description: 'From data science to robotics, Fasilkom is on it! 🤖',
   },
 ]

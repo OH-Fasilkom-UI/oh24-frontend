@@ -25,13 +25,12 @@ const BulletinBoard = () => {
         alt="Board"
         className="md:hidden w-full h-full max-w-sm"
       />
-      <div className="absolute top-0 left-0 w-full h-full grid grid-cols-3 md:grid-cols-5 gap-3 md:gap-5 lg:gap-8 px-7 py-9 md:px-14 md:py-10 lg:px-16 lg:py-14 xl:px-20 xl:py-16">
+      <div className="absolute top-0 left-0 w-full h-full grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5 lg:gap-8 px-7 py-9 md:px-14 md:py-10 lg:px-16 lg:py-14 xl:px-20 xl:py-16">
         {BULLETIN_BOARD_DATA.map((item) => {
           return (
             <BulletinCard
               color={item.color}
               title={item.title}
-              subtitle={item.subtitle}
               description={item.description}
             />
           )

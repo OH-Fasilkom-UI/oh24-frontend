@@ -19,8 +19,8 @@ export const Hero = ({ onClick }: { onClick: () => void }) => {
           <h1 className="md:text-t1 text-t4 text-center text-Text/TextLightBG font-riffic font-bold">
             Merchandise Pacil
           </h1>
-          <p className="md:text-t6 text-center text-t9 text-Text/TextLightBG font-bold">
-            Saksikan bajunya milik maskot Fasilkom UI teryucu-yucu!
+          <p className="md:text-t6 text-center text-t9 text-Text/TextLightBG font-bold max-w-2xl">
+            Kepo sama gaya anak pacil? Temukan pesona khas Fasilkom UI dengan merchandise eksklusif kami!
           </p>
           <Button
             onClick={() => onClick()}

@@ -33,12 +33,12 @@ export const NAVBAR_LINKS = [
     label: 'Wall of Fame',
     isExist: true,
   },
-  // {
-  //   href: '/bulletin-board',
-  //   icon: Presentation,
-  //   label: 'Bulletin Board',
-  //   isExist: true,
-  // },
+  {
+    href: '/bulletin-board',
+    icon: Presentation,
+    label: 'Bulletin Board',
+    isExist: true,
+  },
   {
     href: '/merchandise',
     icon: ShoppingBag,

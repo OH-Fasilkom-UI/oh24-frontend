@@ -1,15 +1,13 @@
-// import Footer from '@/components/elements/Footer'
-// import BulletinBoardModule from '@/modules/BulletinBoardModule'
-import { redirect } from 'next/navigation'
+import Footer from '@/components/elements/Footer'
+import BulletinBoardModule from '@/modules/BulletinBoardModule'
 
 const Page = () => {
-  return redirect('/')
-  // return (
-  //   <main className="relative">
-  //     <BulletinBoardModule />
-  //     <Footer />
-  //   </main>
-  // )
+  return (
+    <main className="relative">
+      <BulletinBoardModule />
+      <Footer />
+    </main>
+  )
 }
 
 export default Page

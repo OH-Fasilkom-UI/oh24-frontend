@@ -87,9 +87,10 @@ export const TataCara = () => {
             <div
               key={index}
               className={`flex flex-col w-[266px] transition-all duration-500 transform
-                ${visibleSlides.includes(index)
-                  ? 'opacity-100 translate-x-0'
-                  : 'opacity-0 translate-x-full'
+                ${
+                  visibleSlides.includes(index)
+                    ? 'opacity-100 translate-x-0'
+                    : 'opacity-0 translate-x-full'
                 }`}
             >
               <div className="relative w-[266px] h-[289px]">
@@ -143,8 +144,9 @@ export const TataCara = () => {
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full ${currentSlide === index ? 'bg-white' : 'bg-white/50'
-                  }`}
+                className={`w-2 h-2 rounded-full ${
+                  currentSlide === index ? 'bg-white' : 'bg-white/50'
+                }`}
               />
             ))}
           </div>

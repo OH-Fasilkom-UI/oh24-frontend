@@ -22,15 +22,15 @@ export const TataCara = () => {
   const slides = [
     {
       image: '/panda-modal/panda-pertama.png',
-      text: 'Lihat-lihat dan pilih merch yang tersedia di website OH',
+      text: 'Cari dan Pilih Barang Merchandise Kesukaanmu!',
     },
     {
       image: '/panda-modal/panda-kedua.png',
-      text: 'Lihat-lihat dan pilih merch yang tersedia di website OH',
+      text: 'Tempatkan Pesananmu dan Checkout',
     },
     {
       image: '/panda-modal/panda-ketiga.png',
-      text: 'Lihat-lihat dan pilih merch yang tersedia di website OH',
+      text: 'Tunggu Pesananmu Tiba!',
     },
   ]
 
@@ -87,10 +87,9 @@ export const TataCara = () => {
             <div
               key={index}
               className={`flex flex-col w-[266px] transition-all duration-500 transform
-                ${
-                  visibleSlides.includes(index)
-                    ? 'opacity-100 translate-x-0'
-                    : 'opacity-0 translate-x-full'
+                ${visibleSlides.includes(index)
+                  ? 'opacity-100 translate-x-0'
+                  : 'opacity-0 translate-x-full'
                 }`}
             >
               <div className="relative w-[266px] h-[289px]">
@@ -144,9 +143,8 @@ export const TataCara = () => {
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full ${
-                  currentSlide === index ? 'bg-white' : 'bg-white/50'
-                }`}
+                className={`w-2 h-2 rounded-full ${currentSlide === index ? 'bg-white' : 'bg-white/50'
+                  }`}
               />
             ))}
           </div>

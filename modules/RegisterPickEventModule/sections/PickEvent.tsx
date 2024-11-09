@@ -135,10 +135,10 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
           >
             <div>
               <h1 className="h-fit text-t3 text-shadow-pickEvent text-[#E0ECFF] flex justify-center mt-6 text-nowrap max-sm:text-t4 max-[400px]:text-[26px]">
-                Full Experience
+                Tour de Campus
               </h1>
               <div className="flex flex-col gap-5 mt-8 text-t7 max-sm:text-t8 max-[400px]:text-[12px]">
-                <div className="leading-[24px]">
+                {/* <div className="leading-[24px]">
                   <h1>1. CS Connect</h1>
                   <ul className="list-disc ml-10">
                     <li>
@@ -151,10 +151,10 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
                       <strong>Tempat:</strong> Zoom Meeting
                     </li>
                   </ul>
-                </div>
+                </div> */}
 
                 <div className="leading-[24px]">
-                  <h1>2. Main Event</h1>
+                  <h1>1. Main Event</h1>
                   <ul className="list-disc ml-10">
                     <li>
                       <strong>Tanggal:</strong> Sabtu, 23 November 2024
@@ -215,7 +215,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
           </Card>
 
           {/* Card Online */}
-          <Card
+          {/* <Card
             className={`w-[561px] h-[543px] flex flex-col justify-between items-center py-10 max-lg:h-fit max-md:w-[84vw] max-sm:w-[90vw] ${isOnlineExperienceFull ? 'bg-[#5C5A5AE6] pointer-events-none' : ''}`}
             style={{
               background: isOnlineExperienceFull
@@ -275,7 +275,7 @@ export const PickEventSection = ({ onClick }: { onClick: () => void }) => {
             >
               Mohon maaf, data yang dimasukkan tidak memenuhi kriteria.
             </p>
-          </Card>
+          </Card> */}
         </div>
 
         <form

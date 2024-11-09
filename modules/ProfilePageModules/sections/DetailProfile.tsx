@@ -79,8 +79,8 @@ export const DetailProfile = () => {
     userData?.ticket?.group?.leaders.length == 0
       ? ['Belum ada']
       : userData?.ticket?.group?.leaders.map(
-        (leader: string, index: number) => `${index + 1}. ${leader}`
-      )
+          (leader: string, index: number) => `${index + 1}. ${leader}`
+        )
 
   const handleScrollToQRCode = () => {
     if (typeof window !== 'undefined' && qrCodeSmallRef.current) {

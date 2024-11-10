@@ -75,7 +75,7 @@ const BulletinCard = ({
             {title}
           </DialogTitle>
           <DialogDescription className={textColor}>
-            <p className="text-start max-md:text-xs">{description}</p>
+            <p className="text-center max-md:text-xs">{description}</p>
           </DialogDescription>
         </DialogHeader>
         <div className="w-full relative">

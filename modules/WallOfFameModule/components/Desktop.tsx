@@ -36,9 +36,9 @@ const NavMenuDesktop: React.FC<NavMenuProps> = ({
   handleNavClick,
 }) => {
   return (
-    <div className="w-full flex h-12 my-6 2xl:h-16 items-center">
+    <div className="w-full flex h-14 my-6 items-center">
       <div
-        className="bg-[#3B478B] gap-4 w-full h-full rounded-full px-2.5 2xl:px-6"
+        className="bg-[#3B478B] gap-4 w-full h-full rounded-full px-4"
         style={{
           boxShadow: '-6px -6px 16px 0px rgba(78, 86, 196, 0.7)',
         }}
@@ -48,7 +48,7 @@ const NavMenuDesktop: React.FC<NavMenuProps> = ({
             <li
               key={index}
               onClick={() => handleNavClick(index)}
-              className={`transition duration-300 cursor-pointer font-riffic px-2 lg:px-4 2xl:px-6 py-1 md:py-2 text-[9px] md:text-[10px] lg:text-[12px] 2xl:text-lg rounded-full ${
+              className={`transition duration-300 cursor-pointer font-riffic tracking-wider px-4 py-2 text-sm rounded-full ${
                 selectedIndex === index
                   ? 'bg-BlueRegion/Cornflower/200 text-Text/TextLightBG'
                   : 'text-BlueRegion/Cornflower/200'
@@ -89,7 +89,7 @@ const DesktopOverview: React.FC<DesktopOverviewProps> = ({
       >
         {navMenuData[selectedIndex]}
       </h1>
-      <div className="flex flex-wrap absolute w-[45%] h-[67.3%] right-[3%] top-[5%] overflow-auto pb-4 2xl:pb-8">
+      <div className="grid grid-cols-2 gap-x-4 lg:gap-x-6 gap-y-5 lg:gap-y-8 w-[45%] h-[67.3%] absolute right-[3%] top-[5%] overflow-auto px-3 lg:px-8 xl:px-12 py-3 lg:py-4 xl:py-8">
         {children}
       </div>
       <Image

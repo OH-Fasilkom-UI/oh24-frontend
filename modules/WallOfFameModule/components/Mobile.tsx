@@ -109,7 +109,7 @@ const MobileOverview: React.FC<MobileOverviewProps> = ({
   children,
 }) => {
   return (
-    <div className="relative flex justify-center">
+    <div className="relative flex justify-center mb-24">
       <h1
         className="block absolute w-[85%] text-center top-[7%] text-[26px] min-[380px]:text-[38px] min-[560px]:text-6xl leading-tight text-PurpleRegion/MoonRaker/800"
         style={{
@@ -119,7 +119,7 @@ const MobileOverview: React.FC<MobileOverviewProps> = ({
         {navMenuData[selectedIndex]}
       </h1>
       <div className="absolute w-[89.2%] h-[69%] top-[23%] overflow-x-auto overflow-y-hidden">
-        <div className="flex w-max mt-8">{children}</div>
+        <div className="flex gap-5 w-max mt-8 p-5">{children}</div>
       </div>
       <Image
         src={ComputerMobile}

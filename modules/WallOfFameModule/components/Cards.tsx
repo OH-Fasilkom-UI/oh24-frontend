@@ -42,7 +42,7 @@ export const Cards: React.FC<CardsProps> = ({ cards, handleCardClick }) => {
             </h2>
           </div>
           <Button
-            className="w-full rounded-lg lg:rounded-xl text-xs lg:text-sm md:py-1.5 lg:py-2 md:px-0 mt-1"
+            className="w-full rounded-lg lg:rounded-xl text-xs md:text-xs lg:text-sm md:py-1.5 lg:py-2 md:px-0 mt-1"
             variant="tertiary"
             onClick={() => handleCardClick(index)}
           >

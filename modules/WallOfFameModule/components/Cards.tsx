@@ -1,5 +1,5 @@
 import Button from '@/components/ui/Button'
-import Mahkota from '@/public/WallOfFame/mahkota.png'
+import Mahkota from '@/public/WallOfFame/Mahkota.png'
 import Image from 'next/image'
 import { cardsDataType } from '../constant'
 

@@ -155,7 +155,12 @@ const HeroSection = () => {
     maxPandas: number
   ): number => {
     const maxParticipants = 940
-    return Math.max(Math.floor((participants / maxParticipants) * maxPandas), 1)
+    return Math.max(
+      Math.floor(
+        ((maxParticipants - participants) / maxParticipants) * maxPandas
+      ),
+      1
+    )
   }
 
   useEffect(() => {

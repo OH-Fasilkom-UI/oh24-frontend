@@ -1,4 +1,4 @@
-import { MenteeRegistrationModule } from "@/modules/MenteeRegistrationModule"
+import { MenteeRegistrationModule } from '@/modules/MenteeRegistrationModule'
 
 const Page = () => {
   return (

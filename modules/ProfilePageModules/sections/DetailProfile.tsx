@@ -75,11 +75,12 @@ export const DetailProfile = () => {
     return <Loader />
   }
 
-  const leadersString = userData?.ticket?.group?.leaders.length == 0
-    ? ['Belum ada']
-    : userData?.ticket?.group?.leaders.map(
-        (leader: string, index: number) => `${index + 1}. ${leader}`
-      )
+  const leadersString =
+    userData?.ticket?.group?.leaders.length == 0
+      ? ['Belum ada']
+      : userData?.ticket?.group?.leaders.map(
+          (leader: string, index: number) => `${index + 1}. ${leader}`
+        )
 
   const handleScrollToQRCode = () => {
     if (typeof window !== 'undefined' && qrCodeSmallRef.current) {
@@ -157,7 +158,7 @@ export const DetailProfile = () => {
           </div>
 
           {userData?.ticket ? (
-            userData?.ticket?.eventName.startsWith("FULL") && (
+            userData?.ticket?.eventName.startsWith('FULL') && (
               <Button
                 className="mt-6 block md:hidden bg-BlueRegion/Portgage/600"
                 onClick={handleScrollToQRCode}
@@ -201,27 +202,36 @@ export const DetailProfile = () => {
           {userData?.ticket && (
             <>
               <div className="mt-6 grid lg:grid-cols-2 md:gap-x-[188px] lg:gap-x-[50px] gap-y-6">
-                <Field label="Event yang Diikuti" values={[(() => {
-                  switch (userData.ticket.eventName) {
-                    case 'FULL_EXPERIENCE_1': return 'Full Experience Pagi';
-                    case 'FULL_EXPERIENCE_2': return 'Full Experience Siang';
-                    case 'ONLINE_EXPERIENCE': return 'Online Experience';
-                    default: return '';
-                  }
-                })()]} />
+                <Field
+                  label="Event yang Diikuti"
+                  values={[
+                    (() => {
+                      switch (userData.ticket.eventName) {
+                        case 'FULL_EXPERIENCE_1':
+                          return 'Full Experience Pagi'
+                        case 'FULL_EXPERIENCE_2':
+                          return 'Full Experience Siang'
+                        case 'ONLINE_EXPERIENCE':
+                          return 'Online Experience'
+                        default:
+                          return ''
+                      }
+                    })(),
+                  ]}
+                />
                 <Field label="Nama Mentor CS Connect" values={leadersString} />
                 <Field
                   label="Link Grup WhatsApp Mentoring CS Connect"
                   values={[userData?.ticket?.group?.linkWA || 'Belum ada']}
                   link
                 />
-                {userData?.ticket.rombel &&
+                {userData?.ticket.rombel && (
                   <Field
                     label="Link Grup WhatsApp Rombel Main Event"
                     values={[userData?.ticket?.rombel?.linkWA || 'Belum ada']}
                     link
                   />
-                }
+                )}
               </div>
 
               {userData?.ticket?.eventName?.startsWith('FULL') && (

@@ -68,7 +68,7 @@ const LandingPageHero = () => {
         </div>
         <div className="flex gap-4 sm:gap-12 my-6 sm:my-12">
           <Link href="/explore">
-            <Button className=" w-[130px] sm:w-[200px] text-[10px] sm:text-[12px]">
+            <Button className="h-[40px] sm:h-[50px] w-[130px] sm:w-[200px] text-[10px] sm:text-[12px]">
               About OH 2024
             </Button>
           </Link>

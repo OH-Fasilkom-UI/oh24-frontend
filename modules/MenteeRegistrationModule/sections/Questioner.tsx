@@ -191,7 +191,8 @@ export const Questioner = ({ onClick }: { onClick: () => void }) => {
                     <FormItem>
                       <h1 className="text-Text/TextDarkBG font-bold text-t7 max-sm:text-[10px] text-center font-tex-gyre tracking-wider mb-[18px] max-sm:mb-[14px]">
                         Apabila ingin mengikuti Main Event yang berada di
-                        Fasilkom UI, Depok pada tanggal 23 November, akomodasi yang digunakan?
+                        Fasilkom UI, Depok pada tanggal 23 November, akomodasi
+                        yang digunakan?
                       </h1>
                       <FormControl>
                         <RadioGroup
@@ -219,7 +220,8 @@ export const Questioner = ({ onClick }: { onClick: () => void }) => {
                     <FormItem>
                       <h1 className="text-Text/TextDarkBG font-bold text-t7 max-sm:text-[10px] text-center font-tex-gyre tracking-wider mb-[18px] max-sm:mb-[14px]">
                         Apabila ingin mengikuti Main Event yang berada di
-                        Fasilkom UI, Depok pada tanggal 23 November 2024, mengunjungi dengan siapa?
+                        Fasilkom UI, Depok pada tanggal 23 November 2024,
+                        mengunjungi dengan siapa?
                       </h1>
                       <FormControl>
                         <RadioGroup

@@ -77,7 +77,9 @@ const AfterRegistrationModule = ({}) => {
                 size={300}
                 className="shadow-lg bg-white p-3"
               />
-              <p className="font-bold text-center mt-5">Scan saat Main Event!</p>
+              <p className="font-bold text-center mt-5">
+                Scan saat Main Event!
+              </p>
             </div>
           )}
         </div>

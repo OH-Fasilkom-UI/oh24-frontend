@@ -109,12 +109,34 @@ const DISPLAY_PATTERNS = {
 }
 
 const HeroSection = () => {
+  const [jumlahParticipants, setJumlahParticipants] = useState(0)
   const [windowWidth, setWindowWidth] = useState<number>(
     typeof window !== 'undefined' ? window.innerWidth : 0
   )
 
-  // Nanti fetching dari API disini
-  const jumlahParticipants = 340
+  useEffect(() => {
+    const fetchParticipantCount = async () => {
+      try {
+        const response = await fetch('/api/mentee/count', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch data')
+        }
+
+        const data = await response.json()
+        setJumlahParticipants(data.menteeCount)
+      } catch (error: any) {
+        throw new Error(error.message)
+      }
+    }
+
+    fetchParticipantCount()
+  }, [])
 
   const getBreakpoint = (width: number): keyof typeof BREAKPOINT_CONFIGS => {
     if (width >= 1280) return 'xl'

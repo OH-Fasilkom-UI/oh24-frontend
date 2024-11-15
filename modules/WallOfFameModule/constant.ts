@@ -190,4 +190,8 @@ export const cardsData = [
 
 export type cardsDataType = typeof cardsData
 
-export const navMenuData: string[] = ['High Achiever Student', 'Alumni', 'Lecturer']
+export const navMenuData: string[] = [
+  'High Achiever Student',
+  'Alumni',
+  'Lecturer',
+]

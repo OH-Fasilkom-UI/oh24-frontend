@@ -1,6 +1,5 @@
-// import Footer from '@/components/elements/Footer'
-// import MerchandiseDetails from '@/modules/MerchandiseModule/sections/MerchandiseDetails'
-import { redirect } from 'next/navigation'
+import Footer from '@/components/elements/Footer'
+import MerchandiseDetails from '@/modules/MerchandiseModule/sections/MerchandiseDetails'
 
 interface MerchandisePageProps {
   params: {
@@ -9,15 +8,14 @@ interface MerchandisePageProps {
 }
 
 const MerchandisePage = ({ params }: MerchandisePageProps) => {
-  return redirect('/')
-  // return (
-  //   <main className="relative">
-  //     <MerchandiseDetails productId={params.productId} />
-  //     <div className="mt-[1420px] sm:mt-[900px] lg:mt-[1100px]">
-  //       <Footer />
-  //     </div>
-  //   </main>
-  // )
+  return (
+    <main className="relative">
+      <MerchandiseDetails productId={params.productId} />
+      <div className="mt-[1420px] sm:mt-[900px] lg:mt-[1100px]">
+        <Footer />
+      </div>
+    </main>
+  )
 }
 
 export default MerchandisePage

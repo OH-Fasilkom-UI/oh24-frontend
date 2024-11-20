@@ -1,9 +1,7 @@
-// import { MerchandiseModule } from '@/modules/MerchandiseModule'
-import { redirect } from 'next/navigation'
+import { MerchandiseModule } from '@/modules/MerchandiseModule'
 
 const Merchandise = () => {
-  return redirect('/')
-  // return <MerchandiseModule />
+  return <MerchandiseModule />
 }
 
 export default Merchandise

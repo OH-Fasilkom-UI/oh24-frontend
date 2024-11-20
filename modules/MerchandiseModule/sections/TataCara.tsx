@@ -12,6 +12,7 @@ import {
   X,
 } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 export const TataCara = () => {
@@ -159,10 +160,12 @@ export const TataCara = () => {
               Continue Browsing
             </Button>
           </DialogPrimitive.Close>
-          <Button className="px-[53px]" variant="secondary">
-            <ShoppingCart />
-            Order Now
-          </Button>
+          <Link href="https://ristek.link/POMerchandiseOH24" target="_blank">
+            <Button className="px-[53px]" variant="secondary">
+              <ShoppingCart />
+              Order Now
+            </Button>
+          </Link>
         </div>
       </div>
     </Modal>

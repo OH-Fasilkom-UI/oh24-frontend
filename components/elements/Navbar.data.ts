@@ -39,12 +39,12 @@ export const NAVBAR_LINKS = [
     label: 'Bulletin Board',
     isExist: true,
   },
-  // {
-  //   href: '/merchandise',
-  //   icon: ShoppingBag,
-  //   label: 'Merchandise',
-  //   isExist: true,
-  // },
+  {
+    href: '/merchandise',
+    icon: ShoppingBag,
+    label: 'Merchandise',
+    isExist: true,
+  },
 ]
 
 export const NAVBAR_LOGIN = [

@@ -59,13 +59,15 @@ export const Merchandise = () => {
           />
         </div>
         <div className="flex gap-[6px] md:gap-3 z-10">
-          <Button
-            variant={'tertiary'}
-            className="flex items-center justify-center gap-3 max-sm:text-t9"
-          >
-            <User className="max-sm:size-[18px]" />
-            Beli
-          </Button>
+          <Link href="https://ristek.link/POMerchandiseOH24" target="_blank">
+            <Button
+              variant={'tertiary'}
+              className="flex items-center justify-center gap-3 max-sm:text-t9"
+            >
+              <User className="max-sm:size-[18px]" />
+              Beli
+            </Button>
+          </Link>
           <TataCara />
         </div>
       </div>

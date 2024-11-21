@@ -73,7 +73,7 @@ const AfterRegistrationModule = ({}) => {
           {userData?.ticket?.eventName?.startsWith('FULL') && (
             <div className="max-lg:mb-16">
               <QRCode
-                value={userData?.ticket?.userId ?? qrCodeValue}
+                value={userData?.ticket?.id ?? qrCodeValue}
                 size={300}
                 className="shadow-lg bg-white p-3"
               />

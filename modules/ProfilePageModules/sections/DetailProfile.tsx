@@ -167,15 +167,17 @@ export const DetailProfile = () => {
               </Button>
             )
           ) : (
-            <Link href="/register"> 
-              <Button className="max-w-36" disabled>Registrasi Peserta</Button>
+            <Link href="/register">
+              <Button className="max-w-36" disabled>
+                Registrasi Peserta
+              </Button>
             </Link>
           )}
 
           {userData?.ticket?.eventName.startsWith('FULL') && (
             <div className="mt-6 max-md:hidden">
               <QRCode
-                value={userData?.ticket.userId ?? 'oh24'}
+                value={userData?.ticket.id ?? 'oh24'}
                 size={300}
                 className="shadow-lg bg-white p-3 rounded-md"
               />

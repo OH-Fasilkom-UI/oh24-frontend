@@ -242,7 +242,7 @@ export const DetailProfile = () => {
                   ref={qrCodeSmallRef}
                 >
                   <QRCode
-                    value={userData?.ticket?.userId ?? 'oh24'}
+                    value={userData?.ticket?.id ?? 'oh24'}
                     size={150}
                     className="shadow-lg bg-white p-3 rounded-md"
                   />

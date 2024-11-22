@@ -53,6 +53,7 @@ export interface TicketData {
   eventName: EventName
   rombel: RombelData | null
   group: GroupData | null
+  present: boolean
 }
 
 export interface RombelData {

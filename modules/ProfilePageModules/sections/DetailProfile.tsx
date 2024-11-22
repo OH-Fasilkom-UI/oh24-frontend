@@ -96,6 +96,8 @@ export const DetailProfile = () => {
     }
   }
 
+  const isScannedBefore = userData?.ticket?.present ?? false;
+
   return (
     <div className="pt-[10rem] min-[1920px]:pt-[10rem] mb-10 flex flex-col md:px-[120px] xl:px-[190px] py-10 max-md:pb-96 justify-center items-center md:items-start md:justify-start gap-[35px]">
       <h1 className="text-[36px] text-[#2E3881] font-bold font-riffic tracking-[0.075rem]">
@@ -175,14 +177,14 @@ export const DetailProfile = () => {
           )}
 
           {userData?.ticket?.eventName.startsWith('FULL') && (
-            <div className="mt-6 max-md:hidden">
+            <div className="mt-6 max-md:hidden flex flex-col items-center">
               <QRCode
                 value={userData?.ticket.id ?? 'oh24'}
                 size={300}
                 className="shadow-lg bg-white p-3 rounded-md"
               />
-              <p className="font-bold text-center mt-5">
-                Scan saat Main Event!
+              <p className="font-bold text-center mt-5 max-w-[300px]">
+                {isScannedBefore ? "Kamu telah terdaftar untuk mengikuti Main Event!" : "Scan saat Main Event!"}
               </p>
             </div>
           )}
@@ -246,7 +248,9 @@ export const DetailProfile = () => {
                     size={150}
                     className="shadow-lg bg-white p-3 rounded-md"
                   />
-                  <p className="font-bold text-center">Scan saat Main Event!</p>
+                  <p className="font-bold text-center">
+                    {isScannedBefore ? "Kamu telah terdaftar untuk mengikuti Main Event!" : "Scan saat Main Event!"}
+                  </p>
                 </div>
               )}
             </>

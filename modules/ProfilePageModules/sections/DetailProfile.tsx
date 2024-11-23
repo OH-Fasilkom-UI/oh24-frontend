@@ -239,11 +239,18 @@ export const DetailProfile = () => {
                   link
                 />
                 {userData?.ticket.rombel && (
-                  <Field
-                    label="Link Grup WhatsApp Rombel Main Event"
-                    values={[userData?.ticket?.rombel?.linkWA || 'Belum ada']}
-                    link
-                  />
+                  <>
+                    <Field
+                      label="Link Grup WhatsApp Rombel Main Event"
+                      values={[userData?.ticket?.rombel?.linkWA || 'Belum ada']}
+                      link
+                    />
+                    <Field
+                      label="Rombel"
+                      values={[userData?.ticket?.rombel?.name || 'Belum ada']}
+                      link
+                    />
+                  </>
                 )}
               </div>
 

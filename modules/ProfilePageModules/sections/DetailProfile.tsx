@@ -12,10 +12,10 @@ import {
 import { useUserData } from '@/hooks/user'
 import { formatPersonalData, updateMyPersonalData } from '@/lib/api/user'
 import { Pencil } from 'lucide-react'
+import Link from 'next/link'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import QRCode from 'react-qr-code'
 import { PandaImages } from '../constant'
-import Link from 'next/link'
 
 interface FieldProps {
   label: string
@@ -100,6 +100,15 @@ export const DetailProfile = () => {
 
   return (
     <div className="pt-[10rem] min-[1920px]:pt-[10rem] mb-10 flex flex-col md:px-[120px] xl:px-[190px] py-10 max-md:pb-96 justify-center items-center md:items-start md:justify-start gap-[35px]">
+      <div className='fixed bottom-0 w-[100vw] flex justify-center z-50 animate-bounce'>
+        <div
+          className='font-bold px-4 md:px-5 py-3 md:py-1.5 rounded-full border-4 bg-white max-w-[400px] text-center
+      border-PurpleRegion/TrueV/700 hover:border-PurpleRegion/BlueViolet/500 data-[selected=true]:border-PurpleRegion/BlueViolet/500
+      text-PurpleRegion/TrueV/700 hover:text-PurpleRegion/BlueViolet/500'
+        >
+          Jangan Lupa Refresh QR Code sebelum Main event yak! 😄
+        </div>
+      </div>
       <h1 className="text-[36px] text-[#2E3881] font-bold font-riffic tracking-[0.075rem]">
         Profile
       </h1>

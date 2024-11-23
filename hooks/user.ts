@@ -38,8 +38,8 @@ export function useUserData<T extends UserDataJoins>(
     if (redirects) {
       if (error != null) {
         // not logged in users trying to visit protected URLs
-        toast.error('Silakan masuk terlebih dahulu.')
-        redirect(paths.login)
+        // toast.error('Silakan masuk terlebih dahulu.')
+        // redirect(paths.login)
       }
 
       if (currentPath === paths.login) {

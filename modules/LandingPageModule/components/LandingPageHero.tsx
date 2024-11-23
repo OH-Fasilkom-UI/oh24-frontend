@@ -1,3 +1,4 @@
+'use client'
 import Countdown from '@/components/elements/Countdown'
 import Button from '@/components/ui/Button'
 import bridge from '@/public/landing-page-bridge.png'
@@ -6,12 +7,23 @@ import effect from '@/public/landing-page-effect.png'
 import glow from '@/public/landing-page-glow.png'
 import train1 from '@/public/landing-page-train1.png'
 import train2 from '@/public/landing-page-train2.png'
-import { SquarePen } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../moving.module.css'
+import { useUserData } from '@/hooks/user'
+import QRCode from 'react-qr-code'
+import { useRef } from 'react'
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/Dialog'
+import { QrCode } from 'lucide-react'
 
 const LandingPageHero = () => {
+  const qrCodeSmallRef = useRef<HTMLDivElement>(null)
+  const { userData, isLoading } = useUserData({ personal: true, ticket: true })
+
+  console.log(userData);
+  
+  const isScannedBefore = userData?.ticket?.present ?? false;
+
   return (
     <>
       <Image
@@ -66,26 +78,58 @@ const LandingPageHero = () => {
             classNameBlock=" w-[60px] h-[70px] sm:w-20 sm:h-24 sm:w-28 sm:h-32 mt-3 mb-3 sm:mb-8"
           />
         </div>
-        <div className="flex gap-4 sm:gap-12 my-6 sm:my-12">
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-12 my-6 sm:my-12">
+          {
+            userData?.ticket?.eventName?.startsWith('FULL') &&
+            <Dialog>
+              <DialogTrigger>
+                <Button>
+                  <QrCode />
+                  See QR Code
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>
+                    Scan Your QR
+                  </DialogTitle>
+                </DialogHeader>
+                <div
+                  className="flex flex-col items-center gap-3.5 mt-8"
+                  ref={qrCodeSmallRef}
+                  >
+                    {
+                      userData ?
+                        (
+                          <>
+                            <QRCode
+                              value={userData?.ticket?.id ?? 'oh24'}
+                              size={200}
+                              className="shadow-lg bg-white p-3 rounded-md"
+                            />
+                            <p className="font-bold text-center">
+                              {isScannedBefore ? "Kamu telah terdaftar untuk mengikuti Main Event!" : "Scan saat Main Event!"}
+                            </p>
+                          </>
+                        )   
+                        :
+                        "Loading Your QR..."
+                    }
+                </div>
+              </DialogContent>
+            </Dialog>
+          }
           <Link href="/explore">
-            <Button className="h-[40px] sm:h-[50px] w-[130px] sm:w-[200px] text-[10px] sm:text-[12px]">
+            <Button className="h-[40px] sm:h-[50px] w-full sm:w-[200px] text-[10px] sm:text-[12px]" variant={'secondary'}>
               About OH 2024
             </Button>
           </Link>
-          <Link href="/register">
-            <Button
-              disabled
-              variant="tertiary"
-              className="w-[120px] h-[40px] sm:w-[180px] sm:h-[50px] text-[10px] sm:text-[12px]"
-            >
-              Register
-              <SquarePen />
-            </Button>
-          </Link>
+
         </div>
       </div>
     </>
   )
 }
 
-export default LandingPageHero
+export default 
+LandingPageHero
